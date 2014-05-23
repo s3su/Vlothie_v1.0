@@ -1,6 +1,7 @@
 "Window": {
 	backgroundColor: "#ddd"
 },
+
 "Label": {
 	width: Ti.UI.SIZE,
 	height: Ti.UI.SIZE,
