@@ -10,7 +10,7 @@
 	height: Ti.UI.SIZE,
 	color: "#fff",
 	font: {
-		fontSize: 20,
+		fontSize: 22,
 		fontFamily: 'Helvetica Neue'
 	},
 	textAlign: 'center'
