@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-    <id>com.v1</id>
-    <name>V1</name>
+    <property name="acs-oauth-secret-production" type="string">h5J41WcFRmakkZDgaJPxFdt9QGYbPd01</property>
+    <property name="acs-oauth-key-production" type="string">zxNcLMprnWY4QYMbvsLzadP61sDtgyYW</property>
+    <property name="acs-api-key-production" type="string">ktlJRyr3BDxS9DI3Z5b9kXDJUYRhRKbr</property>
+    <property name="acs-oauth-secret-development" type="string">jyGvi4idlqunU8jPRGD2vwzTye6B5ZNL</property>
+    <property name="acs-oauth-key-development" type="string">899RvvqI4NttI5R7civxGjO1gpcIqYe8</property>
+    <property name="acs-api-key-development" type="string">XM93oz0sJNcnfHFHTmhtgrPNFvFEswhb</property>
+    <id>com.appcelerator.todo</id>
+    <name>Todo List</name>
     <version>1.0</version>
-    <publisher>sebastiansuarez</publisher>
+    <publisher>not specified</publisher>
     <url>http://</url>
     <description>not specified</description>
-    <copyright>2014 by sebastiansuarez</copyright>
+    <copyright>not specified</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>cd52d376-58af-4c45-a3eb-87a2801ca8ef</guid>
+    <guid>c72e4f8d-ae59-476b-913e-5e71a2f8eed2</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -47,11 +53,13 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="commonjs">ti.cloud</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>
-        <target device="ipad">false</target>
+        <target device="ipad">true</target>
         <target device="iphone">true</target>
         <target device="mobileweb">true</target>
         <target device="tizen">false</target>

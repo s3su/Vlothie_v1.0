@@ -1,0 +1,6 @@
+<Alloy>
+  <TableViewRow id="userRow">
+    <Label id="name" text="{name}"/>
+    <Label id="ager" text="{age}"/>
+  </TableViewRow>
+</Alloy>
