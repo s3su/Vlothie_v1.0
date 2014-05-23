@@ -1,4 +1,7 @@
 function Controller() {
+    function goToHome() {
+        Alloy.createController("home").getView().open();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -6,65 +9,68 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __alloyId0 = [];
-    $.__views.__alloyId2 = Ti.UI.createWindow({
+    var __defers = {};
+    $.__views.landingWin = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        title: "Tab 1",
-        id: "__alloyId2"
+        id: "landingWin",
+        title: "Vlothie"
     });
-    $.__views.__alloyId3 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
-        font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
+    $.__views.landingWin && $.addTopLevelView($.__views.landingWin);
+    $.__views.header = Ti.UI.createView({
+        top: Alloy.Globals.top,
+        height: "50dp",
+        width: Ti.UI.FILL,
+        backgroundGradient: {
+            type: "linear",
+            startPoint: {
+                x: "0%",
+                y: "0%"
+            },
+            endPoint: {
+                x: "0%",
+                y: "100%"
+            },
+            colors: [ {
+                color: "#a00",
+                offset: 0
+            }, {
+                color: "#800",
+                offset: 1
+            } ]
         },
-        textAlign: "center",
-        text: "I am Window 1",
-        id: "__alloyId3"
+        id: "header"
     });
-    $.__views.__alloyId2.add($.__views.__alloyId3);
-    $.__views.__alloyId1 = Ti.UI.createTab({
-        window: $.__views.__alloyId2,
-        title: "Tab 1",
-        icon: "KS_nav_ui.png",
-        id: "__alloyId1"
-    });
-    __alloyId0.push($.__views.__alloyId1);
-    $.__views.__alloyId5 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
-        title: "Tab 2",
-        id: "__alloyId5"
-    });
-    $.__views.__alloyId6 = Ti.UI.createLabel({
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        color: "#000",
+    $.__views.landingWin.add($.__views.header);
+    $.__views.title = Ti.UI.createLabel({
+        color: "#fff",
+        left: "10dp",
         font: {
-            fontSize: 20,
-            fontFamily: "Helvetica Neue"
+            fontSize: "24dp",
+            fontWeight: "bold"
         },
-        textAlign: "center",
-        text: "I am Window 2",
-        id: "__alloyId6"
+        text: "Vlothie",
+        id: "title"
     });
-    $.__views.__alloyId5.add($.__views.__alloyId6);
-    $.__views.__alloyId4 = Ti.UI.createTab({
-        window: $.__views.__alloyId5,
-        title: "Tab 2",
-        icon: "KS_nav_views.png",
-        id: "__alloyId4"
+    $.__views.header.add($.__views.title);
+    $.__views.landingPhoto = Ti.UI.createView({
+        id: "landingPhoto"
     });
-    __alloyId0.push($.__views.__alloyId4);
-    $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId0,
-        id: "index"
+    $.__views.landingWin.add($.__views.landingPhoto);
+    goToHome ? $.__views.landingPhoto.addEventListener("click", goToHome) : __defers["$.__views.landingPhoto!click!goToHome"] = true;
+    $.__views.landingImage = Ti.UI.createImageView({
+        height: Ti.UI.FILL,
+        width: Ti.UI.FILL,
+        color: "#fff",
+        backgroundColor: "transparent",
+        image: "/landingVlothie.jpg",
+        touchEnabled: false,
+        id: "landingImage"
     });
-    $.__views.index && $.addTopLevelView($.__views.index);
+    $.__views.landingPhoto.add($.__views.landingImage);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.index.open();
+    $.landingWin.open();
+    __defers["$.__views.landingPhoto!click!goToHome"] && $.__views.landingPhoto.addEventListener("click", goToHome);
     _.extend($, exports);
 }
 
