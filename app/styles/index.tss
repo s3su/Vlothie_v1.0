@@ -15,3 +15,15 @@
 	},
 	textAlign: 'center'
 } 
+
+
+"Label2": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#fff",
+	font: {
+		fontSize: 25,
+		fontFamily: 'Helvetica Neue'
+	},
+	textAlign: 'center'
+} 
