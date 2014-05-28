@@ -1,18 +1,18 @@
 function Controller() {
-    function __alloyId25(e) {
+    function __alloyId33(e) {
         if (e && e.fromAdapter) return;
-        __alloyId25.opts || {};
-        var models = whereFunction(__alloyId24);
+        __alloyId33.opts || {};
+        var models = whereFunction(__alloyId32);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId21 = models[i];
-            __alloyId21.__transform = transformFunction(__alloyId21);
-            var __alloyId23 = Alloy.createController("userRow", {
-                $model: __alloyId21,
+            var __alloyId29 = models[i];
+            __alloyId29.__transform = transformFunction(__alloyId29);
+            var __alloyId31 = Alloy.createController("userRow", {
+                $model: __alloyId29,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId23.getViewEx({
+            rows.push(__alloyId31.getViewEx({
                 recurse: true
             }));
         }
@@ -30,17 +30,6 @@ function Controller() {
     }
     function addUserToDB() {
         Alloy.createController("addUser").getView().open();
-    }
-    function showTasks(e) {
-        console.log(e);
-        if (3 == e.index) showUsers(e); else {
-            whereIndex = "undefined" != typeof e.index && null !== e.index ? e.index : INDEXES[e.source.title];
-            Alloy.createController("home").getView().open();
-        }
-    }
-    function showUsers() {
-        Alloy.createController("users").getView().open();
-        users.fetch();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "users";
@@ -66,10 +55,10 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId20 = Ti.UI.createView({
-        id: "__alloyId20"
+    $.__views.__alloyId28 = Ti.UI.createView({
+        id: "__alloyId28"
     });
-    $.__views.header.add($.__views.__alloyId20);
+    $.__views.header.add($.__views.__alloyId28);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -83,41 +72,15 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId24 = Alloy.Collections["user"] || user;
-    __alloyId24.on("fetch destroy change add remove reset", __alloyId25);
-    $.__views.footer = Ti.UI.createView({
-        id: "footer"
+    var __alloyId32 = Alloy.Collections["user"] || user;
+    __alloyId32.on("fetch destroy change add remove reset", __alloyId33);
+    $.__views.__alloyId34 = Alloy.createController("menu", {
+        id: "__alloyId34",
+        __parentSymbol: $.__views.usersWin
     });
-    $.__views.usersWin.add($.__views.footer);
-    var __alloyId27 = [];
-    var __alloyId32 = {
-        title: "All",
-        ns: "Alloy.Abstract"
-    };
-    __alloyId27.push(__alloyId32);
-    var __alloyId33 = {
-        title: "Active",
-        ns: "Alloy.Abstract"
-    };
-    __alloyId27.push(__alloyId33);
-    var __alloyId34 = {
-        title: "Done",
-        ns: "Alloy.Abstract"
-    };
-    __alloyId27.push(__alloyId34);
-    var __alloyId35 = {
-        title: "Users",
-        ns: "Alloy.Abstract"
-    };
-    __alloyId27.push(__alloyId35);
-    $.__views.tabbedbar = Ti.UI.iOS.createTabbedBar({
-        labels: __alloyId27,
-        id: "tabbedbar"
-    });
-    $.__views.footer.add($.__views.tabbedbar);
-    showTasks ? $.__views.tabbedbar.addEventListener("click", showTasks) : __defers["$.__views.tabbedbar!click!showTasks"] = true;
+    $.__views.__alloyId34.setParent($.__views.usersWin);
     exports.destroy = function() {
-        __alloyId24.off("fetch destroy change add remove reset", __alloyId25);
+        __alloyId32.off("fetch destroy change add remove reset", __alloyId33);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;
@@ -129,7 +92,6 @@ function Controller() {
     };
     var whereIndex = INDEXES["All"];
     __defers["$.__views.addUser!click!addUserToDB"] && $.__views.addUser.addEventListener("click", addUserToDB);
-    __defers["$.__views.tabbedbar!click!showTasks"] && $.__views.tabbedbar.addEventListener("click", showTasks);
     _.extend($, exports);
 }
 

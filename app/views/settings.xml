@@ -1,15 +1,12 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="todoWin" title="Todo" platform="android,ios">
+  <Window id="settings" title="settings" platform="android,ios">
 
     <!-- header -->
     <View id="header">
-      <Label id="title">Alloy Todo</Label>
+      <Label id="title">settings</Label>
       <View class="divider"/>
-      <View id="addView" onClick="addToDoItem">
-        <ImageView id="addImage"/>
-      </View>
-    </View>
+        </View>
 
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
@@ -21,15 +18,9 @@
       is rendered as a row. It gives the opportunity to modify
       the model's values before they are applied to each row.
     -->
-    
-    <View id="header">
-      <Label id="title">Hello Home!</Label>
-      </View>
-   
-
-
+ 
     <!-- iOS: footer with buttons -->
-    <Require src="menu"/>
+       <Require src="menu"/>
   </Window>
 
   <!-- Main Window for unsupported platforms -->
