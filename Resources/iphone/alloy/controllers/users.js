@@ -1,18 +1,18 @@
 function Controller() {
-    function __alloyId25(e) {
+    function __alloyId38(e) {
         if (e && e.fromAdapter) return;
-        __alloyId25.opts || {};
-        var models = whereFunction(__alloyId24);
+        __alloyId38.opts || {};
+        var models = whereFunction(__alloyId37);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId21 = models[i];
-            __alloyId21.__transform = transformFunction(__alloyId21);
-            var __alloyId23 = Alloy.createController("userRow", {
-                $model: __alloyId21,
+            var __alloyId34 = models[i];
+            __alloyId34.__transform = transformFunction(__alloyId34);
+            var __alloyId36 = Alloy.createController("userRow", {
+                $model: __alloyId34,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId23.getViewEx({
+            rows.push(__alloyId36.getViewEx({
                 recurse: true
             }));
         }
@@ -66,10 +66,10 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId20 = Ti.UI.createView({
-        id: "__alloyId20"
+    $.__views.__alloyId33 = Ti.UI.createView({
+        id: "__alloyId33"
     });
-    $.__views.header.add($.__views.__alloyId20);
+    $.__views.header.add($.__views.__alloyId33);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -83,41 +83,41 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId24 = Alloy.Collections["user"] || user;
-    __alloyId24.on("fetch destroy change add remove reset", __alloyId25);
+    var __alloyId37 = Alloy.Collections["user"] || user;
+    __alloyId37.on("fetch destroy change add remove reset", __alloyId38);
     $.__views.footer = Ti.UI.createView({
         id: "footer"
     });
     $.__views.usersWin.add($.__views.footer);
-    var __alloyId27 = [];
-    var __alloyId32 = {
+    var __alloyId40 = [];
+    var __alloyId45 = {
         title: "All",
         ns: "Alloy.Abstract"
     };
-    __alloyId27.push(__alloyId32);
-    var __alloyId33 = {
+    __alloyId40.push(__alloyId45);
+    var __alloyId46 = {
         title: "Active",
         ns: "Alloy.Abstract"
     };
-    __alloyId27.push(__alloyId33);
-    var __alloyId34 = {
+    __alloyId40.push(__alloyId46);
+    var __alloyId47 = {
         title: "Done",
         ns: "Alloy.Abstract"
     };
-    __alloyId27.push(__alloyId34);
-    var __alloyId35 = {
+    __alloyId40.push(__alloyId47);
+    var __alloyId48 = {
         title: "Users",
         ns: "Alloy.Abstract"
     };
-    __alloyId27.push(__alloyId35);
+    __alloyId40.push(__alloyId48);
     $.__views.tabbedbar = Ti.UI.iOS.createTabbedBar({
-        labels: __alloyId27,
+        labels: __alloyId40,
         id: "tabbedbar"
     });
     $.__views.footer.add($.__views.tabbedbar);
     showTasks ? $.__views.tabbedbar.addEventListener("click", showTasks) : __defers["$.__views.tabbedbar!click!showTasks"] = true;
     exports.destroy = function() {
-        __alloyId24.off("fetch destroy change add remove reset", __alloyId25);
+        __alloyId37.off("fetch destroy change add remove reset", __alloyId38);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;
