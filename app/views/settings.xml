@@ -5,8 +5,7 @@
     <!-- header -->
     <View id="header">
       <Label id="title">settings</Label>
-      <View class="divider"/>
-        </View>
+    </View>
 
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
@@ -24,7 +23,5 @@
   </Window>
 
   <!-- Main Window for unsupported platforms -->
-  <Window id="todoWin" platform="blackberry,mobileweb,tizen">
-    <Label>todo app is only supported on Android and iOS</Label>
-  </Window>
+
 </Alloy>

@@ -1,11 +1,10 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="trend" title="trend" platform="android,ios">
+  <Window id="trend" title="Trends" platform="android,ios">
 
     <!-- header -->
     <View id="header">
-      <Label id="title">trend</Label>
-      <View class="divider"/>
+      <Label id="title">Trends</Label>
         </View>
 
     <!-- Main table for tasks
@@ -21,10 +20,5 @@
  
     <!-- iOS: footer with buttons -->
        <Require src="menu"/>
-  </Window>
-
-  <!-- Main Window for unsupported platforms -->
-  <Window id="todoWin" platform="blackberry,mobileweb,tizen">
-    <Label>todo app is only supported on Android and iOS</Label>
   </Window>
 </Alloy>

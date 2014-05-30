@@ -5,3 +5,32 @@
 "Label": {
 	color: '#000'
 }
+
+"#header": {
+	top: Alloy.Globals.top,
+	height: "40dp",
+	width: Ti.UI.FILL,
+	backgroundColor: "white",
+	opacity: "0.75"}
+	
+
+"#title": {
+	color: "#652F8D",
+	font: {
+		fontSize: '24dp',
+		fontWeight: 'bold',
+		
+	}
+}
+
+
+
+".sectionTitle": {
+	left: "10dp",
+	color: "#652F8D",
+	font: {
+		fontSize: '24dp',
+		fontWeight: 'bold',
+		
+	}
+}

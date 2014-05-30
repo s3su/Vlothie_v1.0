@@ -1,8 +1,9 @@
 var INDEXES = {
+	'Home': 0,
 	'Looks': 1,
-	'Trends': 0,
-	'Alarm': 2,
-	'Settings': 1
+	'Trends': 2,
+	'Alarm': 3,
+	'Settings': 4
 };
 
 
@@ -10,7 +11,8 @@ var INDEXES = {
 function showWindows(e) {
 	//console.log(e);
 	if(e.index == 0){
-		Alloy.createController("look").getView().open();
+		//Alloy.createController("home").getView().open();
+		alert('home');
 	}else if(e.index == 1){
 		Alloy.createController("trend").getView().open();
 	}else if(e.index == 2){
@@ -18,10 +20,11 @@ function showWindows(e) {
 	}else if(e.index == 3){
 		Alloy.createController("settings").getView().open();
 	}else if(e.index == 4){
-		Alloy.createController("home").getView().open();
+		Alloy.createController("look").getView().open();
+
 	}
 	
-	
+
 }
 
 // Show the loading icon.

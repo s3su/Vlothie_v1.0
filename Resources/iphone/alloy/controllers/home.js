@@ -1,7 +1,4 @@
 function Controller() {
-    function addToDoItem() {
-        Alloy.createController("add").getView().open();
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "home";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -9,144 +6,154 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    var __defers = {};
-    $.__views.todoWin = Ti.UI.createWindow({
+    $.__views.vlothieHome = Ti.UI.createWindow({
         backgroundColor: "#fff",
         fullscreen: false,
         navBarHidden: true,
         exitOnClose: true,
-        id: "todoWin",
+        backgroundImage: "/landingVlothie.jpg",
+        id: "vlothieHome",
         title: "Todo"
     });
-    $.__views.todoWin && $.addTopLevelView($.__views.todoWin);
+    $.__views.vlothieHome && $.addTopLevelView($.__views.vlothieHome);
     $.__views.header = Ti.UI.createView({
         top: Alloy.Globals.top,
-        height: "50dp",
+        height: "40dp",
         width: Ti.UI.FILL,
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "0%",
-                y: "100%"
-            },
-            colors: [ {
-                color: "#FFF",
-                offset: 0
-            }, {
-                color: "#000",
-                offset: 1
-            } ]
-        },
+        backgroundColor: "white",
+        opacity: "0.75",
         id: "header"
     });
-    $.__views.todoWin.add($.__views.header);
+    $.__views.vlothieHome.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
-        color: "#fff",
+        color: "#652F8D",
+        font: {
+            fontSize: "24dp",
+            fontWeight: "bold"
+        },
+        text: "Vlothie",
+        id: "title"
+    });
+    $.__views.header.add($.__views.title);
+    $.__views.homeContent = Ti.UI.createView({
+        top: "70dp",
+        height: "470dp",
+        backgroundColor: "transparent",
+        left: 10,
+        right: 10,
+        id: "homeContent"
+    });
+    $.__views.vlothieHome.add($.__views.homeContent);
+    $.__views.hello = Ti.UI.createView({
+        top: "10dp",
+        height: "100dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "hello"
+    });
+    $.__views.homeContent.add($.__views.hello);
+    $.__views.__alloyId3 = Ti.UI.createLabel({
+        color: "#652F8D",
         left: "10dp",
         font: {
             fontSize: "24dp",
             fontWeight: "bold"
         },
-        text: "Alloy Todo",
-        id: "title"
+        text: "Good morning! 16 c / 72 f be beautiful",
+        id: "__alloyId3"
     });
-    $.__views.header.add($.__views.title);
-    $.__views.__alloyId5 = Ti.UI.createView({
-        height: "48dp",
-        width: "3dp",
-        top: "1dp",
-        right: "50dp",
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "100%",
-                y: "0%"
-            },
-            colors: [ {
-                color: "#666",
-                offset: 0
-            }, {
-                color: "#ccc",
-                offset: .5
-            }, {
-                color: "#666",
-                offset: 1
-            } ]
+    $.__views.hello.add($.__views.__alloyId3);
+    $.__views.yourLooks = Ti.UI.createView({
+        top: "120dp",
+        height: "270dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "yourLooks"
+    });
+    $.__views.homeContent.add($.__views.yourLooks);
+    $.__views.__alloyId4 = Ti.UI.createView({
+        top: "0dp",
+        height: "90dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "__alloyId4"
+    });
+    $.__views.yourLooks.add($.__views.__alloyId4);
+    $.__views.__alloyId5 = Ti.UI.createLabel({
+        color: "#652F8D",
+        left: "10dp",
+        font: {
+            fontSize: "24dp",
+            fontWeight: "bold"
         },
+        text: "1 - The day",
         id: "__alloyId5"
     });
-    $.__views.header.add($.__views.__alloyId5);
-    $.__views.addView = Ti.UI.createView({
-        top: 0,
-        bottom: 0,
-        right: 0,
-        width: "50dp",
-        id: "addView"
+    $.__views.__alloyId4.add($.__views.__alloyId5);
+    $.__views.__alloyId6 = Ti.UI.createView({
+        top: "90dp",
+        height: "90dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "__alloyId6"
     });
-    $.__views.header.add($.__views.addView);
-    addToDoItem ? $.__views.addView.addEventListener("click", addToDoItem) : __defers["$.__views.addView!click!addToDoItem"] = true;
-    $.__views.addImage = Ti.UI.createImageView({
-        height: Ti.UI.FILL,
-        width: Ti.UI.FILL,
-        color: "#fff",
-        backgroundColor: "transparent",
-        image: "/ic_menu_add.png",
-        touchEnabled: false,
-        id: "addImage"
-    });
-    $.__views.addView.add($.__views.addImage);
-    $.__views.header = Ti.UI.createView({
-        top: Alloy.Globals.top,
-        height: "50dp",
-        width: Ti.UI.FILL,
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "0%",
-                y: "100%"
-            },
-            colors: [ {
-                color: "#FFF",
-                offset: 0
-            }, {
-                color: "#000",
-                offset: 1
-            } ]
-        },
-        id: "header"
-    });
-    $.__views.todoWin.add($.__views.header);
-    $.__views.title = Ti.UI.createLabel({
-        color: "#fff",
+    $.__views.yourLooks.add($.__views.__alloyId6);
+    $.__views.__alloyId7 = Ti.UI.createLabel({
+        color: "#652F8D",
         left: "10dp",
         font: {
             fontSize: "24dp",
             fontWeight: "bold"
         },
-        text: "Hello Home!",
-        id: "title"
+        text: "2 - That meeting",
+        id: "__alloyId7"
     });
-    $.__views.header.add($.__views.title);
-    $.__views.__alloyId6 = Alloy.createController("menu", {
-        id: "__alloyId6",
-        __parentSymbol: $.__views.todoWin
+    $.__views.__alloyId6.add($.__views.__alloyId7);
+    $.__views.__alloyId8 = Ti.UI.createView({
+        top: "180dp",
+        height: "90dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "__alloyId8"
     });
-    $.__views.__alloyId6.setParent($.__views.todoWin);
+    $.__views.yourLooks.add($.__views.__alloyId8);
+    $.__views.__alloyId9 = Ti.UI.createLabel({
+        color: "#652F8D",
+        left: "10dp",
+        font: {
+            fontSize: "24dp",
+            fontWeight: "bold"
+        },
+        text: "3 - Sporty you!",
+        id: "__alloyId9"
+    });
+    $.__views.__alloyId8.add($.__views.__alloyId9);
+    $.__views.trends = Ti.UI.createView({
+        top: "400dp",
+        height: "50dp",
+        backgroundColor: "white",
+        opacity: "0.75",
+        id: "trends"
+    });
+    $.__views.homeContent.add($.__views.trends);
+    $.__views.__alloyId10 = Ti.UI.createLabel({
+        color: "#652F8D",
+        left: "10dp",
+        font: {
+            fontSize: "24dp",
+            fontWeight: "bold"
+        },
+        text: "be in!",
+        id: "__alloyId10"
+    });
+    $.__views.trends.add($.__views.__alloyId10);
+    $.__views.__alloyId11 = Alloy.createController("menu", {
+        id: "__alloyId11",
+        __parentSymbol: $.__views.vlothieHome
+    });
+    $.__views.__alloyId11.setParent($.__views.vlothieHome);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.addView!click!addToDoItem"] && $.__views.addView.addEventListener("click", addToDoItem);
     _.extend($, exports);
 }
 

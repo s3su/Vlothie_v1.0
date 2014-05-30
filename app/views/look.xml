@@ -1,13 +1,11 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="look" title="look" platform="android,ios">
+  <Window id="look" title="Looks" platform="android,ios">
 
     <!-- header -->
     <View id="header">
-      <Label id="title">look</Label>
-      <View class="divider"/>
-        </View>
-        
+      <Label id="title">Looks</Label>
+    </View>
       
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
@@ -24,8 +22,4 @@
        <Require src="menu"/>
   </Window>
 
-  <!-- Main Window for unsupported platforms -->
-  <Window id="todoWin" platform="blackberry,mobileweb,tizen">
-    <Label>todo app is only supported on Android and iOS</Label>
-  </Window>
 </Alloy>

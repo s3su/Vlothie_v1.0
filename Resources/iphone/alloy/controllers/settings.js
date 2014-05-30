@@ -14,32 +14,15 @@ function Controller() {
     $.__views.settings && $.addTopLevelView($.__views.settings);
     $.__views.header = Ti.UI.createView({
         top: Alloy.Globals.top,
-        height: "50dp",
+        height: "40dp",
         width: Ti.UI.FILL,
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "0%",
-                y: "100%"
-            },
-            colors: [ {
-                color: "#a00",
-                offset: 0
-            }, {
-                color: "#800",
-                offset: 1
-            } ]
-        },
+        backgroundColor: "white",
+        opacity: "0.75",
         id: "header"
     });
     $.__views.settings.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
-        color: "#fff",
-        left: "10dp",
+        color: "#652F8D",
         font: {
             fontSize: "24dp",
             fontWeight: "bold"
@@ -48,40 +31,11 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId22 = Ti.UI.createView({
-        height: "48dp",
-        width: "3dp",
-        top: "1dp",
-        right: "50dp",
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "100%",
-                y: "0%"
-            },
-            colors: [ {
-                color: "#666",
-                offset: 0
-            }, {
-                color: "#ccc",
-                offset: .5
-            }, {
-                color: "#666",
-                offset: 1
-            } ]
-        },
-        id: "__alloyId22"
-    });
-    $.__views.header.add($.__views.__alloyId22);
-    $.__views.__alloyId23 = Alloy.createController("menu", {
-        id: "__alloyId23",
+    $.__views.__alloyId20 = Alloy.createController("menu", {
+        id: "__alloyId20",
         __parentSymbol: $.__views.settings
     });
-    $.__views.__alloyId23.setParent($.__views.settings);
+    $.__views.__alloyId20.setParent($.__views.settings);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

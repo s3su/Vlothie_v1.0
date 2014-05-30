@@ -2,30 +2,23 @@
  <View platform="ios" id="footer">
       <TabbedBar onClick="showWindows" id="tabbedbar">
         <Labels>
-          <Label class="whiteText">Looks</Label>
-          <Label id="title">Trends</Label>
-          <Label>Alarm</Label>
-          <Label>Settings</Label>
-          <Label>Home</Label>
+          <Label id="menuTitle">Home</Label>
+          <Label id="menuTitle">Trends</Label>
+          <Label id="menuTitle">Alarm</Label>
+          <Label id="menuTitle">Settings</Label>
+          <Label id="menuTitle">Looks</Label>
         </Labels>
       </TabbedBar>
-      
-      <View platform="ios" id="footer">
-      	Hola
-      </View>	
-        
     </View>
 
     <!-- Android: menu -->
     <Menu platform="android" id="footer">
+      <MenuItem title="Home" onClick="showWindows"/>
       <MenuItem title="Looks" onClick="showWindows"/>
       <MenuItem title="Trends" onClick="showWindows"/>
       <MenuItem title="Alarm" onClick="showWindows"/>
-       <MenuItem title="Settings" onClick="showWindows"/>
-       <MenuItem title="Home" onClick="showWindows"/>
+      <MenuItem title="Settings" onClick="showWindows"/>
     </Menu>
-    
-    
 	
 		<Require id="loading" type="widget" src="com.appcelerator.loading"/>
 	

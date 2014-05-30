@@ -18,32 +18,15 @@ function Controller() {
     $.__views.landingWin && $.addTopLevelView($.__views.landingWin);
     $.__views.header = Ti.UI.createView({
         top: Alloy.Globals.top,
-        height: "50dp",
+        height: "40dp",
         width: Ti.UI.FILL,
-        backgroundGradient: {
-            type: "linear",
-            startPoint: {
-                x: "0%",
-                y: "0%"
-            },
-            endPoint: {
-                x: "0%",
-                y: "100%"
-            },
-            colors: [ {
-                color: "#a00",
-                offset: 0
-            }, {
-                color: "#800",
-                offset: 1
-            } ]
-        },
+        backgroundColor: "white",
+        opacity: "0.75",
         id: "header"
     });
     $.__views.landingWin.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
-        color: "#fff",
-        left: "10dp",
+        color: "#652F8D",
         font: {
             fontSize: "24dp",
             fontWeight: "bold"

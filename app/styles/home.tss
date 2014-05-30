@@ -1,67 +1,47 @@
-"#todoWin": {
+"#vlothieHome": {
 	fullscreen: false,
 	navBarHidden: true,
-	exitOnClose: true
+	exitOnClose: true,
+	backgroundImage: "/landingVlothie.jpg"
 }
 
-"#todoTable": {
-	top: Alloy.Globals.tableTop,
-	bottom: '46dp'
-}
-
-"#header": {
-	top: Alloy.Globals.top,
-	height: "50dp",
-	width: Ti.UI.FILL,
-	backgroundGradient: {
-		type: "linear",
-		startPoint: { x: "0%", y:"0%"},
-		endPoint:   { x: "0%", y:"100%"},
-		colors: [
-			{ color: "#FFF", offset: 0.0 },
-			{ color: "#000", offset: 1.0 }
-		]
-	}
-}
-
-"#title": {
-	left: "10dp",
-	color: "#fff",
-	font: {
-		fontSize: '24dp',
-		fontWeight: 'bold'
-	}
-}
-
-".divider": {
-	height: "48dp",
-	width: "3dp",
-	top: "1dp",
-	right: "50dp",
-	backgroundGradient: {
-		type: "linear",
-		startPoint: { x: "0%",   y:"0%"},
-		endPoint:   { x: "100%", y:"0%"},
-		colors: [
-			{ color: "#666", offset: 0.0 },
-			{ color: "#ccc", offset: 0.5 },
-			{ color: "#666", offset: 1.0 }
-		]
-	}
-}
-
-"#addView": {
-	top: 0,
-	bottom: 0,
-	right: 0,
-	width: "50dp"
-}
-
-"#addImage": {
-	height: Ti.UI.FILL,
-	width: Ti.UI.FILL,
-	color: "#fff",
+"#homeContent": {
+	top: "70dp",
+	height: "470dp",
 	backgroundColor: "transparent",
-	image: "/ic_menu_add.png",
-	touchEnabled: false
+	left: 10,
+	right: 10}
+	
+"#hello": {
+	top: "10dp",
+	height: "100dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+	
+"#yourLooks": {
+	top: "120dp",
+	height: "270dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
+".yourLooksEach": {
+	top: "0dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
+".yourLooksEachRow1": {
+	top: "90dp"
 }
+
+".yourLooksEachRow2": {
+	top: "180dp"
+}
+
+
+"#trends": {
+	top: "400dp",
+	height: "50dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
