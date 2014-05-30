@@ -77,15 +77,6 @@ function Controller() {
         id: "__alloyId8"
     });
     $.__views.header.add($.__views.__alloyId8);
-    $.__views.sfb = Alloy.createWidget("com.mcongrove.slideMenu", "widget", {
-        id: "sfb",
-        __parentSymbol: $.__views.look
-    });
-    $.__views.sfb.setParent($.__views.look);
-    $.__views.table = Ti.UI.createTableView({
-        id: "table"
-    });
-    $.__views.look.add($.__views.table);
     $.__views.__alloyId9 = Alloy.createController("menu", {
         id: "__alloyId9",
         __parentSymbol: $.__views.look
