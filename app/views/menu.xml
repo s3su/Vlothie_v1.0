@@ -6,6 +6,7 @@
           <Label>Trends</Label>
           <Label>Alarm</Label>
           <Label>Settings</Label>
+          <Label>Home</Label>
         </Labels>
       </TabbedBar>
         
@@ -17,5 +18,11 @@
       <MenuItem title="Trends" onClick="showWindows"/>
       <MenuItem title="Alarm" onClick="showWindows"/>
        <MenuItem title="Settings" onClick="showWindows"/>
+       <MenuItem title="Home" onClick="showWindows"/>
     </Menu>
+    
+    
+	
+		<Require id="loading" type="widget" src="com.appcelerator.loading"/>
+	
 </Alloy>

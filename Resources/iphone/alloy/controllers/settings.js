@@ -48,7 +48,7 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId22 = Ti.UI.createView({
+    $.__views.__alloyId24 = Ti.UI.createView({
         height: "48dp",
         width: "3dp",
         top: "1dp",
@@ -74,14 +74,14 @@ function Controller() {
                 offset: 1
             } ]
         },
-        id: "__alloyId22"
+        id: "__alloyId24"
     });
-    $.__views.header.add($.__views.__alloyId22);
-    $.__views.__alloyId23 = Alloy.createController("menu", {
-        id: "__alloyId23",
+    $.__views.header.add($.__views.__alloyId24);
+    $.__views.__alloyId25 = Alloy.createController("menu", {
+        id: "__alloyId25",
         __parentSymbol: $.__views.settings
     });
-    $.__views.__alloyId23.setParent($.__views.settings);
+    $.__views.__alloyId25.setParent($.__views.settings);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);
