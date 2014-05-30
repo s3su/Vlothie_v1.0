@@ -1,0 +1,25 @@
+<Alloy>
+ <View platform="ios" id="footer">
+      <TabbedBar onClick="showWindows" id="tabbedbar">
+        <Labels>
+          <Label class="whiteText">Looks</Label>
+          <Label id="title">Trends</Label>
+          <Label>Alarm</Label>
+          <Label>Settings</Label>
+        </Labels>
+      </TabbedBar>
+      
+      <View platform="ios" id="footer">
+      	Hola
+      </View>	
+        
+    </View>
+
+    <!-- Android: menu -->
+    <Menu platform="android" id="footer">
+      <MenuItem title="Looks" onClick="showWindows"/>
+      <MenuItem title="Trends" onClick="showWindows"/>
+      <MenuItem title="Alarm" onClick="showWindows"/>
+       <MenuItem title="Settings" onClick="showWindows"/>
+    </Menu>
+</Alloy>
