@@ -8,9 +8,7 @@
       <View class="divider"/>
         </View>
         
-         <Require type="widget" src="com.mcongrove.slideMenu" id="sfb"/>
-        <TableView id="table"/>
-
+      
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
       based on the models in the given collection. "dataCollection"
