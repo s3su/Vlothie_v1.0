@@ -31,11 +31,11 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId21 = Alloy.createController("menu", {
-        id: "__alloyId21",
+    $.__views.__alloyId23 = Alloy.createController("menu", {
+        id: "__alloyId23",
         __parentSymbol: $.__views.trend
     });
-    $.__views.__alloyId21.setParent($.__views.trend);
+    $.__views.__alloyId23.setParent($.__views.trend);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

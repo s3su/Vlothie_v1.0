@@ -3,9 +3,26 @@
   <Window id="look" title="Looks" platform="android,ios">
 
     <!-- header -->
-    <View id="header">
-      <Label id="title">Looks</Label>
-    </View>
+    
+    <View id="lookContent">
+        
+	    <View id="articleTop">
+	             <ImageView id="articleTopImg"/>
+	             <Label>Top</Label>
+ 	    </View>
+	
+	    <View id="articleBottom">
+	             <ImageView id="articleBottomImg"/>
+ 	             <Label>Bottom</Label>
+ 	    </View>
+	
+	    <View id="articleShoes">
+	             <ImageView id="articleShoesImg"/>
+ 	             <Label>Shoes</Label>
+ 	    </View>
+	
+	</View>
+	
       
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table

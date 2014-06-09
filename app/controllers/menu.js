@@ -11,8 +11,7 @@ var INDEXES = {
 function showWindows(e) {
 	//console.log(e);
 	if(e.index == 0){
-		//Alloy.createController("home").getView().open();
-		alert('home');
+		Alloy.createController("home").getView().open();
 	}else if(e.index == 1){
 		Alloy.createController("trend").getView().open();
 	}else if(e.index == 2){

@@ -1,0 +1,54 @@
+"#look": {
+	fullscreen: false,
+	navBarHidden: true,
+	exitOnClose: true,
+}
+
+"#lookContent": {
+	layout: "vertical",
+	top: "20dp",
+	backgroundColor: "transparent",
+	width: "100%",
+	height: "640dp"
+
+}
+
+"#articleTop": {
+	layout: "vertical",
+	height: "180dp",
+	top: "0dp",
+	width: "100%",
+	color: "#fff",
+	backgroundColor: "blue",
+}
+
+"#articleTopImg": {
+	image: "/top.png"
+}
+
+"#articleBottom": {
+	layout: "vertical",
+	height: "180dp",
+	top: "0dp",
+	width: "100%",
+	color: "#fff",
+	backgroundColor: "red",
+}
+
+"#articleBottomImg": {
+	image: "/bottom.png"
+}
+
+"#articleShoes": {
+	layout: "vertical",
+	height: "120dp",
+	top: "0dp",
+	width: "100%",
+	color: "#fff",
+	backgroundColor: "green",
+}
+
+"#articleShoesImg": {
+	image: "/shoes.png"
+
+}

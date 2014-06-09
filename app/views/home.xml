@@ -1,6 +1,6 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="vlothieHome" title="Todo" platform="android,ios">
+  <Window id="vlothieHome" title="Todo" platform="android,ios" >
 
     <!-- header -->
     <View id="header">
@@ -25,20 +25,20 @@
 	   
 	    <View id="yourLooks">
 	    	<View class="yourLooksEach">
-	     	 		<Label class="sectionTitle">1 - The day </Label>
+	     	 		<Label onClick="showLooks" class="sectionTitle">1 - The day </Label>
 	       </View>
 	   	
 	   		<View class="yourLooksEach yourLooksEachRow1">
-	     	   		 <Label class="sectionTitle">2 - That meeting </Label> 
+	     	   		 <Label onClick="showLooks" class="sectionTitle">2 - That meeting </Label> 
 		    </View>
 	   	
 	   		<View class="yourLooksEach yourLooksEachRow2">
-	     	    	 <Label class="sectionTitle">3 - Sporty you!</Label>
+	     	    	 <Label onClick="showLooks" class="sectionTitle">3 - Sporty you!</Label>
 	  		</View>
 	    </View>
 	
 		<View id="trends">
-	      <Label class="sectionTitle">be in!</Label>
+	      <Label id="shake" class="sectionTitle">be in!</Label>
 	   </View> 
 
 	

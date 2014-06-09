@@ -1,6 +1,6 @@
 function Controller() {
     function showWindows(e) {
-        0 == e.index ? alert("home") : 1 == e.index ? Alloy.createController("trend").getView().open() : 2 == e.index ? Alloy.createController("alarm").getView().open() : 3 == e.index ? Alloy.createController("settings").getView().open() : 4 == e.index && Alloy.createController("look").getView().open();
+        0 == e.index ? Alloy.createController("home").getView().open() : 1 == e.index ? Alloy.createController("trend").getView().open() : 2 == e.index ? Alloy.createController("alarm").getView().open() : 3 == e.index ? Alloy.createController("settings").getView().open() : 4 == e.index && Alloy.createController("look").getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "menu";
@@ -18,8 +18,8 @@ function Controller() {
         id: "footer"
     });
     $.__views.footer && $.addTopLevelView($.__views.footer);
-    var __alloyId14 = [];
-    var __alloyId15 = {
+    var __alloyId16 = [];
+    var __alloyId17 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -29,8 +29,8 @@ function Controller() {
         title: "Home",
         ns: "Alloy.Abstract"
     };
-    __alloyId14.push(__alloyId15);
-    var __alloyId16 = {
+    __alloyId16.push(__alloyId17);
+    var __alloyId18 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -40,8 +40,8 @@ function Controller() {
         title: "Trends",
         ns: "Alloy.Abstract"
     };
-    __alloyId14.push(__alloyId16);
-    var __alloyId17 = {
+    __alloyId16.push(__alloyId18);
+    var __alloyId19 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -51,8 +51,8 @@ function Controller() {
         title: "Alarm",
         ns: "Alloy.Abstract"
     };
-    __alloyId14.push(__alloyId17);
-    var __alloyId18 = {
+    __alloyId16.push(__alloyId19);
+    var __alloyId20 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -62,8 +62,8 @@ function Controller() {
         title: "Settings",
         ns: "Alloy.Abstract"
     };
-    __alloyId14.push(__alloyId18);
-    var __alloyId19 = {
+    __alloyId16.push(__alloyId20);
+    var __alloyId21 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -73,7 +73,7 @@ function Controller() {
         title: "Looks",
         ns: "Alloy.Abstract"
     };
-    __alloyId14.push(__alloyId19);
+    __alloyId16.push(__alloyId21);
     $.__views.tabbedbar = Ti.UI.iOS.createTabbedBar({
         style: Titanium.UI.iPhone.SystemButtonStyle.BAR,
         backgroundColor: "#652F8D",
@@ -81,7 +81,7 @@ function Controller() {
         height: 40,
         left: 20,
         right: 20,
-        labels: __alloyId14,
+        labels: __alloyId16,
         id: "tabbedbar"
     });
     $.__views.footer.add($.__views.tabbedbar);

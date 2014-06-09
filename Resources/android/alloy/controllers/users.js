@@ -1,18 +1,18 @@
 function Controller() {
-    function __alloyId40(e) {
+    function __alloyId38(e) {
         if (e && e.fromAdapter) return;
-        __alloyId40.opts || {};
-        var models = whereFunction(__alloyId39);
+        __alloyId38.opts || {};
+        var models = whereFunction(__alloyId37);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId36 = models[i];
-            __alloyId36.__transform = transformFunction(__alloyId36);
-            var __alloyId38 = Alloy.createController("userRow", {
-                $model: __alloyId36,
+            var __alloyId34 = models[i];
+            __alloyId34.__transform = transformFunction(__alloyId34);
+            var __alloyId36 = Alloy.createController("userRow", {
+                $model: __alloyId34,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId38.getViewEx({
+            rows.push(__alloyId36.getViewEx({
                 recurse: true
             }));
         }
@@ -46,19 +46,28 @@ function Controller() {
     });
     $.__views.usersWin && $.addTopLevelView($.__views.usersWin);
     $.__views.header = Ti.UI.createView({
+        top: Alloy.Globals.top,
+        height: "40dp",
+        width: Ti.UI.FILL,
+        backgroundColor: "white",
+        opacity: "0.75",
         id: "header"
     });
     $.__views.usersWin.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
-        color: "#000",
+        color: "#652F8D",
+        font: {
+            fontSize: "24dp",
+            fontWeight: "bold"
+        },
         text: "Alloy User",
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId35 = Ti.UI.createView({
-        id: "__alloyId35"
+    $.__views.__alloyId33 = Ti.UI.createView({
+        id: "__alloyId33"
     });
-    $.__views.header.add($.__views.__alloyId35);
+    $.__views.header.add($.__views.__alloyId33);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -72,15 +81,15 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId39 = Alloy.Collections["user"] || user;
-    __alloyId39.on("fetch destroy change add remove reset", __alloyId40);
-    $.__views.__alloyId41 = Alloy.createController("menu", {
-        id: "__alloyId41",
+    var __alloyId37 = Alloy.Collections["user"] || user;
+    __alloyId37.on("fetch destroy change add remove reset", __alloyId38);
+    $.__views.__alloyId39 = Alloy.createController("menu", {
+        id: "__alloyId39",
         __parentSymbol: $.__views.usersWin
     });
-    $.__views.__alloyId41.setParent($.__views.usersWin);
+    $.__views.__alloyId39.setParent($.__views.usersWin);
     exports.destroy = function() {
-        __alloyId39.off("fetch destroy change add remove reset", __alloyId40);
+        __alloyId37.off("fetch destroy change add remove reset", __alloyId38);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;
