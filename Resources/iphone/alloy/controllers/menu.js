@@ -89,7 +89,6 @@ function Controller() {
     $.__views.tabbedbar = Ti.UI.iOS.createTabbedBar({
         style: Titanium.UI.iPhone.SystemButtonStyle.BAR,
         backgroundColor: "#652F8D",
-        index: 0,
         height: 40,
         left: 20,
         right: 20,
@@ -110,7 +109,8 @@ function Controller() {
         Looks: 1,
         Trends: 2,
         Alarm: 3,
-        Settings: 4
+        Settings: 4,
+        Article: 5
     };
     INDEXES["All"];
     $.loading.setOpacity(1);

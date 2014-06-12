@@ -18,9 +18,9 @@
 "#tabbedbar": {
 	style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
 	backgroundColor: '#652F8D',
-	index: 0,
 	height: 40,
 	left: 20,
 	right: 20
 }
+
 

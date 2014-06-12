@@ -7,8 +7,7 @@
           <Label class="menuTitle" id="alarm">Alarm</Label>
           <Label class="menuTitle" id="settings">Settings</Label>
           <Label class="menuTitle" id="look">Looks</Label>
-          <Label class="menuTitle" id="look">Article</Label>
-    
+          <Label class="menuTitle" id="article">Article</Label>
         </Labels>
       </TabbedBar>
     </View>

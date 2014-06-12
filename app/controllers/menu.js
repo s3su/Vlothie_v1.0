@@ -3,13 +3,15 @@ var INDEXES ={
 	'Looks': 1,
 	'Trends': 2,
 	'Alarm': 3,
-	'Settings': 4
+	'Settings': 4,
+	'Article': 5
 };
 
 // Show task list based on selected status type
 function showWindows(e) {
 	console.log(e);
 	if(e.index == 0){
+		//alert('home');
 		Alloy.createController("home").getView().open();
 	}else if(e.index == 1){
 		Alloy.createController("trend").getView().open();
