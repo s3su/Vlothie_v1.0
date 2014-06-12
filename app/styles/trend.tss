@@ -1,0 +1,13 @@
+"#trendContent": {
+	layout: "vertical",
+	top: "20dp",
+	backgroundColor: "transparent",
+	width: Ti.UI.FILL,
+    height: Ti.UI.FILL,
+}
+
+"#trendImg": {
+	image: "/trend_01.jpg"
+}
+
+

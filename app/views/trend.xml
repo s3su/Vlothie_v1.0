@@ -3,21 +3,11 @@
   <Window id="trend" title="Trends" platform="android,ios">
 
     <!-- header -->
-    <View id="header">
+    <View id="trendContent">
+      <ImageView id="trendImg"/>
       <Label id="title">Trends</Label>
-        </View>
-
-    <!-- Main table for tasks
-      Use model-view binding to render the rows fo this table
-      based on the models in the given collection. "dataCollection"
-      represents the collection used to populate this table.
-      "dataWhere" is a function used to filter the list of
-      models processed within the collection. "dataTransform"
-      is a function that will be executed on each model as it
-      is rendered as a row. It gives the opportunity to modify
-      the model's values before they are applied to each row.
-    -->
- 
+    </View>
+    
     <!-- iOS: footer with buttons -->
        <Require src="menu"/>
   </Window>

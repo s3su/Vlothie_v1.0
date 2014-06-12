@@ -2,11 +2,13 @@
  <View platform="ios" id="footer">
       <TabbedBar onClick="showWindows" id="tabbedbar">
         <Labels>
-          <Label id="menuTitle">Home</Label>
-          <Label id="menuTitle">Trends</Label>
-          <Label id="menuTitle">Alarm</Label>
-          <Label id="menuTitle">Settings</Label>
-          <Label id="menuTitle">Looks</Label>
+          <Label class="menuTitle" id="home">Home</Label>
+          <Label class="menuTitle" id="trends">Trends</Label>
+          <Label class="menuTitle" id="alarm">Alarm</Label>
+          <Label class="menuTitle" id="settings">Settings</Label>
+          <Label class="menuTitle" id="look">Looks</Label>
+          <Label class="menuTitle" id="look">Article</Label>
+    
         </Labels>
       </TabbedBar>
     </View>

@@ -12,15 +12,20 @@ function Controller() {
         title: "Trends"
     });
     $.__views.trend && $.addTopLevelView($.__views.trend);
-    $.__views.header = Ti.UI.createView({
-        top: Alloy.Globals.top,
-        height: "40dp",
+    $.__views.trendContent = Ti.UI.createView({
+        layout: "vertical",
+        top: "20dp",
+        backgroundColor: "transparent",
         width: Ti.UI.FILL,
-        backgroundColor: "white",
-        opacity: "0.75",
-        id: "header"
+        height: Ti.UI.FILL,
+        id: "trendContent"
     });
-    $.__views.trend.add($.__views.header);
+    $.__views.trend.add($.__views.trendContent);
+    $.__views.trendImg = Ti.UI.createImageView({
+        image: "/trend_01.jpg",
+        id: "trendImg"
+    });
+    $.__views.trendContent.add($.__views.trendImg);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -30,12 +35,12 @@ function Controller() {
         text: "Trends",
         id: "title"
     });
-    $.__views.header.add($.__views.title);
-    $.__views.__alloyId23 = Alloy.createController("menu", {
-        id: "__alloyId23",
+    $.__views.trendContent.add($.__views.title);
+    $.__views.__alloyId28 = Alloy.createController("menu", {
+        id: "__alloyId28",
         __parentSymbol: $.__views.trend
     });
-    $.__views.__alloyId23.setParent($.__views.trend);
+    $.__views.__alloyId28.setParent($.__views.trend);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

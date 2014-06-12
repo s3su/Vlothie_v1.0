@@ -1,4 +1,4 @@
-var INDEXES = {
+var INDEXES ={  
 	'Home': 0,
 	'Looks': 1,
 	'Trends': 2,
@@ -6,10 +6,9 @@ var INDEXES = {
 	'Settings': 4
 };
 
-
 // Show task list based on selected status type
 function showWindows(e) {
-	//console.log(e);
+	console.log(e);
 	if(e.index == 0){
 		Alloy.createController("home").getView().open();
 	}else if(e.index == 1){
@@ -20,10 +19,21 @@ function showWindows(e) {
 		Alloy.createController("settings").getView().open();
 	}else if(e.index == 4){
 		Alloy.createController("look").getView().open();
-
+	}else if(e.index == 5){
+		Alloy.createController("article").getView().open();
 	}
-	
+}
 
+var whereIndex = INDEXES['All'];
+
+
+// Filter the fetched collection before rendering. Don't return the
+// collection itself, but instead return an array of models
+// that you would like to render.
+function whereFunction(collection) {
+	return !whereIndex ?
+		collection.models :
+		collection.where({ done: whereIndex === 1 ? 0 : 1 });
 }
 
 // Show the loading icon.

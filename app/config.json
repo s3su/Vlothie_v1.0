@@ -8,6 +8,6 @@
 	"os:ios": {},
 	"os:mobileweb": {},
 	"dependencies": {
-	   "com.appcelerator.loading":"1.0"
+	   "com.appcelerator.loading":"0.0"
 	}
 }

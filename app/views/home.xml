@@ -24,15 +24,15 @@
 	    </View>
 	   
 	    <View id="yourLooks">
-	    	<View class="yourLooksEach">
+	    	<View class="yourLooksEachA">
 	     	 		<Label onClick="showLooks" class="sectionTitle">1 - The day </Label>
 	       </View>
 	   	
-	   		<View class="yourLooksEach yourLooksEachRow1">
+	   		<View class="yourLooksEachB">
 	     	   		 <Label onClick="showLooks" class="sectionTitle">2 - That meeting </Label> 
 		    </View>
 	   	
-	   		<View class="yourLooksEach yourLooksEachRow2">
+	   		<View class="yourLooksEachC">
 	     	    	 <Label onClick="showLooks" class="sectionTitle">3 - Sporty you!</Label>
 	  		</View>
 	    </View>

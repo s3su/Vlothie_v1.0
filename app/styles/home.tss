@@ -24,19 +24,23 @@
 	backgroundColor: "white",
 	opacity: "0.75"}
 
-".yourLooksEach": {
+".yourLooksEachA": {
 	top: "0dp",
 	height: "90dp",
 	backgroundColor: "white",
 	opacity: "0.75"}
 
-".yourLooksEachRow1": {
-	top: "90dp"
-}
-
-".yourLooksEachRow2": {
-	top: "180dp"
-}
+".yourLooksEachB": {
+	top: "95dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+	
+".yourLooksEachC": {
+	top: "190dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
 
 "#trends": {
 	top: "400dp",

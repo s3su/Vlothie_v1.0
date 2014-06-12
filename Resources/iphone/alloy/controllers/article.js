@@ -1,6 +1,6 @@
 function Controller() {
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
-    this.__controllerPath = "look";
+    this.__controllerPath = "article";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
     arguments[0] ? arguments[0]["$model"] : null;
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
@@ -39,12 +39,12 @@ function Controller() {
         id: "articleTopImg"
     });
     $.__views.articleTop.add($.__views.articleTopImg);
-    $.__views.__alloyId15 = Ti.UI.createLabel({
+    $.__views.__alloyId3 = Ti.UI.createLabel({
         color: "#000",
         text: "Top",
-        id: "__alloyId15"
+        id: "__alloyId3"
     });
-    $.__views.articleTop.add($.__views.__alloyId15);
+    $.__views.articleTop.add($.__views.__alloyId3);
     $.__views.articleBottom = Ti.UI.createView({
         layout: "vertical",
         height: "180dp",
@@ -60,12 +60,12 @@ function Controller() {
         id: "articleBottomImg"
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
-    $.__views.__alloyId16 = Ti.UI.createLabel({
+    $.__views.__alloyId4 = Ti.UI.createLabel({
         color: "#000",
         text: "Bottom",
-        id: "__alloyId16"
+        id: "__alloyId4"
     });
-    $.__views.articleBottom.add($.__views.__alloyId16);
+    $.__views.articleBottom.add($.__views.__alloyId4);
     $.__views.articleShoes = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
@@ -81,17 +81,17 @@ function Controller() {
         id: "articleShoesImg"
     });
     $.__views.articleShoes.add($.__views.articleShoesImg);
-    $.__views.__alloyId17 = Ti.UI.createLabel({
+    $.__views.__alloyId5 = Ti.UI.createLabel({
         color: "#000",
         text: "Shoes",
-        id: "__alloyId17"
+        id: "__alloyId5"
     });
-    $.__views.articleShoes.add($.__views.__alloyId17);
-    $.__views.__alloyId18 = Alloy.createController("menu", {
-        id: "__alloyId18",
+    $.__views.articleShoes.add($.__views.__alloyId5);
+    $.__views.__alloyId6 = Alloy.createController("menu", {
+        id: "__alloyId6",
         __parentSymbol: $.__views.look
     });
-    $.__views.__alloyId18.setParent($.__views.look);
+    $.__views.__alloyId6.setParent($.__views.look);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);
