@@ -19,7 +19,7 @@ function showWindows(e) {
 		Alloy.createController("alarm").getView().open();
 	}else if(e.index == 3){
 		Alloy.createController("settings").getView().open();
-	}else if(e.index == 4){
+	}else if(e.index == 4){ 
 		Alloy.createController("look").getView().open();
 	}else if(e.index == 5){
 		Alloy.createController("article").getView().open();
