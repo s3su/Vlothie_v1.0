@@ -1,5 +1,7 @@
-<Alloy>
-  <!-- Main Window -->
+<Alloy>  <!-- Main Window -->
+  
+  <Tab id="trend" title="Trends" icon="KS_nav_views.png">
+  	
   <Window id="trend" title="Trends" platform="android,ios">
 
     <!-- header -->
@@ -8,7 +10,8 @@
       <Label id="title">Trends</Label>
     </View>
     
-    <!-- iOS: footer with buttons -->
-       <Require src="menu"/>
+    <!-- iOS: footer with buttons 
+       <Require src="menu"/>-->
   </Window>
+ </Tab>
 </Alloy>

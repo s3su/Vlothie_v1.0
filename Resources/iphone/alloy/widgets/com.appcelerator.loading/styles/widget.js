@@ -16,7 +16,7 @@ module.exports = [ {
     priority: 1000.0002,
     key: "Label",
     style: {
-        color: "#000"
+        color: "#FFF"
     }
 }, {
     isClass: true,

@@ -1,6 +1,7 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="settings" title="settings" platform="android,ios">
+   <Tab title="Settings" icon="KS_nav_views.png">
+  	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->
     <View id="header">
@@ -18,10 +19,10 @@
       the model's values before they are applied to each row.
     -->
  
-    <!-- iOS: footer with buttons -->
-       <Require src="menu"/>
+    <!-- iOS: footer with buttons 
+       <Require src="menu"/>-->
   </Window>
-
+ </Tab>
   <!-- Main Window for unsupported platforms -->
 
 </Alloy>

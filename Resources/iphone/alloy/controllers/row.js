@@ -37,7 +37,7 @@ function Controller() {
     $.__views.row.add($.__views.check);
     toggleStatus ? $.__views.check.addEventListener("click", toggleStatus) : __defers["$.__views.check!click!toggleStatus"] = true;
     $.__views.task = Ti.UI.createLabel({
-        color: "#000",
+        color: "#FFF",
         left: "50dp",
         right: "50dp",
         height: Ti.UI.SIZE,

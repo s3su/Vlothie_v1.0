@@ -7,10 +7,10 @@
     <property name="acs-oauth-key-development" type="string">899RvvqI4NttI5R7civxGjO1gpcIqYe8</property>
     <property name="acs-api-key-development" type="string">XM93oz0sJNcnfHFHTmhtgrPNFvFEswhb</property>
     <id>com.appcelerator.todo</id>
-    <name>Todo List</name>
-    <version>1.0</version>
-    <publisher>not specified</publisher>
-    <url>http://</url>
+    <name>Vlothie</name>
+    <version>0.7</version>
+    <publisher>Bits0 SRL</publisher>
+    <url>http://www.vlothie.com</url>
     <description>not specified</description>
     <copyright>not specified</copyright>
     <icon>appicon.png</icon>

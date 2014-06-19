@@ -6,12 +6,11 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.settings = Ti.UI.createWindow({
+    $.__views.__alloyId39 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        id: "settings",
-        title: "settings"
+        id: "__alloyId39",
+        title: ""
     });
-    $.__views.settings && $.addTopLevelView($.__views.settings);
     $.__views.header = Ti.UI.createView({
         top: Alloy.Globals.top,
         height: "40dp",
@@ -20,7 +19,7 @@ function Controller() {
         opacity: "0.75",
         id: "header"
     });
-    $.__views.settings.add($.__views.header);
+    $.__views.__alloyId39.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -31,11 +30,13 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId27 = Alloy.createController("menu", {
-        id: "__alloyId27",
-        __parentSymbol: $.__views.settings
+    $.__views.settings = Ti.UI.createTab({
+        window: $.__views.__alloyId39,
+        title: "Settings",
+        icon: "KS_nav_views.png",
+        id: "settings"
     });
-    $.__views.__alloyId27.setParent($.__views.settings);
+    $.__views.settings && $.addTopLevelView($.__views.settings);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

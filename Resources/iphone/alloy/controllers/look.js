@@ -1,4 +1,7 @@
 function Controller() {
+    function showArticle() {
+        Alloy.createController("article").getView().open();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "look";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -6,15 +9,12 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.look = Ti.UI.createWindow({
+    var __defers = {};
+    $.__views.__alloyId27 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        fullscreen: false,
-        navBarHidden: true,
-        exitOnClose: true,
-        id: "look",
-        title: "Looks"
+        id: "__alloyId27",
+        title: ""
     });
-    $.__views.look && $.addTopLevelView($.__views.look);
     $.__views.lookContent = Ti.UI.createScrollView({
         layout: "vertical",
         top: "20dp",
@@ -23,7 +23,7 @@ function Controller() {
         height: Ti.UI.FILL,
         id: "lookContent"
     });
-    $.__views.look.add($.__views.lookContent);
+    $.__views.__alloyId27.add($.__views.lookContent);
     $.__views.articleTop = Ti.UI.createView({
         layout: "vertical",
         height: "180dp",
@@ -39,12 +39,13 @@ function Controller() {
         id: "articleTopImg"
     });
     $.__views.articleTop.add($.__views.articleTopImg);
-    $.__views.__alloyId15 = Ti.UI.createLabel({
-        color: "#000",
+    showArticle ? $.__views.articleTopImg.addEventListener("click", showArticle) : __defers["$.__views.articleTopImg!click!showArticle"] = true;
+    $.__views.__alloyId28 = Ti.UI.createLabel({
+        color: "#FFF",
         text: "Top",
-        id: "__alloyId15"
+        id: "__alloyId28"
     });
-    $.__views.articleTop.add($.__views.__alloyId15);
+    $.__views.articleTop.add($.__views.__alloyId28);
     $.__views.articleBottom = Ti.UI.createView({
         layout: "vertical",
         height: "180dp",
@@ -60,12 +61,13 @@ function Controller() {
         id: "articleBottomImg"
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
-    $.__views.__alloyId16 = Ti.UI.createLabel({
-        color: "#000",
+    showArticle ? $.__views.articleBottomImg.addEventListener("click", showArticle) : __defers["$.__views.articleBottomImg!click!showArticle"] = true;
+    $.__views.__alloyId29 = Ti.UI.createLabel({
+        color: "#FFF",
         text: "Bottom",
-        id: "__alloyId16"
+        id: "__alloyId29"
     });
-    $.__views.articleBottom.add($.__views.__alloyId16);
+    $.__views.articleBottom.add($.__views.__alloyId29);
     $.__views.articleShoes = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
@@ -81,19 +83,28 @@ function Controller() {
         id: "articleShoesImg"
     });
     $.__views.articleShoes.add($.__views.articleShoesImg);
-    $.__views.__alloyId17 = Ti.UI.createLabel({
-        color: "#000",
+    showArticle ? $.__views.articleShoesImg.addEventListener("click", showArticle) : __defers["$.__views.articleShoesImg!click!showArticle"] = true;
+    $.__views.__alloyId30 = Ti.UI.createLabel({
+        color: "#FFF",
         text: "Shoes",
-        id: "__alloyId17"
+        id: "__alloyId30"
     });
-    $.__views.articleShoes.add($.__views.__alloyId17);
-    $.__views.__alloyId18 = Alloy.createController("menu", {
-        id: "__alloyId18",
-        __parentSymbol: $.__views.look
+    $.__views.articleShoes.add($.__views.__alloyId30);
+    $.__views.look = Ti.UI.createTab({
+        fullscreen: false,
+        navBarHidden: true,
+        exitOnClose: true,
+        window: $.__views.__alloyId27,
+        id: "look",
+        title: "Looks",
+        icon: "KS_nav_views.png"
     });
-    $.__views.__alloyId18.setParent($.__views.look);
+    $.__views.look && $.addTopLevelView($.__views.look);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    __defers["$.__views.articleTopImg!click!showArticle"] && $.__views.articleTopImg.addEventListener("click", showArticle);
+    __defers["$.__views.articleBottomImg!click!showArticle"] && $.__views.articleBottomImg.addEventListener("click", showArticle);
+    __defers["$.__views.articleShoesImg!click!showArticle"] && $.__views.articleShoesImg.addEventListener("click", showArticle);
     _.extend($, exports);
 }
 

@@ -11,7 +11,6 @@ function Controller() {
         id: "trend",
         title: "Trends"
     });
-    $.__views.trend && $.addTopLevelView($.__views.trend);
     $.__views.trendContent = Ti.UI.createView({
         layout: "vertical",
         top: "20dp",
@@ -36,11 +35,13 @@ function Controller() {
         id: "title"
     });
     $.__views.trendContent.add($.__views.title);
-    $.__views.__alloyId28 = Alloy.createController("menu", {
-        id: "__alloyId28",
-        __parentSymbol: $.__views.trend
+    $.__views.trend = Ti.UI.createTab({
+        window: $.__views.trend,
+        id: "trend",
+        title: "Trends",
+        icon: "KS_nav_views.png"
     });
-    $.__views.__alloyId28.setParent($.__views.trend);
+    $.__views.trend && $.addTopLevelView($.__views.trend);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

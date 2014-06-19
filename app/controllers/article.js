@@ -1,6 +1,6 @@
 // Show task list based on selected status type
-function showLooks() {
+function showArticle() {
 	//console.log(e);
-		Alloy.createController("look").getView().open();
+		Alloy.createController("article").getView().open();
 }
 

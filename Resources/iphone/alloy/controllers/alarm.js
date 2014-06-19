@@ -6,12 +6,11 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.alarm = Ti.UI.createWindow({
+    $.__views.__alloyId2 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        id: "alarm",
-        title: "alarm"
+        id: "__alloyId2",
+        title: ""
     });
-    $.__views.alarm && $.addTopLevelView($.__views.alarm);
     $.__views.header = Ti.UI.createView({
         top: Alloy.Globals.top,
         height: "40dp",
@@ -20,7 +19,7 @@ function Controller() {
         opacity: "0.75",
         id: "header"
     });
-    $.__views.alarm.add($.__views.header);
+    $.__views.__alloyId2.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -31,11 +30,13 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId2 = Alloy.createController("menu", {
-        id: "__alloyId2",
-        __parentSymbol: $.__views.alarm
+    $.__views.alarm = Ti.UI.createTab({
+        window: $.__views.__alloyId2,
+        title: "Alarm",
+        icon: "KS_nav_views.png",
+        id: "alarm"
     });
-    $.__views.__alloyId2.setParent($.__views.alarm);
+    $.__views.alarm && $.addTopLevelView($.__views.alarm);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

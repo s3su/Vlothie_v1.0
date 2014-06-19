@@ -1,53 +1,58 @@
-<Alloy>
-  <!-- Main Window -->
-  <Window id="vlothieHome" title="Todo" platform="android,ios" >
+ <Alloy>
 
-    <!-- header -->
-    <View id="header">
-      <Label id="title">Vlothie</Label>
-    </View>
-
-    <!-- Main table for tasks
-      Use model-view binding to render the rows fo this table
-      based on the models in the given collection. "dataCollection"
-      represents the collection used to populate this table.
-      "dataWhere" is a function used to filter the list of
-      models processed within the collection. "dataTransform"
-      is a function that will be executed on each model as it
-      is rendered as a row. It gives the opportunity to modify
-      the model's values before they are applied to each row.
-    -->
-    <View id="homeContent">
-        
-	    <View id="hello">
-	      <Label class="sectionTitle">Good morning! 16 c / 72 f be beautiful</Label>
-	    </View>
-	   
-	    <View id="yourLooks">
-	    	<View class="yourLooksEachA">
-	     	 		<Label onClick="showLooks" class="sectionTitle">1 - The day </Label>
-	       </View>
-	   	
-	   		<View class="yourLooksEachB">
-	     	   		 <Label onClick="showLooks" class="sectionTitle">2 - That meeting </Label> 
-		    </View>
-	   	
-	   		<View class="yourLooksEachC">
-	     	    	 <Label onClick="showLooks" class="sectionTitle">3 - Sporty you!</Label>
-	  		</View>
-	    </View>
+	<TabGroup id="TabGroup">
 	
-		<View id="trends">
-	      <Label id="shake" class="sectionTitle">be in!</Label>
-	   </View> 
-
-	
-	</View>
-	
-	<Require src="menu"/>
+	 <Tab id="home" title="Vlothie Home" icon="KS_nav_ui.png">
+			
+				 <Window id="vlothieHome" title="Vlothie Home" platform="android,ios">
+			
+			      <ScrollView id="homeContent" >
+  			
+  				    <View id="hello">
+				      <Label class="sectionTitle">Good morning! 16 c / 72 f be beautiful</Label>
+				    </View>
+				   
+				     <View id="yourLooks" >
   
-  </Window>
+				    	<View class="yourLooksEachA">
+				     	 		<Label onClick="showLooks" class="sectionTitle">1 - The day </Label>
+				       </View>
+				   	
+				   		<View class="yourLooksEachB">
+				     	   		 <Label onClick="showLooks" class="sectionTitle">2 - That meeting </Label> 
+					    </View>
+				   	
+				   		<View class="yourLooksEachC"> 	
+				     	    	 <Label onClick="showLooks" class="sectionTitle">3 - Sporty you!</Label>
+				  		</View>
+				    
+				    	<View class="yourLooksEachD"> 	
+				     	    	 <Label onClick="showLooks" class="sectionTitle">4 - whit friends</Label>
+				  		</View>
+				  
+				  		<View class="yourLooksEachE"> 	
+				     	    	 <Label onClick="showLooks" class="sectionTitle">5 - Party</Label>
+				  		</View>
+				  
+				  		<View class="yourLooksEachF"> 	
+				     	    	 <Label onClick="showLooks" class="sectionTitle">6 - Shine</Label>
+				  		</View>
+				  
+				    
+				    </View>
+				
+					<View id="trends">
+				      <Label id="shake" onClick="showTrends" class="sectionTitle">be in!</Label>
+				   </View> 
+				</ScrollView>
+			  </Window>
+   </Tab>
+ 
+ 	  	<Require src="trend"/>
+  	 	<Require src="look"/>
+  	 	<Require src="alarm"/>
+  	 	<Require src="settings"/>
 
-  <!-- Main Window for unsupported platforms -->
-  
+</TabGroup>
+ 
 </Alloy>

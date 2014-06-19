@@ -1,23 +1,25 @@
 <Alloy>
   <!-- Main Window -->
-  <Window id="look" title="Looks" platform="android,ios">
+  
+   <Tab id="look" title="Looks" icon="KS_nav_views.png">
+  	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->
     
     <ScrollView id="lookContent" >
         
 	    <View id="articleTop">
-	             <ImageView id="articleTopImg"/>
+	             <ImageView id="articleTopImg" onClick="showArticle"/>
 	             <Label>Top</Label>
  	    </View>
 	
 	    <View id="articleBottom">
-	             <ImageView id="articleBottomImg"/>
+	             <ImageView id="articleBottomImg" onClick="showArticle"/>
  	             <Label>Bottom</Label>
  	    </View>
 	
 	    <View id="articleShoes">
-	             <ImageView id="articleShoesImg"/>
+	             <ImageView id="articleShoesImg" onClick="showArticle"/>
  	             <Label>Shoes</Label>
  	    </View>
 	
@@ -35,8 +37,8 @@
       the model's values before they are applied to each row.
     -->
  
-    <!-- iOS: footer with buttons -->
-       <Require src="menu"/>
+    <!-- iOS: footer with buttons 
+       <Require src="menu"/>-->
   </Window>
-
+ </Tab>
 </Alloy>

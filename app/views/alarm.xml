@@ -1,6 +1,6 @@
-<Alloy>
-  <!-- Main Window -->
-  <Window id="alarm" title="alarm" platform="android,ios">
+<Alloy>  <!-- Main Window -->
+   <Tab title="Alarm" icon="KS_nav_views.png">
+  	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->
     <View id="header">
@@ -18,7 +18,8 @@
       the model's values before they are applied to each row.
     -->
  
-    <!-- iOS: footer with buttons -->
-       <Require src="menu"/>
+    <!-- iOS: footer with buttons
+       <Require src="menu"/>-->
   </Window>
+ </Tab>
 </Alloy>

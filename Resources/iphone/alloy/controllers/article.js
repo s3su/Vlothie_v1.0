@@ -6,92 +6,107 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.look = Ti.UI.createWindow({
+    $.__views.article = Ti.UI.createWindow({
         backgroundColor: "#fff",
         fullscreen: false,
         navBarHidden: true,
         exitOnClose: true,
-        id: "look",
-        title: "Looks"
+        id: "article",
+        title: ""
     });
-    $.__views.look && $.addTopLevelView($.__views.look);
-    $.__views.lookContent = Ti.UI.createScrollView({
+    $.__views.article && $.addTopLevelView($.__views.article);
+    $.__views.articleContent = Ti.UI.createScrollView({
         layout: "vertical",
         top: "20dp",
         backgroundColor: "transparent",
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
-        id: "lookContent"
+        id: "articleContent"
     });
-    $.__views.look.add($.__views.lookContent);
-    $.__views.articleTop = Ti.UI.createView({
+    $.__views.article.add($.__views.articleContent);
+    $.__views.articleSelected = Ti.UI.createView({
         layout: "vertical",
-        height: "180dp",
+        height: "360dp",
         top: "0dp",
         width: "100%",
         color: "#fff",
         backgroundColor: "blue",
-        id: "articleTop"
+        id: "articleSelected"
     });
-    $.__views.lookContent.add($.__views.articleTop);
-    $.__views.articleTopImg = Ti.UI.createImageView({
+    $.__views.articleContent.add($.__views.articleSelected);
+    $.__views.articleSelectedImg = Ti.UI.createImageView({
         image: "/top.png",
-        id: "articleTopImg"
+        height: Ti.UI.FILL,
+        id: "articleSelectedImg"
     });
-    $.__views.articleTop.add($.__views.articleTopImg);
+    $.__views.articleSelected.add($.__views.articleSelectedImg);
     $.__views.__alloyId3 = Ti.UI.createLabel({
-        color: "#000",
-        text: "Top",
+        color: "#FFF",
+        text: "Imagen del articulo",
         id: "__alloyId3"
     });
-    $.__views.articleTop.add($.__views.__alloyId3);
-    $.__views.articleBottom = Ti.UI.createView({
+    $.__views.articleSelected.add($.__views.__alloyId3);
+    $.__views.socialItems = Ti.UI.createView({
         layout: "vertical",
-        height: "180dp",
+        height: "40dp",
+        top: "0dp",
+        width: "100%",
+        color: "#fff",
+        horizontalWrap: "true",
+        id: "socialItems"
+    });
+    $.__views.articleContent.add($.__views.socialItems);
+    $.__views.wear = Ti.UI.createButton({
+        left: "10dp",
+        center: "true",
+        width: "40%",
+        title: "I wear it",
+        id: "wear"
+    });
+    $.__views.socialItems.add($.__views.wear);
+    $.__views.use = Ti.UI.createButton({
+        right: "10dp",
+        center: "true",
+        width: "40%",
+        title: "x friend",
+        id: "use"
+    });
+    $.__views.socialItems.add($.__views.use);
+    $.__views.buyButton = Ti.UI.createView({
+        layout: "vertical",
+        height: "4 0dp",
         top: "0dp",
         width: "100%",
         color: "#fff",
         backgroundColor: "red",
-        id: "articleBottom"
+        id: "buyButton"
     });
-    $.__views.lookContent.add($.__views.articleBottom);
-    $.__views.articleBottomImg = Ti.UI.createImageView({
-        image: "/bottom.png",
-        id: "articleBottomImg"
-    });
-    $.__views.articleBottom.add($.__views.articleBottomImg);
-    $.__views.__alloyId4 = Ti.UI.createLabel({
-        color: "#000",
-        text: "Bottom",
+    $.__views.articleContent.add($.__views.buyButton);
+    $.__views.__alloyId4 = Ti.UI.createButton({
+        title: "Buy it!",
         id: "__alloyId4"
     });
-    $.__views.articleBottom.add($.__views.__alloyId4);
-    $.__views.articleShoes = Ti.UI.createView({
+    $.__views.buyButton.add($.__views.__alloyId4);
+    $.__views.articleInfo = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
-        top: "180dp",
+        top: "90dp",
         width: "100%",
         color: "#fff",
         backgroundColor: "green",
-        id: "articleShoes"
+        id: "articleInfo"
     });
-    $.__views.lookContent.add($.__views.articleShoes);
-    $.__views.articleShoesImg = Ti.UI.createImageView({
-        image: "/shoes.png",
-        id: "articleShoesImg"
-    });
-    $.__views.articleShoes.add($.__views.articleShoesImg);
+    $.__views.articleContent.add($.__views.articleInfo);
     $.__views.__alloyId5 = Ti.UI.createLabel({
-        color: "#000",
-        text: "Shoes",
+        color: "#FFF",
+        text: "Article Info",
         id: "__alloyId5"
     });
-    $.__views.articleShoes.add($.__views.__alloyId5);
-    $.__views.__alloyId6 = Alloy.createController("menu", {
-        id: "__alloyId6",
-        __parentSymbol: $.__views.look
+    $.__views.articleInfo.add($.__views.__alloyId5);
+    $.__views.__alloyId6 = Ti.UI.createTextArea({
+        id: "__alloyId6"
     });
-    $.__views.__alloyId6.setParent($.__views.look);
+    $.__views.articleInfo.add($.__views.__alloyId6);
     exports.destroy = function() {};
     _.extend($, $.__views);
     _.extend($, exports);

@@ -1,10 +1,10 @@
-"#look": {
+"#article": {
 	fullscreen: false,
 	navBarHidden: true,
 	exitOnClose: true,
 }
 
-"#lookContent": {
+"#articleContent": {
 	layout: "vertical",
 	top: "20dp",
 	backgroundColor: "transparent",
@@ -12,22 +12,45 @@
     height: Ti.UI.FILL,
 }
 
-"#articleTop": {
+"#articleSelected": {
 	layout: "vertical",
-	height: "180dp",
+	height: "360dp",
 	top: "0dp",
 	width: "100%",
 	color: "#fff",
 	backgroundColor: "blue",
 }
 
-"#articleTopImg": {
-	image: "/top.png"
+"#articleSelectedImg": {
+	image: "/top.png",
+	height: Ti.UI.FILL
 }
 
-"#articleBottom": {
+"#socialItems": {
 	layout: "vertical",
-	height: "180dp",
+	height: "40dp",
+	top: "0dp",
+	width: "100%",
+	color: "#fff",
+	horizontalWrap: "true"
+}
+
+"#wear": {
+ left: "10dp",
+ center: "true",
+ width: "40%"
+}
+
+"#use": {
+ right: "10dp",
+ center: "true",
+ width: "40%"
+}
+
+
+"#buyButton": {
+	layout: "vertical",
+	height: "4 0dp",
 	top: "0dp",
 	width: "100%",
 	color: "#fff",
@@ -38,10 +61,10 @@
 	image: "/bottom.png"
 }
 
-"#articleShoes": {
+"#articleInfo": {
 	layout: "vertical",
 	height: "120dp",
-	top: "180dp",
+	top: "90dp",
 	width: "100%",
 	color: "#fff",
 	backgroundColor: "green",

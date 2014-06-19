@@ -6,8 +6,8 @@
 }
 
 "#homeContent": {
-	top: "70dp",
-	height: "470dp",
+	top: "20dp",
+	height: "500dp",
 	backgroundColor: "transparent",
 	left: 10,
 	right: 10}
@@ -20,9 +20,8 @@
 	
 "#yourLooks": {
 	top: "120dp",
-	height: "270dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	height: "600dp"
+	}
 
 ".yourLooksEachA": {
 	top: "0dp",
@@ -31,19 +30,37 @@
 	opacity: "0.75"}
 
 ".yourLooksEachB": {
-	top: "95dp",
+	top: "100dp",
 	height: "90dp",
 	backgroundColor: "white",
 	opacity: "0.75"}
 	
 ".yourLooksEachC": {
-	top: "190dp",
+	top: "200dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
+".yourLooksEachD": {
+	top: "300dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
+".yourLooksEachE": {
+	top: "400dp",
+	height: "90dp",
+	backgroundColor: "white",
+	opacity: "0.75"}
+
+".yourLooksEachF": {
+	top: "500dp",
 	height: "90dp",
 	backgroundColor: "white",
 	opacity: "0.75"}
 
 "#trends": {
-	top: "400dp",
+	top: "740dp",
 	height: "50dp",
 	backgroundColor: "white",
 	opacity: "0.75"}

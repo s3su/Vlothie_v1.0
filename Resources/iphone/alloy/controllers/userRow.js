@@ -11,13 +11,13 @@ function Controller() {
     });
     $.__views.userRow && $.addTopLevelView($.__views.userRow);
     $.__views.name = Ti.UI.createLabel({
-        color: "#000",
+        color: "#FFF",
         id: "name",
         text: "undefined" != typeof $model.__transform["name"] ? $model.__transform["name"] : $model.get("name")
     });
     $.__views.userRow.add($.__views.name);
     $.__views.ager = Ti.UI.createLabel({
-        color: "#000",
+        color: "#FFF",
         id: "ager",
         text: "undefined" != typeof $model.__transform["age"] ? $model.__transform["age"] : $model.get("age")
     });

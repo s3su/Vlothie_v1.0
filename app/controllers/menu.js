@@ -1,10 +1,10 @@
 var INDEXES ={  
 	'Home': 0,
-	'Looks': 1,
-	'Trends': 2,
-	'Alarm': 3,
-	'Settings': 4,
-	'Article': 5
+	'Trends': 1,
+	'Looks': 2,
+	'Article': 3,
+	'Alarm': 4,
+	'Settings': 5
 };
 
 // Show task list based on selected status type
@@ -16,13 +16,13 @@ function showWindows(e) {
 	}else if(e.index == 1){
 		Alloy.createController("trend").getView().open();
 	}else if(e.index == 2){
-		Alloy.createController("alarm").getView().open();
-	}else if(e.index == 3){
-		Alloy.createController("settings").getView().open();
-	}else if(e.index == 4){ 
 		Alloy.createController("look").getView().open();
-	}else if(e.index == 5){
+	}else if(e.index == 3){
 		Alloy.createController("article").getView().open();
+	}else if(e.index == 4){ 
+		Alloy.createController("alarm").getView().open();
+	}else if(e.index == 5){
+		Alloy.createController("settings").getView().open();
 	}
 }
 
