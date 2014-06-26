@@ -2,66 +2,91 @@
 	fullscreen: false,
 	navBarHidden: true,
 	exitOnClose: true,
-	backgroundImage: "/landingVlothie.jpg"
+	backgroundImage: "/images/landingVlothie.jpg"
 }
 
 "#homeContent": {
 	top: "20dp",
 	height: "500dp",
 	backgroundColor: "transparent",
-	left: 10,
-	right: 10}
+	left: 0,
+	right: 0}
+
+".sectionTitle": {
+	left: "10dp",
+	color: "white",
+	shadowRadius: "5dp",
+	shadowColor: "black",
+	shadowOffset: "4dp",	
+	font: {
+		fontSize: '18dp',
+		fontWeight: 'bold',}
+	}
 	
 "#hello": {
-	top: "10dp",
-	height: "100dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
-	
-"#yourLooks": {
-	top: "120dp",
-	height: "600dp"
-	}
-
-".yourLooksEachA": {
 	top: "0dp",
 	height: "90dp",
 	backgroundColor: "white",
 	opacity: "0.75"}
 
-".yourLooksEachB": {
-	top: "100dp",
+".weatherText": {
+	font: "arial",
+	fontSize: "14",
+	color: "pink"} 	
+	
+"#yourLooks": {
+	top: "90dp",
+	height: "540dp"
+	}
+
+".yourLooksEachA": {
+	top: "0dp",
 	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	backgroundImage: "/images/home/day-01.jpg"}
+
+".yourLooksEachB": {
+	top: "90dp",
+	height: "90dp",
+	backgroundImage: "/images/home/date-01.jpg"}
 	
 ".yourLooksEachC": {
-	top: "200dp",
+	top: "180dp",
 	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	backgroundImage: "/images/home/friends-01.jpg"}
 
 ".yourLooksEachD": {
-	top: "300dp",
+	top: "270dp",
 	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	backgroundImage: "/images/home/day-01.jpg"}
 
 ".yourLooksEachE": {
-	top: "400dp",
+	top: "360dp",
 	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	backgroundImage: "/images/home/date-01.jpg"}
 
 ".yourLooksEachF": {
-	top: "500dp",
+	top: "450dp",
 	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	backgroundImage: "/images/home/friends-01.jpg"}
 
 "#trends": {
-	top: "740dp",
+	top: "630dp",
 	height: "50dp",
 	backgroundColor: "white",
 	opacity: "0.75"}
 
+".menuIcons": {
+	height: "42dp",
+	width:  "42dp",
+	iconIsmask: "true"}
+	
+".sectionTrends": {
+	left: "10dp",
+	color: "pink",
+	shadowRadius: "5dp",
+	shadowColor: "black",
+	shadowOffset: "4dp",	
+	font: {
+		fontSize: '18dp',
+		fontWeight: 'bold',}
+	}	 

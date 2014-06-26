@@ -4,3 +4,11 @@ function showArticle() {
 		Alloy.createController("article").getView().open();
 }
 
+function showHome() {
+	//console.log(e);
+	Alloy.createController("home", {showTab: 'look'}).getView().open();
+}	
+
+function closeArticle() {
+	$.articleWindow.close();
+}

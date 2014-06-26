@@ -13,16 +13,14 @@
 }
 
 "#articleTop": {
-	layout: "vertical",
 	height: "180dp",
 	top: "0dp",
 	width: "100%",
 	color: "#fff",
-	backgroundColor: "blue",
 }
 
 "#articleTopImg": {
-	image: "/top.png"
+	image: "/images/article/top.png"
 }
 
 "#articleBottom": {
@@ -31,24 +29,19 @@
 	top: "0dp",
 	width: "100%",
 	color: "#fff",
-	backgroundColor: "red",
 }
 
 "#articleBottomImg": {
-	image: "/bottom.png"
+	image: "/images/article/bottom.png"
 }
 
 "#articleShoes": {
 	layout: "vertical",
 	height: "120dp",
-	top: "180dp",
+	top: "0dp",
 	width: "100%",
-	color: "#fff",
-	backgroundColor: "green",
-	
-}
+	color: "#fff",}
 
 "#articleShoesImg": {
-	image: "/shoes.png"
-
+	image: "/images/article/shoes.png"
 }

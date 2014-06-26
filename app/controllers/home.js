@@ -1,3 +1,5 @@
+//alert(arguments[0]);
+
 function showLooks() {
 	
 	var looksTab = $.TabGroup.setActiveTab(2); 

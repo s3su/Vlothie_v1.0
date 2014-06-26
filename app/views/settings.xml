@@ -1,6 +1,6 @@
 <Alloy>
   <!-- Main Window -->
-   <Tab title="Settings" icon="KS_nav_views.png">
+   <Tab title="" icon="/images/home/v-settings.png">
   	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->

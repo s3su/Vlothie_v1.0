@@ -1,7 +1,7 @@
 <Alloy>
   <!-- Main Window -->
   
-   <Tab id="look" title="Looks" icon="KS_nav_views.png">
+   <Tab id="look" title="" icon="/images/home/v-look.png">
   	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->
@@ -9,10 +9,12 @@
     <ScrollView id="lookContent" >
         
 	    <View id="articleTop">
+	       
 	             <ImageView id="articleTopImg" onClick="showArticle"/>
 	             <Label>Top</Label>
- 	    </View>
-	
+  	    </View>
+ 	    
+ 	  
 	    <View id="articleBottom">
 	             <ImageView id="articleBottomImg" onClick="showArticle"/>
  	             <Label>Bottom</Label>

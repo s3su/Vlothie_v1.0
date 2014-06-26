@@ -9,7 +9,10 @@ module.exports = [ {
     priority: 1000.0001,
     key: "Window",
     style: {
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        }
     }
 }, {
     isApi: true,
@@ -17,27 +20,6 @@ module.exports = [ {
     key: "Label",
     style: {
         color: "#FFF"
-    }
-}, {
-    isClass: true,
-    priority: 10000.0005,
-    key: "sectionTitle",
-    style: {
-        left: "10dp",
-        color: "#652F8D",
-        font: {
-            fontSize: "24dp",
-            fontWeight: "bold"
-        }
-    }
-}, {
-    isId: true,
-    priority: 100000.0002,
-    key: "loading",
-    style: {
-        height: 20,
-        width: 20,
-        images: [ "/images/com.appcelerator.loading/00.png", "/images/com.appcelerator.loading/01.png", "/images/com.appcelerator.loading/02.png", "/images/com.appcelerator.loading/03.png", "/images/com.appcelerator.loading/04.png", "/images/com.appcelerator.loading/05.png", "/images/com.appcelerator.loading/06.png", "/images/com.appcelerator.loading/07.png", "/images/com.appcelerator.loading/08.png", "/images/com.appcelerator.loading/09.png", "/images/com.appcelerator.loading/10.png", "/images/com.appcelerator.loading/11.png" ]
     }
 }, {
     isId: true,
@@ -60,5 +42,14 @@ module.exports = [ {
             fontSize: "24dp",
             fontWeight: "bold"
         }
+    }
+}, {
+    isId: true,
+    priority: 100000.0006,
+    key: "loading",
+    style: {
+        height: 20,
+        width: 20,
+        images: [ "/images/com.appcelerator.loading/00.png", "/images/com.appcelerator.loading/01.png", "/images/com.appcelerator.loading/02.png", "/images/com.appcelerator.loading/03.png", "/images/com.appcelerator.loading/04.png", "/images/com.appcelerator.loading/05.png", "/images/com.appcelerator.loading/06.png", "/images/com.appcelerator.loading/07.png", "/images/com.appcelerator.loading/08.png", "/images/com.appcelerator.loading/09.png", "/images/com.appcelerator.loading/10.png", "/images/com.appcelerator.loading/11.png" ]
     }
 } ];

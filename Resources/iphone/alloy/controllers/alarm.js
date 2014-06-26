@@ -8,6 +8,9 @@ function Controller() {
     var exports = {};
     $.__views.__alloyId2 = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
         id: "__alloyId2",
         title: ""
     });
@@ -32,8 +35,8 @@ function Controller() {
     $.__views.header.add($.__views.title);
     $.__views.alarm = Ti.UI.createTab({
         window: $.__views.__alloyId2,
-        title: "Alarm",
-        icon: "KS_nav_views.png",
+        title: "",
+        icon: "/images/home/v-alarm.png",
         id: "alarm"
     });
     $.__views.alarm && $.addTopLevelView($.__views.alarm);

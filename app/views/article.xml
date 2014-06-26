@@ -1,7 +1,9 @@
 <Alloy>
   <!-- Main Window -->
-  	 <Window id="" title="" platform="android,ios">
- 
+  	 <Window id="articleWindow" title="Article Name" platform="android,ios">
+ 	<ButtonBar id="articleButtons">
+ 		<Button onClick="closeArticle" icon="/images/home/v-home.png"></Button>
+ 	</ButtonBar>
     <!-- header -->
     
     <ScrollView id="articleContent" >

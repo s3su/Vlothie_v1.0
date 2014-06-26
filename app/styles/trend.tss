@@ -7,7 +7,7 @@
 }
 
 "#trendImg": {
-	image: "/trend_01.jpg"
+	image: "/images/trends/trend_01.jpg"
 }
 
 

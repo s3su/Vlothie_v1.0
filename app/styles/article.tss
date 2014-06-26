@@ -1,6 +1,13 @@
+"#articleButtons": {
+	height: "30dp",
+	top: "12dp",
+	color: "#fff",
+	zIndex: "10"
+}
+
 "#article": {
 	fullscreen: false,
-	navBarHidden: true,
+	navBarHidden: false,
 	exitOnClose: true,
 }
 

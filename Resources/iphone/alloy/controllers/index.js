@@ -12,6 +12,9 @@ function Controller() {
     var __defers = {};
     $.__views.landingWin = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
         id: "landingWin",
         title: "Vlothie"
     });

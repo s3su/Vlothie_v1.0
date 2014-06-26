@@ -1,6 +1,6 @@
 <Alloy>  <!-- Main Window -->
   
-  <Tab id="trend" title="Trends" icon="KS_nav_views.png">
+  <Tab id="trend" title="" icon="/images/home/v-trend.png">
   	
   <Window id="trend" title="Trends" platform="android,ios">
 

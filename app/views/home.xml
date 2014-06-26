@@ -2,14 +2,14 @@
 
 	<TabGroup id="TabGroup">
 	
-	 <Tab id="home" title="Vlothie Home" icon="KS_nav_ui.png">
+	 <Tab id="home" title="" class="menuIcons" icon="/images/home/v-home.png">
 			
 				 <Window id="vlothieHome" title="Vlothie Home" platform="android,ios">
 			
 			      <ScrollView id="homeContent" >
   			
   				    <View id="hello">
-				      <Label class="sectionTitle">Good morning! 16 c / 72 f be beautiful</Label>
+				      <Label class="weatherText">Good morning! 16 c / 72 f be beautiful</Label>
 				    </View>
 				   
 				     <View id="yourLooks" >
@@ -37,12 +37,10 @@
 				  		<View class="yourLooksEachF"> 	
 				     	    	 <Label onClick="showLooks" class="sectionTitle">6 - Shine</Label>
 				  		</View>
-				  
-				    
 				    </View>
 				
 					<View id="trends">
-				      <Label id="shake" onClick="showTrends" class="sectionTitle">be in!</Label>
+				      <Label id="shake" onClick="showTrends" class="sectionTrends">be in!</Label>
 				   </View> 
 				</ScrollView>
 			  </Window>

@@ -19,8 +19,8 @@ function Controller() {
         id: "footer"
     });
     $.__views.footer && $.addTopLevelView($.__views.footer);
-    var __alloyId32 = [];
-    var __alloyId33 = {
+    var __alloyId33 = [];
+    var __alloyId34 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -30,8 +30,8 @@ function Controller() {
         title: "Home",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId33);
-    var __alloyId34 = {
+    __alloyId33.push(__alloyId34);
+    var __alloyId35 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -41,8 +41,8 @@ function Controller() {
         title: "Trends",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId34);
-    var __alloyId35 = {
+    __alloyId33.push(__alloyId35);
+    var __alloyId36 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -52,8 +52,8 @@ function Controller() {
         title: "Looks",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId35);
-    var __alloyId36 = {
+    __alloyId33.push(__alloyId36);
+    var __alloyId37 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -63,8 +63,8 @@ function Controller() {
         title: "Article",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId36);
-    var __alloyId37 = {
+    __alloyId33.push(__alloyId37);
+    var __alloyId38 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -74,8 +74,8 @@ function Controller() {
         title: "Alarm",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId37);
-    var __alloyId38 = {
+    __alloyId33.push(__alloyId38);
+    var __alloyId39 = {
         left: "10dp",
         color: "#000",
         font: {
@@ -85,14 +85,14 @@ function Controller() {
         title: "Settings",
         ns: "Alloy.Abstract"
     };
-    __alloyId32.push(__alloyId38);
+    __alloyId33.push(__alloyId39);
     $.__views.tabbedbar = Ti.UI.iOS.createTabbedBar({
         style: Titanium.UI.iPhone.SystemButtonStyle.BAR,
         backgroundColor: "#652F8D",
         height: 40,
         left: 20,
         right: 20,
-        labels: __alloyId32,
+        labels: __alloyId33,
         id: "tabbedbar"
     });
     $.__views.footer.add($.__views.tabbedbar);

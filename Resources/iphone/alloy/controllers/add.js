@@ -37,6 +37,9 @@ function Controller() {
     var __defers = {};
     $.__views.addWin = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
         layout: "vertical",
         barColor: "#a00",
         id: "addWin",

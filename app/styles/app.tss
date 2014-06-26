@@ -1,5 +1,6 @@
 "Window": {
-	backgroundColor: '#fff'
+	backgroundColor: '#fff',
+	font: {fontFamily: 'AmericanTypewriter'}
 }
 
 "Label": {
@@ -15,18 +16,6 @@
 	
 
 "#title": {
-	color: "#652F8D",
-	font: {
-		fontSize: '24dp',
-		fontWeight: 'bold',
-		
-	}
-}
-
-
-
-".sectionTitle": {
-	left: "10dp",
 	color: "#652F8D",
 	font: {
 		fontSize: '24dp',

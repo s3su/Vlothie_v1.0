@@ -8,6 +8,9 @@ function Controller() {
     var exports = {};
     $.__views.trend = Ti.UI.createWindow({
         backgroundColor: "#fff",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
         id: "trend",
         title: "Trends"
     });
@@ -21,7 +24,7 @@ function Controller() {
     });
     $.__views.trend.add($.__views.trendContent);
     $.__views.trendImg = Ti.UI.createImageView({
-        image: "/trend_01.jpg",
+        image: "/images/trends/trend_01.jpg",
         id: "trendImg"
     });
     $.__views.trendContent.add($.__views.trendImg);
@@ -38,8 +41,8 @@ function Controller() {
     $.__views.trend = Ti.UI.createTab({
         window: $.__views.trend,
         id: "trend",
-        title: "Trends",
-        icon: "KS_nav_views.png"
+        title: "",
+        icon: "/images/home/v-trend.png"
     });
     $.__views.trend && $.addTopLevelView($.__views.trend);
     exports.destroy = function() {};

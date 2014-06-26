@@ -6,9 +6,12 @@ function Controller() {
     arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
-    $.__views.__alloyId39 = Ti.UI.createWindow({
+    $.__views.__alloyId40 = Ti.UI.createWindow({
         backgroundColor: "#fff",
-        id: "__alloyId39",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
+        id: "__alloyId40",
         title: ""
     });
     $.__views.header = Ti.UI.createView({
@@ -19,7 +22,7 @@ function Controller() {
         opacity: "0.75",
         id: "header"
     });
-    $.__views.__alloyId39.add($.__views.header);
+    $.__views.__alloyId40.add($.__views.header);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -31,9 +34,9 @@ function Controller() {
     });
     $.__views.header.add($.__views.title);
     $.__views.settings = Ti.UI.createTab({
-        window: $.__views.__alloyId39,
-        title: "Settings",
-        icon: "KS_nav_views.png",
+        window: $.__views.__alloyId40,
+        title: "",
+        icon: "/images/home/v-settings.png",
         id: "settings"
     });
     $.__views.settings && $.addTopLevelView($.__views.settings);
