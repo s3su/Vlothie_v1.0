@@ -10,12 +10,12 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.__alloyId28 = Ti.UI.createWindow({
+    $.__views.__alloyId33 = Ti.UI.createWindow({
         backgroundColor: "#fff",
         font: {
             fontFamily: "AmericanTypewriter"
         },
-        id: "__alloyId28",
+        id: "__alloyId33",
         title: ""
     });
     $.__views.lookContent = Ti.UI.createScrollView({
@@ -26,7 +26,7 @@ function Controller() {
         height: Ti.UI.FILL,
         id: "lookContent"
     });
-    $.__views.__alloyId28.add($.__views.lookContent);
+    $.__views.__alloyId33.add($.__views.lookContent);
     $.__views.articleTop = Ti.UI.createView({
         height: "180dp",
         top: "0dp",
@@ -41,12 +41,12 @@ function Controller() {
     });
     $.__views.articleTop.add($.__views.articleTopImg);
     showArticle ? $.__views.articleTopImg.addEventListener("click", showArticle) : __defers["$.__views.articleTopImg!click!showArticle"] = true;
-    $.__views.__alloyId29 = Ti.UI.createLabel({
+    $.__views.__alloyId34 = Ti.UI.createLabel({
         color: "#FFF",
         text: "Top",
-        id: "__alloyId29"
+        id: "__alloyId34"
     });
-    $.__views.articleTop.add($.__views.__alloyId29);
+    $.__views.articleTop.add($.__views.__alloyId34);
     $.__views.articleBottom = Ti.UI.createView({
         layout: "vertical",
         height: "180dp",
@@ -62,12 +62,12 @@ function Controller() {
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
     showArticle ? $.__views.articleBottomImg.addEventListener("click", showArticle) : __defers["$.__views.articleBottomImg!click!showArticle"] = true;
-    $.__views.__alloyId30 = Ti.UI.createLabel({
+    $.__views.__alloyId35 = Ti.UI.createLabel({
         color: "#FFF",
         text: "Bottom",
-        id: "__alloyId30"
+        id: "__alloyId35"
     });
-    $.__views.articleBottom.add($.__views.__alloyId30);
+    $.__views.articleBottom.add($.__views.__alloyId35);
     $.__views.articleShoes = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
@@ -83,17 +83,17 @@ function Controller() {
     });
     $.__views.articleShoes.add($.__views.articleShoesImg);
     showArticle ? $.__views.articleShoesImg.addEventListener("click", showArticle) : __defers["$.__views.articleShoesImg!click!showArticle"] = true;
-    $.__views.__alloyId31 = Ti.UI.createLabel({
+    $.__views.__alloyId36 = Ti.UI.createLabel({
         color: "#FFF",
         text: "Shoes",
-        id: "__alloyId31"
+        id: "__alloyId36"
     });
-    $.__views.articleShoes.add($.__views.__alloyId31);
+    $.__views.articleShoes.add($.__views.__alloyId36);
     $.__views.look = Ti.UI.createTab({
         fullscreen: false,
         navBarHidden: true,
         exitOnClose: true,
-        window: $.__views.__alloyId28,
+        window: $.__views.__alloyId33,
         id: "look",
         title: "",
         icon: "/images/home/v-look.png"

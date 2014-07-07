@@ -1,8 +1,9 @@
 <Alloy>
   <!-- Main Window -->
   	 <Window id="articleWindow" title="Article Name" platform="android,ios">
+ 	
  	<ButtonBar id="articleButtons">
- 		<Button onClick="closeArticle" icon="/images/home/v-home.png"></Button>
+ 		<Button class="closeArticle" onClick="closeArticle"></Button>
  	</ButtonBar>
     <!-- header -->
     
@@ -13,22 +14,25 @@
 	             <Label>Imagen del articulo</Label>
  	    </View>
 	
-	    <View id="socialItems">
-	    		 <Button id="wear">I wear it</Button>
- 	    		 <Button id="use">x friend </Button>
- 	    		 
- 	    </View>
+		 <ButtonBar id="socialItems" platform="ios, android">
+            <!-- The Labels tag sets the ButtonBar.labels property -->
+            <Labels>
+                <!-- Specify text with node text or the title attribute. -->
+                <!-- Can also specify the enabled, image and width attributes. -->
+                <Label id="wear">I wear it</Label>
+                <Label id="use">Share it </Label>
+            </Labels>
+            <!-- Place additional views for the ButtonBar here. -->
+        </ButtonBar>
 	
 	    <View id="buyButton">
 	    		 <Button>Buy it!</Button>
+	    		 <Button>Add to my closet</Button>
  	    </View>
 	
 	    <View id="articleInfo">
-	            <Label>Article Info</Label>
- 	            <TextArea>
- 	            	Info del articulo descripcion y varios 	            	Info del articulo descripcion y varios 	            	Info del articulo descripcion y varios 	            	Info del articulo descripcion y varios
- 	            	
- 	            </TextArea>
+	            <Label class="articleTitle">Article title</Label>
+	            <Label class="articleInfo"></Label>
  	             
  	    </View>
 	

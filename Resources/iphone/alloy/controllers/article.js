@@ -28,7 +28,7 @@ function Controller() {
     });
     $.__views.articleWindow.add($.__views.articleButtons);
     $.__views.__alloyId3 = Ti.UI.createButton({
-        icon: "/images/home/v-home.png",
+        image: "/images/home/v-home.png",
         id: "__alloyId3"
     });
     $.__views.articleButtons.add($.__views.__alloyId3);
@@ -45,15 +45,15 @@ function Controller() {
     $.__views.articleSelected = Ti.UI.createView({
         layout: "vertical",
         height: "360dp",
-        top: "0dp",
+        top: 0,
         width: "100%",
         color: "#fff",
-        backgroundColor: "blue",
+        backgroundColor: "transparent",
         id: "articleSelected"
     });
     $.__views.articleContent.add($.__views.articleSelected);
     $.__views.articleSelectedImg = Ti.UI.createImageView({
-        image: "/top.png",
+        image: "/images/article/top.png",
         height: Ti.UI.FILL,
         id: "articleSelectedImg"
     });
@@ -64,67 +64,84 @@ function Controller() {
         id: "__alloyId4"
     });
     $.__views.articleSelected.add($.__views.__alloyId4);
-    $.__views.socialItems = Ti.UI.createView({
+    var __alloyId6 = [];
+    var __alloyId7 = {
+        layout: "horizontal",
+        left: 0,
+        title: "I wear it",
+        ns: "Alloy.Abstract"
+    };
+    __alloyId6.push(__alloyId7);
+    var __alloyId8 = {
+        layout: "horizontal",
+        right: 0,
+        title: "Share it ",
+        ns: "Alloy.Abstract"
+    };
+    __alloyId6.push(__alloyId8);
+    $.__views.socialItems = Ti.UI.createButtonBar({
         layout: "vertical",
         height: "40dp",
         top: "0dp",
         width: "100%",
         color: "#fff",
         horizontalWrap: "true",
+        backgroundColor: "#369",
+        labels: __alloyId6,
         id: "socialItems"
     });
     $.__views.articleContent.add($.__views.socialItems);
-    $.__views.wear = Ti.UI.createButton({
-        left: "10dp",
-        center: "true",
-        width: "40%",
-        title: "I wear it",
-        id: "wear"
-    });
-    $.__views.socialItems.add($.__views.wear);
-    $.__views.use = Ti.UI.createButton({
-        right: "10dp",
-        center: "true",
-        width: "40%",
-        title: "x friend",
-        id: "use"
-    });
-    $.__views.socialItems.add($.__views.use);
     $.__views.buyButton = Ti.UI.createView({
         layout: "vertical",
-        height: "4 0dp",
+        height: "40dp",
+        left: "2dp",
         top: "0dp",
-        width: "100%",
         color: "#fff",
-        backgroundColor: "red",
         id: "buyButton"
     });
     $.__views.articleContent.add($.__views.buyButton);
-    $.__views.__alloyId5 = Ti.UI.createButton({
+    $.__views.__alloyId9 = Ti.UI.createButton({
         title: "Buy it!",
-        id: "__alloyId5"
+        id: "__alloyId9"
     });
-    $.__views.buyButton.add($.__views.__alloyId5);
+    $.__views.buyButton.add($.__views.__alloyId9);
+    $.__views.__alloyId10 = Ti.UI.createButton({
+        title: "Add to my closet",
+        id: "__alloyId10"
+    });
+    $.__views.buyButton.add($.__views.__alloyId10);
     $.__views.articleInfo = Ti.UI.createView({
         layout: "vertical",
-        height: "120dp",
         top: "90dp",
-        width: "100%",
-        color: "#fff",
-        backgroundColor: "green",
+        backgroundColor: "transparent",
         id: "articleInfo"
     });
     $.__views.articleContent.add($.__views.articleInfo);
-    $.__views.__alloyId6 = Ti.UI.createLabel({
-        color: "#FFF",
-        text: "Article Info",
-        id: "__alloyId6"
+    $.__views.__alloyId11 = Ti.UI.createLabel({
+        color: "black",
+        left: "4dp",
+        font: {
+            fontSize: 16,
+            fontFamily: "AmericanTypewriter"
+        },
+        text: "Article title",
+        id: "__alloyId11"
     });
-    $.__views.articleInfo.add($.__views.__alloyId6);
-    $.__views.__alloyId7 = Ti.UI.createTextArea({
-        id: "__alloyId7"
+    $.__views.articleInfo.add($.__views.__alloyId11);
+    $.__views.__alloyId12 = Ti.UI.createLabel({
+        color: "black",
+        width: 300,
+        left: 10,
+        height: 240,
+        bottom: 10,
+        font: {
+            fontSize: 14,
+            fontFamily: "AmericanTypewriter"
+        },
+        text: "Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970. Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970.",
+        id: "__alloyId12"
     });
-    $.__views.articleInfo.add($.__views.__alloyId7);
+    $.__views.articleInfo.add($.__views.__alloyId12);
     exports.destroy = function() {};
     _.extend($, $.__views);
     __defers["$.__views.__alloyId3!click!closeArticle"] && $.__views.__alloyId3.addEventListener("click", closeArticle);

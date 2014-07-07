@@ -3,82 +3,82 @@
 	top: "12dp",
 	color: "#fff",
 	zIndex: "10"
-}
+} 
 
-"#article": {
-	fullscreen: false,
-	navBarHidden: false,
-	exitOnClose: true,
-}
+".closeArticle": {
+	image: "/images/home/v-home.png"}
 
 "#articleContent": {
 	layout: "vertical",
 	top: "20dp",
 	backgroundColor: "transparent",
 	width: Ti.UI.FILL,
-    height: Ti.UI.FILL,
-}
+    height: Ti.UI.FILL,}
 
 "#articleSelected": {
 	layout: "vertical",
 	height: "360dp",
-	top: "0dp",
+	top: 0,
 	width: "100%",
 	color: "#fff",
-	backgroundColor: "blue",
+	backgroundColor: "transparent",
 }
 
 "#articleSelectedImg": {
-	image: "/top.png",
+	image: "/images/article/top.png",
 	height: Ti.UI.FILL
 }
 
 "#socialItems": {
-	layout: "vertical",
+	layout:  "vertical",
 	height: "40dp",
 	top: "0dp",
 	width: "100%",
 	color: "#fff",
-	horizontalWrap: "true"
+	horizontalWrap: "true",
+	backgroundColor: "#369"
 }
 
 "#wear": {
- left: "10dp",
- center: "true",
- width: "40%"
-}
+ layout:  "horizontal",
+ left: 0}
 
 "#use": {
- right: "10dp",
- center: "true",
- width: "40%"
-}
+ layout:  "horizontal",
+ right: 0}
 
 
 "#buyButton": {
 	layout: "vertical",
-	height: "4 0dp",
+	height: "40dp",
+	left: "2dp",
 	top: "0dp",
-	width: "100%",
-	color: "#fff",
-	backgroundColor: "red",
-}
+	color: "#fff",}
 
 "#articleBottomImg": {
-	image: "/bottom.png"
+	image: "/images/article/bottom.png"
 }
 
 "#articleInfo": {
 	layout: "vertical",
-	height: "120dp",
 	top: "90dp",
-	width: "100%",
-	color: "#fff",
-	backgroundColor: "green",
+	backgroundColor: "transparent"}
 	
+".articleTitle": {
+	color: "black",
+	left: "4dp",
+	font: {fontSize: 16, fontFamily: 'AmericanTypewriter'},
+	}
+	
+".articleInfo":{
+	width: 300,
+	left: 10,
+	height: 240,
+	bottom: 10,
+	font: {fontSize: 14, fontFamily: 'AmericanTypewriter'},
+	color: 'black',
+	text: 'Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan\'s first number one in Britain since New Morning in 1970. Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan\'s first number one in Britain since New Morning in 1970.'
 }
 
-"#articleShoesImg": {
-	image: "/shoes.png"
-
-}
+	
+	

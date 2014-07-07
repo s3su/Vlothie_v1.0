@@ -48,8 +48,8 @@ function Controller() {
         width: Ti.UI.FILL,
         color: "#fff",
         backgroundColor: "transparent",
-        image: "/landingVlothie.jpg",
-        touchEnabled: false,
+        image: "/images/landingVlothie.jpg",
+        touchEnabled: true,
         id: "landingImage"
     });
     $.__views.landingPhoto.add($.__views.landingImage);

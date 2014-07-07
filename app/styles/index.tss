@@ -3,6 +3,6 @@
 	width: Ti.UI.FILL,
 	color: "#fff",
 	backgroundColor: "transparent",
-	image: "/landingVlothie.jpg",
-	touchEnabled: false
+	image: "/images/landingVlothie.jpg",
+	touchEnabled: true
 }
