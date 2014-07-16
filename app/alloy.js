@@ -1,6 +1,16 @@
+var getDefaultData = true;
+
+if(getDefaultData){
+	require('includes/getDefaultData');
+}
+
+// .. INCLUDES
+require('includes/functions');
+
+
+
 if (OS_IOS || OS_ANDROID) {
-	Alloy.Collections.todo = Alloy.createCollection('todo');
-	Alloy.Collections.user = Alloy.createCollection('user');
+	
 	Alloy.Globals.top = 0;
 	Alloy.Globals.tableTop = '50dp';
 

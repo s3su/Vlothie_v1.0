@@ -105,28 +105,31 @@ function Controller() {
     var articleTop = [];
     var articleBottom = [];
     var articleShoes = [];
-    articleTop[0] = "/top.png";
-    articleTop[1] = "/bottom.png";
-    articleTop[2] = "/shoes.png";
-    articleBottom[0] = "/top.png";
-    articleBottom[1] = "/bottom.png";
-    articleBottom[2] = "/shoes.png";
-    articleShoes[0] = "/top.png";
-    articleShoes[1] = "/bottom.png";
-    articleShoes[2] = "/shoes.png";
+    articleTop[0] = "http://be.vlothie.com/photos/articles/pants1.jpg";
+    articleTop[1] = "http://be.vlothie.com/photos/articles/skirt1.jpg";
+    articleTop[2] = "http://be.vlothie.com/photos/articles/short1.jpg";
+    articleBottom[0] = "/images/article/top.png";
+    articleBottom[1] = "/images/article/bottom.png";
+    articleBottom[2] = "/images/article/shoes.png";
+    articleShoes[0] = "/images/article/top.png";
+    articleShoes[1] = "/images/article/bottom.png";
+    articleShoes[2] = "/images/article/shoes.png";
     $.articleTop.addEventListener("swipe", function() {
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        $.articleTopImg.image = articleTop[Math.floor(3 * Math.random())];
+        var imagePath = articleTop[Math.floor(3 * Math.random())];
+        $.articleTopImg.image = imagePath;
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
     });
     $.articleBottom.addEventListener("swipe", function() {
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        $.articleBottomImg.image = articleBottom[Math.floor(3 * Math.random())];
+        var imagePath = articleBottom[Math.floor(3 * Math.random())];
+        $.articleBottomImg.image = imagePath;
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
     });
     $.articleShoes.addEventListener("swipe", function() {
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-        $.articleShoesImg.image = articleShoes[Math.floor(3 * Math.random())];
+        var imagePath = articleShoes[Math.floor(3 * Math.random())];
+        $.articleShoesImg.image = imagePath;
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
     });
     $.articleBottom.addEventListener("swipe", function() {

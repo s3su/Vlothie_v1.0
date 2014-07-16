@@ -259,6 +259,7 @@ function Controller() {
     $.__views.TabGroup && $.addTopLevelView($.__views.TabGroup);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    Ti.API.info("seeded: " + Ti.App.Properties.hasProperty("seeded"));
     __defers["$.__views.__alloyId16!click!showLooks"] && $.__views.__alloyId16.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId18!click!showLooks"] && $.__views.__alloyId18.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId20!click!showLooks"] && $.__views.__alloyId20.addEventListener("click", showLooks);
