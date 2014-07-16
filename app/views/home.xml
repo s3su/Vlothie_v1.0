@@ -1,48 +1,70 @@
- <Alloy>
+ <Alloy autoStyle="true">
 
 	<TabGroup id="TabGroup">
 	
-	 <Tab id="home" title="" class="menuIcons" icon="/images/home/v-home.png">
+	 <Tab id="home" title="Home">
 			
 				 <Window id="vlothieHome" title="Vlothie Home" platform="android,ios">
 			
 			      <ScrollView id="homeContent" >
   			
   				    <View id="hello">
-				      <Label class="weatherText">Good morning! 16 c / 72 f be beautiful</Label>
+				        <View id="helloLeft">
+					    
+					  	  <Label class="weatherTextTemp">Nube 16</Label>
+					    
+					   </View>
+					   
+					   <View id="helloMid"></View>
+					   
+					   <View id="helloRight">
+					   
+					  	  <Label class="weatherTextBold">Good morning! Be beautiful</Label>
+					      <Label class="weatherText">Today wear neutral colors</Label>
+				
+					    </View>
+					 </View>
+				
+				
+				   
+				    <View id="getLook">
+				      <Label>Get the look for:</Label>
 				    </View>
+				   
 				   
 				     <View id="yourLooks" >
   
 				    	<View class="yourLooksEachA">
-				     	 		<Label onClick="showLooks" class="sectionTitle">1 - The day </Label>
+				     	 		<Label onClick="showLooks" class="sectionTitleWhite">THAT MEETING</Label>
 				       </View>
 				   	
 				   		<View class="yourLooksEachB">
-				     	   		 <Label onClick="showLooks" class="sectionTitle">2 - That meeting </Label> 
+				     	   		 <Label onClick="showLooks" class="sectionTitleViolet">SPORTY YOU</Label> 
 					    </View>
 				   	
 				   		<View class="yourLooksEachC"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitle">3 - Sporty you!</Label>
+				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">A CASUAL DAY</Label>
 				  		</View>
 				    
 				    	<View class="yourLooksEachD"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitle">4 - whit friends</Label>
+				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">YOUR LOOK FOR THE NIGHT</Label>
 				  		</View>
-				  
-				  		<View class="yourLooksEachE"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitle">5 - Party</Label>
-				  		</View>
-				  
-				  		<View class="yourLooksEachF"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitle">6 - Shine</Label>
+				    
+				    	<View class="yourLooksEachE"> 	
+				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">MORE  ; )</Label>
 				  		</View>
 				    </View>
 				
-					<View id="trends">
-				      <Label id="shake" onClick="showTrends" class="sectionTrends">be in!</Label>
-				   </View> 
 				</ScrollView>
+
+ 		<ButtonBar  id="menuHome">	
+		  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
+	 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
+	 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+	 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
+	 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+	 	</ButtonBar>	
+ 
 			  </Window>
    </Tab>
  

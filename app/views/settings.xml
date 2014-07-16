@@ -1,6 +1,6 @@
 <Alloy>
   <!-- Main Window -->
-   <Tab title="" icon="/images/home/v-settings.png">
+   <Tab title="Settings" icon="/images/home/v-setting.png">
   	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->

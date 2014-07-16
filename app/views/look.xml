@@ -1,8 +1,8 @@
 <Alloy>
   <!-- Main Window -->
   
-   <Tab id="look" title="" icon="/images/home/v-look.png">
-  	 <Window id="" title="" platform="android,ios">
+   <Tab id="look" title="Explore">
+  	 <Window id="lookWindow"  platform="android,ios">
 
     <!-- header -->
     
@@ -26,8 +26,16 @@
  	    </View>
 	
 	</ScrollView>
-	
-      
+	 
+     		<ButtonBar  id="menuHome">	
+			  <Button class="homeButtonMenuHome" onClick="showHome"></Button>
+ 			  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
+ 			  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+ 			  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
+ 			  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+ 			</ButtonBar>	
+ 			
+ 			 
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
       based on the models in the given collection. "dataCollection"

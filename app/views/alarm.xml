@@ -1,5 +1,5 @@
 <Alloy>  <!-- Main Window -->
-   <Tab title="" icon="/images/home/v-alarm.png">
+   <Tab title="Alarm" icon="/images/home/v-alarm.png">
   	 <Window id="" title="" platform="android,ios">
 
     <!-- header -->

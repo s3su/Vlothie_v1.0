@@ -11,7 +11,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.landingWin = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         },
@@ -20,11 +20,6 @@ function Controller() {
     });
     $.__views.landingWin && $.addTopLevelView($.__views.landingWin);
     $.__views.header = Ti.UI.createView({
-        top: Alloy.Globals.top,
-        height: "40dp",
-        width: Ti.UI.FILL,
-        backgroundColor: "white",
-        opacity: "0.75",
         id: "header"
     });
     $.__views.landingWin.add($.__views.header);
@@ -46,7 +41,6 @@ function Controller() {
     $.__views.landingImage = Ti.UI.createImageView({
         height: Ti.UI.FILL,
         width: Ti.UI.FILL,
-        color: "#fff",
         backgroundColor: "transparent",
         image: "/images/landingVlothie.jpg",
         touchEnabled: true,

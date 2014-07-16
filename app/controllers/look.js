@@ -3,17 +3,17 @@ var articleTop = [];
 var articleBottom = [];
 var articleShoes = [];
 
-articleTop[0] = '/top.png';
-articleTop[1] = '/bottom.png';
-articleTop[2] = '/shoes.png';
+articleTop[0] = '/images/article/top.png';
+articleTop[1] = '/images/article/bottom.png';
+articleTop[2] = '/images/article/shoes.png';
 
-articleBottom[0] = '/top.png';
-articleBottom[1] = '/bottom.png';
-articleBottom[2] = '/shoes.png';
+articleBottom[0] = '/images/article/top.png';
+articleBottom[1] = '/images/article/bottom.png';
+articleBottom[2] = '/images/article/shoes.png';
 
-articleShoes[0] = '/top.png';
-articleShoes[1] = '/bottom.png';
-articleShoes[2] = '/shoes.png';
+articleShoes[0] = '/images/article/top.png';
+articleShoes[1] = '/images/article/bottom.png';
+articleShoes[2] = '/images/article/shoes.png';
 
 
 // handle the swipe event -- change the liner notes 
@@ -58,5 +58,28 @@ function showArticle() {
 		Alloy.createController("article").getView().open();
 }
 
+function showHome() {
+	var homeTab = $.TabGroup.setActiveTab(0); 
+	homeTab.open();
+	}
 
+function showTrends() {
+	var trendTab = $.TabGroup.setActiveTab(1); 
+	trendTab.open();
+	}
 
+function showLooks() {
+	var lookTab = $.TabGroup.setActiveTab(2); 
+	lookTab.open();
+	}
+	
+function showAlarm() {
+	var alarmTab = $.TabGroup.setActiveTab(3); 
+	alarmTab.open();
+	}
+	
+function showSettings() {
+	var settingTab = $.TabGroup.setActiveTab(4); 
+	settingTab.open();
+	}
+	

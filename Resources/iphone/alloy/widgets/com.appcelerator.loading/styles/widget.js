@@ -9,7 +9,7 @@ module.exports = [ {
     priority: 1000.0001,
     key: "Window",
     style: {
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         }
@@ -33,17 +33,6 @@ module.exports = [ {
 }, {
     isId: true,
     priority: 100000.0003,
-    key: "header",
-    style: {
-        top: Alloy.Globals.top,
-        height: "40dp",
-        width: Ti.UI.FILL,
-        backgroundColor: "white",
-        opacity: "0.75"
-    }
-}, {
-    isId: true,
-    priority: 100000.0004,
     key: "title",
     style: {
         color: "#652F8D",

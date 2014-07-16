@@ -36,7 +36,7 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.addWin = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         },
