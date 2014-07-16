@@ -7,7 +7,7 @@ function Controller() {
     var $ = this;
     var exports = {};
     $.__views.__alloyId2 = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         },
@@ -15,11 +15,6 @@ function Controller() {
         title: ""
     });
     $.__views.header = Ti.UI.createView({
-        top: Alloy.Globals.top,
-        height: "40dp",
-        width: Ti.UI.FILL,
-        backgroundColor: "white",
-        opacity: "0.75",
         id: "header"
     });
     $.__views.__alloyId2.add($.__views.header);
@@ -35,7 +30,7 @@ function Controller() {
     $.__views.header.add($.__views.title);
     $.__views.alarm = Ti.UI.createTab({
         window: $.__views.__alloyId2,
-        title: "",
+        title: "Alarm",
         icon: "/images/home/v-alarm.png",
         id: "alarm"
     });

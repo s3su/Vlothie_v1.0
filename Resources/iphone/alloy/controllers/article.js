@@ -11,31 +11,35 @@ function Controller() {
     var exports = {};
     var __defers = {};
     $.__views.articleWindow = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         },
+        fullscreen: true,
+        navBarHidden: true,
+        exitOnClose: true,
+        backgroundImage: "/images/vlothie-background.jpg",
         id: "articleWindow",
         title: "Article Name"
     });
     $.__views.articleWindow && $.addTopLevelView($.__views.articleWindow);
     $.__views.articleButtons = Ti.UI.createButtonBar({
-        height: "30dp",
-        top: "12dp",
-        color: "#fff",
+        height: "28dp",
+        top: "4dp",
         zIndex: "10",
         id: "articleButtons"
     });
     $.__views.articleWindow.add($.__views.articleButtons);
     $.__views.__alloyId3 = Ti.UI.createButton({
-        image: "/images/home/v-home.png",
+        image: "/images/home/v-home2.png",
+        tintColor: "#ddd",
         id: "__alloyId3"
     });
     $.__views.articleButtons.add($.__views.__alloyId3);
     closeArticle ? $.__views.__alloyId3.addEventListener("click", closeArticle) : __defers["$.__views.__alloyId3!click!closeArticle"] = true;
     $.__views.articleContent = Ti.UI.createScrollView({
         layout: "vertical",
-        top: "20dp",
+        top: "32dp",
         backgroundColor: "transparent",
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
@@ -47,7 +51,6 @@ function Controller() {
         height: "360dp",
         top: 0,
         width: "100%",
-        color: "#fff",
         backgroundColor: "transparent",
         id: "articleSelected"
     });
@@ -84,7 +87,6 @@ function Controller() {
         height: "40dp",
         top: "0dp",
         width: "100%",
-        color: "#fff",
         horizontalWrap: "true",
         backgroundColor: "#369",
         labels: __alloyId6,

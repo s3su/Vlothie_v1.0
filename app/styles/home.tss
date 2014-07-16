@@ -1,92 +1,190 @@
+"#home[platform=ios]":{
+	icon: 'images/home/v-home.png'
+}
+
+"#TabGroup": {
+    tintColor: "white",
+    translucent: true
+    }
+
 "#vlothieHome": {
 	fullscreen: false,
 	navBarHidden: true,
 	exitOnClose: true,
-	backgroundImage: "/images/landingVlothie.jpg"
+	tabBarHidden: true,
+	backgroundImage: "/images/vlothie-background.jpg"
 }
 
 "#homeContent": {
 	top: "20dp",
+	left: "0dp",
+	right: "0dp",
 	height: "500dp",
-	backgroundColor: "transparent",
-	left: 0,
-	right: 0}
+	backgroundColor: "transparent"}
+	
 
-".sectionTitle": {
-	left: "10dp",
+".sectionTitleViolet": {
+	color: "a1238e",
+	textAlign: "center",
+	shadowRadius: "5dp",
+	shadowColor: "black",
+	shadowOffset: "4dp",	
+	font: {
+		fontSize: "18dp",
+		fontWeight: "light"}
+	}
+	
+".sectionTitleWhite": {
 	color: "white",
+	textAlign: "center",
 	shadowRadius: "5dp",
 	shadowColor: "black",
 	shadowOffset: "4dp",	
 	font: {
 		fontSize: '18dp',
-		fontWeight: 'bold',}
+		fontWeight: 'light',}
 	}
 	
 "#hello": {
-	top: "0dp",
-	height: "90dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
+	top: "16dp",
+	left: "16dp",
+	right: "16dp",
+	height: "80dp",
+	borderRadius: "8dp", 
+	backgroundColor: "#4f4f42",
+	opacity: "0.25",
+	zIndex: "1",
+	translucent: true
+	}
+
+"#helloLeft": {	
+	height: "70dp",
+	width: "90dp",
+	left:  "6dp",
+	backgroundColor: "transparent",
+ 	}
+
+"#helloMid": {	
+	height: "70dp",
+	width: "2dp",
+	left:  "103dp",
+	backgroundColor: "transparent"
+ 	}
+
+
+"#helloRight": { 	
+	height: "70dp",
+	width: "170dp",
+	left:  "112dp",
+	backgroundColor: "transparent",
+	zIndex: "1"
+	}
+
+".weatherTextBold": {
+	font: {
+		fontFamily: "arial",
+		fontSize: '16dp',
+		fontWeight: 'bold'},
+	textAlign: "left",
+	color: "white",
+	top: "8dp",
+	zIndex: "100"
+	} 	
+
+".weatherTextTemp": {
+	font: {
+		fontFamily:  "arial",
+		fontSize: "13",
+		fontWeight: 'light'},
+	textAlign: "left",
+	color: "white",
+	top: "40dp",
+	zIndex: "500"
+	} 	
 
 ".weatherText": {
-	font: "arial",
-	fontSize: "14",
-	color: "pink"} 	
+	font: {
+		fontFamily:  "arial",
+		fontSize: "13",
+		fontWeight: 'light'},
+	textAlign: "left",
+	color: "white",
+	top: "40dp",
+	zIndex: 500
+	} 	
+
+ 	
+"#getLook": {
+	top: "0dp",
+	}
 	
 "#yourLooks": {
-	top: "90dp",
+	top: "120dp",
 	height: "540dp"
 	}
 
 ".yourLooksEachA": {
 	top: "0dp",
-	height: "90dp",
-	backgroundImage: "/images/home/day-01.jpg"}
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#a1238e"}
 
 ".yourLooksEachB": {
-	top: "90dp",
-	height: "90dp",
-	backgroundImage: "/images/home/date-01.jpg"}
+	top: "66dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fe94d5"}
 	
 ".yourLooksEachC": {
-	top: "180dp",
-	height: "90dp",
-	backgroundImage: "/images/home/friends-01.jpg"}
+	top: "132dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#ffc3e2"}
 
 ".yourLooksEachD": {
-	top: "270dp",
-	height: "90dp",
-	backgroundImage: "/images/home/day-01.jpg"}
+	top: "198dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fee8f3"}
 
 ".yourLooksEachE": {
-	top: "360dp",
-	height: "90dp",
-	backgroundImage: "/images/home/date-01.jpg"}
+	top: "264dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fdf4f9"}
 
-".yourLooksEachF": {
-	top: "450dp",
-	height: "90dp",
-	backgroundImage: "/images/home/friends-01.jpg"}
 
-"#trends": {
-	top: "630dp",
-	height: "50dp",
-	backgroundColor: "white",
-	opacity: "0.75"}
-
-".menuIcons": {
-	height: "42dp",
-	width:  "42dp",
-	iconIsmask: "true"}
+"#menuHome": {
+	zIndex: "100",
+	bottom: "10dp",
+	height: "58dp",
+	width: "100%",
+	style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
+	 }	
 	
-".sectionTrends": {
-	left: "10dp",
-	color: "pink",
-	shadowRadius: "5dp",
-	shadowColor: "black",
-	shadowOffset: "4dp",	
-	font: {
-		fontSize: '18dp',
-		fontWeight: 'bold',}
-	}	 
+".homeButtonMenuHome": {
+	image: "/images/home/v-home.png",
+	tintColor: "#fff",
+	left: "30dp"}	
+
+".trendButtonMenuHome": {
+	image: "/images/home/v-trend.png",
+	tintColor: "#fff",
+	left: "86dp"}	
+
+".lookButtonMenuHome": {
+	image: "/images/home/v-look.png",
+	tintColor: "#fff",
+	left: "140dp"}	
+
+".alarmButtonMenuHome": {
+	image: "/images/home/v-alarm.png",
+	tintColor: "#fff",
+	left: "195dp"}	
+
+".settingsButtonMenuHome": {
+	image: "/images/home/v-setting.png",
+	tintColor: "#fff",
+	left: "250dp"}	
+
+

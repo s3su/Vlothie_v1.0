@@ -8,7 +8,7 @@
     <property name="acs-api-key-development" type="string">XM93oz0sJNcnfHFHTmhtgrPNFvFEswhb</property>
     <id>com.appcelerator.todo</id>
     <name>Vlothie</name>
-    <version>0.7</version>
+    <version>1</version>
     <publisher>Bits0 SRL</publisher>
     <url>http://www.vlothie.com</url>
     <description>not specified</description>

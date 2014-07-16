@@ -1,5 +1,6 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
+<<<<<<< HEAD
 var getDefaultData = true;
 
 getDefaultData && require("includes/getDefaultData");
@@ -51,4 +52,6 @@ try {
     }
 } catch (e) {}
 
+=======
+>>>>>>> b97304c2793e9857911b0f654e1cd46b100ba1f6
 Alloy.createController("index");

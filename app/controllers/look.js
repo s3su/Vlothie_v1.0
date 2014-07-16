@@ -3,9 +3,14 @@ var articleTop = [];
 var articleBottom = [];
 var articleShoes = [];
 
+
 articleTop[0] = 'http://be.vlothie.com/photos/articles/pants1.jpg';
 articleTop[1] = 'http://be.vlothie.com/photos/articles/skirt1.jpg';
 articleTop[2] = 'http://be.vlothie.com/photos/articles/short1.jpg';
+
+articleTop[0] = '/images/article/top.png';
+articleTop[1] = '/images/article/bottom.png';
+articleTop[2] = '/images/article/shoes.png';
 
 articleBottom[0] = '/images/article/top.png';
 articleBottom[1] = '/images/article/bottom.png';
@@ -58,3 +63,29 @@ function showArticle() {
 	//console.log(e);
 		Alloy.createController("article").getView().open();
 }
+
+function showHome() {
+	var homeTab = $.TabGroup.setActiveTab(0); 
+	homeTab.open();
+	}
+
+function showTrends() {
+	var trendTab = $.TabGroup.setActiveTab(1); 
+	trendTab.open();
+	}
+
+function showLooks() {
+	var lookTab = $.TabGroup.setActiveTab(2); 
+	lookTab.open();
+	}
+	
+function showAlarm() {
+	var alarmTab = $.TabGroup.setActiveTab(3); 
+	alarmTab.open();
+	}
+	
+function showSettings() {
+	var settingTab = $.TabGroup.setActiveTab(4); 
+	settingTab.open();
+	}
+	

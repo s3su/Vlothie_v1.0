@@ -1,7 +1,6 @@
 "#landingImage": {
 	height: Ti.UI.FILL,
 	width: Ti.UI.FILL,
-	color: "#fff",
 	backgroundColor: "transparent",
 	image: "/images/landingVlothie.jpg",
 	touchEnabled: true
