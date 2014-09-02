@@ -1,17 +1,6 @@
-"#home[platform=ios]":{
-	icon: 'images/home/v-home.png'
-}
-
-"#TabGroup": {
-    tintColor: "white",
-    translucent: true
-    }
-
 "#vlothieHome": {
 	fullscreen: false,
-	navBarHidden: true,
 	exitOnClose: true,
-	tabBarHidden: true,
 	backgroundImage: "/images/vlothie-background.jpg"
 }
 
@@ -19,8 +8,7 @@
 	top: "20dp",
 	left: "0dp",
 	right: "0dp",
-	height: "500dp",
-	backgroundColor: "transparent"}
+	height: "460dp"}
 	
 
 ".sectionTitleViolet": {
@@ -49,46 +37,46 @@
 	top: "16dp",
 	left: "16dp",
 	right: "16dp",
+	borderRadius: "10dp", 
 	height: "80dp",
-	borderRadius: "8dp", 
-	backgroundColor: "#4f4f42",
-	opacity: "0.25",
-	zIndex: "1",
-	translucent: true
+	backgroundImage: 'images/home/helloBackground.png'
 	}
 
 "#helloLeft": {	
 	height: "70dp",
-	width: "90dp",
+	width: "70dp",
 	left:  "6dp",
 	backgroundColor: "transparent",
- 	}
+ 	zIndex: 2
+	}
 
 "#helloMid": {	
 	height: "70dp",
 	width: "2dp",
-	left:  "103dp",
-	backgroundColor: "transparent"
+	left:  "83dp",
+	backgroundColor: "transparent",
+	zIndex: 2
  	}
 
 
 "#helloRight": { 	
 	height: "70dp",
-	width: "170dp",
-	left:  "112dp",
+	width: "190dp",
+	left:  "92dp",
 	backgroundColor: "transparent",
-	zIndex: "1"
+	zIndex: 2
 	}
 
 ".weatherTextBold": {
+	left: "0dp",
 	font: {
 		fontFamily: "arial",
-		fontSize: '16dp',
+		fontSize: '15dp',
 		fontWeight: 'bold'},
 	textAlign: "left",
 	color: "white",
 	top: "8dp",
-	zIndex: "100"
+	zIndex: 3
 	} 	
 
 ".weatherTextTemp": {
@@ -98,11 +86,13 @@
 		fontWeight: 'light'},
 	textAlign: "left",
 	color: "white",
-	top: "40dp",
-	zIndex: "500"
+	top: "43dp",
+	zIndex: 3,
+	text: '16c / 4c'
 	} 	
 
 ".weatherText": {
+	left: "0dp",
 	font: {
 		fontFamily:  "arial",
 		fontSize: "13",
@@ -110,13 +100,25 @@
 	textAlign: "left",
 	color: "white",
 	top: "40dp",
-	zIndex: 500
+	zIndex: 3
 	} 	
 
  	
 "#getLook": {
-	top: "0dp",
+	top: "98dp",
+	width: "100%",
+	height: "20dp",
 	}
+
+".getLookText": {
+	color: "#922a80",
+	font: {
+		fontSize: "16dp",
+		fontWeight: "bold",
+		fontStyle: "italic",
+		fontFamily: "Baskerville"}
+	}
+	
 	
 "#yourLooks": {
 	top: "120dp",
@@ -155,12 +157,10 @@
 
 
 "#menuHome": {
-	zIndex: "100",
-	bottom: "10dp",
 	height: "58dp",
 	width: "100%",
-	style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
-	 }	
+	bottom: "8dp",
+	backgroundColor: "#transparent"}	
 	
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",

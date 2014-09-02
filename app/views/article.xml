@@ -2,56 +2,45 @@
   <!-- Main Window -->
   	 <Window id="articleWindow" title="Article Name" platform="android,ios">
  	
- 	<ButtonBar id="articleButtons">
+ 	<View id="articleButtons">
  		<Button class="closeArticle" onClick="closeArticle"></Button>
- 	</ButtonBar>
+ 	</View>
     <!-- header -->
     
     <ScrollView id="articleContent" >
-        
+    
+    	
 	    <View id="articleSelected">
-	             <ImageView id="articleSelectedImg"/>
-	             <Label>Imagen del articulo</Label>
- 	    </View>
-	
-		 <ButtonBar id="socialItems" platform="ios, android">
-            <!-- The Labels tag sets the ButtonBar.labels property -->
-            <Labels>
-                <!-- Specify text with node text or the title attribute. -->
-                <!-- Can also specify the enabled, image and width attributes. -->
-                <Label id="wear">I wear it</Label>
-                <Label id="use">Share it </Label>
-            </Labels>
-            <!-- Place additional views for the ButtonBar here. -->
-        </ButtonBar>
-	
-	    <View id="buyButton">
-	    		 <Button>Buy it!</Button>
-	    		 <Button>Add to my closet</Button>
- 	    </View>
+		   	<View class="buttonBuyItView">
+		     	<Button class="buttonBuyIt"></Button>
+	        </View> 
+	       
+	        <View class="buttonDiamondView">
+		     	<Button class="buttonDiamond"></Button>
+	        </View> 
+	      
+	        <View>
+		        <ImageView id="articleSelectedImg"/>
+		   </View> 
+	      
+	      	<View class="buttonInfoView">
+		     	<Button class="buttonInfo"></Button>
+	        </View> 
+	       
+	       	<View class="buttonWearItView">
+		     	<Button class="buttonWearIt"></Button>
+	        </View> 
+	       
+	        
+	    
+	    </View>
 	
 	    <View id="articleInfo">
 	            <Label class="articleTitle">Article title</Label>
 	            <Label class="articleInfo"></Label>
- 	             
  	    </View>
-	
 	
 	</ScrollView>
 	
-      
-    <!-- Main table for tasks
-      Use model-view binding to render the rows fo this table
-      based on the models in the given collection. "dataCollection"
-      represents the collection used to populate this table.
-      "dataWhere" is a function used to filter the list of
-      models processed within the collection. "dataTransform"
-      is a function that will be executed on each model as it
-      is rendered as a row. It gives the opportunity to modify
-      the model's values before they are applied to each row.
-    -->
- 
-    <!-- iOS: footer with buttons
-       <Require src="menu"/>-->
   </Window>
 </Alloy>  

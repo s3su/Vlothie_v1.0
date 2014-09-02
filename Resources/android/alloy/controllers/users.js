@@ -1,18 +1,27 @@
+function __processArg(obj, key) {
+    var arg = null;
+    if (obj) {
+        arg = obj[key] || null;
+        delete obj[key];
+    }
+    return arg;
+}
+
 function Controller() {
-    function __alloyId38(e) {
+    function __alloyId59(e) {
         if (e && e.fromAdapter) return;
-        __alloyId38.opts || {};
-        var models = whereFunction(__alloyId37);
+        __alloyId59.opts || {};
+        var models = whereFunction(__alloyId58);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId34 = models[i];
-            __alloyId34.__transform = transformFunction(__alloyId34);
-            var __alloyId36 = Alloy.createController("userRow", {
-                $model: __alloyId34,
+            var __alloyId55 = models[i];
+            __alloyId55.__transform = transformFunction(__alloyId55);
+            var __alloyId57 = Alloy.createController("userRow", {
+                $model: __alloyId55,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId36.getViewEx({
+            rows.push(__alloyId57.getViewEx({
                 recurse: true
             }));
         }
@@ -33,24 +42,24 @@ function Controller() {
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "users";
-    var __parentSymbol = arguments[0] ? arguments[0]["__parentSymbol"] : null;
-    arguments[0] ? arguments[0]["$model"] : null;
-    arguments[0] ? arguments[0]["__itemTemplate"] : null;
+    if (arguments[0]) {
+        var __parentSymbol = __processArg(arguments[0], "__parentSymbol");
+        __processArg(arguments[0], "$model");
+        __processArg(arguments[0], "__itemTemplate");
+    }
     var $ = this;
     var exports = {};
     var __defers = {};
     $.__views.usersWin = Ti.UI.createWindow({
-        backgroundColor: "#fff",
+        backgroundColor: "transparent",
+        font: {
+            fontFamily: "AmericanTypewriter"
+        },
         id: "usersWin",
         title: "User"
     });
     $.__views.usersWin && $.addTopLevelView($.__views.usersWin);
     $.__views.header = Ti.UI.createView({
-        top: Alloy.Globals.top,
-        height: "40dp",
-        width: Ti.UI.FILL,
-        backgroundColor: "white",
-        opacity: "0.75",
         id: "header"
     });
     $.__views.usersWin.add($.__views.header);
@@ -64,10 +73,10 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId33 = Ti.UI.createView({
-        id: "__alloyId33"
+    $.__views.__alloyId54 = Ti.UI.createView({
+        id: "__alloyId54"
     });
-    $.__views.header.add($.__views.__alloyId33);
+    $.__views.header.add($.__views.__alloyId54);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -81,15 +90,10 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId37 = Alloy.Collections["user"] || user;
-    __alloyId37.on("fetch destroy change add remove reset", __alloyId38);
-    $.__views.__alloyId39 = Alloy.createController("menu", {
-        id: "__alloyId39",
-        __parentSymbol: $.__views.usersWin
-    });
-    $.__views.__alloyId39.setParent($.__views.usersWin);
+    var __alloyId58 = Alloy.Collections["user"] || user;
+    __alloyId58.on("fetch destroy change add remove reset", __alloyId59);
     exports.destroy = function() {
-        __alloyId37.off("fetch destroy change add remove reset", __alloyId38);
+        __alloyId58.off("fetch destroy change add remove reset", __alloyId59);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;

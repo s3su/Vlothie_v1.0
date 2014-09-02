@@ -5,61 +5,93 @@
 	backgroundImage: "/images/vlothie-background.jpg" 
 }
 
-
 "#articleButtons": {
-	height: "28dp",
-	top: "4dp",
+	height: "30dp",
+	top: "2dp",
 	zIndex: "10"
 } 
 
 ".closeArticle": {
-	image: "/images/home/v-home2.png",
-	tintColor: "#ddd"}
+	image: "/images/v-back.png",
+	tintColor: "#fff",
+	top: "2dp",
+	left: "8dp"}
 
 "#articleContent": {
 	layout: "vertical",
-	top: "32dp",
-	backgroundColor: "transparent",
-	width: Ti.UI.FILL,
-    height: Ti.UI.FILL,}
-
+	top: "28dp",
+	backgroundColor: "transparent"}
+	
 "#articleSelected": {
-	layout: "vertical",
-	height: "360dp",
-	top: 0,
+	height: "420dp",
+	top: "0dp",
 	width: "100%",
 	backgroundColor: "transparent",
 }
+
+".buttonBuyItView": {
+	right: "12dp",
+	top: "0dp",
+	zIndex: "200",
+	width: "60dp",
+	height: "60dp"  
+	}
+
+".buttonBuyIt": {
+	image: "/images/v-article-buy.png",
+	tintColor: "#beee00",
+	zIndex: "250"
+	}
+
+".buttonInfoView": {
+	right: "12dp",
+	bottom: "100dp",
+	zIndex: "200",
+	width: "60dp",
+	height: "60dp"  
+	}
+
+".buttonInfo": {
+	image: "/images/v-article-info.png",
+	tintColor: "#de6ebb",
+	zIndex: "250"
+	}
+	
+".buttonWearItView": {
+	right: "12dp",
+	bottom: "50dp",
+	zIndex: "200",
+	width: "60dp",
+	height: "60dp"  
+	}
+
+".buttonWearIt": {
+	image: "/images/v-article-wear.png",
+	tintColor: "#f9a0e0",
+	zIndex: "250"
+	}
+
+".buttonDiamondView": {
+	left: "12dp",
+	top: "30dp",
+	zIndex: "200",
+	width: "60dp",
+	height: "60dp"  
+	}
+
+".buttonDiamond": {
+	image: "/images/v-article-diamond.png",
+	tintColor: "#f9a0e0",
+	zIndex: "250"
+	}
 
 "#articleSelectedImg": {
-	image: "/images/article/top.png",
-	height: Ti.UI.FILL
-}
-
-"#socialItems": {
-	layout:  "vertical",
-	height: "40dp",
-	top: "0dp",
-	width: "100%",
-	horizontalWrap: "true",
-	backgroundColor: "#369"
-}
-
-"#wear": {
- layout:  "horizontal",
- left: 0}
-
-"#use": {
- layout:  "horizontal",
- right: 0}
-
-
-"#buyButton": {
-	layout: "vertical",
-	height: "40dp",
-	left: "2dp",
-	top: "0dp",
-	color: "#fff",}
+	image: "/images/article/v-article-01.png",
+	zIndex: "100",
+	top: "16dp",
+	width: "400dp",
+	}
+	
 
 "#articleBottomImg": {
 	image: "/images/article/bottom.png"
@@ -67,7 +99,7 @@
 
 "#articleInfo": {
 	layout: "vertical",
-	top: "90dp",
+	top: "20dp",
 	backgroundColor: "transparent"}
 	
 ".articleTitle": {
@@ -79,7 +111,6 @@
 ".articleInfo":{
 	width: 300,
 	left: 10,
-	height: 240,
 	bottom: 10,
 	font: {fontSize: 14, fontFamily: 'AmericanTypewriter'},
 	color: 'black',
