@@ -1,11 +1,19 @@
 <Alloy>  <!-- Main Window -->
-   <Tab title="Alarm" icon="/images/home/v-alarm.png">
-  	 <Window id="" title="" platform="android,ios">
+  	 <Window id="alarmWindow" platform="android,ios">
 
     <!-- header -->
-    <View id="header">
+    <View id="alarmView">
       <Label id="title">alarm</Label>
     </View>
+
+	<View id="menuHome">
+			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
+		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
+		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+		 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
+		 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+	   	</View>
+ 			
 
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
@@ -21,5 +29,4 @@
     <!-- iOS: footer with buttons
        <Require src="menu"/>-->
   </Window>
- </Tab>
 </Alloy>

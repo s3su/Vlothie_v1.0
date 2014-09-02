@@ -1,3 +1,5 @@
+var Alloy = require("alloy"), _ = require("alloy/underscore")._, model, collection;
+
 var moment = require("alloy/moment");
 
 exports.definition = {
@@ -35,8 +37,6 @@ exports.definition = {
         return Collection;
     }
 };
-
-var Alloy = require("alloy"), _ = require("alloy/underscore")._, model, collection;
 
 model = Alloy.M("todo", exports.definition, [ function(migration) {
     migration.name = "todo";

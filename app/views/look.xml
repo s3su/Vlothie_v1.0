@@ -1,39 +1,52 @@
 <Alloy>
   <!-- Main Window -->
-  
-   <Tab id="look" title="Explore">
   	 <Window id="lookWindow"  platform="android,ios">
 
     <!-- header -->
-    
-    <ScrollView id="lookContent" >
-        
-	    <View id="articleTop">
-	       
-	             <ImageView id="articleTopImg" onClick="showArticle"/>
-	             <Label>Top</Label>
-  	    </View>
- 	    
- 	  
-	    <View id="articleBottom">
-	             <ImageView id="articleBottomImg" onClick="showArticle"/>
- 	             <Label>Bottom</Label>
- 	    </View>
+
+	<View id="lookButtons">
+ 		<Button class="backButton"></Button>
+ 		<Button class="searchButton"></Button>
+ 	</View>
+   
+    <View id="getLook">
+	    <Label class="getLookText">A cassual day look:</Label>
+	</View>
 	
+		<View id="menuLookView">
+			  <Button class="buttonSchedule" onClick="showHome" ></Button>
+		 	  <Button class="buttonDiamond" onClick="showTrends"></Button>
+		 	  <Button class="buttonStylist" onClick="showLooks"></Button>
+		 	  <Button class="buttonInfo" onClick="showAlarm"></Button>
+		</View>
+		
+    <ScrollView id="lookContent">
+ 
+        <View id="articleTop">
+	             <ImageView id="articleTopImg" onClick="showArticle"/>
+	    </View>
+ 	   
+ 	    		 <View class="lookSeparator"></View>
+	  	
+	    <View id="articleBottom">
+	            <ImageView id="articleBottomImg" onClick="showArticle"/>
+ 		</View>
+	
+			<View class="lookSeparator"></View>
+	    
 	    <View id="articleShoes">
 	             <ImageView id="articleShoesImg" onClick="showArticle"/>
- 	             <Label>Shoes</Label>
  	    </View>
 	
 	</ScrollView>
 	 
-     		<ButtonBar  id="menuHome">	
-			  <Button class="homeButtonMenuHome" onClick="showHome"></Button>
- 			  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
- 			  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
- 			  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
- 			  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
- 			</ButtonBar>	
+    	<View id="menuHome">
+			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
+		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
+		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+		 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
+		 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+	   	</View>
  			
  			 
     <!-- Main table for tasks
@@ -50,5 +63,4 @@
     <!-- iOS: footer with buttons 
        <Require src="menu"/>-->
   </Window>
- </Tab>
 </Alloy>

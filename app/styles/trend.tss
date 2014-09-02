@@ -1,4 +1,4 @@
-"#trend": {
+"#trendWindow": {
 	fullscreen: false,
 	navBarHidden: true,
 	exitOnClose: true,
@@ -19,12 +19,10 @@
 }
 
 "#menuHome": {
-	zIndex: "100",
-	bottom: "10dp",
-	height: "42dp",
+	height: "58dp",
 	width: "100%",
-	style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
-	 }	
+	bottom: "8dp",
+	backgroundColor: "#transparent"}	
 	
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",

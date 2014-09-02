@@ -1,25 +1,20 @@
 <Alloy>  <!-- Main Window -->
-  
-  <Tab id="trendTab" title="Trends" icon="/images/home/v-trend.png">
   	
-  <Window id="trend" platform="android,ios">
+  <Window id="trendWindow" platform="android,ios">
 
     <!-- header -->
     <View id="trendContent" onClick="showLooks">
       <ImageView id="trendImg"/>
-      <Label id="title">Trends</Label>
     </View>
    
-   <ButtonBar  id="menuHome">	
+   	<View id="menuHome">
 		  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 	 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 	 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
 	 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
 	 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
-   </ButtonBar>
+   </View>
     
-    <!-- iOS: footer with buttons 
-       <Require src="menu"/>-->
   </Window>
- </Tab>
+ 
 </Alloy>

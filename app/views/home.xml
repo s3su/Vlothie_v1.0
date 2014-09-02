@@ -1,18 +1,13 @@
- <Alloy autoStyle="true">
-
-	<TabGroup id="TabGroup">
-	
-	 <Tab id="home" title="Home">
+ <Alloy>
 			
-				 <Window id="vlothieHome" title="Vlothie Home" platform="android,ios">
+	 <Window id="vlothieHome" title="Vlothie Home" platform="android,ios">
+			
 			
 			      <ScrollView id="homeContent" >
   			
   				    <View id="hello">
 				        <View id="helloLeft">
-					    
-					  	  <Label class="weatherTextTemp">Nube 16</Label>
-					    
+					  	  <Label class="weatherTextTemp"></Label>
 					   </View>
 					   
 					   <View id="helloMid"></View>
@@ -25,10 +20,8 @@
 					    </View>
 					 </View>
 				
-				
-				   
 				    <View id="getLook">
-				      <Label>Get the look for:</Label>
+				      <Label class="getLookText">Get the look for:</Label>
 				    </View>
 				   
 				   
@@ -54,25 +47,16 @@
 				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">MORE  ; )</Label>
 				  		</View>
 				    </View>
-				
 				</ScrollView>
-
- 		<ButtonBar  id="menuHome">	
-		  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
-	 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
-	 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-	 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
-	 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
-	 	</ButtonBar>	
- 
+		
+					<View id="menuHome">
+				 	  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
+				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
+				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+				 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
+				 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+					</View>
+			 
 			  </Window>
-   </Tab>
- 
- 	  	<Require src="trend"/>
-  	 	<Require src="look"/>
-  	 	<Require src="alarm"/>
-  	 	<Require src="settings"/>
-
-</TabGroup>
- 
+   
 </Alloy>

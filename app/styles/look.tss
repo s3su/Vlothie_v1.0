@@ -1,71 +1,119 @@
-"#look": {
-	icon: "/images/home/v-look.png",
-	backgroundColor: "transparent",
-	activeTabBackgroundColor: "transparent",
-	activeTabBackgroundDisabledColor: "transparent",
-    translucent: true,
-    barColor: "transparent",
-    extendEdges:[Ti.UI.EXTEND_EDGE_TOP, Ti.UI.EXTEND_EDGE_BOTTOM]}
-    
-        
 "#lookWindow": {
 	fullscreen: true,
 	navBarHidden: true,
 	exitOnClose: true,
 	tabBarHidden: true,
-	backgroundImage: "/images/vlothie-background.jpg"
+	backgroundImage: "/images/vlothie-background.jpg"}
+	
+"#lookButtons": {
+	height: "28dp",
+	top: "0dp",
+	zIndex: "10"	
+}	
 
-}
+".backButton": {
+		image: "/images/v-back.png",
+		tintColor: "#fff",
+		left: "8dp",
+		top: "2dp"}
+
+".searchButton": {
+		image: "/images/v-search.png",
+		tintColor: "#fff",
+		right: "8dp",
+		top: "2dp"}
+
+"#menuLookView": {
+	top: "32dp",
+	height: "36dp"}
+
+".buttonSchedule": {
+	image: "/images/v-schedule.png", 
+	tintColor: "#b23b91",
+	left: "20dp"}
+
+".buttonDiamond": {
+	image: "/images/v-diamond.png",
+	tintColor: "#b23b91",
+	left: "50dp"}
+
+".buttonStylist": {
+	image: "/images/v-stylist.png",
+	tintColor: "#b23b91",
+	left: "80dp"}
+
+".buttonInfo": {
+	image: "/images/v-article-info.png",
+	tintColor: "#b23b91",
+	left: "110dp"}
+
+"#getLook": {
+	top: "2dp",
+	width: "100%",
+	height: "20dp"}
+
+".getLookText": {
+	color: "#922a80",
+	font: {
+		fontSize: "16dp",
+		fontWeight: "bold",
+		fontStyle: "italic",
+		fontFamily: "Baskerville"}
+		}
+	
 
 "#lookContent": {
 	layout: "vertical",
-	top: "0dp",
+	top: "70dp",
 	backgroundColor: "transparent",
 	width: Ti.UI.FILL,
-    height: Ti.UI.FILL,
-    navBarHidden: true,
-	
-}
+    height: Ti.UI.FILL}
+
+".lookSeparator": {
+	height: "2dp",
+	backgroundColor:  "#fda8e2",
+	bottom: "0dp"}
 
 "#articleTop": {
-	height: "180dp",
+	layout: "vertical",
+	height: "150dp",
 	top: "0dp",
-	width: "100%"
-}
+	borderRadius: "0dp 10dp 0dp 10dp",
+	bottom: "0dp"}
 
 "#articleTopImg": {
-	image: "/images/article/top.png"
+	image: "/images/article/top.png",
+	bottom: "0dp"
 }
 
 "#articleBottom": {
 	layout: "vertical",
-	height: "180dp",
+	height: "150dp",
 	top: "0dp",
-	width: "100%"
+	bottom: "0dp"
 }
 
 "#articleBottomImg": {
-	image: "/images/article/bottom.png"
+	image: "/images/article/bottom.png",
+	bottom: "0dp"
 }
 
 "#articleShoes": {
 	layout: "vertical",
-	height: "120dp",
+	height: "110dp",
 	top: "0dp",
-	width: "100%"}
+	bottom: "0dp"}
 
 "#articleShoesImg": {
-	image: "/images/article/shoes.png"
-}
+	image: "/images/article/shoes.png",
+	borderRadius: "0dp 12dp 0dp 12dp"}
 
 
 "#menuHome": {
-	zIndex: "100",
-	bottom: "10dp",
-	height: "42dp",
+	height: "58dp",
 	width: "100%",
-	style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
-	 }	
+	bottom: "8dp",
+	backgroundColor: "#transparent"}	
 	
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",
