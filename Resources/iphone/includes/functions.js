@@ -1,4 +1,6 @@
-function dump(arr, level) {
+Ti.API.info("!!functions.js LOADED");
+
+Alloy.Globals.dump = function(arr, level) {
     var dumped_text = "";
     level || (level = 0);
     var level_padding = "";
@@ -7,13 +9,13 @@ function dump(arr, level) {
         var value = arr[item];
         if ("object" == typeof value) {
             dumped_text += level_padding + "'" + item + "' ...\n";
-            dumped_text += dump(value, level + 1);
+            dumped_text += Alloy.Globals.dump(value, level + 1);
         } else dumped_text += level_padding + "'" + item + "' => \"" + value + '"\n';
     } else dumped_text = "===>" + arr + "<===(" + typeof arr + ")";
     return dumped_text;
-}
+};
 
-function getJsonData(jsonURL) {
+Alloy.Globals.getJsonData = function(jsonURL) {
     var xhr = Titanium.Network.createHTTPClient();
     xhr.onload = function() {
         Ti.API.info("got data from the network: " + this.responseText);
@@ -23,11 +25,11 @@ function getJsonData(jsonURL) {
     xhr.open("GET", jsonURL);
     xhr.send();
     return xhr.onload;
-}
+};
 
-function clearCollectionData() {}
+Alloy.Globals.clearCollectionData = function() {};
 
-function updateFIXDataOfTable(tableName) {
+Alloy.Globals.updateFIXDataOfTable = function(tableName) {
     Ti.API.info("Going to Update: " + tableName);
     clearCollectionData(tableName);
     var jsonURL = "?tableName=" + tableName;
@@ -41,6 +43,4 @@ function updateFIXDataOfTable(tableName) {
         });
         modelElement.save();
     });
-}
-
-Ti.API.info("!!functions.js LOADED");
+};

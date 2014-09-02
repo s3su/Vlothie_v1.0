@@ -1,14 +1,15 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
-    function showArticle() {
+    function showArticleTop() {
+        alert("selected articleId: " + articleTop[topId]["articleId"]);
+        Alloy.Globals.sectedArticleId = articleTop[topId]["articleId"];
+        Alloy.createController("article").getView().open();
+    }
+    function showArticleBottom() {
+        Alloy.Globals.sectedArticleId = articleBottom[topId]["articleId"];
+        Alloy.createController("article").getView().open();
+    }
+    function showArticleShoes() {
+        Alloy.Globals.sectedArticleId = articleShoes[topId]["articleId"];
         Alloy.createController("article").getView().open();
     }
     function showHome() {
@@ -26,13 +27,23 @@ function Controller() {
     function showSettings() {
         Alloy.createController("settings").getView().open();
     }
+    function selectTopId() {
+        articleTop.length > topId + 1 ? topId++ : topId = 0;
+        return topId;
+    }
+    function selectBottomId() {
+        articleBottom.length > bottomId + 1 ? bottomId++ : bottomId = 0;
+        return bottomId;
+    }
+    function selectShoesId() {
+        articleShoes.length > shoesId + 1 ? shoesId++ : shoesId = 0;
+        return shoesId;
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "look";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
@@ -153,7 +164,7 @@ function Controller() {
         id: "articleTopImg"
     });
     $.__views.articleTop.add($.__views.articleTopImg);
-    showArticle ? $.__views.articleTopImg.addEventListener("click", showArticle) : __defers["$.__views.articleTopImg!click!showArticle"] = true;
+    showArticleTop ? $.__views.articleTopImg.addEventListener("click", showArticleTop) : __defers["$.__views.articleTopImg!click!showArticleTop"] = true;
     $.__views.__alloyId45 = Ti.UI.createView({
         height: "2dp",
         backgroundColor: "#fda8e2",
@@ -175,7 +186,7 @@ function Controller() {
         id: "articleBottomImg"
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
-    showArticle ? $.__views.articleBottomImg.addEventListener("click", showArticle) : __defers["$.__views.articleBottomImg!click!showArticle"] = true;
+    showArticleBottom ? $.__views.articleBottomImg.addEventListener("click", showArticleBottom) : __defers["$.__views.articleBottomImg!click!showArticleBottom"] = true;
     $.__views.__alloyId46 = Ti.UI.createView({
         height: "2dp",
         backgroundColor: "#fda8e2",
@@ -197,7 +208,7 @@ function Controller() {
         id: "articleShoesImg"
     });
     $.__views.articleShoes.add($.__views.articleShoesImg);
-    showArticle ? $.__views.articleShoesImg.addEventListener("click", showArticle) : __defers["$.__views.articleShoesImg!click!showArticle"] = true;
+    showArticleShoes ? $.__views.articleShoesImg.addEventListener("click", showArticleShoes) : __defers["$.__views.articleShoesImg!click!showArticleShoes"] = true;
     $.__views.menuHome = Ti.UI.createView({
         height: "58dp",
         width: "100%",
@@ -252,49 +263,70 @@ function Controller() {
     var articleTop = [];
     var articleBottom = [];
     var articleShoes = [];
-    articleTop[0] = "http://be.vlothie.com/photos/articles/pants1.jpg";
-    articleTop[1] = "http://be.vlothie.com/photos/articles/skirt1.jpg";
-    articleTop[2] = "http://be.vlothie.com/photos/articles/short1.jpg";
-    articleTop[0] = "/images/article/top.png";
-    articleTop[1] = "/images/article/bottom.png";
-    articleTop[2] = "/images/article/shoes.png";
-    articleBottom[0] = "/images/article/top.png";
-    articleBottom[1] = "/images/article/bottom.png";
-    articleBottom[2] = "/images/article/shoes.png";
-    articleShoes[0] = "/images/article/top.png";
-    articleShoes[1] = "/images/article/bottom.png";
-    articleShoes[2] = "/images/article/shoes.png";
+    var articleTopCount = 0;
+    var articleBottomCount = 0;
+    var articleShoesCount = 0;
+    var topId = 0;
+    var bottomId = 0;
+    var shoesId = 0;
+    for (var articleId in Alloy.Globals.articlesArray) switch (Alloy.Globals.articlesArray[articleId]["categoryId"]) {
+      case "1":
+        articleTop[articleTopCount] = [];
+        articleTop[articleTopCount]["articleId"] = articleId;
+        articleTop[articleTopCount]["photo"] = Alloy.Globals.articlesArray[articleId]["photo"];
+        articleTop[articleTopCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
+        articleTop[articleTopCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
+        articleTop[articleTopCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleTopCount++;
+        break;
+
+      case "2":
+        articleBottom[articleBottomCount] = [];
+        articleBottom[articleBottomCount]["articleId"] = articleId;
+        articleBottom[articleBottomCount]["photo"] = Alloy.Globals.articlesArray[articleId]["photo"];
+        articleBottom[articleBottomCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
+        articleBottom[articleBottomCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
+        articleBottom[articleBottomCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleBottomCount++;
+        break;
+
+      case "3":
+        articleShoes[articleShoesCount] = [];
+        articleShoes[articleShoesCount]["articleId"] = articleId;
+        articleShoes[articleShoesCount]["photo"] = Alloy.Globals.articlesArray[articleId]["photo"];
+        articleShoes[articleShoesCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
+        articleShoes[articleShoesCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
+        articleShoes[articleShoesCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleShoesCount++;
+    }
     $.articleTop.addEventListener("swipe", function() {
+        topId = selectTopId();
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        var imagePath = articleTop[Math.floor(3 * Math.random())];
+        var imagePath = articleTop[topId]["photo"];
         $.articleTopImg.image = imagePath;
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
     });
     $.articleBottom.addEventListener("swipe", function() {
+        bottomId = selectBottomId();
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        var imagePath = articleBottom[Math.floor(3 * Math.random())];
+        var imagePath = articleBottom[bottomId]["photo"];
         $.articleBottomImg.image = imagePath;
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
     });
     $.articleShoes.addEventListener("swipe", function() {
+        shoesId = selectShoesId();
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-        var imagePath = articleShoes[Math.floor(3 * Math.random())];
+        var imagePath = articleShoes[shoesId]["photo"];
         $.articleShoesImg.image = imagePath;
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-    });
-    $.articleBottom.addEventListener("swipe", function() {
-        $.articleBottomImg.image.animation = articleTop[Math.floor(3 * Math.random())];
-    });
-    $.articleShoesImg.addEventListener("swipe", function() {
-        $.articleShoesImg.image = articleTop[Math.floor(3 * Math.random())];
     });
     __defers["$.__views.__alloyId41!click!showHome"] && $.__views.__alloyId41.addEventListener("click", showHome);
     __defers["$.__views.__alloyId42!click!showTrends"] && $.__views.__alloyId42.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId43!click!showLooks"] && $.__views.__alloyId43.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId44!click!showAlarm"] && $.__views.__alloyId44.addEventListener("click", showAlarm);
-    __defers["$.__views.articleTopImg!click!showArticle"] && $.__views.articleTopImg.addEventListener("click", showArticle);
-    __defers["$.__views.articleBottomImg!click!showArticle"] && $.__views.articleBottomImg.addEventListener("click", showArticle);
-    __defers["$.__views.articleShoesImg!click!showArticle"] && $.__views.articleShoesImg.addEventListener("click", showArticle);
+    __defers["$.__views.articleTopImg!click!showArticleTop"] && $.__views.articleTopImg.addEventListener("click", showArticleTop);
+    __defers["$.__views.articleBottomImg!click!showArticleBottom"] && $.__views.articleBottomImg.addEventListener("click", showArticleBottom);
+    __defers["$.__views.articleShoesImg!click!showArticleShoes"] && $.__views.articleShoesImg.addEventListener("click", showArticleShoes);
     __defers["$.__views.__alloyId47!click!showHome"] && $.__views.__alloyId47.addEventListener("click", showHome);
     __defers["$.__views.__alloyId48!click!showTrends"] && $.__views.__alloyId48.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId49!click!showLooks"] && $.__views.__alloyId49.addEventListener("click", showLooks);

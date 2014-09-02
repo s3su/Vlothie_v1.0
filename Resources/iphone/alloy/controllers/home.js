@@ -1,12 +1,3 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     function showHome() {
         Alloy.createController("home").getView().open();
@@ -25,11 +16,9 @@ function Controller() {
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "home";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
@@ -324,20 +313,10 @@ function Controller() {
     showSettings ? $.__views.__alloyId37.addEventListener("click", showSettings) : __defers["$.__views.__alloyId37!click!showSettings"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-<<<<<<< HEAD
     Ti.API.info("seeded: " + Ti.App.Properties.hasProperty("seeded"));
-    __defers["$.__views.__alloyId19!click!showLooks"] && $.__views.__alloyId19.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId21!click!showLooks"] && $.__views.__alloyId21.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId23!click!showLooks"] && $.__views.__alloyId23.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId25!click!showLooks"] && $.__views.__alloyId25.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId27!click!showLooks"] && $.__views.__alloyId27.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId28!click!showHome"] && $.__views.__alloyId28.addEventListener("click", showHome);
-    __defers["$.__views.__alloyId29!click!showTrends"] && $.__views.__alloyId29.addEventListener("click", showTrends);
-=======
     __defers["$.__views.__alloyId24!click!showLooks"] && $.__views.__alloyId24.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId26!click!showLooks"] && $.__views.__alloyId26.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId28!click!showLooks"] && $.__views.__alloyId28.addEventListener("click", showLooks);
->>>>>>> c6f13b3b3b543b59417b8a594d93bb5fb7830b5c
     __defers["$.__views.__alloyId30!click!showLooks"] && $.__views.__alloyId30.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId32!click!showLooks"] && $.__views.__alloyId32.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId33!click!showHome"] && $.__views.__alloyId33.addEventListener("click", showHome);

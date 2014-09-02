@@ -24,6 +24,8 @@ var measurementsTypesCollection = Alloy.createCollection("MeasurementsTypes");
 
 var patternsCollection = Alloy.createCollection("Patterns");
 
+Alloy.Globals.sectedArticleId = 0;
+
 var getFIXData = true;
 
 var getArticlesData = true;

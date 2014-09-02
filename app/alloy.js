@@ -17,6 +17,7 @@ var patternsCollection = Alloy.createCollection("Patterns");
 //var situationsCollection = Alloy.createCollection("Situations");
 //var stylesCollection = Alloy.createCollection("Styles");
 
+Alloy.Globals.sectedArticleId = 0;
 
 
 var getFIXData = true;
