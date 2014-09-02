@@ -1,45 +1,36 @@
 var Alloy = require("alloy"), _ = Alloy._, Backbone = Alloy.Backbone;
 
-<<<<<<< HEAD
-var getDefaultData = true;
-
-getDefaultData && require("includes/getDefaultData");
-
 require("includes/functions");
 
-var articleOne = Alloy.createModel("Articles", {
-    title: "sebas1"
-});
-
-var articleCollection = Alloy.createCollection("Articles");
-
-articleCollection.fetch();
-
-var articleCategories1 = Alloy.createModel("ArticleCategories", {
-    name: "Top"
-});
-
-articleCategories1.save();
+require("includes/getArticlesData");
 
 var articleCategoriesCollection = Alloy.createCollection("ArticleCategories");
 
-articleCategoriesCollection.fetch();
+var articlesCollection = Alloy.createCollection("Articles");
 
-var articleSeasonCollection = Alloy.createCollection("ArticleSeasons");
+var articleSeasonsCollection = Alloy.createCollection("ArticleSeasons");
 
-articleSeasonCollection.fetch();
+var articleSubcategoriesCollection = Alloy.createCollection("ArticleSubcategories");
 
-var elements = "";
+var brandsCollection = Alloy.createCollection("Brands");
 
-articleSeasonCollection.forEach(function(eachCollectionElement) {
-    eachCollectionElement.destroy();
-});
+var citiesCollection = Alloy.createCollection("Cities");
 
-alert("seaoson elements deleted");
+var coloursCollection = Alloy.createCollection("Colours");
 
-articleSeasonCollection.forEach(function(eachCollectionElement) {
-    alert("ELEm: " + eachCollectionElement.get("season"));
-});
+var materialsfabricsCollection = Alloy.createCollection("Materialsfabrics");
+
+var measurementsTypesCollection = Alloy.createCollection("MeasurementsTypes");
+
+var patternsCollection = Alloy.createCollection("Patterns");
+
+var getFIXData = true;
+
+var getArticlesData = true;
+
+getFIXData;
+
+getArticlesData;
 
 Alloy.Globals.top = 0;
 
@@ -52,6 +43,4 @@ try {
     }
 } catch (e) {}
 
-=======
->>>>>>> b97304c2793e9857911b0f654e1cd46b100ba1f6
 Alloy.createController("index");

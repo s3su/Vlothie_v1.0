@@ -423,16 +423,7 @@ function Controller() {
     $.__views.TabGroup && $.addTopLevelView($.__views.TabGroup);
     exports.destroy = function() {};
     _.extend($, $.__views);
-<<<<<<< HEAD
     Ti.API.info("seeded: " + Ti.App.Properties.hasProperty("seeded"));
-    __defers["$.__views.__alloyId16!click!showLooks"] && $.__views.__alloyId16.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId18!click!showLooks"] && $.__views.__alloyId18.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId20!click!showLooks"] && $.__views.__alloyId20.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId22!click!showLooks"] && $.__views.__alloyId22.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId24!click!showLooks"] && $.__views.__alloyId24.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId26!click!showLooks"] && $.__views.__alloyId26.addEventListener("click", showLooks);
-    __defers["$.__views.shake!click!showTrends"] && $.__views.shake.addEventListener("click", showTrends);
-=======
     __defers["$.__views.__alloyId19!click!showLooks"] && $.__views.__alloyId19.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId21!click!showLooks"] && $.__views.__alloyId21.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId23!click!showLooks"] && $.__views.__alloyId23.addEventListener("click", showLooks);
@@ -443,7 +434,6 @@ function Controller() {
     __defers["$.__views.__alloyId30!click!showLooks"] && $.__views.__alloyId30.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId31!click!showAlarm"] && $.__views.__alloyId31.addEventListener("click", showAlarm);
     __defers["$.__views.__alloyId32!click!showSettings"] && $.__views.__alloyId32.addEventListener("click", showSettings);
->>>>>>> b97304c2793e9857911b0f654e1cd46b100ba1f6
     _.extend($, exports);
 }
 

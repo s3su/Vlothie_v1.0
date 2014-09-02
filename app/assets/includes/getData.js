@@ -1,45 +1,13 @@
-Ti.API.info('!!getFIXData.js LOADED');
-
-
-
-
+Ti.API.info('!!getDeafultData.js LOADED');
 
 var isGetDataFromJson = false;
 var isGetDataFromHardcode = false;
 
-//var jsonURL = "http://localhost/vlothieLocal/getDefaultData.php";
+var jsonURL = "http://localhost/vlothieLocal/getDefaultData.php";
 
 //clean all models
 //cleanAllModels();
 //articleCategoriesCollection.fetch();
-
-
-//VERIFIFY LASTEST FIX DATA VERSIONS
-fixDataJsonURL = "";
-var versionArray = getJsonData(fixDataJsonURL);
-lastestFixDataVersionsCollection.forEach(function(eachLastestFixDataVersionsModel){
-	var objectTableName = eachLastestFixDataVersionsModel.get('table');
-	versionArray.forEach(function(eachRow, index){ //FIND INDEX
-		if(eachRow['table'] == objectTableName){
-			//same table
-			if(eachLastestFixDataVersionsModel.get('version') != eachRow['version']){
-				//update
-				Ti.API.info('!!Table: '+objectTableName+' NOT UPDATED. CHANGRE FROM '+eachLastestFixDataVersionsModel.get('version')+' TO '+eachRow['version']);
-				updateFIXDataOfTable(objectTableName);
-				eachLastestFixDataVersionsModel.set({version: eachRow['version']});
-				eachLastestFixDataVersionsModel.save();
-			}else{
-				//Table Up to date
-				Ti.API.info('!!Table: '+objectTableName+' UP TO DATE');
-			}
-		}
-		});
-
-});
-
-
-
-
 
 while(articleCategoriesCollection.length > 0){
 	articleCategoriesCollection.at(0).destroy();

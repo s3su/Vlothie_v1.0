@@ -9,7 +9,7 @@ function showTrends() {
 	}
 
 function showLooks() {
-	var lookTab = $.TabGroup.setActiveTab(2); 
+	var lookTab = $.TabGroup.setActiveTab(2);
 	lookTab.open();
 	}
 	
