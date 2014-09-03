@@ -3,12 +3,12 @@
   <Window id="landingWin" title="Vlothie" platform="android,ios">
 
     <!-- header -->
-    <View id="header">
+    <View>
       <Label id="title">Vlothie</Label>
     </View>
 
 
-	<View id="landingPhoto" onClick="goToHome">
+	<View onClick="goToHome">
         <ImageView id="landingImage"/>
       </View>
 

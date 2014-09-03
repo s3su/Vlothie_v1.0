@@ -8,20 +8,20 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function __alloyId67(e) {
+    function __alloyId69(e) {
         if (e && e.fromAdapter) return;
-        __alloyId67.opts || {};
-        var models = whereFunction(__alloyId66);
+        __alloyId69.opts || {};
+        var models = whereFunction(__alloyId68);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId63 = models[i];
-            __alloyId63.__transform = transformFunction(__alloyId63);
-            var __alloyId65 = Alloy.createController("userRow", {
-                $model: __alloyId63,
+            var __alloyId65 = models[i];
+            __alloyId65.__transform = transformFunction(__alloyId65);
+            var __alloyId67 = Alloy.createController("userRow", {
+                $model: __alloyId65,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId65.getViewEx({
+            rows.push(__alloyId67.getViewEx({
                 recurse: true
             }));
         }
@@ -73,10 +73,10 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId62 = Ti.UI.createView({
-        id: "__alloyId62"
+    $.__views.__alloyId64 = Ti.UI.createView({
+        id: "__alloyId64"
     });
-    $.__views.header.add($.__views.__alloyId62);
+    $.__views.header.add($.__views.__alloyId64);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -90,10 +90,10 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId66 = Alloy.Collections["user"] || user;
-    __alloyId66.on("fetch destroy change add remove reset", __alloyId67);
+    var __alloyId68 = Alloy.Collections["user"] || user;
+    __alloyId68.on("fetch destroy change add remove reset", __alloyId69);
     exports.destroy = function() {
-        __alloyId66.off("fetch destroy change add remove reset", __alloyId67);
+        __alloyId68.off("fetch destroy change add remove reset", __alloyId69);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;
