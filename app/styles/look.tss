@@ -17,6 +17,9 @@
 		left: "8dp",
 		top: "2dp"}
 
+
+
+ 
 ".searchButton": {
 		image: "/images/v-search.png",
 		tintColor: "#fff",
