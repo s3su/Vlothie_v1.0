@@ -57,53 +57,53 @@ function Controller() {
         id: "menuHome"
     });
     $.__views.alarmWindow.add($.__views.menuHome);
-    $.__views.__alloyId2 = Ti.UI.createButton({
+    $.__views.__alloyId0 = Ti.UI.createButton({
         image: "/images/home/v-home.png",
         tintColor: "#fff",
         left: "30dp",
-        id: "__alloyId2"
+        id: "__alloyId0"
     });
-    $.__views.menuHome.add($.__views.__alloyId2);
-    showHome ? $.__views.__alloyId2.addEventListener("click", showHome) : __defers["$.__views.__alloyId2!click!showHome"] = true;
-    $.__views.__alloyId3 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId0);
+    showHome ? $.__views.__alloyId0.addEventListener("click", showHome) : __defers["$.__views.__alloyId0!click!showHome"] = true;
+    $.__views.__alloyId1 = Ti.UI.createButton({
         image: "/images/home/v-trend.png",
         tintColor: "#fff",
         left: "86dp",
-        id: "__alloyId3"
+        id: "__alloyId1"
     });
-    $.__views.menuHome.add($.__views.__alloyId3);
-    showTrends ? $.__views.__alloyId3.addEventListener("click", showTrends) : __defers["$.__views.__alloyId3!click!showTrends"] = true;
-    $.__views.__alloyId4 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId1);
+    showTrends ? $.__views.__alloyId1.addEventListener("click", showTrends) : __defers["$.__views.__alloyId1!click!showTrends"] = true;
+    $.__views.__alloyId2 = Ti.UI.createButton({
         image: "/images/home/v-look.png",
         tintColor: "#fff",
         left: "140dp",
-        id: "__alloyId4"
+        id: "__alloyId2"
     });
-    $.__views.menuHome.add($.__views.__alloyId4);
-    showLooks ? $.__views.__alloyId4.addEventListener("click", showLooks) : __defers["$.__views.__alloyId4!click!showLooks"] = true;
-    $.__views.__alloyId5 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId2);
+    showLooks ? $.__views.__alloyId2.addEventListener("click", showLooks) : __defers["$.__views.__alloyId2!click!showLooks"] = true;
+    $.__views.__alloyId3 = Ti.UI.createButton({
         image: "/images/home/v-alarm.png",
         tintColor: "#fff",
         left: "195dp",
-        id: "__alloyId5"
+        id: "__alloyId3"
     });
-    $.__views.menuHome.add($.__views.__alloyId5);
-    showAlarm ? $.__views.__alloyId5.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId5!click!showAlarm"] = true;
-    $.__views.__alloyId6 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId3);
+    showAlarm ? $.__views.__alloyId3.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId3!click!showAlarm"] = true;
+    $.__views.__alloyId4 = Ti.UI.createButton({
         image: "/images/home/v-setting.png",
         tintColor: "#fff",
         left: "250dp",
-        id: "__alloyId6"
+        id: "__alloyId4"
     });
-    $.__views.menuHome.add($.__views.__alloyId6);
-    showSettings ? $.__views.__alloyId6.addEventListener("click", showSettings) : __defers["$.__views.__alloyId6!click!showSettings"] = true;
+    $.__views.menuHome.add($.__views.__alloyId4);
+    showSettings ? $.__views.__alloyId4.addEventListener("click", showSettings) : __defers["$.__views.__alloyId4!click!showSettings"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    __defers["$.__views.__alloyId2!click!showHome"] && $.__views.__alloyId2.addEventListener("click", showHome);
-    __defers["$.__views.__alloyId3!click!showTrends"] && $.__views.__alloyId3.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId4!click!showLooks"] && $.__views.__alloyId4.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId5!click!showAlarm"] && $.__views.__alloyId5.addEventListener("click", showAlarm);
-    __defers["$.__views.__alloyId6!click!showSettings"] && $.__views.__alloyId6.addEventListener("click", showSettings);
+    __defers["$.__views.__alloyId0!click!showHome"] && $.__views.__alloyId0.addEventListener("click", showHome);
+    __defers["$.__views.__alloyId1!click!showTrends"] && $.__views.__alloyId1.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId2!click!showLooks"] && $.__views.__alloyId2.addEventListener("click", showLooks);
+    __defers["$.__views.__alloyId3!click!showAlarm"] && $.__views.__alloyId3.addEventListener("click", showAlarm);
+    __defers["$.__views.__alloyId4!click!showSettings"] && $.__views.__alloyId4.addEventListener("click", showSettings);
     _.extend($, exports);
 }
 

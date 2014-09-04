@@ -44,3 +44,19 @@ Alloy.Globals.updateFIXDataOfTable = function(tableName) {
         modelElement.save();
     });
 };
+
+Alloy.Globals.getLocation = function(tableName) {
+    Ti.API.info("Going to Update: " + tableName);
+    clearCollectionData(tableName);
+    var jsonURL = "?tableName=" + tableName;
+    var tableArray = getJsonData(jsonURL);
+    tableArray.forEach(function(eachRow) {
+        var modelElement = Alloy.createModel(tableName);
+        eachRow.forEach(function(eachField) {
+            modelElement.set({
+                index: eachField
+            });
+        });
+        modelElement.save();
+    });
+};
