@@ -23,19 +23,19 @@
     <ScrollView id="lookContent">
  
         <View id="articleTop">
-	             <ImageView id="articleTopImg" onClick="showArticle"/>
+	             <ImageView id="articleTopImg" onClick="showArticleTop"/>
 	    </View>
  	   
  	    		 <View class="lookSeparator"></View>
 	  	
 	    <View id="articleBottom">
-	            <ImageView id="articleBottomImg" onClick="showArticle"/>
+	            <ImageView id="articleBottomImg" onClick="showArticleBottom"/>
  		</View>
 	
 			<View class="lookSeparator"></View>
 	    
 	    <View id="articleShoes">
-	             <ImageView id="articleShoesImg" onClick="showArticle"/>
+	             <ImageView id="articleShoesImg" onClick="showArticleShoes"/>
  	    </View>
 	
 	</ScrollView>

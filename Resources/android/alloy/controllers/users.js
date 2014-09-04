@@ -1,27 +1,18 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
-    function __alloyId59(e) {
+    function __alloyId67(e) {
         if (e && e.fromAdapter) return;
-        __alloyId59.opts || {};
-        var models = whereFunction(__alloyId58);
+        __alloyId67.opts || {};
+        var models = whereFunction(__alloyId66);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId55 = models[i];
-            __alloyId55.__transform = transformFunction(__alloyId55);
-            var __alloyId57 = Alloy.createController("userRow", {
-                $model: __alloyId55,
+            var __alloyId63 = models[i];
+            __alloyId63.__transform = transformFunction(__alloyId63);
+            var __alloyId65 = Alloy.createController("userRow", {
+                $model: __alloyId63,
                 __parentSymbol: __parentSymbol
             });
-            rows.push(__alloyId57.getViewEx({
+            rows.push(__alloyId65.getViewEx({
                 recurse: true
             }));
         }
@@ -42,11 +33,9 @@ function Controller() {
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "users";
-    if (arguments[0]) {
-        var __parentSymbol = __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    var __parentSymbol = arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
@@ -73,10 +62,10 @@ function Controller() {
         id: "title"
     });
     $.__views.header.add($.__views.title);
-    $.__views.__alloyId54 = Ti.UI.createView({
-        id: "__alloyId54"
+    $.__views.__alloyId62 = Ti.UI.createView({
+        id: "__alloyId62"
     });
-    $.__views.header.add($.__views.__alloyId54);
+    $.__views.header.add($.__views.__alloyId62);
     $.__views.addUser = Ti.UI.createView({
         id: "addUser"
     });
@@ -90,10 +79,10 @@ function Controller() {
         id: "userTable"
     });
     $.__views.usersWin.add($.__views.userTable);
-    var __alloyId58 = Alloy.Collections["user"] || user;
-    __alloyId58.on("fetch destroy change add remove reset", __alloyId59);
+    var __alloyId66 = Alloy.Collections["user"] || user;
+    __alloyId66.on("fetch destroy change add remove reset", __alloyId67);
     exports.destroy = function() {
-        __alloyId58.off("fetch destroy change add remove reset", __alloyId59);
+        __alloyId66.off("fetch destroy change add remove reset", __alloyId67);
     };
     _.extend($, $.__views);
     var users = Alloy.Collections.user;

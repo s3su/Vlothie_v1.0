@@ -20,9 +20,6 @@ function Controller() {
     function showAlarm() {
         Alloy.createController("alarm").getView().open();
     }
-    function showSettings() {
-        Alloy.createController("settings").getView().open();
-    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "home";
     if (arguments[0]) {
@@ -285,7 +282,7 @@ function Controller() {
     $.__views.__alloyId33 = Ti.UI.createButton({
         image: "/images/home/v-home.png",
         tintColor: "#fff",
-        left: "30dp",
+        left: "60dp",
         id: "__alloyId33"
     });
     $.__views.menuHome.add($.__views.__alloyId33);
@@ -293,7 +290,7 @@ function Controller() {
     $.__views.__alloyId34 = Ti.UI.createButton({
         image: "/images/home/v-trend.png",
         tintColor: "#fff",
-        left: "86dp",
+        left: "106dp",
         id: "__alloyId34"
     });
     $.__views.menuHome.add($.__views.__alloyId34);
@@ -301,7 +298,7 @@ function Controller() {
     $.__views.__alloyId35 = Ti.UI.createButton({
         image: "/images/home/v-look.png",
         tintColor: "#fff",
-        left: "140dp",
+        left: "170dp",
         id: "__alloyId35"
     });
     $.__views.menuHome.add($.__views.__alloyId35);
@@ -309,21 +306,14 @@ function Controller() {
     $.__views.__alloyId36 = Ti.UI.createButton({
         image: "/images/home/v-alarm.png",
         tintColor: "#fff",
-        left: "195dp",
+        left: "225dp",
         id: "__alloyId36"
     });
     $.__views.menuHome.add($.__views.__alloyId36);
     showAlarm ? $.__views.__alloyId36.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId36!click!showAlarm"] = true;
-    $.__views.__alloyId37 = Ti.UI.createButton({
-        image: "/images/home/v-setting.png",
-        tintColor: "#fff",
-        left: "250dp",
-        id: "__alloyId37"
-    });
-    $.__views.menuHome.add($.__views.__alloyId37);
-    showSettings ? $.__views.__alloyId37.addEventListener("click", showSettings) : __defers["$.__views.__alloyId37!click!showSettings"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
+    Ti.API.info("seeded: " + Ti.App.Properties.hasProperty("seeded"));
     __defers["$.__views.__alloyId24!click!showLooks"] && $.__views.__alloyId24.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId26!click!showLooks"] && $.__views.__alloyId26.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId28!click!showLooks"] && $.__views.__alloyId28.addEventListener("click", showLooks);
@@ -333,7 +323,6 @@ function Controller() {
     __defers["$.__views.__alloyId34!click!showTrends"] && $.__views.__alloyId34.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId35!click!showLooks"] && $.__views.__alloyId35.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId36!click!showAlarm"] && $.__views.__alloyId36.addEventListener("click", showAlarm);
-    __defers["$.__views.__alloyId37!click!showSettings"] && $.__views.__alloyId37.addEventListener("click", showSettings);
     _.extend($, exports);
 }
 

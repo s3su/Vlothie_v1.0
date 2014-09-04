@@ -14,10 +14,15 @@ function showTrends() {
 
 function showLooks() {
 
+	//var lookTab = $.TabGroup.setActiveTab(2);
+	//lookTab.open();
+
+
 	//console.log(e);
 		Alloy.createController("look").getView().open();
 	//var lookTab = $.TabGroup.setActiveTab(2); 
 	//lookTab.open();
+
 	}
 	
 function showAlarm() {

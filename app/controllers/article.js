@@ -12,3 +12,5 @@ function showHome() {
 function closeArticle() {
 	$.articleWindow.close();
 }
+
+alert("articleId: "+Alloy.Globals.sectedArticleId+" -- data: "+Alloy.Globals.dump(Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]));
