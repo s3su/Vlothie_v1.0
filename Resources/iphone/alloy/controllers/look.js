@@ -1,14 +1,14 @@
 function Controller() {
     function showArticleTop() {
-        Alloy.Globals.sectedArticleId = articleTop[topId]["articleId"];
+        Alloy.Globals.sectedArticleId = articleTop[Alloy.Globals.lookTopId]["articleId"];
         Alloy.createController("article").getView().open();
     }
     function showArticleBottom() {
-        Alloy.Globals.sectedArticleId = articleBottom[bottomId]["articleId"];
+        Alloy.Globals.sectedArticleId = articleBottom[Alloy.Globals.lookBottomId]["articleId"];
         Alloy.createController("article").getView().open();
     }
     function showArticleShoes() {
-        Alloy.Globals.sectedArticleId = articleShoes[shoesId]["articleId"];
+        Alloy.Globals.sectedArticleId = articleShoes[Alloy.Globals.lookShoesId]["articleId"];
         Alloy.createController("article").getView().open();
     }
     function showHome() {
@@ -27,48 +27,51 @@ function Controller() {
         Alloy.createController("settings").getView().open();
     }
     function selectTopId() {
-        articleTop.length > topId + 1 ? topId++ : topId = 0;
-        return topId;
+        Alloy.Globals.lookTopId + 1 < articleTop.length ? Alloy.Globals.lookTopId++ : Alloy.Globals.lookTopId = 0;
+        return Alloy.Globals.lookTopId;
     }
     function selectBottomId() {
-        articleBottom.length > bottomId + 1 ? bottomId++ : bottomId = 0;
-        return bottomId;
+        Alloy.Globals.lookBottomId + 1 < articleBottom.length ? Alloy.Globals.lookBottomId++ : Alloy.Globals.lookBottomId = 0;
+        return Alloy.Globals.lookBottomId;
     }
     function selectShoesId() {
-        articleShoes.length > shoesId + 1 ? shoesId++ : shoesId = 0;
-        return shoesId;
+        Alloy.Globals.lookShoesId + 1 < articleShoes.length ? Alloy.Globals.lookShoesId++ : Alloy.Globals.lookShoesId = 0;
+        return Alloy.Globals.lookShoesId;
     }
     function setInitialLook() {
         if (Alloy.Globals.selectedSituationId > 0) {
-            topId = "";
-            for (var articleId in Alloy.Globals.articlesArray) if (1 == Alloy.Globals.articlesArray[articleId]["categoryId"] && Alloy.Globals.articlesArray[articleId]["situationId"] == Alloy.Globals.selectedSituationId) {
-                topId = articleId;
+            for (var topId in articleTop) if (articleTop[topId]["situationId"] == Alloy.Globals.selectedSituationId) {
+                Alloy.Globals.lookTopId = topId;
                 break;
             }
-            0 == topId && (topId = selectTopId());
-            bottomId = selectBottomId();
-            shoesId = selectShoesId();
+            0 == Alloy.Globals.lookTopId && (Alloy.Globals.lookTopId = selectTopId());
+            for (var bottomId in articleBottom) if (articleBottom[bottomId]["situationId"] == Alloy.Globals.selectedSituationId) {
+                Alloy.Globals.lookBottomId = bottomId;
+                break;
+            }
+            0 == Alloy.Globals.lookBottomId && (Alloy.Globals.lookBottomId = selectBottomId());
+            for (var shoesId in articleShoes) if (articleShoes[shoesId]["situationId"] == Alloy.Globals.selectedSituationId) {
+                Alloy.Globals.lookShoesId = shoesId;
+                break;
+            }
+            0 == Alloy.Globals.lookShoesId && (Alloy.Globals.lookShoesId = selectShoesId());
             Alloy.Globals.selectedSituationId = 0;
-            setImages();
-        } else if (0 == Alloy.Globals.isSetInitialLook) {
+        } else if (0 == Alloy.Globals.isSetLook) {
             topId = selectTopId();
             bottomId = selectBottomId();
             shoesId = selectShoesId();
-            Alloy.Globals.isSetInitialLook = 1;
-            setImages();
+            Alloy.Globals.isSetLook = 1;
         }
-    }
-    function setImages() {
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        var imagePath = articleTop[topId]["photo"];
+        var imagePath = articleTop[Alloy.Globals.lookTopId]["photo"];
         $.articleTopImg.image = imagePath;
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        var imagePath = articleBottom[bottomId]["photo"];
+        var imagePath = articleBottom[Alloy.Globals.lookBottomId]["photo"];
         $.articleBottomImg.image = imagePath;
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-        var imagePath = articleShoes[shoesId]["photo"];
+        var imagePath = articleShoes[Alloy.Globals.lookShoesId]["photo"];
         $.articleShoesImg.image = imagePath;
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
     }
@@ -296,9 +299,6 @@ function Controller() {
     var articleTopCount = 0;
     var articleBottomCount = 0;
     var articleShoesCount = 0;
-    var topId = 0;
-    var bottomId = 0;
-    var shoesId = 0;
     for (var articleId in Alloy.Globals.articlesArray) switch (Alloy.Globals.articlesArray[articleId]["categoryId"]) {
       case "1":
         articleTop[articleTopCount] = [];
@@ -307,6 +307,11 @@ function Controller() {
         articleTop[articleTopCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
         articleTop[articleTopCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
         articleTop[articleTopCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleTop[articleTopCount]["situationId"] = Alloy.Globals.articlesArray[articleId]["situationId"];
+        articleTop[articleTopCount]["link"] = Alloy.Globals.articlesArray[articleId]["link"];
+        articleTop[articleTopCount]["wearIt"] = Alloy.Globals.articlesArray[articleId]["wearIt"];
+        articleTop[articleTopCount]["clicks"] = Alloy.Globals.articlesArray[articleId]["clicks"];
+        articleTop[articleTopCount]["description"] = Alloy.Globals.articlesArray[articleId]["description"];
         articleTopCount++;
         break;
 
@@ -317,6 +322,11 @@ function Controller() {
         articleBottom[articleBottomCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
         articleBottom[articleBottomCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
         articleBottom[articleBottomCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleBottom[articleBottomCount]["situationId"] = Alloy.Globals.articlesArray[articleId]["situationId"];
+        articleBottom[articleBottomCount]["link"] = Alloy.Globals.articlesArray[articleId]["link"];
+        articleBottom[articleBottomCount]["wearIt"] = Alloy.Globals.articlesArray[articleId]["wearIt"];
+        articleBottom[articleBottomCount]["clicks"] = Alloy.Globals.articlesArray[articleId]["clicks"];
+        articleBottom[articleBottomCount]["description"] = Alloy.Globals.articlesArray[articleId]["description"];
         articleBottomCount++;
         break;
 
@@ -327,27 +337,32 @@ function Controller() {
         articleShoes[articleShoesCount]["name"] = Alloy.Globals.articlesArray[articleId]["name"];
         articleShoes[articleShoesCount]["subcategoryId"] = Alloy.Globals.articlesArray[articleId]["subcategoryId"];
         articleShoes[articleShoesCount]["subcategoryName"] = Alloy.Globals.articlesArray[articleId]["subcategoryName"];
+        articleShoes[articleShoesCount]["situationId"] = Alloy.Globals.articlesArray[articleId]["situationId"];
+        articleShoes[articleShoesCount]["link"] = Alloy.Globals.articlesArray[articleId]["link"];
+        articleShoes[articleShoesCount]["wearIt"] = Alloy.Globals.articlesArray[articleId]["wearIt"];
+        articleShoes[articleShoesCount]["clicks"] = Alloy.Globals.articlesArray[articleId]["clicks"];
+        articleShoes[articleShoesCount]["description"] = Alloy.Globals.articlesArray[articleId]["description"];
         articleShoesCount++;
     }
     setInitialLook();
     $.articleTop.addEventListener("swipe", function() {
-        topId = selectTopId();
+        Alloy.Globals.lookTopId = selectTopId();
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        var imagePath = articleTop[topId]["photo"];
+        var imagePath = articleTop[Alloy.Globals.lookTopId]["photo"];
         $.articleTopImg.image = imagePath;
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
     });
     $.articleBottom.addEventListener("swipe", function() {
-        bottomId = selectBottomId();
+        Alloy.Globals.lookBottomId = selectBottomId();
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        var imagePath = articleBottom[bottomId]["photo"];
+        var imagePath = articleBottom[Alloy.Globals.lookBottomId]["photo"];
         $.articleBottomImg.image = imagePath;
         animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
     });
     $.articleShoes.addEventListener("swipe", function() {
-        shoesId = selectShoesId();
+        Alloy.Globals.lookShoesId = selectShoesId();
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-        var imagePath = articleShoes[shoesId]["photo"];
+        var imagePath = articleShoes[Alloy.Globals.lookShoesId]["photo"];
         $.articleShoesImg.image = imagePath;
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
     });

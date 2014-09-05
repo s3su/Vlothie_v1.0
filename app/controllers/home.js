@@ -6,27 +6,16 @@ $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray['greetingDayPhrase']);
 $.weatherId.setText(Alloy.Globals.homeDataArray['weatherId']);
 
 function showHome() {
-	//console.log(e);
-		Alloy.createController("home").getView().open();
-	//var homeTab = $.TabGroup.setActiveTab(0); 
-	//homeTab.open();
-	}
+	Alloy.createController("home").getView().open();
+}
 
 function showTrends() {
-	//console.log(e);
-		Alloy.createController("trend").getView().open();
-	//var trendTab = $.TabGroup.setActiveTab(1); 
-	//trendTab.open();
-	}
+	Alloy.createController("trend").getView().open();
+}
 
 function showLooks() {
-
-	//console.log(e);
-	//alert('situationId: '+situationId);
-		Alloy.createController("look").getView().open();
-	//var lookTab = $.TabGroup.setActiveTab(2); 
-	//lookTab.open();
-	}
+	Alloy.createController("look").getView().open();
+}
 	
 function showLooksWithSituation1(){
 	Alloy.Globals.selectedSituationId = 1;
@@ -34,24 +23,21 @@ function showLooksWithSituation1(){
 }
 
 function showLooksWithSituation2(){
-	Alloy.Globals.selectedSituationId = 1;
+	Alloy.Globals.selectedSituationId = 2;
 	Alloy.createController("look").getView().open();
 }
 
 function showLooksWithSituation3(){
-	Alloy.Globals.selectedSituationId = 1;
+	Alloy.Globals.selectedSituationId = 3;
 	Alloy.createController("look").getView().open();
 }
 
 function showLooksWithSituation4(){
-	Alloy.Globals.selectedSituationId = 1;
+	Alloy.Globals.selectedSituationId = 4;
 	Alloy.createController("look").getView().open();
 }
 
-function showLooksWithSituationRdm(){
-	Alloy.Globals.selectedSituationId = 1;
-	Alloy.createController("look").getView().open();
-}
+
 function showAlarm() {
 	//console.log(e);
 		Alloy.createController("alarm").getView().open();

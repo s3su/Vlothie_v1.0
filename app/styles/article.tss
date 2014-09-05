@@ -107,7 +107,7 @@
 	font: {fontSize: 16, fontFamily: 'AmericanTypewriter'},
 	}
 	
-".articleInfo":{
+"#articleInfoText":{
 	width: 300,
 	left: 10,
 	bottom: 10,

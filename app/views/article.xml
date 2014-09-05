@@ -37,7 +37,7 @@
 	
 	    <View id="articleInfo">
 	            <Label id="articleTitle" class="articleTitle">Article title</Label>
-	            <Label id="articleInfo" class="articleInfo"></Label>
+	            <Label id="articleInfoText">Article desct</Label>
  	    </View>
 	
 	</ScrollView>

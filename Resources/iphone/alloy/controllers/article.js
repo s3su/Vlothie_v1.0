@@ -147,7 +147,7 @@ function Controller() {
         id: "articleTitle"
     });
     $.__views.articleInfo.add($.__views.articleTitle);
-    $.__views.articleInfo = Ti.UI.createLabel({
+    $.__views.articleInfoText = Ti.UI.createLabel({
         color: "black",
         width: 300,
         left: 10,
@@ -156,17 +156,15 @@ function Controller() {
             fontSize: 14,
             fontFamily: "AmericanTypewriter"
         },
-        layout: "vertical",
-        top: "20dp",
-        backgroundColor: "transparent",
-        id: "articleInfo"
+        text: "Article desct",
+        id: "articleInfoText"
     });
-    $.__views.articleInfo.add($.__views.articleInfo);
+    $.__views.articleInfo.add($.__views.articleInfoText);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["photo"];
     $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["name"];
-    $.articleInfo.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["description"];
+    $.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["description"];
     __defers["$.__views.__alloyId5!click!closeArticle"] && $.__views.__alloyId5.addEventListener("click", closeArticle);
     _.extend($, exports);
 }

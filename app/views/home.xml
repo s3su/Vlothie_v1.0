@@ -44,7 +44,7 @@
 				  		</View>
 				    
 				    	<View class="yourLooksEachE"> 	
-				     	    	 <Label onClick="showLooksWithSituationRdm" class="sectionTitleViolet">MORE  ; )</Label>
+				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">MORE  ; )</Label>
 				  		</View>
 				    </View>
 				</ScrollView>

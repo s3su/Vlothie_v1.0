@@ -18,4 +18,4 @@ function closeArticle() {
 //SET DATA IN VIWE
 $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['photo'];
 $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['name'];
-$.articleInfo.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['description'];
+$.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['description'];

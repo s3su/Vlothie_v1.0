@@ -13,19 +13,15 @@ function Controller() {
         Alloy.createController("look").getView().open();
     }
     function showLooksWithSituation2() {
-        Alloy.Globals.selectedSituationId = 1;
+        Alloy.Globals.selectedSituationId = 2;
         Alloy.createController("look").getView().open();
     }
     function showLooksWithSituation3() {
-        Alloy.Globals.selectedSituationId = 1;
+        Alloy.Globals.selectedSituationId = 3;
         Alloy.createController("look").getView().open();
     }
     function showLooksWithSituation4() {
-        Alloy.Globals.selectedSituationId = 1;
-        Alloy.createController("look").getView().open();
-    }
-    function showLooksWithSituationRdm() {
-        Alloy.Globals.selectedSituationId = 1;
+        Alloy.Globals.selectedSituationId = 4;
         Alloy.createController("look").getView().open();
     }
     function showAlarm() {
@@ -279,7 +275,7 @@ function Controller() {
         id: "__alloyId25"
     });
     $.__views.__alloyId24.add($.__views.__alloyId25);
-    showLooksWithSituationRdm ? $.__views.__alloyId25.addEventListener("click", showLooksWithSituationRdm) : __defers["$.__views.__alloyId25!click!showLooksWithSituationRdm"] = true;
+    showLooks ? $.__views.__alloyId25.addEventListener("click", showLooks) : __defers["$.__views.__alloyId25!click!showLooks"] = true;
     $.__views.menuHome = Ti.UI.createView({
         height: "58dp",
         width: "100%",
@@ -329,7 +325,7 @@ function Controller() {
     __defers["$.__views.__alloyId19!click!showLooksWithSituation2"] && $.__views.__alloyId19.addEventListener("click", showLooksWithSituation2);
     __defers["$.__views.__alloyId21!click!showLooksWithSituation3"] && $.__views.__alloyId21.addEventListener("click", showLooksWithSituation3);
     __defers["$.__views.__alloyId23!click!showLooksWithSituation4"] && $.__views.__alloyId23.addEventListener("click", showLooksWithSituation4);
-    __defers["$.__views.__alloyId25!click!showLooksWithSituationRdm"] && $.__views.__alloyId25.addEventListener("click", showLooksWithSituationRdm);
+    __defers["$.__views.__alloyId25!click!showLooks"] && $.__views.__alloyId25.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId26!click!showHome"] && $.__views.__alloyId26.addEventListener("click", showHome);
     __defers["$.__views.__alloyId27!click!showTrends"] && $.__views.__alloyId27.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId28!click!showLooks"] && $.__views.__alloyId28.addEventListener("click", showLooks);
