@@ -36,8 +36,13 @@
 	    </View>
 	
 	    <View id="articleInfo">
+<<<<<<< HEAD
 	            <Label id="articleTitle" class="articleTitle">Article title</Label>
 	            <Label id="articleInfoText">Article desct</Label>
+=======
+	            <Label class="articleTitle">Article title</Label>
+	            <Label id="articleInfoText">asdfasdf</Label>
+>>>>>>> FETCH_HEAD
  	    </View>
 	
 	</ScrollView>

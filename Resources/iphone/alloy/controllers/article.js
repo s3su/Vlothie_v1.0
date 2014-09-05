@@ -146,7 +146,11 @@ function Controller() {
         text: "Article title",
         id: "articleTitle"
     });
+<<<<<<< HEAD
     $.__views.articleInfo.add($.__views.articleTitle);
+=======
+    $.__views.articleInfo.add($.__views.__alloyId15);
+>>>>>>> FETCH_HEAD
     $.__views.articleInfoText = Ti.UI.createLabel({
         color: "black",
         width: 300,
@@ -156,7 +160,11 @@ function Controller() {
             fontSize: 14,
             fontFamily: "AmericanTypewriter"
         },
+<<<<<<< HEAD
         text: "Article desct",
+=======
+        text: "asdfasdf",
+>>>>>>> FETCH_HEAD
         id: "articleInfoText"
     });
     $.__views.articleInfo.add($.__views.articleInfoText);
