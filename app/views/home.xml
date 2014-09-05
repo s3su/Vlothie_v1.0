@@ -7,15 +7,15 @@
   			
   				    <View id="hello">
 				        <View id="helloLeft">
-					  	  <Label class="weatherTextTemp"></Label>
+					  	  <Label id="weatherId" class="weatherTextTemp"></Label>
 					   </View>
 					   
 					   <View id="helloMid"></View>
 					   
 					   <View id="helloRight">
 					   
-					  	  <Label class="weatherTextBold">Good morning! Be beautiful</Label>
-					      <Label class="weatherText">Today wear neutral colors</Label>
+					  	  <Label id="greetingTimePhrase" class="weatherTextBold">Good morning! Be beautiful</Label>
+					      <Label id ="greetingDayPhrase" class="weatherText">Today wear neutral colors</Label>
 				
 					    </View>
 					 </View>
@@ -28,23 +28,23 @@
 				     <View id="yourLooks" >
   
 				    	<View class="yourLooksEachA">
-				     	 		<Label onClick="showLooks" class="sectionTitleWhite">THAT MEETING</Label>
+				     	 		<Label onClick="showLooksWithSituation1" class="sectionTitleWhite">THAT MEETING</Label>
 				       </View>
 				   	
 				   		<View class="yourLooksEachB">
-				     	   		 <Label onClick="showLooks" class="sectionTitleViolet">SPORTY YOU</Label> 
+				     	   		 <Label onClick="showLooksWithSituation2" class="sectionTitleViolet">SPORTY YOU</Label> 
 					    </View>
 				   	
 				   		<View class="yourLooksEachC"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">A CASUAL DAY</Label>
+				     	    	 <Label onClick="showLooksWithSituation3" class="sectionTitleViolet">A CASUAL DAY</Label>
 				  		</View>
 				    
 				    	<View class="yourLooksEachD"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">YOUR LOOK FOR THE NIGHT</Label>
+				     	    	 <Label onClick="showLooksWithSituation4" class="sectionTitleViolet">YOUR LOOK FOR THE NIGHT</Label>
 				  		</View>
 				    
 				    	<View class="yourLooksEachE"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">MORE  ; )</Label>
+				     	    	 <Label onClick="showLooksWithSituationRdm" class="sectionTitleViolet">MORE  ; )</Label>
 				  		</View>
 				    </View>
 				</ScrollView>

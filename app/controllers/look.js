@@ -51,6 +51,7 @@ for(var articleId in Alloy.Globals.articlesArray) {
 	
 }
 
+setInitialLook();
 //alert(Alloy.Globals.dump(articleTop));
 		
 		
@@ -75,6 +76,10 @@ articleShoes[2] = '/images/article/shoes.png';
 
 // handle the swipe event -- change the liner notes 
 // to a random member of the notes array
+
+
+
+
 $.articleTop.addEventListener('swipe',function(){
 	topId = selectTopId();
 	//alert('topId: '+topId);
@@ -113,13 +118,13 @@ function showArticleTop() {
 
 function showArticleBottom() {
 	//console.log(e);
-	Alloy.Globals.sectedArticleId = articleBottom[topId]['articleId'];
+	Alloy.Globals.sectedArticleId = articleBottom[bottomId]['articleId'];
 	Alloy.createController("article").getView().open();
 }
 
 function showArticleShoes() {
 	//console.log(e);
-	Alloy.Globals.sectedArticleId = articleShoes[topId]['articleId'];
+	Alloy.Globals.sectedArticleId = articleShoes[shoesId]['articleId'];
 	Alloy.createController("article").getView().open();
 }
 function showHome() {
@@ -187,4 +192,55 @@ function selectShoesId(){
 		shoesId = 0;
 	}
 	return shoesId;
+}
+
+//--------------set INITIAL LOOK
+function setInitialLook(){
+	//alert('setInitialLook');
+	if(Alloy.Globals.selectedSituationId > 0){
+		topId =  '';
+		for(var articleId in Alloy.Globals.articlesArray) {
+			if(Alloy.Globals.articlesArray[articleId]['categoryId'] == 1 && Alloy.Globals.articlesArray[articleId]['situationId'] == Alloy.Globals.selectedSituationId){
+				topId =  articleId;
+				break;
+			}
+		}
+		if(topId == 0){
+			topId = selectTopId();
+		}
+		bottomId = selectBottomId();
+		shoesId = selectShoesId();
+		
+		Alloy.Globals.selectedSituationId = 0;
+		setImages();
+	}else if(Alloy.Globals.isSetInitialLook == 0){
+		topId = selectTopId();
+		bottomId = selectBottomId();
+		shoesId = selectShoesId();
+		Alloy.Globals.isSetInitialLook = 1;
+		setImages();
+	}
+//TOP
+}
+
+function setImages(){
+animation.flipHorizontal($.articleTop,$.articleTop, 500);
+var imagePath = articleTop[topId]['photo'];
+$.articleTopImg.image = imagePath;
+animation.flipHorizontal($.articleTop,$.articleTop, 500);
+
+//BOTTOM
+
+animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+var imagePath = articleBottom[bottomId]['photo'];
+$.articleBottomImg.image = imagePath;
+animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	
+//SHOES
+
+animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+var imagePath = articleShoes[shoesId]['photo'];
+$.articleShoesImg.image = imagePath;
+animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+
 }

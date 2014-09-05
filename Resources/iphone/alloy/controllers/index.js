@@ -1,23 +1,12 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     function goToHome() {
         Alloy.createController("home").getView().open();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
@@ -30,10 +19,10 @@ function Controller() {
         title: "Vlothie"
     });
     $.__views.landingWin && $.addTopLevelView($.__views.landingWin);
-    $.__views.__alloyId37 = Ti.UI.createView({
-        id: "__alloyId37"
+    $.__views.__alloyId30 = Ti.UI.createView({
+        id: "__alloyId30"
     });
-    $.__views.landingWin.add($.__views.__alloyId37);
+    $.__views.landingWin.add($.__views.__alloyId30);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -43,12 +32,12 @@ function Controller() {
         text: "Vlothie",
         id: "title"
     });
-    $.__views.__alloyId37.add($.__views.title);
-    $.__views.__alloyId38 = Ti.UI.createView({
-        id: "__alloyId38"
+    $.__views.__alloyId30.add($.__views.title);
+    $.__views.__alloyId31 = Ti.UI.createView({
+        id: "__alloyId31"
     });
-    $.__views.landingWin.add($.__views.__alloyId38);
-    goToHome ? $.__views.__alloyId38.addEventListener("click", goToHome) : __defers["$.__views.__alloyId38!click!goToHome"] = true;
+    $.__views.landingWin.add($.__views.__alloyId31);
+    goToHome ? $.__views.__alloyId31.addEventListener("click", goToHome) : __defers["$.__views.__alloyId31!click!goToHome"] = true;
     $.__views.landingImage = Ti.UI.createImageView({
         height: Ti.UI.FILL,
         width: Ti.UI.FILL,
@@ -57,11 +46,11 @@ function Controller() {
         touchEnabled: true,
         id: "landingImage"
     });
-    $.__views.__alloyId38.add($.__views.landingImage);
+    $.__views.__alloyId31.add($.__views.landingImage);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.landingWin.open();
-    __defers["$.__views.__alloyId38!click!goToHome"] && $.__views.__alloyId38.addEventListener("click", goToHome);
+    __defers["$.__views.__alloyId31!click!goToHome"] && $.__views.__alloyId31.addEventListener("click", goToHome);
     _.extend($, exports);
 }
 

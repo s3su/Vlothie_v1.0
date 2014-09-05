@@ -1,6 +1,7 @@
 // .. INCLUDES
 require('includes/functions');
 require('includes/getArticlesData');
+require('includes/getHomeData');
 
 //create collections
 var articleCategoriesCollection = Alloy.createCollection("ArticleCategories");
@@ -18,6 +19,8 @@ var patternsCollection = Alloy.createCollection("Patterns");
 //var stylesCollection = Alloy.createCollection("Styles");
 
 Alloy.Globals.sectedArticleId = 0;
+Alloy.Globals.isSetInitialLook = 0;
+Alloy.Globals.selectedSituationId = 0;
 
 
 var getFIXData = true;

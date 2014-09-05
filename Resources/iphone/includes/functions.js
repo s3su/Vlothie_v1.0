@@ -16,15 +16,18 @@ Alloy.Globals.dump = function(arr, level) {
 };
 
 Alloy.Globals.getJsonData = function(jsonURL) {
+    var defaultData = "";
     var xhr = Titanium.Network.createHTTPClient();
-    xhr.onload = function() {
+    defaultData = xhr.onload = function() {
         Ti.API.info("got data from the network: " + this.responseText);
-        var defaultData = JSON.parse(this.responseText);
-        return defaultData;
+        defaultData = JSON.parse(this.responseText);
     };
     xhr.open("GET", jsonURL);
     xhr.send();
-    return xhr.onload;
+    xhr.getResponseText();
+    alert(defaultData);
+    Ti.API.info("return got data from the network: " + xhr.responseText);
+    return xhr.responseText;
 };
 
 Alloy.Globals.clearCollectionData = function() {};

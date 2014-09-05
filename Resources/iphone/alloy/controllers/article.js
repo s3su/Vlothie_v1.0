@@ -1,23 +1,12 @@
-function __processArg(obj, key) {
-    var arg = null;
-    if (obj) {
-        arg = obj[key] || null;
-        delete obj[key];
-    }
-    return arg;
-}
-
 function Controller() {
     function closeArticle() {
         $.articleWindow.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "article";
-    if (arguments[0]) {
-        __processArg(arguments[0], "__parentSymbol");
-        __processArg(arguments[0], "$model");
-        __processArg(arguments[0], "__itemTemplate");
-    }
+    arguments[0] ? arguments[0]["__parentSymbol"] : null;
+    arguments[0] ? arguments[0]["$model"] : null;
+    arguments[0] ? arguments[0]["__itemTemplate"] : null;
     var $ = this;
     var exports = {};
     var __defers = {};
@@ -147,7 +136,7 @@ function Controller() {
         id: "articleInfo"
     });
     $.__views.articleContent.add($.__views.articleInfo);
-    $.__views.__alloyId15 = Ti.UI.createLabel({
+    $.__views.articleTitle = Ti.UI.createLabel({
         color: "black",
         left: "4dp",
         font: {
@@ -155,10 +144,10 @@ function Controller() {
             fontFamily: "AmericanTypewriter"
         },
         text: "Article title",
-        id: "__alloyId15"
+        id: "articleTitle"
     });
-    $.__views.articleInfo.add($.__views.__alloyId15);
-    $.__views.__alloyId16 = Ti.UI.createLabel({
+    $.__views.articleInfo.add($.__views.articleTitle);
+    $.__views.articleInfo = Ti.UI.createLabel({
         color: "black",
         width: 300,
         left: 10,
@@ -167,22 +156,17 @@ function Controller() {
             fontSize: 14,
             fontFamily: "AmericanTypewriter"
         },
-<<<<<<< HEAD
-<<<<<<< HEAD
-        id: "__alloyId18"
-=======
-        text: "Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970. Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970.",
-        id: "__alloyId16"
->>>>>>> FETCH_HEAD
-=======
-        text: "Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970. Together Through Life is the 33rd studio album by Bob Dylan, released on April 28, 2009, on Columbia Records. The album debuted at number one in several countries, including the U.S. and the UK. It is Dylan's first number one in Britain since New Morning in 1970.",
-        id: "__alloyId16"
->>>>>>> cb2ba03eccb03cd6d12538e9536ee06c7021dad2
+        layout: "vertical",
+        top: "20dp",
+        backgroundColor: "transparent",
+        id: "articleInfo"
     });
-    $.__views.articleInfo.add($.__views.__alloyId16);
+    $.__views.articleInfo.add($.__views.articleInfo);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    alert("articleId: " + Alloy.Globals.sectedArticleId + " -- data: " + Alloy.Globals.dump(Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]));
+    $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["photo"];
+    $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["name"];
+    $.articleInfo.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["description"];
     __defers["$.__views.__alloyId5!click!closeArticle"] && $.__views.__alloyId5.addEventListener("click", closeArticle);
     _.extend($, exports);
 }

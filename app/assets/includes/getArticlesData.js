@@ -31,5 +31,3 @@ xhr.onload = function() {
 
 xhr.open("GET",jsonURL);
 xhr.send();
-
-

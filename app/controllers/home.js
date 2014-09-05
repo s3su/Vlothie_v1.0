@@ -1,3 +1,10 @@
+
+
+//alert(Alloy.Globals.dump(Alloy.Globals.homeDataArray));
+$.greetingTimePhrase.setText(Alloy.Globals.homeDataArray['greetingTimePhrase']);
+$.greetingDayPhrase.setText(Alloy.Globals.homeDataArray['greetingDayPhrase']);
+$.weatherId.setText(Alloy.Globals.homeDataArray['weatherId']);
+
 function showHome() {
 	//console.log(e);
 		Alloy.createController("home").getView().open();
@@ -15,11 +22,36 @@ function showTrends() {
 function showLooks() {
 
 	//console.log(e);
+	//alert('situationId: '+situationId);
 		Alloy.createController("look").getView().open();
 	//var lookTab = $.TabGroup.setActiveTab(2); 
 	//lookTab.open();
 	}
 	
+function showLooksWithSituation1(){
+	Alloy.Globals.selectedSituationId = 1;
+	Alloy.createController("look").getView().open();
+}
+
+function showLooksWithSituation2(){
+	Alloy.Globals.selectedSituationId = 1;
+	Alloy.createController("look").getView().open();
+}
+
+function showLooksWithSituation3(){
+	Alloy.Globals.selectedSituationId = 1;
+	Alloy.createController("look").getView().open();
+}
+
+function showLooksWithSituation4(){
+	Alloy.Globals.selectedSituationId = 1;
+	Alloy.createController("look").getView().open();
+}
+
+function showLooksWithSituationRdm(){
+	Alloy.Globals.selectedSituationId = 1;
+	Alloy.createController("look").getView().open();
+}
 function showAlarm() {
 	//console.log(e);
 		Alloy.createController("alarm").getView().open();
@@ -36,60 +68,8 @@ function showSettings() {
 
 
 
-Ti.API.info('seeded: ' + Ti.App.Properties.hasProperty('seeded'));
 
 
-
-//var article1 = Alloy.createModel('Articles', { title: 'juan'});
-//article1.save();
-
-//var db = Ti.Database.open('myDB');
-//alert(db.close());
-//alert(db.remove());
-
-/*
-//determine if the database needs to be seeded
-if (!Ti.App.Properties.hasProperty('seeded')) {
-
-	// Use the HTTPClient object to send a GET request to 
-	// http://bountyhunterapp.appspot.com/bounties and process the returned data.
-	// It returns an array of objects in the form [{name: 'Jeff Haynie'}, ...]
-	var xhr = Titanium.Network.createHTTPClient();
-	xhr.onload = function() {
-		Ti.API.info('got data from the network: ' + this.responseText);
-		var articles = JSON.parse(this.responseText);
-		alert(dump(articles));
-		
-		
-		for(var i=0,j=articles.length;i<j;i++) {
-			var eachArticle = Alloy.createModel('Articles', { 
-				name: articles[i].name,
-				articleId: articles[i].DBId,
-				mainPhoto: articles[i].photo 
-				});
-			//eachArticle.save();
-		}
-		// set our app property so this code doesn't run next time
-	    Ti.App.Properties.setString('seeded', 'yuppers');
-		// force tables to update
-		Alloy.Collections.Articles.fetch();
-		
-		
-	};
-	xhr.open("GET","http://be.vlothie.com/json/getArticles.php");
-	xhr.send();
-	
-    
-/*
-} else {
-
-   
-
-}
-*/
-
-// force tables to update
-//articleCollection.fetch();
 
 if(OS_ANDROID) {
     // Add the app's name to the Android action bar
@@ -101,36 +81,3 @@ if(OS_ANDROID) {
         }
     });
 }
-
-	//console.log(e);
-		
-	//var settingTab = $.TabGroup.setActiveTab(4); 
-	//settingTab.open();
-
-function dump (arr,level) {
-        var dumped_text = "";
-	if(!level) level = 0;
-	
-	//The padding given at the beginning of the line.
-	var level_padding = "";
-	for(var j=0;j<level+1;j++) level_padding += "    ";
-	
-	if(typeof(arr) == 'object') { //Array/Hashes/Objects 
-		for(var item in arr) {
-			var value = arr[item];
-			
-			if(typeof(value) == 'object') { //If it is an array,
-				dumped_text += level_padding + "'" + item + "' ...\n";
-				dumped_text += dump(value,level+1);
-			} else {
-				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-			}
-		}
-	} else { //Stings/Chars/Numbers etc.
-		dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
-	}
-	return dumped_text;
-   }
-    
-    
-//alert(Alloy.Globals.dump(Alloy.Globals.articlesArray));
