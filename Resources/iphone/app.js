@@ -6,6 +6,8 @@ require("includes/getArticlesData");
 
 require("includes/getHomeData");
 
+require("includes/setArticlesData");
+
 Alloy.Globals.sectedArticleId = 0;
 
 Alloy.Globals.isSetLook = 0;

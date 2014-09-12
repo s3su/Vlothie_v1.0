@@ -19,10 +19,10 @@ function Controller() {
         title: "Vlothie"
     });
     $.__views.landingWin && $.addTopLevelView($.__views.landingWin);
-    $.__views.__alloyId30 = Ti.UI.createView({
-        id: "__alloyId30"
+    $.__views.__alloyId25 = Ti.UI.createView({
+        id: "__alloyId25"
     });
-    $.__views.landingWin.add($.__views.__alloyId30);
+    $.__views.landingWin.add($.__views.__alloyId25);
     $.__views.title = Ti.UI.createLabel({
         color: "#652F8D",
         font: {
@@ -32,12 +32,12 @@ function Controller() {
         text: "Vlothie",
         id: "title"
     });
-    $.__views.__alloyId30.add($.__views.title);
-    $.__views.__alloyId31 = Ti.UI.createView({
-        id: "__alloyId31"
+    $.__views.__alloyId25.add($.__views.title);
+    $.__views.__alloyId26 = Ti.UI.createView({
+        id: "__alloyId26"
     });
-    $.__views.landingWin.add($.__views.__alloyId31);
-    goToHome ? $.__views.__alloyId31.addEventListener("click", goToHome) : __defers["$.__views.__alloyId31!click!goToHome"] = true;
+    $.__views.landingWin.add($.__views.__alloyId26);
+    goToHome ? $.__views.__alloyId26.addEventListener("click", goToHome) : __defers["$.__views.__alloyId26!click!goToHome"] = true;
     $.__views.landingImage = Ti.UI.createImageView({
         height: Ti.UI.FILL,
         width: Ti.UI.FILL,
@@ -46,11 +46,11 @@ function Controller() {
         touchEnabled: true,
         id: "landingImage"
     });
-    $.__views.__alloyId31.add($.__views.landingImage);
+    $.__views.__alloyId26.add($.__views.landingImage);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.landingWin.open();
-    __defers["$.__views.__alloyId31!click!goToHome"] && $.__views.__alloyId31.addEventListener("click", goToHome);
+    __defers["$.__views.__alloyId26!click!goToHome"] && $.__views.__alloyId26.addEventListener("click", goToHome);
     _.extend($, exports);
 }
 

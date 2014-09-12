@@ -38,9 +38,9 @@ function showLooksWithSituation4(){
 }
 
 
-function showAlarm() {
+function showWebBrowser() {
 	//console.log(e);
-		Alloy.createController("alarm").getView().open();
+		Alloy.createController("webBrowser").getView().open();
 	//var alarmTab = $.TabGroup.setActiveTab(3); 
 	//alarmTab.open();
 	}
