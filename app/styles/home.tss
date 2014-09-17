@@ -165,26 +165,25 @@
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",
 	tintColor: "#fff",
-	left: "50dp"}	
+	left: "30dp"}	
 
 ".trendButtonMenuHome": {
 	image: "/images/home/v-trend.png",
 	tintColor: "#fff",
-	left: "106dp"}	
+	left: "86dp"}	
 
 ".lookButtonMenuHome": {
 	image: "/images/home/v-look.png",
 	tintColor: "#fff",
-	left: "165dp"}	
+	left: "140dp"}	
 
 ".alarmButtonMenuHome": {
 	image: "/images/home/v-alarm.png",
 	tintColor: "#fff",
-	left: "230dp"}	
+	left: "195dp"}	
 
 ".settingsButtonMenuHome": {
 	image: "/images/home/v-setting.png",
 	tintColor: "#fff",
 	left: "250dp"}	
-
 

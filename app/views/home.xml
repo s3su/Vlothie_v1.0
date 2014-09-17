@@ -54,7 +54,8 @@
 				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
 				 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
-					</View>
+				 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+			</View>
 			 
 			  </Window>
    
