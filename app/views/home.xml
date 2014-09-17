@@ -53,9 +53,14 @@
 				 	  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
+<<<<<<< HEAD
 				 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
 				 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
 			</View>
+=======
+				 	  <Button class="alarmButtonMenuHome" onClick="showWebBrowser"></Button>
+					</View>
+>>>>>>> FETCH_HEAD
 			 
 			  </Window>
    

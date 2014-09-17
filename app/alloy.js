@@ -2,6 +2,7 @@
 require('includes/functions');
 require('includes/getArticlesData');
 require('includes/getHomeData');
+require('includes/setArticlesData');
 
 
 

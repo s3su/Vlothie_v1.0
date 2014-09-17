@@ -8,6 +8,10 @@ var articleTopCount = 0;
 var articleBottomCount = 0;
 var articleShoesCount = 0;
 
+Alloy.Globals.lookTopId = -1;
+Alloy.Globals.lookBottomId = -1;
+Alloy.Globals.lookShoesId = -1;
+
 
 //alert(Alloy.Globals.dump(Alloy.Globals.articlesArray));
 
@@ -63,29 +67,45 @@ for(var articleId in Alloy.Globals.articlesArray) {
 	
 }
 
+
 setInitialLook();
 
 
 
 
-$.articleTop.addEventListener('swipe',function(){
-	Alloy.Globals.lookTopId = selectTopId();
+$.articleTop.addEventListener('swipe',function(e){
+	if (e.direction == 'right') {
+      	Alloy.Globals.lookTopId = selectTopId('right');
+   	} else if (e.direction == 'left') {
+      	Alloy.Globals.lookTopId = selectTopId();
+   	}
+	
 	animation.flipHorizontal($.articleTop,$.articleTop, 500);
 	var imagePath = articleTop[Alloy.Globals.lookTopId]['photo'];
 	$.articleTopImg.image = imagePath;
 	animation.flipHorizontal($.articleTop,$.articleTop, 500);
 });
 
-$.articleBottom.addEventListener('swipe',function(){
-	Alloy.Globals.lookBottomId = selectBottomId();
+$.articleBottom.addEventListener('swipe',function(e){
+	if (e.direction == 'right') {
+      	Alloy.Globals.lookBottomId = selectBottomId('right');
+   	} else if (e.direction == 'left') {
+      	Alloy.Globals.lookTopId = selectBottomId();
+   	}
+	
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
 	var imagePath = articleBottom[Alloy.Globals.lookBottomId]['photo'];
 	$.articleBottomImg.image = imagePath;
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
 });
 
-$.articleShoes.addEventListener('swipe',function(){
-	Alloy.Globals.lookShoesId = selectShoesId();
+$.articleShoes.addEventListener('swipe',function(e){
+	if (e.direction == 'right') {
+      	Alloy.Globals.lookShoesId = selectShoesId('right');
+   	} else if (e.direction == 'left') {
+    	Alloy.Globals.lookShoesId = selectShoesId();
+   	}
+	
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
 	var imagePath = articleShoes[Alloy.Globals.lookShoesId]['photo'];
 	$.articleShoesImg.image = imagePath;
@@ -131,30 +151,54 @@ function showSettings() {
 	Alloy.createController("settings").getView().open();
 }
 	
-function selectTopId(){
+function selectTopId(direction){
 	//alert('select top id prev: '+topId+' with length: '+articleTop.length);
-	if((Alloy.Globals.lookTopId+1) < articleTop.length){
-		Alloy.Globals.lookTopId++;
+	if(direction == 'right'){
+		if((Alloy.Globals.lookTopId-1) >= 0){
+			Alloy.Globals.lookTopId--;
+		}else{
+			Alloy.Globals.lookTopId = articleTop.length-1;
+		}
 	}else{
-		Alloy.Globals.lookTopId = 0;
+		if((Alloy.Globals.lookTopId+1) < articleTop.length){
+			Alloy.Globals.lookTopId++;
+		}else{
+			Alloy.Globals.lookTopId = 0;
+		}
 	}
 	return Alloy.Globals.lookTopId;
 }
 
-function selectBottomId(){
-	if((Alloy.Globals.lookBottomId+1) < articleBottom.length){
-		Alloy.Globals.lookBottomId++;
+function selectBottomId(direction){
+	if(direction == 'right'){
+		if((Alloy.Globals.lookBottomId-1) >= 0){
+			Alloy.Globals.lookBottomId--;
+		}else{
+			Alloy.Globals.lookBottomId = articleBottom.length-1;
+		}
 	}else{
-		Alloy.Globals.lookBottomId = 0;
+		if((Alloy.Globals.lookBottomId+1) < articleBottom.length){
+			Alloy.Globals.lookBottomId++;
+		}else{
+			Alloy.Globals.lookBottomId = 0;
+		}
 	}
 	return Alloy.Globals.lookBottomId;
 }
 
-function selectShoesId(){
-	if((Alloy.Globals.lookShoesId+1) < articleShoes.length){
-		Alloy.Globals.lookShoesId++;
+function selectShoesId(direction){
+	if(direction == 'right'){
+		if((Alloy.Globals.lookShoesId-1) >= 0){
+			Alloy.Globals.lookShoesId--;
+		}else{
+			Alloy.Globals.lookShoesId = articleShoes.length-1;
+		}
 	}else{
-		Alloy.Globals.lookShoesId = 0;
+		if((Alloy.Globals.lookShoesId+1) < articleShoes.length){
+			Alloy.Globals.lookShoesId++;
+		}else{
+			Alloy.Globals.lookShoesId = 0;
+		}
 	}
 	return Alloy.Globals.lookShoesId;
 }
@@ -163,14 +207,18 @@ function selectShoesId(){
 function setInitialLook(){
 	//alert('setInitialLook');
 	if(Alloy.Globals.selectedSituationId > 0){
+		//alert('Look with situationId: '+Alloy.Globals.selectedSituationId);
 		for(var topId in articleTop) {
+			//Ti.API.info('!!articleTop[topId][situationId]: '+articleTop[topId]['situationId']);
 			if(articleTop[topId]['situationId'] == Alloy.Globals.selectedSituationId){
 				Alloy.Globals.lookTopId =  topId;
 				break;
 			}
 		}
-		if(Alloy.Globals.lookTopId == 0){
+		//Ti.API.info('!!Alloy.Globals.lookTopId: '+Alloy.Globals.lookTopId);
+		if(Alloy.Globals.lookTopId < 0){
 			Alloy.Globals.lookTopId = selectTopId();
+			//Ti.API.info('!!article top setted random');
 		}
 		
 		for(var bottomId in articleBottom) {
@@ -179,7 +227,7 @@ function setInitialLook(){
 				break;
 			}
 		}
-		if(Alloy.Globals.lookBottomId == 0){
+		if(Alloy.Globals.lookBottomId < 0){
 			Alloy.Globals.lookBottomId = selectBottomId();
 		}
 		
@@ -190,7 +238,7 @@ function setInitialLook(){
 				break;
 			}
 		}
-		if(Alloy.Globals.lookShoesId == 0){
+		if(Alloy.Globals.lookShoesId < 0){
 			Alloy.Globals.lookShoesId = selectShoesId();
 		}
 		
