@@ -17,6 +17,6 @@ function closeArticle() {
 //alert("articleId: "+Alloy.Globals.sectedArticleId+" -- data: "+Alloy.Globals.dump(Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]));
 
 //SET DATA IN VIWE
-$.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['photo'];
-$.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['name'];
+$.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['articlePhotoArt'];
+$.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['title'];
 $.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['description'];

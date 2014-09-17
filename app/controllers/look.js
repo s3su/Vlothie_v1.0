@@ -22,12 +22,12 @@ for(var articleId in Alloy.Globals.articlesArray) {
 		case "1":
 			articleTop[articleTopCount] = [];
 			articleTop[articleTopCount]['articleId'] = articleId;
-			articleTop[articleTopCount]['photo'] = Alloy.Globals.articlesArray[articleId]['photo'];
-			articleTop[articleTopCount]['name'] = Alloy.Globals.articlesArray[articleId]['name'];
+			articleTop[articleTopCount]['articlePhotoLook'] = Alloy.Globals.articlesArray[articleId]['articlePhotoLook'];
+			articleTop[articleTopCount]['title'] = Alloy.Globals.articlesArray[articleId]['title'];
 			articleTop[articleTopCount]['subcategoryId'] = Alloy.Globals.articlesArray[articleId]['subcategoryId'];
 			articleTop[articleTopCount]['subcategoryName'] = Alloy.Globals.articlesArray[articleId]['subcategoryName'];
 			articleTop[articleTopCount]['situationId'] = Alloy.Globals.articlesArray[articleId]['situationId'];
-			articleTop[articleTopCount]['link'] = Alloy.Globals.articlesArray[articleId]['link'];
+			articleTop[articleTopCount]['articleLink'] = Alloy.Globals.articlesArray[articleId]['articleLink'];
 			articleTop[articleTopCount]['wearIt'] = Alloy.Globals.articlesArray[articleId]['wearIt'];
 			articleTop[articleTopCount]['clicks'] = Alloy.Globals.articlesArray[articleId]['clicks'];
 			articleTop[articleTopCount]['description'] = Alloy.Globals.articlesArray[articleId]['description'];
@@ -37,12 +37,12 @@ for(var articleId in Alloy.Globals.articlesArray) {
 		case "2":
 			articleBottom[articleBottomCount] = [];
 			articleBottom[articleBottomCount]['articleId'] = articleId;
-			articleBottom[articleBottomCount]['photo'] = Alloy.Globals.articlesArray[articleId]['photo'];
-			articleBottom[articleBottomCount]['name'] = Alloy.Globals.articlesArray[articleId]['name'];
+			articleBottom[articleBottomCount]['articlePhotoLook'] = Alloy.Globals.articlesArray[articleId]['articlePhotoLook'];
+			articleBottom[articleBottomCount]['title'] = Alloy.Globals.articlesArray[articleId]['title'];
 			articleBottom[articleBottomCount]['subcategoryId'] = Alloy.Globals.articlesArray[articleId]['subcategoryId'];
 			articleBottom[articleBottomCount]['subcategoryName'] = Alloy.Globals.articlesArray[articleId]['subcategoryName'];
 			articleBottom[articleBottomCount]['situationId'] = Alloy.Globals.articlesArray[articleId]['situationId'];
-			articleBottom[articleBottomCount]['link'] = Alloy.Globals.articlesArray[articleId]['link'];
+			articleBottom[articleBottomCount]['articleLink'] = Alloy.Globals.articlesArray[articleId]['articleLink'];
 			articleBottom[articleBottomCount]['wearIt'] = Alloy.Globals.articlesArray[articleId]['wearIt'];
 			articleBottom[articleBottomCount]['clicks'] = Alloy.Globals.articlesArray[articleId]['clicks'];
 			articleBottom[articleBottomCount]['description'] = Alloy.Globals.articlesArray[articleId]['description'];
@@ -52,12 +52,12 @@ for(var articleId in Alloy.Globals.articlesArray) {
 		case "3":
 			articleShoes[articleShoesCount] = [];
 			articleShoes[articleShoesCount]['articleId'] = articleId;
-			articleShoes[articleShoesCount]['photo'] = Alloy.Globals.articlesArray[articleId]['photo'];
-			articleShoes[articleShoesCount]['name'] = Alloy.Globals.articlesArray[articleId]['name'];
+			articleShoes[articleShoesCount]['articlePhotoLook'] = Alloy.Globals.articlesArray[articleId]['articlePhotoLook'];
+			articleShoes[articleShoesCount]['title'] = Alloy.Globals.articlesArray[articleId]['title'];
 			articleShoes[articleShoesCount]['subcategoryId'] = Alloy.Globals.articlesArray[articleId]['subcategoryId'];
 			articleShoes[articleShoesCount]['subcategoryName'] = Alloy.Globals.articlesArray[articleId]['subcategoryName'];
 			articleShoes[articleShoesCount]['situationId'] = Alloy.Globals.articlesArray[articleId]['situationId'];
-			articleShoes[articleShoesCount]['link'] = Alloy.Globals.articlesArray[articleId]['link'];
+			articleShoes[articleShoesCount]['articleLink'] = Alloy.Globals.articlesArray[articleId]['articleLink'];
 			articleShoes[articleShoesCount]['wearIt'] = Alloy.Globals.articlesArray[articleId]['wearIt'];
 			articleShoes[articleShoesCount]['clicks'] = Alloy.Globals.articlesArray[articleId]['clicks'];
 			articleShoes[articleShoesCount]['description'] = Alloy.Globals.articlesArray[articleId]['description'];
@@ -94,7 +94,7 @@ $.articleBottom.addEventListener('swipe',function(e){
    	}
 	
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
-	var imagePath = articleBottom[Alloy.Globals.lookBottomId]['photo'];
+	var imagePath = articleBottom[Alloy.Globals.lookBottomId]['articlePhotoLook'];
 	$.articleBottomImg.image = imagePath;
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
 });
@@ -253,21 +253,21 @@ function setInitialLook(){
 	}
 	
 	animation.flipHorizontal($.articleTop,$.articleTop, 500);
-	var imagePath = articleTop[Alloy.Globals.lookTopId]['photo'];
+	var imagePath = articleTop[Alloy.Globals.lookTopId]['articlePhotoLook'];
 	$.articleTopImg.image = imagePath;
 	animation.flipHorizontal($.articleTop,$.articleTop, 500);
 	
 	//BOTTOM
 	
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
-	var imagePath = articleBottom[Alloy.Globals.lookBottomId]['photo'];
+	var imagePath = articleBottom[Alloy.Globals.lookBottomId]['articlePhotoLook'];
 	$.articleBottomImg.image = imagePath;
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
 		
 	//SHOES
 	
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
-	var imagePath = articleShoes[Alloy.Globals.lookShoesId]['photo'];
+	var imagePath = articleShoes[Alloy.Globals.lookShoesId]['articlePhotoLook'];
 	$.articleShoesImg.image = imagePath;
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
 	
