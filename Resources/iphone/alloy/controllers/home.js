@@ -301,83 +301,56 @@ function Controller() {
     $.__views.__alloyId21 = Ti.UI.createButton({
         image: "/images/home/v-home.png",
         tintColor: "#fff",
-<<<<<<< HEAD
         left: "30dp",
-        id: "__alloyId26"
-=======
-        left: "50dp",
         id: "__alloyId21"
->>>>>>> FETCH_HEAD
     });
     $.__views.menuHome.add($.__views.__alloyId21);
     showHome ? $.__views.__alloyId21.addEventListener("click", showHome) : __defers["$.__views.__alloyId21!click!showHome"] = true;
     $.__views.__alloyId22 = Ti.UI.createButton({
         image: "/images/home/v-trend.png",
         tintColor: "#fff",
-<<<<<<< HEAD
         left: "86dp",
-        id: "__alloyId27"
-=======
-        left: "106dp",
         id: "__alloyId22"
->>>>>>> FETCH_HEAD
     });
     $.__views.menuHome.add($.__views.__alloyId22);
     showTrends ? $.__views.__alloyId22.addEventListener("click", showTrends) : __defers["$.__views.__alloyId22!click!showTrends"] = true;
     $.__views.__alloyId23 = Ti.UI.createButton({
         image: "/images/home/v-look.png",
         tintColor: "#fff",
-<<<<<<< HEAD
         left: "140dp",
-        id: "__alloyId28"
-=======
-        left: "165dp",
         id: "__alloyId23"
->>>>>>> FETCH_HEAD
     });
     $.__views.menuHome.add($.__views.__alloyId23);
     showLooks ? $.__views.__alloyId23.addEventListener("click", showLooks) : __defers["$.__views.__alloyId23!click!showLooks"] = true;
     $.__views.__alloyId24 = Ti.UI.createButton({
         image: "/images/home/v-alarm.png",
         tintColor: "#fff",
-<<<<<<< HEAD
         left: "195dp",
-        id: "__alloyId29"
-    });
-    $.__views.menuHome.add($.__views.__alloyId29);
-    showAlarm ? $.__views.__alloyId29.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId29!click!showAlarm"] = true;
-    $.__views.__alloyId30 = Ti.UI.createButton({
-        image: "/images/home/v-setting.png",
-        tintColor: "#fff",
-        left: "250dp",
-        id: "__alloyId30"
-    });
-    $.__views.menuHome.add($.__views.__alloyId30);
-    showSettings ? $.__views.__alloyId30.addEventListener("click", showSettings) : __defers["$.__views.__alloyId30!click!showSettings"] = true;
-=======
-        left: "230dp",
         id: "__alloyId24"
     });
     $.__views.menuHome.add($.__views.__alloyId24);
-    showWebBrowser ? $.__views.__alloyId24.addEventListener("click", showWebBrowser) : __defers["$.__views.__alloyId24!click!showWebBrowser"] = true;
->>>>>>> FETCH_HEAD
+    showAlarm ? $.__views.__alloyId24.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId24!click!showAlarm"] = true;
+    $.__views.__alloyId25 = Ti.UI.createButton({
+        image: "/images/home/v-setting.png",
+        tintColor: "#fff",
+        left: "250dp",
+        id: "__alloyId25"
+    });
+    $.__views.menuHome.add($.__views.__alloyId25);
+    showSettings ? $.__views.__alloyId25.addEventListener("click", showSettings) : __defers["$.__views.__alloyId25!click!showSettings"] = true;
+    $.__views.__alloyId26 = Ti.UI.createButton({
+        image: "/images/home/v-alarm.png",
+        tintColor: "#fff",
+        left: "195dp",
+        id: "__alloyId26"
+    });
+    $.__views.menuHome.add($.__views.__alloyId26);
+    showWebBrowser ? $.__views.__alloyId26.addEventListener("click", showWebBrowser) : __defers["$.__views.__alloyId26!click!showWebBrowser"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.greetingTimePhrase.setText(Alloy.Globals.homeDataArray["greetingTimePhrase"]);
     $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray["greetingDayPhrase"]);
     $.weatherId.setText(Alloy.Globals.homeDataArray["weatherId"]);
-<<<<<<< HEAD
-    __defers["$.__views.__alloyId17!click!showLooksWithSituation1"] && $.__views.__alloyId17.addEventListener("click", showLooksWithSituation1);
-    __defers["$.__views.__alloyId19!click!showLooksWithSituation2"] && $.__views.__alloyId19.addEventListener("click", showLooksWithSituation2);
-    __defers["$.__views.__alloyId21!click!showLooksWithSituation3"] && $.__views.__alloyId21.addEventListener("click", showLooksWithSituation3);
-    __defers["$.__views.__alloyId23!click!showLooksWithSituation4"] && $.__views.__alloyId23.addEventListener("click", showLooksWithSituation4);
-    __defers["$.__views.__alloyId25!click!showLooks"] && $.__views.__alloyId25.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId26!click!showHome"] && $.__views.__alloyId26.addEventListener("click", showHome);
-    __defers["$.__views.__alloyId27!click!showTrends"] && $.__views.__alloyId27.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId28!click!showLooks"] && $.__views.__alloyId28.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId29!click!showAlarm"] && $.__views.__alloyId29.addEventListener("click", showAlarm);
-    __defers["$.__views.__alloyId30!click!showSettings"] && $.__views.__alloyId30.addEventListener("click", showSettings);
-=======
     __defers["$.__views.__alloyId12!click!showLooksWithSituation1"] && $.__views.__alloyId12.addEventListener("click", showLooksWithSituation1);
     __defers["$.__views.__alloyId14!click!showLooksWithSituation2"] && $.__views.__alloyId14.addEventListener("click", showLooksWithSituation2);
     __defers["$.__views.__alloyId16!click!showLooksWithSituation3"] && $.__views.__alloyId16.addEventListener("click", showLooksWithSituation3);
@@ -386,8 +359,9 @@ function Controller() {
     __defers["$.__views.__alloyId21!click!showHome"] && $.__views.__alloyId21.addEventListener("click", showHome);
     __defers["$.__views.__alloyId22!click!showTrends"] && $.__views.__alloyId22.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId23!click!showLooks"] && $.__views.__alloyId23.addEventListener("click", showLooks);
-    __defers["$.__views.__alloyId24!click!showWebBrowser"] && $.__views.__alloyId24.addEventListener("click", showWebBrowser);
->>>>>>> FETCH_HEAD
+    __defers["$.__views.__alloyId24!click!showAlarm"] && $.__views.__alloyId24.addEventListener("click", showAlarm);
+    __defers["$.__views.__alloyId25!click!showSettings"] && $.__views.__alloyId25.addEventListener("click", showSettings);
+    __defers["$.__views.__alloyId26!click!showWebBrowser"] && $.__views.__alloyId26.addEventListener("click", showWebBrowser);
     _.extend($, exports);
 }
 
