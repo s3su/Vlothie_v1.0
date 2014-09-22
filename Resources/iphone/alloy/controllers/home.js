@@ -324,6 +324,10 @@ function Controller() {
         id: "__alloyId24"
     });
     $.__views.menuHome.add($.__views.__alloyId24);
+<<<<<<< HEAD
+    showAlarm ? $.__views.__alloyId24.addEventListener("click", showAlarm) : __defers["$.__views.__alloyId24!click!showAlarm"] = true;
+=======
+>>>>>>> FETCH_HEAD
     $.__views.__alloyId25 = Ti.UI.createButton({
         image: "/images/home/v-setting.png",
         tintColor: "#fff",
@@ -331,6 +335,18 @@ function Controller() {
         id: "__alloyId25"
     });
     $.__views.menuHome.add($.__views.__alloyId25);
+<<<<<<< HEAD
+    showSettings ? $.__views.__alloyId25.addEventListener("click", showSettings) : __defers["$.__views.__alloyId25!click!showSettings"] = true;
+    $.__views.__alloyId26 = Ti.UI.createButton({
+        image: "/images/home/v-alarm.png",
+        tintColor: "#fff",
+        left: "195dp",
+        id: "__alloyId26"
+    });
+    $.__views.menuHome.add($.__views.__alloyId26);
+    showWebBrowser ? $.__views.__alloyId26.addEventListener("click", showWebBrowser) : __defers["$.__views.__alloyId26!click!showWebBrowser"] = true;
+=======
+>>>>>>> FETCH_HEAD
     exports.destroy = function() {};
     _.extend($, $.__views);
     Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
@@ -345,6 +361,12 @@ function Controller() {
     __defers["$.__views.__alloyId21!click!showHome"] && $.__views.__alloyId21.addEventListener("click", showHome);
     __defers["$.__views.__alloyId22!click!showTrends"] && $.__views.__alloyId22.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId23!click!showLooks"] && $.__views.__alloyId23.addEventListener("click", showLooks);
+<<<<<<< HEAD
+    __defers["$.__views.__alloyId24!click!showAlarm"] && $.__views.__alloyId24.addEventListener("click", showAlarm);
+    __defers["$.__views.__alloyId25!click!showSettings"] && $.__views.__alloyId25.addEventListener("click", showSettings);
+    __defers["$.__views.__alloyId26!click!showWebBrowser"] && $.__views.__alloyId26.addEventListener("click", showWebBrowser);
+=======
+>>>>>>> FETCH_HEAD
     _.extend($, exports);
 }
 
