@@ -9,7 +9,9 @@
 	height: "30dp",
 	top: "2dp",
 	zIndex: "10"
-} 
+}
+
+"#articleTitle": {} 
 
 ".closeArticle": {
 	image: "/images/v-back.png",
