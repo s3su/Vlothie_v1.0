@@ -1,5 +1,5 @@
 
-
+Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
 //alert(Alloy.Globals.dump(Alloy.Globals.homeDataArray));
 $.greetingTimePhrase.setText(Alloy.Globals.homeDataArray['greetingTimePhrase']);
 $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray['greetingDayPhrase']);
@@ -14,6 +14,7 @@ function showTrends() {
 }
 
 function showLooks() {
+	Alloy.Globals.isSetLook = 0;
 	Alloy.createController("look").getView().open();
 }
 	

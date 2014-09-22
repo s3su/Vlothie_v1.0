@@ -15,8 +15,10 @@ function closeArticle() {
 
 
 //alert("articleId: "+Alloy.Globals.sectedArticleId+" -- data: "+Alloy.Globals.dump(Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]));
+Ti.API.info('!!-----------------article.js ---------------------------');
+Ti.API.info('!!articleIndex: '+Alloy.Globals.selectedArticleIndex+' - Title: ');
 
 //SET DATA IN VIWE
-$.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['articlePhotoArt'];
-$.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['title'];
-$.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]['description'];
+$.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['articlePhotoArt'];
+$.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['title'];
+$.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['description'];

@@ -15,6 +15,7 @@ function Controller() {
         Alloy.createController("trend").getView().open();
     }
     function showLooks() {
+        Alloy.Globals.isSetLook = 0;
         Alloy.createController("look").getView().open();
     }
     function showLooksWithSituation1() {
@@ -332,6 +333,7 @@ function Controller() {
     $.__views.menuHome.add($.__views.__alloyId25);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
     $.greetingTimePhrase.setText(Alloy.Globals.homeDataArray["greetingTimePhrase"]);
     $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray["greetingDayPhrase"]);
     $.weatherId.setText(Alloy.Globals.homeDataArray["weatherId"]);
