@@ -1,6 +1,7 @@
 // .. INCLUDES
 require('includes/functions');
 require('includes/getArticlesData');
+require('includes/getLooksData');
 require('includes/getHomeData');
 require('includes/setArticlesData');
 

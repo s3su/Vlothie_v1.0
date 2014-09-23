@@ -20,4 +20,4 @@ var addClosetExample = ({
 
 //alert('addClosetExample: '+Alloy.Globals.dump(addClosetExample));
 //alert('addClosetExample2: '+Alloy.Globals.dump(addClosetExample2));
-xhr.send(addClosetExample);
+//xhr.send(addClosetExample);

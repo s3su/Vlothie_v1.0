@@ -12,7 +12,7 @@ xhr.onload = function() {
 		var articlesArrayLocal = [];
 		Ti.API.info('got data from the network: ' + this.responseText);
 		var jsonData = JSON.parse(this.responseText);
-		Ti.API.info('got data from: ' + Alloy.Globals.dump(jsonData));
+		//Ti.API.info('got data from: ' + Alloy.Globals.dump(jsonData));
 		
 		//alert(jsonData[0]['name']);
 		
@@ -21,7 +21,7 @@ xhr.onload = function() {
 			//articlesArray[3]['name'] = 'test';
 			//Ti.API.info('Name jsonData[index]: ' + jsonData[index]['title']);
 			for(var field in jsonData[index]) {
-				Ti.API.info('Name jsonData['+index+']['+field+']: ' + jsonData[index][field]);
+				//Ti.API.info('Name jsonData['+index+']['+field+']: ' + jsonData[index][field]);
 				
 				Alloy.Globals.articlesArray[index][field] = jsonData[index][field];
 			}

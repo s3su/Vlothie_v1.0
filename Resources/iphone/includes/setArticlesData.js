@@ -14,5 +14,3 @@ var addClosetExample = {
     accountId: "10",
     articleId: "11"
 };
-
-xhr.send(addClosetExample);
