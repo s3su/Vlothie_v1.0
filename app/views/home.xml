@@ -53,18 +53,9 @@
 				 	  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-<<<<<<< HEAD
-				 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
-				 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
-				 	  <Button class="alarmButtonMenuHome" onClick="showWebBrowser"></Button>
+				 	  <Button class="alarmButtonMenuHome"></Button>
+				 	  <Button class="settingsButtonMenuHome"></Button>
 					</View>
-			 
-=======
-
-				 	  <Button class="alarmButtonMenuHome" ></Button>
-				 	  <Button class="settingsButtonMenuHome" ></Button>
-			</View>			 
->>>>>>> FETCH_HEAD
-			  </Window>
+	 </Window>
    
 </Alloy>
