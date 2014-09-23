@@ -53,9 +53,8 @@
 				 	  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-				 	  <Button class="alarmButtonMenuHome"></Button>
-				 	  <Button class="settingsButtonMenuHome"></Button>
-					</View>
-	 </Window>
-   
+				 	  <Button class="alarmButtonMenuHome" ></Button>
+				 	  <Button class="settingsButtonMenuHome" ></Button>
+				 	  </View>
+			  </Window>   
 </Alloy>

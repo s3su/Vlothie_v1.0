@@ -173,9 +173,11 @@ function Controller() {
     $.__views.articleInfo.add($.__views.articleInfoText);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["articlePhotoArt"];
-    $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["title"];
-    $.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]["description"];
+    Ti.API.info("!!-----------------article.js ---------------------------");
+    Ti.API.info("!!articleIndex: " + Alloy.Globals.selectedArticleIndex + " - Title: ");
+    $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]["articlePhotoArt"];
+    $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]["title"];
+    $.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]["description"];
     __defers["$.__views.__alloyId0!click!closeArticle"] && $.__views.__alloyId0.addEventListener("click", closeArticle);
     _.extend($, exports);
 }

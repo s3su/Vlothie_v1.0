@@ -5,14 +5,15 @@ require('includes/getHomeData');
 require('includes/setArticlesData');
 
 
-
-Alloy.Globals.sectedArticleId = 0;
+Alloy.Globals.selectedArticleIndex = 0;
 Alloy.Globals.isSetLook = 0;
 Alloy.Globals.selectedSituationId = 0;
 
 Alloy.Globals.lookTopId = 0;
 Alloy.Globals.lookBottomId = 0;
 Alloy.Globals.lookShoesId = 0;
+
+
 
 
 var getFIXData = true;

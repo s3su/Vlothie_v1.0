@@ -17,7 +17,6 @@
 			  <Button class="buttonSchedule" onClick="showHome" ></Button>
 		 	  <Button class="buttonDiamond" onClick="showTrends"></Button>
 		 	  <Button class="buttonStylist" onClick="showLooks"></Button>
-		 	  <Button class="buttonInfo" onClick="showAlarm"></Button>
 		</View>
 		
     <ScrollView id="lookContent">
@@ -44,8 +43,8 @@
 			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
 		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-		 	  <Button class="alarmButtonMenuHome" onClick="showAlarm"></Button>
-		 	  <Button class="settingsButtonMenuHome" onClick="showSettings"></Button>
+		 	  <Button class="alarmButtonMenuHome"></Button>
+		 	  <Button class="settingsButtonMenuHome"></Button>
 	   	</View>
  			
  			 
