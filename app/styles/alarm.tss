@@ -1,14 +1,3 @@
-
-"#alarmWindow": {
-	fullscreen: false,
-	navBarHidden: true,
-	exitOnClose: true,
-	tabBarHidden: true,
-	backgroundImage: "/images/vlothie-background.jpg"
-}
-"#alarmView": {
-}
-
 "#menuHome": {
 	height: "58dp",
 	width: "100%",

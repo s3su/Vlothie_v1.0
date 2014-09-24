@@ -26,11 +26,11 @@ function Controller() {
         id: "webBrowser"
     });
     $.__views.webBrowser && $.addTopLevelView($.__views.webBrowser);
-    $.__views.webview = Ti.UI.createWebView({
-        id: "webview",
-        url: ""
+    $.__views.__alloyId54 = Ti.UI.createWebView({
+        url: "",
+        id: "__alloyId54"
     });
-    $.__views.webBrowser.add($.__views.webview);
+    $.__views.webBrowser.add($.__views.__alloyId54);
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = "http://www.bits0.com/bits0Develop/";
