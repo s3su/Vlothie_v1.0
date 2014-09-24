@@ -8,17 +8,13 @@
 "#lookButtons": {
 	height: "28dp",
 	top: "0dp",
-	zIndex: "10"	
-}	
+	zIndex: "10"}	
 
 ".backButton": {
 		image: "/images/v-back.png",
 		tintColor: "#fff",
 		left: "8dp",
 		top: "2dp"}
-
-
-
  
 ".searchButton": {
 		image: "/images/v-search.png",
@@ -80,24 +76,23 @@
 "#articleTop": {
 	layout: "vertical",
 	height: "150dp",
+	left: "10dp",
+	right: "10dp",
 	top: "0dp",
-	borderRadius: "0dp 10dp 0dp 10dp",
+	borderRadius: "0% 5% 5% 0%",
 	bottom: "0dp"}
 
 "#articleTopImg": {
-	bottom: "0dp"
-}
+	bottom: "0dp"}
 
 "#articleBottom": {
 	layout: "vertical",
 	height: "150dp",
 	top: "0dp",
-	bottom: "0dp"
-}
+	bottom: "0dp"}
 
 "#articleBottomImg": {
-	bottom: "0dp"
-}
+	bottom: "0dp"}
 
 "#articleShoes": {
 	layout: "vertical",
@@ -108,13 +103,12 @@
 "#articleShoesImg": {
 	borderRadius: "0dp 12dp 0dp 12dp"}
 
-
 "#menuHome": {
-	height: "58dp",
+	height: "50dp",
 	width: "100%",
-	bottom: "8dp",
+	bottom: "2dp",
 	backgroundColor: "#transparent"}	
-	
+		
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",
 	tintColor: "#fff",

@@ -1,26 +1,76 @@
 "#trendWindow": {
-	fullscreen: false,
+	fullscreen: true,
 	navBarHidden: true,
 	exitOnClose: true,
 	tabBarHidden: true,
 	backgroundImage: "/images/vlothie-background.jpg"}
 
+"#trendButtons": {
+	height: "28dp",
+	top: "0dp",
+	zIndex: "10"}	
+
+".backButton": {
+		image: "/images/v-back.png",
+		tintColor: "#fff",
+		left: "8dp",
+		top: "2dp"}
+ 
+".searchButton": {
+		image: "/images/v-search.png",
+		tintColor: "#fff",
+		right: "8dp",
+		top: "2dp"}
+
+"#getTrend": {
+	top: "2dp",
+	width: "100%",
+	height: "20dp"}
+
+".getTrendText": {
+	color: "#922a80",
+	font: {
+		fontSize: "16dp",
+		fontWeight: "bold",
+		fontStyle: "italic",
+		fontFamily: "Baskerville"}
+		}
+
+
+"#trendContentScroll": {
+	top: "50dp",
+	left: "0dp",
+	right: "0dp",
+	height: "460dp"}
+
 ".trendContent": {
 	layout: "vertical",
 	top: "0dp",
-	backgroundColor: "transparent",
-	width: Ti.UI.FILL,
-	height: Ti.UI.FILL}
-
+	backgroundColor: "transparent"}
+	
 ".trendContentAuthor": {
-	top: "0dp",
-	backgroundColor: "transparent",
-	image: "/images/trends/trend_01.jpg",
+	backgroundColor: "#e8e6da",
 	width: "100%",
-	height: "50dp"}
+	layout: "vertical",
+	top: "20dp"
+	}
+
+"#trendTitle": {
+	color: "black",
+	left: "4dp",
+	font: {fontSize: 16, fontFamily: 'AmericanTypewriter'},
+	}
+	
+"#trendInfoText":{
+	width: 300,
+	left: 10,
+	bottom: 10,
+	font: {fontSize: 14, fontFamily: 'AmericanTypewriter'},
+	color: 'black'}
+ 
 
 ".trendAuthorImg": {
-	image: "/images/trends/trend_01.jpg",
+	image: "/images/v-article-wear.png",
 	width: "50dp",
 	height: "50dp"}
 
@@ -28,14 +78,14 @@
 "#trendImg": {
 	image: "/images/trends/trend_01.jpg",
 	width: "100%",
-	height: "90%"}
+	height: "auto"}
 
 "#menuHome": {
-	height: "58dp",
+	height: "50dp",
 	width: "100%",
-	bottom: "8dp",
+	bottom: "2dp",
 	backgroundColor: "#transparent"}	
-	
+		
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",
 	tintColor: "#fff",

@@ -286,9 +286,9 @@ function Controller() {
     $.__views.__alloyId19.add($.__views.__alloyId20);
     showLooks ? $.__views.__alloyId20.addEventListener("click", showLooks) : __defers["$.__views.__alloyId20!click!showLooks"] = true;
     $.__views.menuHome = Ti.UI.createView({
-        height: "58dp",
+        height: "50dp",
         width: "100%",
-        bottom: "8dp",
+        bottom: "2dp",
         backgroundColor: "#transparent",
         id: "menuHome"
     });

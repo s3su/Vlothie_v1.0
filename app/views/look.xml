@@ -1,11 +1,8 @@
 <Alloy>
-  <!-- Main Window -->
   	 <Window id="lookWindow"  platform="android,ios">
 
-    <!-- header -->
-
 	<View id="lookButtons">
- 		<Button class="backButton"></Button>
+ 		<Button class="backButton" onClick="showTrends"></Button>
  		<Button class="searchButton"></Button>
  	</View>
    

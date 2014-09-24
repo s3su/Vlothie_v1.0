@@ -119,6 +119,7 @@ function Controller() {
         id: "__alloyId28"
     });
     $.__views.lookButtons.add($.__views.__alloyId28);
+    showTrends ? $.__views.__alloyId28.addEventListener("click", showTrends) : __defers["$.__views.__alloyId28!click!showTrends"] = true;
     $.__views.__alloyId29 = Ti.UI.createButton({
         image: "/images/v-search.png",
         tintColor: "#fff",
@@ -188,8 +189,10 @@ function Controller() {
     $.__views.articleTop = Ti.UI.createView({
         layout: "vertical",
         height: "150dp",
+        left: "10dp",
+        right: "10dp",
         top: "0dp",
-        borderRadius: "0dp 10dp 0dp 10dp",
+        borderRadius: "0% 5% 5% 0%",
         bottom: "0dp",
         id: "articleTop"
     });
@@ -243,9 +246,9 @@ function Controller() {
     $.__views.articleShoes.add($.__views.articleShoesImg);
     showArticleShoes ? $.__views.articleShoesImg.addEventListener("click", showArticleShoes) : __defers["$.__views.articleShoesImg!click!showArticleShoes"] = true;
     $.__views.menuHome = Ti.UI.createView({
-        height: "58dp",
+        height: "50dp",
         width: "100%",
-        bottom: "8dp",
+        bottom: "2dp",
         backgroundColor: "#transparent",
         id: "menuHome"
     });
@@ -371,6 +374,7 @@ function Controller() {
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
         Ti.API.info("!!shoes title: " + articleShoes[Alloy.Globals.lookShoesId]["title"] + " - Image: " + imagePath);
     });
+    __defers["$.__views.__alloyId28!click!showTrends"] && $.__views.__alloyId28.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId31!click!showHome"] && $.__views.__alloyId31.addEventListener("click", showHome);
     __defers["$.__views.__alloyId32!click!showTrends"] && $.__views.__alloyId32.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId33!click!showLooks"] && $.__views.__alloyId33.addEventListener("click", showLooks);

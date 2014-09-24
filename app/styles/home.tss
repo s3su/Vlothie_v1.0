@@ -161,9 +161,9 @@
 
 
 "#menuHome": {
-	height: "58dp",
+	height: "50dp",
 	width: "100%",
-	bottom: "8dp",
+	bottom: "2dp",
 	backgroundColor: "#transparent"}	
 	
 ".homeButtonMenuHome": {
