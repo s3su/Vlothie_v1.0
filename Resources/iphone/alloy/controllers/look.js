@@ -41,6 +41,22 @@ function Controller() {
         "right" == direction ? Alloy.Globals.lookShoesId - 1 >= 0 ? Alloy.Globals.lookShoesId-- : Alloy.Globals.lookShoesId = articleShoes.length - 1 : "left" == direction ? Alloy.Globals.lookShoesId + 1 < articleShoes.length ? Alloy.Globals.lookShoesId++ : Alloy.Globals.lookShoesId = 0 : "random" == direction && (Alloy.Globals.lookShoesId = Math.floor(Math.random() * articleShoes.length));
         return Alloy.Globals.lookShoesId;
     }
+    function setLook() {
+        Alloy.Globals.lookSetId + 1 < Alloy.Globals.looksArray["size"] ? Alloy.Globals.lookSetId++ : Alloy.Globals.lookSetId = 0;
+        Ti.API.info("Alloy.Globals.lookSetId: " + Alloy.Globals.lookSetId);
+        for (var index in articleTop) if (articleTop[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["topArticleId"]) {
+            Alloy.Globals.lookTopId = index;
+            break;
+        }
+        for (var index in articleBottom) if (articleBottom[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["bottomArticleId"]) {
+            Alloy.Globals.lookBottomId = index;
+            break;
+        }
+        for (var index in articleShoes) if (articleShoes[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["shoesArticleId"]) {
+            Alloy.Globals.lookShoesId = index;
+            break;
+        }
+    }
     function setInitialLook() {
         if (Alloy.Globals.selectedSituationId > 0) {
             Ti.API.info("!!setInitialLook() situationId: " + Alloy.Globals.selectedSituationId);
@@ -62,10 +78,8 @@ function Controller() {
             Alloy.Globals.selectedSituationId = 0;
         } else if (0 == Alloy.Globals.isSetLook) {
             Ti.API.info("!!setInitialLook() Not setted Look ");
-            Alloy.Globals.lookTopId = selectTopId("random");
-            Alloy.Globals.lookBottomId = selectBottomId("random");
-            Alloy.Globals.lookShoesId = selectShoesId("random");
-            Alloy.Globals.isSetLook = 1;
+            setLook();
+            Alloy.Globals.isSetLook = 0;
         }
         Ti.API.info("!!Setted looks ids) TOP: " + Alloy.Globals.lookTopId + " - BOTTOM: " + Alloy.Globals.lookBottomId + " - SHOES: " + Alloy.Globals.lookShoesId);
         animation.flipHorizontal($.articleTop, $.articleTop, 500);
@@ -301,6 +315,7 @@ function Controller() {
     var articleTopCount = 0;
     var articleBottomCount = 0;
     var articleShoesCount = 0;
+    Ti.API.info("Alloy.Globals.looksArray.length: " + Alloy.Globals.looksArray.length);
     for (var index in Alloy.Globals.articlesArray) switch (Alloy.Globals.articlesArray[index]["categoryId"]) {
       case "1":
         articleTop[articleTopCount] = [];
@@ -372,6 +387,7 @@ function Controller() {
         var imagePath = articleShoes[Alloy.Globals.lookShoesId]["articlePhotoLook"];
         $.articleShoesImg.image = imagePath;
         animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
+        Ti.API.info("articleShoes[Alloy.Globals.lookShoesId][articlePhotoLook]:  with: Alloy.Globals.lookShoesId: " + Alloy.Globals.lookShoesId);
         Ti.API.info("!!shoes title: " + articleShoes[Alloy.Globals.lookShoesId]["title"] + " - Image: " + imagePath);
     });
     __defers["$.__views.__alloyId28!click!showTrends"] && $.__views.__alloyId28.addEventListener("click", showTrends);

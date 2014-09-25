@@ -1,12 +1,12 @@
-Ti.API.info('!!getLooksData.js LOADED');
+Ti.API.info('!!getTrendsData.js LOADED');
 
-var jsonURL = "http://be.vlothie.com/json/getLooks.php";
+var jsonURL = "http://be.vlothie.com/json/getTrends.php";
 
 //Array to store the data from the articles
-Alloy.Globals.looksArray = {};
+Alloy.Globals.trendsArray = {};
 
 
-Ti.API.info('!!---- getLooksData.js get json data from: '+jsonURL);
+Ti.API.info('!!---- getTrendsData.js get json data from: '+jsonURL);
 var xhr = Titanium.Network.createHTTPClient();
 xhr.onload = function() {
 		var looksArrayLocal = [];
@@ -16,20 +16,18 @@ xhr.onload = function() {
 		
 		//alert(jsonData[0]['name']);
 		
-		var count = 0;
 		for(var index in jsonData) {
-			Alloy.Globals.looksArray[index] = [];
+			Alloy.Globals.trendsArray[index] = [];
 			//articlesArray[3]['name'] = 'test';
 			//Ti.API.info('Name jsonData[index]: ' + jsonData[index]['title']);
 			for(var field in jsonData[index]) {
 				//Ti.API.info('Name jsonData['+index+']['+field+']: ' + jsonData[index][field]);
 				
-				Alloy.Globals.looksArray[index][field] = jsonData[index][field];
+				Alloy.Globals.trendsArray[index][field] = jsonData[index][field];
 			}
-			count++;
 		}
-		Alloy.Globals.looksArray['size'] = count;
-		//Ti.API.info('Alloy.Globals.looksArray.[size]: '+Alloy.Globals.looksArray['size']);	
+		//Ti.API.info(Alloy.Globals.dump(Alloy.Globals.trendsArray));
+		
 };
 
 xhr.open("GET",jsonURL);

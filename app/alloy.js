@@ -2,6 +2,7 @@
 require('includes/functions');
 require('includes/getArticlesData');
 require('includes/getLooksData');
+require('includes/getTrendsData');
 require('includes/getHomeData');
 require('includes/setArticlesData');
 
@@ -9,6 +10,8 @@ require('includes/setArticlesData');
 Alloy.Globals.selectedArticleIndex = 0;
 Alloy.Globals.isSetLook = 0;
 Alloy.Globals.selectedSituationId = 0;
+
+Alloy.Globals.lookSetId = 0;
 
 Alloy.Globals.lookTopId = 0;
 Alloy.Globals.lookBottomId = 0;
@@ -27,9 +30,6 @@ if(getFIXData){
 if(getArticlesData){
 	//require('includes/getArticlesData');
 }
-
-
-
 
 if (OS_IOS || OS_ANDROID) {
 	

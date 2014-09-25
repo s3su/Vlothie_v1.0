@@ -6,6 +6,8 @@ require("includes/getArticlesData");
 
 require("includes/getLooksData");
 
+require("includes/getTrendsData");
+
 require("includes/getHomeData");
 
 require("includes/setArticlesData");
@@ -15,6 +17,8 @@ Alloy.Globals.selectedArticleIndex = 0;
 Alloy.Globals.isSetLook = 0;
 
 Alloy.Globals.selectedSituationId = 0;
+
+Alloy.Globals.lookSetId = 0;
 
 Alloy.Globals.lookTopId = 0;
 

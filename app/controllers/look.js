@@ -10,9 +10,6 @@ var articleBottomCount = 0;
 var articleShoesCount = 0;
 
 
-
-//Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
-
 for(var index in Alloy.Globals.articlesArray) {
 	
 		
@@ -120,6 +117,7 @@ $.articleShoes.addEventListener('swipe',function(e){
 	var imagePath = articleShoes[Alloy.Globals.lookShoesId]['articlePhotoLook'];
 	$.articleShoesImg.image = imagePath;
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+	Ti.API.info('articleShoes[Alloy.Globals.lookShoesId][articlePhotoLook]:  with: Alloy.Globals.lookShoesId: '+Alloy.Globals.lookShoesId);
 	Ti.API.info('!!shoes title: '+articleShoes[Alloy.Globals.lookShoesId]['title']+' - Image: '+imagePath);
 });
 
@@ -215,6 +213,41 @@ function selectShoesId(direction){
 	return Alloy.Globals.lookShoesId;
 }
 
+function setLook(){
+	
+	//Ti.API.info('Set Look function || Alloy.Globals.looksArray.length: '+Alloy.Globals.looksArray.length);
+	//Ti.API.info('Alloy.Globals.looksArray ===: '+Alloy.Globals.dump(Alloy.Globals.looksArray));
+	if((Alloy.Globals.lookSetId+1) < Alloy.Globals.looksArray['size']){
+		Alloy.Globals.lookSetId++;
+	}else{
+		Alloy.Globals.lookSetId = 0;
+	}
+	Ti.API.info('Alloy.Globals.lookSetId: '+Alloy.Globals.lookSetId);
+	
+	
+	for(var index in articleTop) {
+		if(articleTop[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['topArticleId']){
+			Alloy.Globals.lookTopId = index;
+			break;
+		}
+	}
+	
+	for(var index in articleBottom) {
+		if(articleBottom[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['bottomArticleId']){
+			Alloy.Globals.lookBottomId = index;
+			break;
+		}
+	}
+	
+	for(var index in articleShoes) {
+		if(articleShoes[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['shoesArticleId']){
+			Alloy.Globals.lookShoesId = index;
+			break;
+		}
+	}
+	
+}
+
 //--------------set INITIAL LOOK
 function setInitialLook(){
 	//alert('setInitialLook');
@@ -262,10 +295,9 @@ function setInitialLook(){
 		
 	}else if(Alloy.Globals.isSetLook == 0){
 		Ti.API.info('!!setInitialLook() Not setted Look ');
-		Alloy.Globals.lookTopId = selectTopId('random');
-		Alloy.Globals.lookBottomId = selectBottomId('random');
-		Alloy.Globals.lookShoesId = selectShoesId('random');
-		Alloy.Globals.isSetLook = 1;
+		
+		setLook();
+		Alloy.Globals.isSetLook = 0;
 	}
 	
 	
@@ -288,6 +320,7 @@ function setInitialLook(){
 	//SHOES
 	
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+	//Ti.API.info('articleShoes[Alloy.Globals.lookShoesId][articlePhotoLook]:  with: Alloy.Globals.lookShoesId: '+Alloy.Globals.lookShoesId);
 	var imagePath = articleShoes[Alloy.Globals.lookShoesId]['articlePhotoLook'];
 	$.articleShoesImg.image = imagePath;
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
