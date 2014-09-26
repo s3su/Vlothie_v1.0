@@ -76,32 +76,38 @@
 "#articleTop": {
 	layout: "vertical",
 	height: "150dp",
-	left: "10dp",
-	right: "10dp",
 	top: "0dp",
-	borderRadius: "0% 5% 5% 0%",
 	bottom: "0dp"}
 
 "#articleTopImg": {
-	bottom: "0dp"}
+	bottom: "0dp",
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL}
 
 "#articleBottom": {
 	layout: "vertical",
 	height: "150dp",
 	top: "0dp",
 	bottom: "0dp"}
+	
 
 "#articleBottomImg": {
-	bottom: "0dp"}
+	bottom: "0dp",
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL}
+
 
 "#articleShoes": {
 	layout: "vertical",
-	height: "110dp",
+	height: "120dp",
 	top: "0dp",
 	bottom: "0dp"}
 
 "#articleShoesImg": {
-	borderRadius: "0dp 12dp 0dp 12dp"}
+	bottom: "0dp",
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL}
+
 
 "#menuHome": {
 	height: "50dp",

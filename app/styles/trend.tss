@@ -1,5 +1,5 @@
 "#trendWindow": {
-	fullscreen: true,
+	fullscreen: false,
 	navBarHidden: true,
 	exitOnClose: true,
 	tabBarHidden: true,
@@ -36,49 +36,51 @@
 		fontFamily: "Baskerville"}
 		}
 
-
 "#trendContentScroll": {
-	top: "50dp",
-	left: "0dp",
-	right: "0dp",
-	height: "460dp"}
-
-".trendContent": {
 	layout: "vertical",
+	top: "28dp",
+	backgroundColor: "transparent",
+	verticalBounce: "true"}
+	
+".trendContent": {
 	top: "0dp",
+	width: "90%",
 	backgroundColor: "transparent"}
 	
+".trendContentDesc": {
+	backgroundColor: "#e8e6da",
+	height: "120dp",
+	width: "90%",
+	top: "0dp"}
+
 ".trendContentAuthor": {
 	backgroundColor: "#e8e6da",
-	width: "100%",
-	layout: "vertical",
-	top: "20dp"
-	}
+	height: "100dp",
+	width: "90%",
+	top: "0dp"}
 
-"#trendTitle": {
-	color: "black",
-	left: "4dp",
-	font: {fontSize: 16, fontFamily: 'AmericanTypewriter'},
-	}
-	
 "#trendInfoText":{
-	width: 300,
-	left: 10,
-	bottom: 10,
-	font: {fontSize: 14, fontFamily: 'AmericanTypewriter'},
-	color: 'black'}
+	width: "90%",
+	left: "10dp",
+	top: "10dp",
+	font: {fontSize: 16, fontFamily: 'Roboto'},
+	color: '#464541'}
  
-
 ".trendAuthorImg": {
-	image: "/images/v-article-wear.png",
+	backgroundImage: "/images/v-article-wear.png",
+	borderRadius: "50%",
 	width: "50dp",
-	height: "50dp"}
+	height: "50dp",
+	top: "0dp",
+	left: "8dp",
+	bottom: "8dp"}
 
-
+ 
 "#trendImg": {
+	layout: "vertical",
 	image: "/images/trends/trend_01.jpg",
-	width: "100%",
-	height: "auto"}
+	width: Ti.UI.FILL,
+    height: Ti.UI.FILL}
 
 "#menuHome": {
 	height: "50dp",

@@ -32,12 +32,9 @@ function showAlarm() {
 	//alarmTab.open();
 	}
 	
-	
 function showSettings() {
 	//console.log(e);
 		Alloy.createController("settings").getView().open();
 	//var settingTab = $.TabGroup.setActiveTab(4); 
 	//settingTab.open();
 	}
-
-	

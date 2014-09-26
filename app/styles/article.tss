@@ -8,7 +8,8 @@
 "#articleButtons": {
 	height: "30dp",
 	top: "2dp",
-	zIndex: "10"
+	zIndex: "1",
+	backgroundColor: "transparent"
 }
 
 "#articleTitle": {} 
@@ -22,17 +23,18 @@
 "#articleContent": {
 	layout: "vertical",
 	top: "28dp",
-	backgroundColor: "transparent"}
+	backgroundColor: "transparent",
+	verticalBounce: "true",
+	height: "auto"}
 	
 "#articleSelected": {
-	height: "420dp",
 	top: "0dp",
 	width: "100%",
 	backgroundColor: "transparent",
 }
 
 ".buttonBuyItView": {
-	right: "12dp",
+	right: "8dp",
 	top: "0dp",
 	zIndex: "200",
 	width: "60dp",
@@ -44,78 +46,73 @@
 	tintColor: "#beee00",
 	zIndex: "250"
 	}
-
-".buttonInfoView": {
-	right: "12dp",
-	bottom: "100dp",
-	zIndex: "200",
-	width: "60dp",
-	height: "60dp"  
-	}
-
-".buttonInfo": {
-	image: "/images/v-article-info.png",
-	tintColor: "#de6ebb",
-	zIndex: "250"
-	}
 	
 ".buttonWearItView": {
 	right: "12dp",
-	bottom: "50dp",
-	zIndex: "200",
+	bottom: "2dp",
+	zIndex: "250",
 	width: "60dp",
-	height: "60dp"  
-	}
+	height: "60dp"}
 
 ".buttonWearIt": {
-	image: "/images/v-article-wear.png",
-	tintColor: "#f9a0e0",
-	zIndex: "250"
-	}
-
-".buttonDiamondView": {
-	left: "12dp",
-	top: "30dp",
+	backgroundImage: "/images/v-article-wear.png",
+	zIndex: "300"}
+	
+".buttonClosetView": {
+	left: "8dp",
+	top: "0dp",
 	zIndex: "200",
 	width: "60dp",
-	height: "60dp"  
-	}
+	height: "60dp"}
+
+".buttonCloset": {
+	backgroundImage: "/images/v-article-diamond.png",
+	zIndex: "300"}
 
 ".buttonDiamond": {
-	image: "/images/v-article-diamond.png",
+	image: "/images/v-article-diamond.png"  ,
 	tintColor: "#f9a0e0",
 	zIndex: "250"
 	}
 
-"#articleSelectedImg": {
-	zIndex: "100",
+".borderArticle": {
+	borderRadius: "10dp",
+	zIndex: "1",
 	top: "16dp",
-	width: "400dp",
-	}
-	
+	left: "16dp",	
+	right: "16dp",	
+	width: "90%"}
 
+"#articleSelectedImg": {
+	width: Ti.UI.FILL,
+    height: Ti.UI.FILL}
+
+ 
 "#articleBottomImg": {
 	image: "/images/article/bottom.png"
 }
 
 "#articleInfo": {
 	layout: "vertical",
-	top: "20dp",
+	top: "24dp",
 	backgroundColor: "transparent"}
 	
 ".articleTitle": {
-	color: "black",
-	left: "4dp",
-	font: {fontSize: 16, fontFamily: 'AmericanTypewriter'},
+	color: "white",
+	width: "90%",
+	bottom: "dp",
+	font: {fontSize: 18, fontFamily: 'Roboto'},
 	}
 	
 "#articleInfoText":{
-	width: 300,
-	left: 10,
-	bottom: 10,
-	font: {fontSize: 14, fontFamily: 'AmericanTypewriter'},
-	color: 'black',
-}
+	width: "90%",
+	top: "10dp",
+	color: 'white',
+	font: {
+		fontSize: 16, 
+		fontFamily: 'Roboto',
+		fontWeight: "light"},}
 
+	
 	
 	

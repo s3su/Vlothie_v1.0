@@ -5,25 +5,28 @@
  		<Button class="backButton" onClick="showHome"></Button>
  		<Button class="searchButton"></Button>
  	</View>
-   
+                         
     <View id="getTrend">
-	    <Label class="getTrendText">trends:</Label>
+	    <Label class="getTrendText">Trends!</Label>
 	</View>
 		
       <ScrollView id="trendContentScroll">
   		
         <View class="trendContent" onClick="showLooks">
-	      <ImageView id="trendImg"/>
-	    </View>
-	    
-	    <View class="trendContentAuthor">
-		       <Label id="trendTitle" class="articleTitle">Trend title</Label>
-	           <Label id="trendInfoText">Trend desct</Label>
- 			   <Images class="trendAuthorImg"></Images>
+			<ImageView id="trendImg"/>
+		</View>
+	     
+	    <View class="trendContentDesc">
+			   <Label id="trendInfoText">Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct</Label>
  		</View> 
-	   
     
+    	<View class="trendContentAuthor">
+		   	   <ImageView class="trendAuthorImg"/>
+	    </View> 
+    
+	    
     </ScrollView>
+	
 	   	<View id="menuHome">
 			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
 		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
