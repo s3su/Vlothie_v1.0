@@ -14,17 +14,18 @@
   		
         <View class="trendContent" id="trendContent" onClick="showLooks">
 			<ImageView id="trendImg"/>
+		   	   <ImageView class="trendAuthorImg"/>
+	
 		</View>
 	     
 	    <View class="trendContentDesc">
 			   <Label id="trendInfoText"></Label>
- 		</View> 
+ 		</View>
     
     	<View class="trendContentAuthor">
-		   	   <ImageView class="trendAuthorImg" id="trendAuthorImg"/>
+		   	   <ImageView id="trendAuthorImg"/>
 	    </View> 
     
-	    
     </ScrollView>
 	
 	   	<View id="menuHome">

@@ -95,7 +95,8 @@
 "#articleInfo": {
 	layout: "vertical",
 	top: "24dp",
-	backgroundColor: "transparent"}
+	backgroundColor: "transparent",
+	height: "120dp"}
 	
 ".articleTitle": {
 	color: "white",

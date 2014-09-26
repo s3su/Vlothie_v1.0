@@ -84,6 +84,7 @@ function Controller() {
     });
     $.__views.hello.add($.__views.helloLeft);
     $.__views.weatherIcon = Ti.UI.createImageView({
+        top: "8dp",
         id: "weatherIcon"
     });
     $.__views.helloLeft.add($.__views.weatherIcon);
@@ -91,11 +92,11 @@ function Controller() {
         color: "white",
         font: {
             fontFamily: "arial",
-            fontSize: "13",
+            fontSize: "15",
             fontWeight: "light"
         },
         textAlign: "left",
-        top: "43dp",
+        top: "48dp",
         zIndex: 3,
         text: "16c / 4c",
         id: "weatherText"
@@ -342,6 +343,7 @@ function Controller() {
     $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray["greetingDayPhrase"]);
     $.weatherText.setText(Alloy.Globals.weatherArray["temp_C"] + " °C");
     $.weatherIcon.image = "/images/weather/" + Alloy.Globals.weatherArray["weatherCode"] + ".png";
+<<<<<<< HEAD
     __defers["$.__views.__alloyId10!click!showLooksWithSituation1"] && $.__views.__alloyId10.addEventListener("click", showLooksWithSituation1);
     __defers["$.__views.__alloyId12!click!showLooksWithSituation2"] && $.__views.__alloyId12.addEventListener("click", showLooksWithSituation2);
     __defers["$.__views.__alloyId14!click!showLooksWithSituation3"] && $.__views.__alloyId14.addEventListener("click", showLooksWithSituation3);
@@ -350,6 +352,16 @@ function Controller() {
     __defers["$.__views.__alloyId19!click!showHome"] && $.__views.__alloyId19.addEventListener("click", showHome);
     __defers["$.__views.__alloyId20!click!showTrends"] && $.__views.__alloyId20.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId21!click!showLooks"] && $.__views.__alloyId21.addEventListener("click", showLooks);
+=======
+    __defers["$.__views.__alloyId11!click!showLooksWithSituation1"] && $.__views.__alloyId11.addEventListener("click", showLooksWithSituation1);
+    __defers["$.__views.__alloyId13!click!showLooksWithSituation2"] && $.__views.__alloyId13.addEventListener("click", showLooksWithSituation2);
+    __defers["$.__views.__alloyId15!click!showLooksWithSituation3"] && $.__views.__alloyId15.addEventListener("click", showLooksWithSituation3);
+    __defers["$.__views.__alloyId17!click!showLooksWithSituation4"] && $.__views.__alloyId17.addEventListener("click", showLooksWithSituation4);
+    __defers["$.__views.__alloyId19!click!showLooks"] && $.__views.__alloyId19.addEventListener("click", showLooks);
+    __defers["$.__views.__alloyId20!click!showHome"] && $.__views.__alloyId20.addEventListener("click", showHome);
+    __defers["$.__views.__alloyId21!click!showTrends"] && $.__views.__alloyId21.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId22!click!showLooks"] && $.__views.__alloyId22.addEventListener("click", showLooks);
+>>>>>>> FETCH_HEAD
     _.extend($, exports);
 }
 

@@ -1,5 +1,5 @@
 "#trendWindow": {
-	fullscreen: false,
+	fullscreen: true,
 	navBarHidden: true,
 	exitOnClose: true,
 	tabBarHidden: true,
@@ -45,19 +45,22 @@
 ".trendContent": {
 	top: "0dp",
 	width: "90%",
-	backgroundColor: "transparent"}
+	backgroundColor: "transparent",
+	borderRadius: "8dp"}
 	
 ".trendContentDesc": {
 	backgroundColor: "#e8e6da",
 	height: "120dp",
 	width: "90%",
-	top: "0dp"}
+	top: "10dp",
+	borderRadius: "8dp"}
 
 ".trendContentAuthor": {
 	backgroundColor: "#e8e6da",
 	height: "100dp",
 	width: "90%",
-	top: "0dp"}
+	top: "10dp",
+	borderRadius: "8dp"}
 
 "#trendInfoText":{
 	width: "90%",
@@ -86,7 +89,7 @@
 	height: "50dp",
 	width: "100%",
 	bottom: "2dp",
-	backgroundColor: "#transparent"}	
+	}	
 		
 ".homeButtonMenuHome": {
 	image: "/images/home/v-home.png",

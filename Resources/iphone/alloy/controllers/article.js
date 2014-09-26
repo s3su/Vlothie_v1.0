@@ -140,6 +140,7 @@ function Controller() {
         layout: "vertical",
         top: "24dp",
         backgroundColor: "transparent",
+        height: "120dp",
         id: "articleInfo"
     });
     $.__views.articleContent.add($.__views.articleInfo);

@@ -37,6 +37,7 @@ function Controller() {
     $.__views.__alloyId54 = Ti.UI.createButton({
         id: "__alloyId54"
     });
+<<<<<<< HEAD
     $.__views.articleButtons.add($.__views.__alloyId54);
     closeBrowser ? $.__views.__alloyId54.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId54!click!closeBrowser"] = true;
     $.__views.webview = Ti.UI.createWebView({
@@ -44,6 +45,14 @@ function Controller() {
         url: "http://www.appcelerator.com"
     });
     $.__views.browserWindow.add($.__views.webview);
+=======
+    $.__views.webBrowser && $.addTopLevelView($.__views.webBrowser);
+    $.__views.__alloyId56 = Ti.UI.createWebView({
+        url: "",
+        id: "__alloyId56"
+    });
+    $.__views.webBrowser.add($.__views.__alloyId56);
+>>>>>>> FETCH_HEAD
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;

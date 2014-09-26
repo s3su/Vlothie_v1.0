@@ -11,8 +11,15 @@
 	height: "460dp"}
 	
 	
-"#weatherId": {}
+"#weatherIcon": {
+	top: "8dp",}
+
+"#weatherText": {
+	top: "48dp",}
+
+
 "#greetingTimePhrase": {}
+
 "#greetingDayPhrase": {}
 
 ".sectionTitleViolet": {
@@ -86,11 +93,11 @@
 ".weatherTextTemp": {
 	font: {
 		fontFamily:  "arial",
-		fontSize: "13",
+		fontSize: "15",
 		fontWeight: 'light'},
 	textAlign: "left",
 	color: "white",
-	top: "43dp",
+	top: "40dp",
 	zIndex: 3,
 	text: '16c / 4c'
 	} 	
