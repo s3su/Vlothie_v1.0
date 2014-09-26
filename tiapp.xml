@@ -6,13 +6,13 @@
     <property name="acs-oauth-secret-development" type="string">jyGvi4idlqunU8jPRGD2vwzTye6B5ZNL</property>
     <property name="acs-oauth-key-development" type="string">899RvvqI4NttI5R7civxGjO1gpcIqYe8</property>
     <property name="acs-api-key-development" type="string">XM93oz0sJNcnfHFHTmhtgrPNFvFEswhb</property>
-    <id>com.appcelerator.todo</id>
+    <id>com.appcelerator.vlothie</id>
     <name>Vlothie</name>
     <version>1</version>
     <publisher>Bits0 SRL</publisher>
     <url>http://www.vlothie.com</url>
-    <description>not specified</description>
-    <copyright>not specified</copyright>
+    <description>Your assistance for an stylish life</description>
+    <copyright>Bits0 SRL</copyright>
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -26,7 +26,6 @@
                 <array>
                     <string>UIInterfaceOrientationPortrait</string>
                 </array>
-                <key>UISupportedInterfaceOrientations~ipad</key>
                 <array>
                     <string>UIInterfaceOrientationPortrait</string>
                     <string>UIInterfaceOrientationPortraitUpsideDown</string>

@@ -8,32 +8,29 @@
     <!-- header -->
     
     <ScrollView id="articleContent" >
-    
     	
-	    <View id="articleSelected">
+	    <View id="articleSelected"> 
 		   	<View class="buttonBuyItView">
-		     	<Button class="buttonBuyIt"></Button>
+		     	<Button class="buttonBuyIt">
+		     		<Label>
+		     			BUY
+		     		</Label>
+		     	</Button>
+	        </View> 
+	     
+	        <View class="buttonClosetView">
+		     	<Button class="buttonCloset"></Button>
 	        </View> 
 	       
-	        <View class="buttonDiamondView">
-		     	<Button class="buttonDiamond"></Button>
-	        </View> 
-	      
-	        <View>
-		        <ImageView id="articleSelectedImg"/>
-		   </View> 
-	      
-	      	<View class="buttonInfoView">
-		     	<Button class="buttonInfo"></Button>
-	        </View> 
-	       
+	        		       <View class="borderArticle"> 
+						        <ImageView id="articleSelectedImg"/>
+						   </View> 
+			
 	       	<View class="buttonWearItView">
-		     	<Button class="buttonWearIt"></Button>
-	        </View> 
+		     		<Button class="buttonWearIt"></Button>	
+		    </View> 
 	       
-	        
-	    
-	    </View>
+	      </View>
 	
 	    <View id="articleInfo">
 	            <Label id="articleTitle" class="articleTitle">Article title</Label>
