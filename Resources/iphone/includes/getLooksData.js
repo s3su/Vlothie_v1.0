@@ -17,9 +17,7 @@ xhr.onload = function() {
         for (var field in jsonData[index]) Alloy.Globals.looksArray[index][field] = jsonData[index][field];
         count++;
     }
-    Ti.API.info("Alloy.Globals.looksArray :->>: " + Alloy.Globals.dump(Alloy.Globals.looksArray));
     Alloy.Globals.looksArray["size"] = count;
-    Ti.API.info("Alloy.Globals.looksArray.[size]: " + Alloy.Globals.looksArray["size"]);
 };
 
 xhr.open("GET", jsonURL);

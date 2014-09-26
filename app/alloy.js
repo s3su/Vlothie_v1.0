@@ -4,6 +4,7 @@ require('includes/getArticlesData');
 require('includes/getLooksData');
 require('includes/getTrendsData');
 require('includes/getHomeData');
+require('includes/getWeatherData');
 require('includes/setArticlesData');
 
 

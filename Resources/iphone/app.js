@@ -10,6 +10,8 @@ require("includes/getTrendsData");
 
 require("includes/getHomeData");
 
+require("includes/getWeatherData");
+
 require("includes/setArticlesData");
 
 Alloy.Globals.selectedArticleIndex = 0;

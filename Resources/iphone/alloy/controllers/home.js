@@ -83,7 +83,11 @@ function Controller() {
         id: "helloLeft"
     });
     $.__views.hello.add($.__views.helloLeft);
-    $.__views.weatherId = Ti.UI.createLabel({
+    $.__views.weatherIcon = Ti.UI.createImageView({
+        id: "weatherIcon"
+    });
+    $.__views.helloLeft.add($.__views.weatherIcon);
+    $.__views.weatherText = Ti.UI.createLabel({
         color: "white",
         font: {
             fontFamily: "arial",
@@ -94,9 +98,9 @@ function Controller() {
         top: "43dp",
         zIndex: 3,
         text: "16c / 4c",
-        id: "weatherId"
+        id: "weatherText"
     });
-    $.__views.helloLeft.add($.__views.weatherId);
+    $.__views.helloLeft.add($.__views.weatherText);
     $.__views.helloMid = Ti.UI.createView({
         height: "70dp",
         width: "2dp",
@@ -333,10 +337,11 @@ function Controller() {
     $.__views.menuHome.add($.__views.__alloyId25);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
+    Ti.API.info(Alloy.Globals.dump(Alloy.Globals.homeDataArray));
     $.greetingTimePhrase.setText(Alloy.Globals.homeDataArray["greetingTimePhrase"]);
     $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray["greetingDayPhrase"]);
-    $.weatherId.setText(Alloy.Globals.homeDataArray["weatherId"]);
+    $.weatherText.setText(Alloy.Globals.weatherArray["temp_C"] + " °C");
+    $.weatherIcon.image = "/images/weather/" + Alloy.Globals.weatherArray["weatherCode"] + ".png";
     __defers["$.__views.__alloyId12!click!showLooksWithSituation1"] && $.__views.__alloyId12.addEventListener("click", showLooksWithSituation1);
     __defers["$.__views.__alloyId14!click!showLooksWithSituation2"] && $.__views.__alloyId14.addEventListener("click", showLooksWithSituation2);
     __defers["$.__views.__alloyId16!click!showLooksWithSituation3"] && $.__views.__alloyId16.addEventListener("click", showLooksWithSituation3);

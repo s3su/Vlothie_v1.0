@@ -315,7 +315,6 @@ function Controller() {
     var articleTopCount = 0;
     var articleBottomCount = 0;
     var articleShoesCount = 0;
-    Ti.API.info("Alloy.Globals.looksArray.length: " + Alloy.Globals.looksArray.length);
     for (var index in Alloy.Globals.articlesArray) switch (Alloy.Globals.articlesArray[index]["categoryId"]) {
       case "1":
         articleTop[articleTopCount] = [];

@@ -2,7 +2,7 @@ Ti.API.info("!!getHomeData.js LOADED");
 
 var jsonURL = "http://be.vlothie.com/json/getHomeData.php";
 
-Alloy.Globals.homeDataArray = "getting the data? outside";
+Alloy.Globals.homeDataArray = {};
 
 var jsonData = "";
 

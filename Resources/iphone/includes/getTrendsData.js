@@ -11,12 +11,10 @@ var xhr = Titanium.Network.createHTTPClient();
 xhr.onload = function() {
     Ti.API.info("got data from the network: " + this.responseText);
     var jsonData = JSON.parse(this.responseText);
-    Ti.API.info("got data from: " + Alloy.Globals.dump(jsonData));
     for (var index in jsonData) {
         Alloy.Globals.trendsArray[index] = [];
         for (var field in jsonData[index]) Alloy.Globals.trendsArray[index][field] = jsonData[index][field];
     }
-    Ti.API.info(Alloy.Globals.dump(Alloy.Globals.trendsArray));
 };
 
 xhr.open("GET", jsonURL);

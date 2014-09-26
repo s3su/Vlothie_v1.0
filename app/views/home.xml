@@ -7,7 +7,8 @@
   			
   				    <View id="hello">
 				        <View id="helloLeft">
-					  	  <Label id="weatherId" class="weatherTextTemp"></Label>
+					  	   <ImageView id="weatherIcon" />
+					  	  <Label id="weatherText" class="weatherTextTemp"></Label>
 					   </View>
 					   
 					   <View id="helloMid"></View>

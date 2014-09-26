@@ -3,8 +3,8 @@ Ti.API.info('!!getHomeData.js LOADED');
 var jsonURL = "http://be.vlothie.com/json/getHomeData.php";
 
 //Array to store the data from the articles
-//Alloy.Globals.homeDataArray = {};
-Alloy.Globals.homeDataArray = "getting the data? outside";
+Alloy.Globals.homeDataArray = {};
+//Alloy.Globals.homeDataArray = "getting the data? outside";
 var jsonData = '';
 //Ti.API.info('!!---- getArticleData.js get json data from: '+jsonURL);
 var xhr = Titanium.Network.createHTTPClient();

@@ -1,9 +1,10 @@
 
-Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
-//alert(Alloy.Globals.dump(Alloy.Globals.homeDataArray));
+//Ti.API.info(Alloy.Globals.dump(Alloy.Globals.articlesArray));
+Ti.API.info(Alloy.Globals.dump(Alloy.Globals.homeDataArray));
 $.greetingTimePhrase.setText(Alloy.Globals.homeDataArray['greetingTimePhrase']);
 $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray['greetingDayPhrase']);
-$.weatherId.setText(Alloy.Globals.homeDataArray['weatherId']);
+$.weatherText.setText(Alloy.Globals.weatherArray['temp_C']+" °C");
+$.weatherIcon.image = '/images/weather/'+Alloy.Globals.weatherArray['weatherCode']+".png";
 
 function showHome() {
 	Alloy.createController("home").getView().open();
