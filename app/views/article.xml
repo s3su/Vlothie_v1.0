@@ -10,7 +10,7 @@
     <ScrollView id="articleContent" >
     	
 	    <View id="articleSelected"> 
-		   	<View class="buttonBuyItView">
+		   	<View class="buttonBuyItView" id="buttonBuyItView">
 		     	<Button class="buttonBuyIt">
 		     		<Label>
 		     			BUY

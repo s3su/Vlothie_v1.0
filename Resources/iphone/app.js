@@ -20,13 +20,17 @@ Alloy.Globals.isSetLook = 0;
 
 Alloy.Globals.selectedSituationId = 0;
 
-Alloy.Globals.lookSetId = 0;
+Alloy.Globals.lookSetIndex = 0;
 
 Alloy.Globals.lookTopId = 0;
 
 Alloy.Globals.lookBottomId = 0;
 
 Alloy.Globals.lookShoesId = 0;
+
+Alloy.Globals.trendId = 0;
+
+Alloy.Globals.webBrowserUrl = "";
 
 var getFIXData = true;
 

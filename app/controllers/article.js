@@ -13,6 +13,12 @@ function closeArticle() {
 	$.articleWindow.close();
 }
 
+$.buttonBuyItView.addEventListener('click',function(e){
+	
+	Alloy.Globals.webBrowserUrl = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['articleLink'];
+	Ti.API.info('!!articleIndex: '+Alloy.Globals.selectedArticleIndex+' - Link: '+Alloy.Globals.webBrowserUrl);
+	Alloy.createController("webBrowser").getView().open();
+});
 
 //alert("articleId: "+Alloy.Globals.sectedArticleId+" -- data: "+Alloy.Globals.dump(Alloy.Globals.articlesArray[Alloy.Globals.sectedArticleId]));
 Ti.API.info('!!-----------------article.js ---------------------------');

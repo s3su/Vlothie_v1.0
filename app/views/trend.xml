@@ -12,16 +12,16 @@
 		
       <ScrollView id="trendContentScroll">
   		
-        <View class="trendContent" onClick="showLooks">
+        <View class="trendContent" id="trendContent" onClick="showLooks">
 			<ImageView id="trendImg"/>
 		</View>
 	     
 	    <View class="trendContentDesc">
-			   <Label id="trendInfoText">Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct Trend desct</Label>
+			   <Label id="trendInfoText"></Label>
  		</View> 
     
     	<View class="trendContentAuthor">
-		   	   <ImageView class="trendAuthorImg"/>
+		   	   <ImageView class="trendAuthorImg" id="trendAuthorImg"/>
 	    </View> 
     
 	    

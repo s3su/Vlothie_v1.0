@@ -41,21 +41,24 @@ function Controller() {
         "right" == direction ? Alloy.Globals.lookShoesId - 1 >= 0 ? Alloy.Globals.lookShoesId-- : Alloy.Globals.lookShoesId = articleShoes.length - 1 : "left" == direction ? Alloy.Globals.lookShoesId + 1 < articleShoes.length ? Alloy.Globals.lookShoesId++ : Alloy.Globals.lookShoesId = 0 : "random" == direction && (Alloy.Globals.lookShoesId = Math.floor(Math.random() * articleShoes.length));
         return Alloy.Globals.lookShoesId;
     }
-    function setLook() {
-        Alloy.Globals.lookSetId + 1 < Alloy.Globals.looksArray["size"] ? Alloy.Globals.lookSetId++ : Alloy.Globals.lookSetId = 0;
-        Ti.API.info("Alloy.Globals.lookSetId: " + Alloy.Globals.lookSetId);
-        for (var index in articleTop) if (articleTop[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["topArticleId"]) {
+    function setLook(lookId) {
+        lookId > 0 ? Alloy.Globals.lookSetIndex = getLookSetIndexBylookId(lookId) : Alloy.Globals.lookSetIndex + 1 < Alloy.Globals.looksArray["size"] ? Alloy.Globals.lookSetIndex++ : Alloy.Globals.lookSetIndex = 0;
+        Ti.API.info("Alloy.Globals.lookSetIndex: " + Alloy.Globals.lookSetIndex);
+        for (var index in articleTop) if (articleTop[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["topArticleId"]) {
             Alloy.Globals.lookTopId = index;
             break;
         }
-        for (var index in articleBottom) if (articleBottom[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["bottomArticleId"]) {
+        for (var index in articleBottom) if (articleBottom[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["bottomArticleId"]) {
             Alloy.Globals.lookBottomId = index;
             break;
         }
-        for (var index in articleShoes) if (articleShoes[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]["shoesArticleId"]) {
+        for (var index in articleShoes) if (articleShoes[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["shoesArticleId"]) {
             Alloy.Globals.lookShoesId = index;
             break;
         }
+    }
+    function getLookSetIndexBylookId(lookId) {
+        for (var index in Alloy.Globals.looksArray) if (Alloy.Globals.looksArray[index]["lookId"] == lookId) return index;
     }
     function setInitialLook() {
         if (Alloy.Globals.selectedSituationId > 0) {
@@ -76,6 +79,10 @@ function Controller() {
             }
             0 > Alloy.Globals.lookShoesId && (Alloy.Globals.lookShoesId = selectShoesId());
             Alloy.Globals.selectedSituationId = 0;
+        } else if (Alloy.Globals.isSetLook > 0) {
+            Ti.API.info("!!setInitialLook() Setted Look ");
+            setLook(Alloy.Globals.isSetLook);
+            Alloy.Globals.isSetLook = 0;
         } else if (0 == Alloy.Globals.isSetLook) {
             Ti.API.info("!!setInitialLook() Not setted Look ");
             setLook();
@@ -125,23 +132,23 @@ function Controller() {
         id: "lookButtons"
     });
     $.__views.lookWindow.add($.__views.lookButtons);
-    $.__views.__alloyId27 = Ti.UI.createButton({
+    $.__views.__alloyId26 = Ti.UI.createButton({
         image: "/images/v-back.png",
         tintColor: "#fff",
         left: "8dp",
         top: "2dp",
-        id: "__alloyId27"
+        id: "__alloyId26"
     });
-    $.__views.lookButtons.add($.__views.__alloyId27);
-    showTrends ? $.__views.__alloyId27.addEventListener("click", showTrends) : __defers["$.__views.__alloyId27!click!showTrends"] = true;
-    $.__views.__alloyId28 = Ti.UI.createButton({
+    $.__views.lookButtons.add($.__views.__alloyId26);
+    showTrends ? $.__views.__alloyId26.addEventListener("click", showTrends) : __defers["$.__views.__alloyId26!click!showTrends"] = true;
+    $.__views.__alloyId27 = Ti.UI.createButton({
         image: "/images/v-search.png",
         tintColor: "#fff",
         right: "8dp",
         top: "2dp",
-        id: "__alloyId28"
+        id: "__alloyId27"
     });
-    $.__views.lookButtons.add($.__views.__alloyId28);
+    $.__views.lookButtons.add($.__views.__alloyId27);
     $.__views.getLook = Ti.UI.createView({
         top: "2dp",
         width: "100%",
@@ -149,7 +156,7 @@ function Controller() {
         id: "getLook"
     });
     $.__views.lookWindow.add($.__views.getLook);
-    $.__views.__alloyId29 = Ti.UI.createLabel({
+    $.__views.__alloyId28 = Ti.UI.createLabel({
         color: "#922a80",
         font: {
             fontSize: "16dp",
@@ -158,39 +165,39 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "A cassual day look:",
-        id: "__alloyId29"
+        id: "__alloyId28"
     });
-    $.__views.getLook.add($.__views.__alloyId29);
+    $.__views.getLook.add($.__views.__alloyId28);
     $.__views.menuLookView = Ti.UI.createView({
         top: "32dp",
         height: "36dp",
         id: "menuLookView"
     });
     $.__views.lookWindow.add($.__views.menuLookView);
-    $.__views.__alloyId30 = Ti.UI.createButton({
+    $.__views.__alloyId29 = Ti.UI.createButton({
         image: "/images/v-schedule.png",
         tintColor: "#b23b91",
         left: "20dp",
-        id: "__alloyId30"
+        id: "__alloyId29"
     });
-    $.__views.menuLookView.add($.__views.__alloyId30);
-    showHome ? $.__views.__alloyId30.addEventListener("click", showHome) : __defers["$.__views.__alloyId30!click!showHome"] = true;
-    $.__views.__alloyId31 = Ti.UI.createButton({
+    $.__views.menuLookView.add($.__views.__alloyId29);
+    showHome ? $.__views.__alloyId29.addEventListener("click", showHome) : __defers["$.__views.__alloyId29!click!showHome"] = true;
+    $.__views.__alloyId30 = Ti.UI.createButton({
         image: "/images/v-diamond.png",
         tintColor: "#b23b91",
         left: "50dp",
-        id: "__alloyId31"
+        id: "__alloyId30"
     });
-    $.__views.menuLookView.add($.__views.__alloyId31);
-    showTrends ? $.__views.__alloyId31.addEventListener("click", showTrends) : __defers["$.__views.__alloyId31!click!showTrends"] = true;
-    $.__views.__alloyId32 = Ti.UI.createButton({
+    $.__views.menuLookView.add($.__views.__alloyId30);
+    showTrends ? $.__views.__alloyId30.addEventListener("click", showTrends) : __defers["$.__views.__alloyId30!click!showTrends"] = true;
+    $.__views.__alloyId31 = Ti.UI.createButton({
         image: "/images/v-stylist.png",
         tintColor: "#b23b91",
         left: "80dp",
-        id: "__alloyId32"
+        id: "__alloyId31"
     });
-    $.__views.menuLookView.add($.__views.__alloyId32);
-    showLooks ? $.__views.__alloyId32.addEventListener("click", showLooks) : __defers["$.__views.__alloyId32!click!showLooks"] = true;
+    $.__views.menuLookView.add($.__views.__alloyId31);
+    showLooks ? $.__views.__alloyId31.addEventListener("click", showLooks) : __defers["$.__views.__alloyId31!click!showLooks"] = true;
     $.__views.lookContent = Ti.UI.createScrollView({
         layout: "vertical",
         top: "70dp",
@@ -216,13 +223,13 @@ function Controller() {
     });
     $.__views.articleTop.add($.__views.articleTopImg);
     showArticleTop ? $.__views.articleTopImg.addEventListener("click", showArticleTop) : __defers["$.__views.articleTopImg!click!showArticleTop"] = true;
-    $.__views.__alloyId33 = Ti.UI.createView({
+    $.__views.__alloyId32 = Ti.UI.createView({
         height: "2dp",
         backgroundColor: "#fda8e2",
         bottom: "0dp",
-        id: "__alloyId33"
+        id: "__alloyId32"
     });
-    $.__views.lookContent.add($.__views.__alloyId33);
+    $.__views.lookContent.add($.__views.__alloyId32);
     $.__views.articleBottom = Ti.UI.createView({
         layout: "vertical",
         height: "150dp",
@@ -239,13 +246,13 @@ function Controller() {
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
     showArticleBottom ? $.__views.articleBottomImg.addEventListener("click", showArticleBottom) : __defers["$.__views.articleBottomImg!click!showArticleBottom"] = true;
-    $.__views.__alloyId34 = Ti.UI.createView({
+    $.__views.__alloyId33 = Ti.UI.createView({
         height: "2dp",
         backgroundColor: "#fda8e2",
         bottom: "0dp",
-        id: "__alloyId34"
+        id: "__alloyId33"
     });
-    $.__views.lookContent.add($.__views.__alloyId34);
+    $.__views.lookContent.add($.__views.__alloyId33);
     $.__views.articleShoes = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
@@ -270,44 +277,44 @@ function Controller() {
         id: "menuHome"
     });
     $.__views.lookWindow.add($.__views.menuHome);
-    $.__views.__alloyId35 = Ti.UI.createButton({
+    $.__views.__alloyId34 = Ti.UI.createButton({
         image: "/images/home/v-home.png",
         tintColor: "#fff",
         left: "30dp",
-        id: "__alloyId35"
+        id: "__alloyId34"
     });
-    $.__views.menuHome.add($.__views.__alloyId35);
-    showHome ? $.__views.__alloyId35.addEventListener("click", showHome) : __defers["$.__views.__alloyId35!click!showHome"] = true;
-    $.__views.__alloyId36 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId34);
+    showHome ? $.__views.__alloyId34.addEventListener("click", showHome) : __defers["$.__views.__alloyId34!click!showHome"] = true;
+    $.__views.__alloyId35 = Ti.UI.createButton({
         image: "/images/home/v-trend.png",
         tintColor: "#fff",
         left: "86dp",
-        id: "__alloyId36"
+        id: "__alloyId35"
     });
-    $.__views.menuHome.add($.__views.__alloyId36);
-    showTrends ? $.__views.__alloyId36.addEventListener("click", showTrends) : __defers["$.__views.__alloyId36!click!showTrends"] = true;
-    $.__views.__alloyId37 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId35);
+    showTrends ? $.__views.__alloyId35.addEventListener("click", showTrends) : __defers["$.__views.__alloyId35!click!showTrends"] = true;
+    $.__views.__alloyId36 = Ti.UI.createButton({
         image: "/images/home/v-look.png",
         tintColor: "#fff",
         left: "140dp",
-        id: "__alloyId37"
+        id: "__alloyId36"
     });
-    $.__views.menuHome.add($.__views.__alloyId37);
-    showLooks ? $.__views.__alloyId37.addEventListener("click", showLooks) : __defers["$.__views.__alloyId37!click!showLooks"] = true;
-    $.__views.__alloyId38 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId36);
+    showLooks ? $.__views.__alloyId36.addEventListener("click", showLooks) : __defers["$.__views.__alloyId36!click!showLooks"] = true;
+    $.__views.__alloyId37 = Ti.UI.createButton({
         image: "/images/home/v-alarm.png",
         tintColor: "#fff",
         left: "195dp",
-        id: "__alloyId38"
+        id: "__alloyId37"
     });
-    $.__views.menuHome.add($.__views.__alloyId38);
-    $.__views.__alloyId39 = Ti.UI.createButton({
+    $.__views.menuHome.add($.__views.__alloyId37);
+    $.__views.__alloyId38 = Ti.UI.createButton({
         image: "/images/home/v-setting.png",
         tintColor: "#fff",
         left: "250dp",
-        id: "__alloyId39"
+        id: "__alloyId38"
     });
-    $.__views.menuHome.add($.__views.__alloyId39);
+    $.__views.menuHome.add($.__views.__alloyId38);
     exports.destroy = function() {};
     _.extend($, $.__views);
     Ti.API.info("---------------- look.js ------------------------");
@@ -392,16 +399,16 @@ function Controller() {
         Ti.API.info("articleShoes[Alloy.Globals.lookShoesId][articlePhotoLook]:  with: Alloy.Globals.lookShoesId: " + Alloy.Globals.lookShoesId);
         Ti.API.info("!!shoes title: " + articleShoes[Alloy.Globals.lookShoesId]["title"] + " - Image: " + imagePath);
     });
-    __defers["$.__views.__alloyId27!click!showTrends"] && $.__views.__alloyId27.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId30!click!showHome"] && $.__views.__alloyId30.addEventListener("click", showHome);
-    __defers["$.__views.__alloyId31!click!showTrends"] && $.__views.__alloyId31.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId32!click!showLooks"] && $.__views.__alloyId32.addEventListener("click", showLooks);
+    __defers["$.__views.__alloyId26!click!showTrends"] && $.__views.__alloyId26.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId29!click!showHome"] && $.__views.__alloyId29.addEventListener("click", showHome);
+    __defers["$.__views.__alloyId30!click!showTrends"] && $.__views.__alloyId30.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId31!click!showLooks"] && $.__views.__alloyId31.addEventListener("click", showLooks);
     __defers["$.__views.articleTopImg!click!showArticleTop"] && $.__views.articleTopImg.addEventListener("click", showArticleTop);
     __defers["$.__views.articleBottomImg!click!showArticleBottom"] && $.__views.articleBottomImg.addEventListener("click", showArticleBottom);
     __defers["$.__views.articleShoesImg!click!showArticleShoes"] && $.__views.articleShoesImg.addEventListener("click", showArticleShoes);
-    __defers["$.__views.__alloyId35!click!showHome"] && $.__views.__alloyId35.addEventListener("click", showHome);
-    __defers["$.__views.__alloyId36!click!showTrends"] && $.__views.__alloyId36.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId37!click!showLooks"] && $.__views.__alloyId37.addEventListener("click", showLooks);
+    __defers["$.__views.__alloyId34!click!showHome"] && $.__views.__alloyId34.addEventListener("click", showHome);
+    __defers["$.__views.__alloyId35!click!showTrends"] && $.__views.__alloyId35.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId36!click!showLooks"] && $.__views.__alloyId36.addEventListener("click", showLooks);
     _.extend($, exports);
 }
 

@@ -213,34 +213,38 @@ function selectShoesId(direction){
 	return Alloy.Globals.lookShoesId;
 }
 
-function setLook(){
+function setLook(lookId){
 	
 	//Ti.API.info('Set Look function || Alloy.Globals.looksArray.length: '+Alloy.Globals.looksArray.length);
 	//Ti.API.info('Alloy.Globals.looksArray ===: '+Alloy.Globals.dump(Alloy.Globals.looksArray));
-	if((Alloy.Globals.lookSetId+1) < Alloy.Globals.looksArray['size']){
-		Alloy.Globals.lookSetId++;
+	if(lookId>0){
+		Alloy.Globals.lookSetIndex = getLookSetIndexBylookId(lookId);
 	}else{
-		Alloy.Globals.lookSetId = 0;
+		if((Alloy.Globals.lookSetIndex+1) < Alloy.Globals.looksArray['size']){
+			Alloy.Globals.lookSetIndex++;
+		}else{
+			Alloy.Globals.lookSetIndex = 0;
+		}
 	}
-	Ti.API.info('Alloy.Globals.lookSetId: '+Alloy.Globals.lookSetId);
+	Ti.API.info('Alloy.Globals.lookSetIndex: '+Alloy.Globals.lookSetIndex);
 	
 	
 	for(var index in articleTop) {
-		if(articleTop[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['topArticleId']){
+		if(articleTop[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]['topArticleId']){
 			Alloy.Globals.lookTopId = index;
 			break;
 		}
 	}
 	
 	for(var index in articleBottom) {
-		if(articleBottom[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['bottomArticleId']){
+		if(articleBottom[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]['bottomArticleId']){
 			Alloy.Globals.lookBottomId = index;
 			break;
 		}
 	}
 	
 	for(var index in articleShoes) {
-		if(articleShoes[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetId]['shoesArticleId']){
+		if(articleShoes[index]['articleId'] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]['shoesArticleId']){
 			Alloy.Globals.lookShoesId = index;
 			break;
 		}
@@ -248,6 +252,13 @@ function setLook(){
 	
 }
 
+function getLookSetIndexBylookId(lookId){
+	for(var index in Alloy.Globals.looksArray) {
+		if(Alloy.Globals.looksArray[index]['lookId'] == lookId){
+			return index;
+		}
+	}
+}
 //--------------set INITIAL LOOK
 function setInitialLook(){
 	//alert('setInitialLook');
@@ -293,6 +304,11 @@ function setInitialLook(){
 		
 		Alloy.Globals.selectedSituationId = 0;
 		
+	}else if(Alloy.Globals.isSetLook >0){
+		Ti.API.info('!!setInitialLook() Setted Look ');
+		
+		setLook(Alloy.Globals.isSetLook);
+		Alloy.Globals.isSetLook = 0;
 	}else if(Alloy.Globals.isSetLook == 0){
 		Ti.API.info('!!setInitialLook() Not setted Look ');
 		

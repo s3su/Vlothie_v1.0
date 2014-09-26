@@ -1,0 +1,5 @@
+".closeArticle": {
+	image: "/images/v-back.png",
+	tintColor: "#fff",
+	top: "2dp",
+	left: "8dp"}

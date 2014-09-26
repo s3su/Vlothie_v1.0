@@ -67,75 +67,75 @@ function Controller() {
         id: "articleSelected"
     });
     $.__views.articleContent.add($.__views.articleSelected);
-    $.__views.__alloyId1 = Ti.UI.createView({
+    $.__views.buttonBuyItView = Ti.UI.createView({
         right: "8dp",
         top: "0dp",
         zIndex: "200",
         width: "60dp",
         height: "60dp",
-        id: "__alloyId1"
+        id: "buttonBuyItView"
     });
-    $.__views.articleSelected.add($.__views.__alloyId1);
-    $.__views.__alloyId2 = Ti.UI.createButton({
+    $.__views.articleSelected.add($.__views.buttonBuyItView);
+    $.__views.__alloyId1 = Ti.UI.createButton({
         image: "/images/v-article-buy.png",
         tintColor: "#beee00",
         zIndex: "250",
         title: "",
+        id: "__alloyId1"
+    });
+    $.__views.buttonBuyItView.add($.__views.__alloyId1);
+    $.__views.__alloyId2 = Ti.UI.createLabel({
+        color: "#FFF",
+        text: "BUY",
         id: "__alloyId2"
     });
     $.__views.__alloyId1.add($.__views.__alloyId2);
-    $.__views.__alloyId3 = Ti.UI.createLabel({
-        color: "#FFF",
-        text: "BUY",
-        id: "__alloyId3"
-    });
-    $.__views.__alloyId2.add($.__views.__alloyId3);
-    $.__views.__alloyId4 = Ti.UI.createView({
+    $.__views.__alloyId3 = Ti.UI.createView({
         left: "8dp",
         top: "0dp",
         zIndex: "200",
         width: "60dp",
         height: "60dp",
-        id: "__alloyId4"
+        id: "__alloyId3"
     });
-    $.__views.articleSelected.add($.__views.__alloyId4);
-    $.__views.__alloyId5 = Ti.UI.createButton({
+    $.__views.articleSelected.add($.__views.__alloyId3);
+    $.__views.__alloyId4 = Ti.UI.createButton({
         backgroundImage: "/images/v-article-diamond.png",
         zIndex: "300",
-        id: "__alloyId5"
+        id: "__alloyId4"
     });
-    $.__views.__alloyId4.add($.__views.__alloyId5);
-    $.__views.__alloyId6 = Ti.UI.createView({
+    $.__views.__alloyId3.add($.__views.__alloyId4);
+    $.__views.__alloyId5 = Ti.UI.createView({
         borderRadius: "10dp",
         zIndex: "1",
         top: "16dp",
         left: "16dp",
         right: "16dp",
         width: "90%",
-        id: "__alloyId6"
+        id: "__alloyId5"
     });
-    $.__views.articleSelected.add($.__views.__alloyId6);
+    $.__views.articleSelected.add($.__views.__alloyId5);
     $.__views.articleSelectedImg = Ti.UI.createImageView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
         id: "articleSelectedImg"
     });
-    $.__views.__alloyId6.add($.__views.articleSelectedImg);
-    $.__views.__alloyId7 = Ti.UI.createView({
+    $.__views.__alloyId5.add($.__views.articleSelectedImg);
+    $.__views.__alloyId6 = Ti.UI.createView({
         right: "12dp",
         bottom: "2dp",
         zIndex: "250",
         width: "60dp",
         height: "60dp",
-        id: "__alloyId7"
+        id: "__alloyId6"
     });
-    $.__views.articleSelected.add($.__views.__alloyId7);
-    $.__views.__alloyId8 = Ti.UI.createButton({
+    $.__views.articleSelected.add($.__views.__alloyId6);
+    $.__views.__alloyId7 = Ti.UI.createButton({
         backgroundImage: "/images/v-article-wear.png",
         zIndex: "300",
-        id: "__alloyId8"
+        id: "__alloyId7"
     });
-    $.__views.__alloyId7.add($.__views.__alloyId8);
+    $.__views.__alloyId6.add($.__views.__alloyId7);
     $.__views.articleInfo = Ti.UI.createView({
         layout: "vertical",
         top: "24dp",
@@ -170,6 +170,11 @@ function Controller() {
     $.__views.articleInfo.add($.__views.articleInfoText);
     exports.destroy = function() {};
     _.extend($, $.__views);
+    $.buttonBuyItView.addEventListener("click", function() {
+        Alloy.Globals.webBrowserUrl = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]["articleLink"];
+        Ti.API.info("!!articleIndex: " + Alloy.Globals.selectedArticleIndex + " - Link: " + Alloy.Globals.webBrowserUrl);
+        Alloy.createController("webBrowser").getView().open();
+    });
     Ti.API.info("!!-----------------article.js ---------------------------");
     Ti.API.info("!!articleIndex: " + Alloy.Globals.selectedArticleIndex + " - Title: ");
     $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]["articlePhotoArt"];

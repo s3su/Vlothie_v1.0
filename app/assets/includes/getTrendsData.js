@@ -15,7 +15,7 @@ xhr.onload = function() {
 		//Ti.API.info('got data from: ' + Alloy.Globals.dump(jsonData));
 		
 		//alert(jsonData[0]['name']);
-		
+		var count = 0;
 		for(var index in jsonData) {
 			Alloy.Globals.trendsArray[index] = [];
 			//articlesArray[3]['name'] = 'test';
@@ -25,7 +25,9 @@ xhr.onload = function() {
 				
 				Alloy.Globals.trendsArray[index][field] = jsonData[index][field];
 			}
+			count++;
 		}
+		Alloy.Globals.trendsArray['size'] = count;
 		//Ti.API.info(Alloy.Globals.dump(Alloy.Globals.trendsArray));
 		
 };

@@ -8,6 +8,9 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
+    function closeBrowser() {
+        $.browserWindow.close();
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "webBrowser";
     if (arguments[0]) {
@@ -17,23 +20,34 @@ function Controller() {
     }
     var $ = this;
     var exports = {};
-    $.__views.webBrowser = Ti.UI.createWindow({
+    var __defers = {};
+    $.__views.browserWindow = Ti.UI.createWindow({
         backgroundColor: "transparent",
         font: {
             fontFamily: "AmericanTypewriter"
         },
-        modal: "true",
-        id: "webBrowser"
+        id: "browserWindow",
+        modal: "true"
     });
-    $.__views.webBrowser && $.addTopLevelView($.__views.webBrowser);
-    $.__views.__alloyId57 = Ti.UI.createWebView({
-        url: "",
-        id: "__alloyId57"
+    $.__views.browserWindow && $.addTopLevelView($.__views.browserWindow);
+    $.__views.articleButtons = Ti.UI.createView({
+        id: "articleButtons"
     });
-    $.__views.webBrowser.add($.__views.__alloyId57);
+    $.__views.browserWindow.add($.__views.articleButtons);
+    $.__views.__alloyId54 = Ti.UI.createButton({
+        id: "__alloyId54"
+    });
+    $.__views.articleButtons.add($.__views.__alloyId54);
+    closeBrowser ? $.__views.__alloyId54.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId54!click!closeBrowser"] = true;
+    $.__views.webview = Ti.UI.createWebView({
+        id: "webview",
+        url: "http://www.appcelerator.com"
+    });
+    $.__views.browserWindow.add($.__views.webview);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.webview.url = "http://www.bits0.com/bits0Develop/";
+    $.webview.url = Alloy.Globals.webBrowserUrl;
+    __defers["$.__views.__alloyId54!click!closeBrowser"] && $.__views.__alloyId54.addEventListener("click", closeBrowser);
     _.extend($, exports);
 }
 
