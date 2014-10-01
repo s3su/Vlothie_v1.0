@@ -1,0 +1,200 @@
+"#vlothieHome": {
+	fullscreen: false,
+	exitOnClose: true,
+	backgroundImage: "/images/vlothie-background.jpg"
+}
+
+"#homeContent": {
+	top: "20dp",
+	left: "0dp",
+	right: "0dp",
+	height: "460dp"}
+	
+	
+"#weatherIcon": {
+	top: "8dp",}
+
+"#weatherText": {
+	top: "48dp",}
+
+
+"#greetingTimePhrase": {}
+
+"#greetingDayPhrase": {}
+
+".sectionTitleViolet": {
+	color: "a1238e",
+	textAlign: "center",
+	shadowRadius: "5dp",
+	shadowColor: "black",
+	shadowOffset: "4dp",	
+	font: {
+		fontSize: "18dp",
+		fontWeight: "light"}
+	}
+	
+".sectionTitleWhite": {
+	color: "white",
+	textAlign: "center",
+	shadowRadius: "5dp",
+	shadowColor: "black",
+	shadowOffset: "4dp",	
+	font: {
+		fontSize: '18dp',
+		fontWeight: 'light',}
+	}
+	
+"#hello": {
+	top: "16dp",
+	left: "16dp",
+	right: "16dp",
+	borderRadius: "10dp", 
+	height: "80dp",
+	backgroundImage: 'images/home/helloBackground.png'
+	}
+
+"#helloLeft": {	
+	height: "70dp",
+	width: "70dp",
+	left:  "6dp",
+	backgroundColor: "transparent",
+ 	zIndex: 2
+	}
+
+"#helloMid": {	
+	height: "70dp",
+	width: "2dp",
+	left:  "83dp",
+	backgroundColor: "transparent",
+	zIndex: 2
+ 	}
+
+
+"#helloRight": { 	
+	height: "70dp",
+	width: "190dp",
+	left:  "92dp",
+	backgroundColor: "transparent",
+	zIndex: 2
+	}
+
+".weatherTextBold": {
+	left: "0dp",
+	font: {
+		fontFamily: "arial",
+		fontSize: '15dp',
+		fontWeight: 'bold'},
+	textAlign: "left",
+	color: "white",
+	top: "8dp",
+	zIndex: 3
+	} 	
+
+".weatherTextTemp": {
+	font: {
+		fontFamily:  "arial",
+		fontSize: "15",
+		fontWeight: 'light'},
+	textAlign: "left",
+	color: "white",
+	top: "40dp",
+	zIndex: 3,
+	text: '16c / 4c'
+	} 	
+
+".weatherText": {
+	left: "0dp",
+	font: {
+		fontFamily:  "arial",
+		fontSize: "13",
+		fontWeight: 'light'},
+	textAlign: "left",
+	color: "white",
+	top: "40dp",
+	zIndex: 3
+	} 	
+
+ 	
+"#getLook": {
+	top: "98dp",
+	width: "100%",
+	height: "20dp",
+	}
+
+".getLookText": {
+	color: "#922a80",
+	font: {
+		fontSize: "16dp",
+		fontWeight: "bold",
+		fontStyle: "italic",
+		fontFamily: "Baskerville"}
+	}
+	
+	
+"#yourLooks": {
+	top: "120dp",
+	height: "540dp"
+	}
+
+".yourLooksEachA": {
+	top: "0dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#a1238e"}
+
+".yourLooksEachB": {
+	top: "66dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fe94d5"}
+	
+".yourLooksEachC": {
+	top: "132dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#ffc3e2"}
+
+".yourLooksEachD": {
+	top: "198dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fee8f3"}
+
+".yourLooksEachE": {
+	top: "264dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fdf4f9"}
+
+
+"#menuHome": {
+	height: "50dp",
+	width: "100%",
+	bottom: "2dp",
+	backgroundColor: "#transparent"}	
+	
+".homeButtonMenuHome": {
+	image: "/images/home/v-home.png",
+	tintColor: "#fff",
+	left: "30dp"}	
+
+".trendButtonMenuHome": {
+	image: "/images/home/v-trend.png",
+	tintColor: "#fff",
+	left: "86dp"}	
+
+".lookButtonMenuHome": {
+	image: "/images/home/v-look.png",
+	tintColor: "#fff",
+	left: "140dp"}	
+
+".alarmButtonMenuHome": {
+	image: "/images/home/v-alarm.png",
+	tintColor: "#fff",
+	left: "195dp"}	
+
+".settingsButtonMenuHome": {
+	image: "/images/home/v-setting.png",
+	tintColor: "#fff",
+	left: "250dp"}	
+
