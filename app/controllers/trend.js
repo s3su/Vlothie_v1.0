@@ -3,7 +3,7 @@ var animation = require('alloy/animation');
 
 function showHome() {
 	//console.log(e);
-		Alloy.createController("home").getView().open();
+		Alloy.createController("index").getView().open();
 	//var homeTab = $.TabGroup.setActiveTab(0); 
 	//homeTab.open();
 	}

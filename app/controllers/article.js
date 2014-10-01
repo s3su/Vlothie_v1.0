@@ -6,7 +6,7 @@ function showArticle() {
 
 function showHome() {
 	//console.log(e);
-	Alloy.createController("home", {showTab: 'look'}).getView().open();
+	Alloy.createController("index", {showTab: 'look'}).getView().open();
 }	
 
 function closeArticle() {

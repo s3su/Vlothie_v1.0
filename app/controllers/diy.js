@@ -10,85 +10,9 @@ var articleBottomCount = 0;
 var articleShoesCount = 0;
 
 
-/*
-if(Alloy.Globals.selectedSituationId > 0){
-	
-	buildLooksBySituationId();
-	loadRandomLook();
-	showLook();
-	
-	$.lookContent.addEventListener('swipe',function(e){
-		if (e.direction == 'right') {
-	      	loadPreviousLook();
-	   	} else if (e.direction == 'left') {
-	      	loadNextLook();
-	   	} else if (e.direction == 'top') {
-	      	buildLooksByNextSituation();
-			loadRandomLook();
-	   	} else if (e.direction == 'down') {
-	      	buildLooksByPreviousSituation();
-			loadRandomLook();
-	   	}
-		
-		showLook();
-	});
-		
-	
-}else if(Alloy.Globals.selectedTrendId > 0){
-	
-	loadLookByTrendId();
-	showLook();
-	
-	$.lookContent.addEventListener('swipe',function(e){
-		if (e.direction == 'right') {
-	      	Alloy.createController("trend").getView().open();
-	   	} else if (e.direction == 'left') {
-	      	//NOthing
-	   	} else if (e.direction == 'top') {
-	      	//NOthing
-	   	} else if (e.direction == 'down') {
-	      	//NOthing
-	   	}
-		showLook();
-		
-	});
-	
-}
-
-function buildLooksBySituationId(){
-	
-	var count = 0;
-	for(var index in Alloy.Globals.looksArray) {
-		if(Alloy.Globals.looksArray[index]['situationId'] == Alloy.Globals.selectedSituationId){
-			looksCurrentArray[count]['title'] = Alloy.Globals.looksArray[index]['title'];
-			looksCurrentArray[count]['lookId'] = Alloy.Globals.looksArray[index]['lookId'];
-			looksCurrentArray[count]['topArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[index]['topArticleId']);
-			looksCurrentArray[count]['bottomArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['bottomArticleId']);
-			looksCurrentArray[count]['shoesArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['shoesArticleId']);		
-		}
-		count++;
-	}
-	looksCurrentArray['size'] = count;
-	
-}
-
-function loadRandomLook(){
-	Alloy.Globals.lookCurrentIndex = Math.floor(Math.random() * (looksCurrentArray['size']));
-}
-
-function showLook(){
-	animation.flipHorizontal($.lookContent,$.lookContent, 500);
-	$.articleTopImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex']]['articlePhotoLook'];
-	$.articleBottomImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['bottomArticleIndex']]['articlePhotoLook'];
-	$.articleShoesImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['shoesArticleIndex']]['articlePhotoLook'];
-	animation.flipHorizontal($.lookContent,$.lookContent, 500);
-	
-	Ti.API.info('!!Change Look: '+articleTop[Alloy.Globals.lookTopId]['title']+' - Image: '+imagePath);
-}
-
-*/
-
 for(var index in Alloy.Globals.articlesArray) {
+	
+		
 
 	switch(Alloy.Globals.articlesArray[index]['categoryId']){
 		case "1":
