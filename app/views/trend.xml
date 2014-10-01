@@ -1,42 +1,24 @@
 <Alloy>  <!-- Main Window -->
   <Window id="trendWindow" platform="android,ios">
 
-	<View id="trendButtons">
+	<View id="windowButtons">
  		<Button class="backButton" onClick="showHome"></Button>
  		<Button class="searchButton"></Button>
+ 	
  	</View>
-                         
-    <View id="getTrend">
-	    <Label class="getTrendText">Trends!</Label>
-	</View>
+ 	
+ 	 	<View id="windowTitle">
+		    <Label class="windowTitleText">Trend Stylist</Label>
+		</View>
 		
       <ScrollView id="trendContentScroll">
   		
         <View class="trendContent" id="trendContent" onClick="showLooks">
 			<ImageView id="trendImg"/>
-		   	   <ImageView class="trendAuthorImg"/>
-	
 		</View>
 	     
-	    <View class="trendContentDesc">
-			   <Label id="trendInfoText"></Label>
- 		</View>
-     
-    	<View class="trendContentAuthor">
-		   	   <ImageView id="trendAuthorImg"/>
-	    </View> 
-    
-    </ScrollView>
+	</ScrollView>
 	
-	   	<View id="menuHome">
-			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
-		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
-		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-		 	  <Button class="alarmButtonMenuHome"></Button>
-		 	  <Button class="settingsButtonMenuHome"></Button>
-	   </View>
-
-    
   </Window>
  
 </Alloy>

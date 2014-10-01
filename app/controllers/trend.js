@@ -42,8 +42,8 @@ if(Alloy.Globals.trendId <= 0){
 
 var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]['photoMain'];
 $.trendImg.image = imagePath;
-$.trendInfoText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
-$.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['accountName']);
+//$.trendInfoText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
+//$.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['accountName']);
 
 $.trendContent.addEventListener('swipe',function(e){
 	if (e.direction == 'right') {

@@ -5,24 +5,9 @@
 	backgroundImage: "/images/vlothie-background.jpg" 
 }
 
-"#articleButtons": {
-	height: "30dp",
-	top: "2dp",
-	zIndex: "1",
-	backgroundColor: "transparent"
-}
-
-"#articleTitle": {} 
-
-".closeArticle": {
-	image: "/images/v-back.png",
-	tintColor: "#fff",
-	top: "2dp",
-	left: "8dp"}
-
 "#articleContent": {
 	layout: "vertical",
-	top: "28dp",
+	top: "24dp",
 	backgroundColor: "transparent",
 	verticalBounce: "true",
 	height: "auto"}
@@ -45,12 +30,14 @@
 
 ".buttonBuyIt": {
 	image: "/images/v-article-buy.png",
-	tintColor: "#beee00",
-	zIndex: "250"
+	tintColor: "#922a80",
+	zIndex: "250",
+	width: "60dp",
+	height: "60dp"  
 	}
 	
 ".buttonWearItView": {
-	right: "12dp",
+	right: "22dp",
 	bottom: "2dp",
 	zIndex: "250",
 	width: "60dp",
@@ -58,24 +45,22 @@
 
 ".buttonWearIt": {
 	backgroundImage: "/images/v-article-wear.png",
-	zIndex: "300"}
+	zIndex: "300",
+	width: "60dp",
+	height: "60dp"}
 	
 ".buttonClosetView": {
-	left: "8dp",
-	top: "0dp",
+	left: "22dp",
+	bottom: "2dp",
 	zIndex: "200",
 	width: "60dp",
 	height: "60dp"}
 
 ".buttonCloset": {
 	backgroundImage: "/images/v-article-diamond.png",
-	zIndex: "300"}
-
-".buttonDiamond": {
-	image: "/images/v-article-diamond.png"  ,
-	tintColor: "#f9a0e0",
-	zIndex: "250"
-	}
+	zIndex: "300",
+	width: "60dp",
+	height: "60dp"}
 
 ".borderArticle": {
 	borderRadius: "10dp",
@@ -100,7 +85,7 @@
 	backgroundColor: "transparent",
 	height: "120dp"}
 	
-".articleTitle": {
+"#articleTitle": {
 	color: "white",
 	width: "90%",
 	bottom: "dp",

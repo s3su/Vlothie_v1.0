@@ -11,9 +11,6 @@ function Controller() {
     function showHome() {
         Alloy.createController("index").getView().open();
     }
-    function showTrends() {
-        Alloy.createController("trend").getView().open();
-    }
     function showLooks() {
         Alloy.Globals.isSetLook = Alloy.Globals.trendsArray[Alloy.Globals.trendId]["lookId"];
         Alloy.createController("look").getView().open();
@@ -51,62 +48,101 @@ function Controller() {
         id: "trendWindow"
     });
     $.__views.trendWindow && $.addTopLevelView($.__views.trendWindow);
-    $.__views.trendButtons = Ti.UI.createView({
-        height: "28dp",
+    $.__views.windowButtons = Ti.UI.createView({
+        height: "36dp",
         top: "0dp",
-        zIndex: "10",
-        id: "trendButtons"
+        zIndex: "1",
+        backgroundColor: "transparent",
+        id: "windowButtons"
     });
+<<<<<<< HEAD
     $.__views.trendWindow.add($.__views.trendButtons);
     $.__views.__alloyId42 = Ti.UI.createButton({
+=======
+    $.__views.trendWindow.add($.__views.windowButtons);
+    $.__views.__alloyId46 = Ti.UI.createButton({
+>>>>>>> FETCH_HEAD
         image: "/images/v-back.png",
-        tintColor: "#fff",
+        height: "32dp",
+        tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
+<<<<<<< HEAD
         id: "__alloyId42"
     });
     $.__views.trendButtons.add($.__views.__alloyId42);
     showHome ? $.__views.__alloyId42.addEventListener("click", showHome) : __defers["$.__views.__alloyId42!click!showHome"] = true;
     $.__views.__alloyId43 = Ti.UI.createButton({
+=======
+        id: "__alloyId46"
+    });
+    $.__views.windowButtons.add($.__views.__alloyId46);
+    showHome ? $.__views.__alloyId46.addEventListener("click", showHome) : __defers["$.__views.__alloyId46!click!showHome"] = true;
+    $.__views.__alloyId47 = Ti.UI.createButton({
+>>>>>>> FETCH_HEAD
         image: "/images/v-search.png",
-        tintColor: "#fff",
+        tintColor: "#922a80",
+        height: "32dp",
         right: "8dp",
         top: "2dp",
+<<<<<<< HEAD
         id: "__alloyId43"
     });
     $.__views.trendButtons.add($.__views.__alloyId43);
     $.__views.getTrend = Ti.UI.createView({
         top: "2dp",
-        width: "100%",
-        height: "20dp",
-        id: "getTrend"
+=======
+        id: "__alloyId47"
     });
+    $.__views.windowButtons.add($.__views.__alloyId47);
+    $.__views.windowTitle = Ti.UI.createView({
+        top: "6dp",
+>>>>>>> FETCH_HEAD
+        width: "100%",
+        height: "24dp",
+        id: "windowTitle"
+    });
+<<<<<<< HEAD
     $.__views.trendWindow.add($.__views.getTrend);
     $.__views.__alloyId44 = Ti.UI.createLabel({
+=======
+    $.__views.trendWindow.add($.__views.windowTitle);
+    $.__views.__alloyId48 = Ti.UI.createLabel({
+>>>>>>> FETCH_HEAD
         color: "#922a80",
         font: {
-            fontSize: "16dp",
+            fontSize: "20dp",
             fontWeight: "bold",
             fontStyle: "italic",
             fontFamily: "Baskerville"
         },
+<<<<<<< HEAD
         text: "Trends!",
         id: "__alloyId44"
     });
     $.__views.getTrend.add($.__views.__alloyId44);
+=======
+        text: "Trend Stylist",
+        id: "__alloyId48"
+    });
+    $.__views.windowTitle.add($.__views.__alloyId48);
+>>>>>>> FETCH_HEAD
     $.__views.trendContentScroll = Ti.UI.createScrollView({
         layout: "vertical",
         top: "28dp",
         backgroundColor: "transparent",
-        verticalBounce: "true",
         id: "trendContentScroll"
     });
     $.__views.trendWindow.add($.__views.trendContentScroll);
     $.__views.trendContent = Ti.UI.createView({
-        top: "0dp",
+        top: "12dp",
+        horizontalWrap: "true",
         width: "90%",
+        height: "95%",
         backgroundColor: "transparent",
         borderRadius: "8dp",
+        viewShadowColor: "#000",
+        viewShadowOffset: "-1",
         id: "trendContent"
     });
     $.__views.trendContentScroll.add($.__views.trendContent);
@@ -114,11 +150,13 @@ function Controller() {
     $.__views.trendImg = Ti.UI.createImageView({
         layout: "vertical",
         image: "/images/trends/trend_01.jpg",
+        borderRadius: "8dp",
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
         id: "trendImg"
     });
     $.__views.trendContent.add($.__views.trendImg);
+<<<<<<< HEAD
     $.__views.__alloyId45 = Ti.UI.createImageView({
         backgroundImage: "/images/v-article-wear.png",
         borderRadius: "50%",
@@ -209,6 +247,8 @@ function Controller() {
         id: "__alloyId52"
     });
     $.__views.menuHome.add($.__views.__alloyId52);
+=======
+>>>>>>> FETCH_HEAD
     exports.destroy = function() {};
     _.extend($, $.__views);
     Ti.API.info("---------------- trend.js ------------------------");
@@ -216,8 +256,6 @@ function Controller() {
     Alloy.Globals.trendId <= 0 && (Alloy.Globals.trendId = selectTrendId("random"));
     var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]["photoMain"];
     $.trendImg.image = imagePath;
-    $.trendInfoText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]["title"]);
-    $.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]["accountName"]);
     $.trendContent.addEventListener("swipe", function(e) {
         "right" == e.direction ? Alloy.Globals.trendId = selectTrendId("right") : "left" == e.direction && (Alloy.Globals.trendId = selectTrendId("left"));
         animation.flipHorizontal($.trendContent, $.trendContent, 500);
@@ -228,11 +266,16 @@ function Controller() {
         $.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]["accountName"]);
         Ti.API.info("Alloy.Globals.trendId: " + Alloy.Globals.trendId + " AND imagePath: " + imagePath);
     });
+<<<<<<< HEAD
     __defers["$.__views.__alloyId42!click!showHome"] && $.__views.__alloyId42.addEventListener("click", showHome);
     __defers["$.__views.trendContent!click!showLooks"] && $.__views.trendContent.addEventListener("click", showLooks);
     __defers["$.__views.__alloyId48!click!showHome"] && $.__views.__alloyId48.addEventListener("click", showHome);
     __defers["$.__views.__alloyId49!click!showTrends"] && $.__views.__alloyId49.addEventListener("click", showTrends);
     __defers["$.__views.__alloyId50!click!showLooks"] && $.__views.__alloyId50.addEventListener("click", showLooks);
+=======
+    __defers["$.__views.__alloyId46!click!showHome"] && $.__views.__alloyId46.addEventListener("click", showHome);
+    __defers["$.__views.trendContent!click!showLooks"] && $.__views.trendContent.addEventListener("click", showLooks);
+>>>>>>> FETCH_HEAD
     _.extend($, exports);
 }
 

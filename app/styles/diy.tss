@@ -1,67 +1,16 @@
-"#lookWindow": {
+"#DIYWindow": {
 	fullscreen: true,
 	navBarHidden: true,
 	exitOnClose: true,
 	tabBarHidden: true,
 	backgroundImage: "/images/vlothie-background.jpg"}
 	
-"#lookButtons": {
-	height: "28dp",
-	top: "0dp",
-	zIndex: "10"}	
-
-".backButton": {
-		image: "/images/v-back.png",
-		tintColor: "#fff",
-		left: "8dp",
-		top: "2dp"}
- 
-".searchButton": {
-		image: "/images/v-search.png",
-		tintColor: "#fff",
-		right: "8dp",
-		top: "2dp"}
-
-"#menuLookView": {
-	top: "32dp",
-	height: "36dp"}
-
-".buttonSchedule": {
-	image: "/images/v-schedule.png", 
-	tintColor: "#b23b91",
-	left: "20dp"}
-
-".buttonDiamond": {
-	image: "/images/v-diamond.png",
-	tintColor: "#b23b91",
-	left: "50dp"}
-
-".buttonStylist": {
-	image: "/images/v-stylist.png",
-	tintColor: "#b23b91",
-	left: "80dp"}
-
-"#getLook": {
-	top: "2dp",
-	width: "100%",
-	height: "20dp"}
-
-".getLookText": {
-	color: "#922a80",
-	font: {
-		fontSize: "16dp",
-		fontWeight: "bold",
-		fontStyle: "italic",
-		fontFamily: "Baskerville"}
-		}
-	
-
-"#lookContent": {
+"#DIYContent": {
 	layout: "vertical",
 	top: "70dp",
 	backgroundColor: "transparent",
 	width: Ti.UI.FILL,
-    height: Ti.UI.FILL}
+	height: Ti.UI.FILL}
 
 ".lookSeparator": {
 	height: "2dp",
@@ -103,36 +52,29 @@
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL}
 
-
-"#menuHome": {
-	height: "50dp",
-	width: "100%",
+".buttonWearItView": {
+	right: "22dp",
 	bottom: "2dp",
-	backgroundColor: "#transparent"}	
-		
-".homeButtonMenuHome": {
-	image: "/images/home/v-home.png",
-	tintColor: "#fff",
-	left: "30dp"}	
+	zIndex: "250",
+	width: "60dp",
+	height: "60dp"}
 
-".trendButtonMenuHome": {
-	image: "/images/home/v-trend.png",
-	tintColor: "#fff",
-	left: "86dp"}	
+".buttonWearIt": {
+	backgroundImage: "/images/v-article-wear.png",
+	zIndex: "300",
+	width: "60dp",
+	height: "60dp"}
+	
+".buttonClosetView": {
+	left: "22dp",
+	bottom: "2dp",
+	zIndex: "200",
+	width: "60dp",
+	height: "60dp"}
 
-".lookButtonMenuHome": {
-	image: "/images/home/v-look.png",
-	tintColor: "#fff",
-	left: "140dp"}	
-
-".alarmButtonMenuHome": {
-	image: "/images/home/v-alarm.png",
-	tintColor: "#fff",
-	left: "195dp"}	
-
-".settingsButtonMenuHome": {
-	image: "/images/home/v-setting.png",
-	tintColor: "#fff",
-	left: "250dp"}	
-
+".buttonCloset": {
+	backgroundImage: "/images/v-article-diamond.png",
+	zIndex: "300",
+	width: "60dp",
+	height: "60dp"}
 

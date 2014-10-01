@@ -40,26 +40,46 @@ function Controller() {
         title: "Article Name"
     });
     $.__views.articleWindow && $.addTopLevelView($.__views.articleWindow);
-    $.__views.articleButtons = Ti.UI.createView({
-        height: "30dp",
-        top: "2dp",
+    $.__views.windowButtons = Ti.UI.createView({
+        height: "36dp",
+        top: "0dp",
         zIndex: "1",
         backgroundColor: "transparent",
-        id: "articleButtons"
+        id: "windowButtons"
     });
-    $.__views.articleWindow.add($.__views.articleButtons);
+    $.__views.articleWindow.add($.__views.windowButtons);
     $.__views.__alloyId0 = Ti.UI.createButton({
         image: "/images/v-back.png",
-        tintColor: "#fff",
-        top: "2dp",
+        height: "32dp",
+        tintColor: "#922a80",
         left: "8dp",
+        top: "2dp",
         id: "__alloyId0"
     });
-    $.__views.articleButtons.add($.__views.__alloyId0);
+    $.__views.windowButtons.add($.__views.__alloyId0);
     closeArticle ? $.__views.__alloyId0.addEventListener("click", closeArticle) : __defers["$.__views.__alloyId0!click!closeArticle"] = true;
+    $.__views.windowTitle = Ti.UI.createView({
+        top: "6dp",
+        width: "100%",
+        height: "24dp",
+        id: "windowTitle"
+    });
+    $.__views.articleWindow.add($.__views.windowTitle);
+    $.__views.__alloyId1 = Ti.UI.createLabel({
+        color: "#922a80",
+        font: {
+            fontSize: "20dp",
+            fontWeight: "bold",
+            fontStyle: "italic",
+            fontFamily: "Baskerville"
+        },
+        text: "Article Name",
+        id: "__alloyId1"
+    });
+    $.__views.windowTitle.add($.__views.__alloyId1);
     $.__views.articleContent = Ti.UI.createScrollView({
         layout: "vertical",
-        top: "28dp",
+        top: "24dp",
         backgroundColor: "transparent",
         verticalBounce: "true",
         height: "auto",
@@ -82,66 +102,72 @@ function Controller() {
         id: "buttonBuyItView"
     });
     $.__views.articleSelected.add($.__views.buttonBuyItView);
-    $.__views.__alloyId1 = Ti.UI.createButton({
+    $.__views.__alloyId2 = Ti.UI.createButton({
         image: "/images/v-article-buy.png",
-        tintColor: "#beee00",
+        tintColor: "#922a80",
         zIndex: "250",
-        title: "",
-        id: "__alloyId1"
-    });
-    $.__views.buttonBuyItView.add($.__views.__alloyId1);
-    $.__views.__alloyId2 = Ti.UI.createLabel({
-        color: "#FFF",
-        text: "BUY",
-        id: "__alloyId2"
-    });
-    $.__views.__alloyId1.add($.__views.__alloyId2);
-    $.__views.__alloyId3 = Ti.UI.createView({
-        left: "8dp",
-        top: "0dp",
-        zIndex: "200",
         width: "60dp",
         height: "60dp",
+        title: "",
+        id: "__alloyId2"
+    });
+    $.__views.buttonBuyItView.add($.__views.__alloyId2);
+    $.__views.__alloyId3 = Ti.UI.createLabel({
+        color: "#FFF",
+        text: "BUY",
         id: "__alloyId3"
     });
-    $.__views.articleSelected.add($.__views.__alloyId3);
-    $.__views.__alloyId4 = Ti.UI.createButton({
-        backgroundImage: "/images/v-article-diamond.png",
-        zIndex: "300",
-        id: "__alloyId4"
-    });
-    $.__views.__alloyId3.add($.__views.__alloyId4);
-    $.__views.__alloyId5 = Ti.UI.createView({
+    $.__views.__alloyId2.add($.__views.__alloyId3);
+    $.__views.__alloyId4 = Ti.UI.createView({
         borderRadius: "10dp",
         zIndex: "1",
         top: "16dp",
         left: "16dp",
         right: "16dp",
         width: "90%",
-        id: "__alloyId5"
+        id: "__alloyId4"
     });
-    $.__views.articleSelected.add($.__views.__alloyId5);
+    $.__views.articleSelected.add($.__views.__alloyId4);
     $.__views.articleSelectedImg = Ti.UI.createImageView({
         width: Ti.UI.FILL,
         height: Ti.UI.FILL,
         id: "articleSelectedImg"
     });
-    $.__views.__alloyId5.add($.__views.articleSelectedImg);
-    $.__views.__alloyId6 = Ti.UI.createView({
-        right: "12dp",
+    $.__views.__alloyId4.add($.__views.articleSelectedImg);
+    $.__views.__alloyId5 = Ti.UI.createView({
+        left: "22dp",
         bottom: "2dp",
-        zIndex: "250",
+        zIndex: "200",
+        width: "60dp",
+        height: "60dp",
+        id: "__alloyId5"
+    });
+    $.__views.articleSelected.add($.__views.__alloyId5);
+    $.__views.__alloyId6 = Ti.UI.createButton({
+        backgroundImage: "/images/v-article-diamond.png",
+        zIndex: "300",
         width: "60dp",
         height: "60dp",
         id: "__alloyId6"
     });
-    $.__views.articleSelected.add($.__views.__alloyId6);
-    $.__views.__alloyId7 = Ti.UI.createButton({
-        backgroundImage: "/images/v-article-wear.png",
-        zIndex: "300",
+    $.__views.__alloyId5.add($.__views.__alloyId6);
+    $.__views.__alloyId7 = Ti.UI.createView({
+        right: "22dp",
+        bottom: "2dp",
+        zIndex: "250",
+        width: "60dp",
+        height: "60dp",
         id: "__alloyId7"
     });
-    $.__views.__alloyId6.add($.__views.__alloyId7);
+    $.__views.articleSelected.add($.__views.__alloyId7);
+    $.__views.__alloyId8 = Ti.UI.createButton({
+        backgroundImage: "/images/v-article-wear.png",
+        zIndex: "300",
+        width: "60dp",
+        height: "60dp",
+        id: "__alloyId8"
+    });
+    $.__views.__alloyId7.add($.__views.__alloyId8);
     $.__views.articleInfo = Ti.UI.createView({
         layout: "vertical",
         top: "24dp",
