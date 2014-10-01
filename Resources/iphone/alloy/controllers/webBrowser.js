@@ -32,6 +32,10 @@ function Controller() {
         font: {
             fontFamily: "AmericanTypewriter"
         },
+        fullscreen: false,
+        navBarHidden: false,
+        exitOnClose: true,
+        tabBarHidden: false,
         id: "browserWindow",
         modal: "true"
     });
@@ -40,11 +44,15 @@ function Controller() {
         id: "articleButtons"
     });
     $.__views.browserWindow.add($.__views.articleButtons);
-    $.__views.__alloyId45 = Ti.UI.createButton({
-        id: "__alloyId45"
+    $.__views.__alloyId53 = Ti.UI.createButton({
+        image: "/images/v-back.png",
+        tintColor: "#fff",
+        top: "2dp",
+        left: "8dp",
+        id: "__alloyId53"
     });
-    $.__views.articleButtons.add($.__views.__alloyId45);
-    closeBrowser ? $.__views.__alloyId45.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId45!click!closeBrowser"] = true;
+    $.__views.articleButtons.add($.__views.__alloyId53);
+    closeBrowser ? $.__views.__alloyId53.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId53!click!closeBrowser"] = true;
     $.__views.webview = Ti.UI.createWebView({
         id: "webview",
         url: "http://www.appcelerator.com"
@@ -53,7 +61,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
-    __defers["$.__views.__alloyId45!click!closeBrowser"] && $.__views.__alloyId45.addEventListener("click", closeBrowser);
+    __defers["$.__views.__alloyId53!click!closeBrowser"] && $.__views.__alloyId53.addEventListener("click", closeBrowser);
     _.extend($, exports);
 }
 

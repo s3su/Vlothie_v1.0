@@ -83,9 +83,12 @@ Alloy.Globals.getLocation = function (tableName){
 
 Alloy.Globals.getArticlesIndexByArticleId = function (articleId){
 	
+	//Ti.API.info('getArticlesIndexByArticleId (articleId) --> '+articleId);
 	for(var index in Alloy.Globals.articlesArray) {
-			if(Alloy.Globals.articlesArray['articleId'] == articleId){
+			//Ti.API.info(' ---> Alloy.Globals.articlesArray[articleId]: ' + Alloy.Globals.articlesArray[index]['articleId']);
+			if(Alloy.Globals.articlesArray[index]['articleId'] == articleId){
 				return index;
 			}
-		}
+	}
+	
 };

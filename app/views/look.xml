@@ -2,7 +2,7 @@
   	 <Window id="lookWindow"  platform="android,ios">
 
 	<View id="lookButtons">
- 		<Button class="backButton" onClick="showTrends"></Button>
+ 		<Button class="backButton" ></Button>
  		<Button class="searchButton"></Button>
  	</View>
    
@@ -10,11 +10,6 @@
 	    <Label class="getLookText">A cassual day look:</Label>
 	</View>
 	
-		<View id="menuLookView">
-			  <Button class="buttonSchedule" onClick="showHome" ></Button>
-		 	  <Button class="buttonDiamond" onClick="showTrends"></Button>
-		 	  <Button class="buttonStylist" onClick="showLooks"></Button>
-		</View>
 		
     <ScrollView id="lookContent">
  
@@ -36,14 +31,7 @@
 	
 	</ScrollView>
 	 
-    	<View id="menuHome">
-			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
-		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
-		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-		 	  <Button class="alarmButtonMenuHome"></Button>
-		 	  <Button class="settingsButtonMenuHome"></Button>
-	   	</View>
- 			
+    	
  			 
     <!-- Main table for tasks
       Use model-view binding to render the rows fo this table
