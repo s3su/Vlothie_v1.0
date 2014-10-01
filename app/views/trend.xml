@@ -21,7 +21,7 @@
 	    <View class="trendContentDesc">
 			   <Label id="trendInfoText"></Label>
  		</View>
-    
+     
     	<View class="trendContentAuthor">
 		   	   <ImageView id="trendAuthorImg"/>
 	    </View> 

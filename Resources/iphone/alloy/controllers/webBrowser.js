@@ -40,11 +40,11 @@ function Controller() {
         id: "articleButtons"
     });
     $.__views.browserWindow.add($.__views.articleButtons);
-    $.__views.__alloyId61 = Ti.UI.createButton({
-        id: "__alloyId61"
+    $.__views.__alloyId45 = Ti.UI.createButton({
+        id: "__alloyId45"
     });
-    $.__views.articleButtons.add($.__views.__alloyId61);
-    closeBrowser ? $.__views.__alloyId61.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId61!click!closeBrowser"] = true;
+    $.__views.articleButtons.add($.__views.__alloyId45);
+    closeBrowser ? $.__views.__alloyId45.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId45!click!closeBrowser"] = true;
     $.__views.webview = Ti.UI.createWebView({
         id: "webview",
         url: "http://www.appcelerator.com"
@@ -53,7 +53,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
-    __defers["$.__views.__alloyId61!click!closeBrowser"] && $.__views.__alloyId61.addEventListener("click", closeBrowser);
+    __defers["$.__views.__alloyId45!click!closeBrowser"] && $.__views.__alloyId45.addEventListener("click", closeBrowser);
     _.extend($, exports);
 }
 

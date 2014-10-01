@@ -41,11 +41,6 @@
 	tintColor: "#b23b91",
 	left: "80dp"}
 
-".buttonInfo": {
-	image: "/images/v-article-info.png",
-	tintColor: "#b23b91",
-	left: "110dp"}
-
 "#getLook": {
 	top: "2dp",
 	width: "100%",

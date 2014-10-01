@@ -33,6 +33,8 @@
 	backgroundColor: "transparent",
 }
 
+"#buttonBuyItView": {}
+
 ".buttonBuyItView": {
 	right: "8dp",
 	top: "0dp",

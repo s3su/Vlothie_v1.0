@@ -41,6 +41,8 @@
 	top: "28dp",
 	backgroundColor: "transparent",
 	verticalBounce: "true"}
+
+"#trendContent": {}
 	
 ".trendContent": {
 	top: "0dp",
@@ -68,6 +70,8 @@
 	top: "10dp",
 	font: {fontSize: 16, fontFamily: 'Roboto'},
 	color: '#464541'}
+
+"#trendAuthorImg": {}
  
 ".trendAuthorImg": {
 	backgroundImage: "/images/v-article-wear.png",

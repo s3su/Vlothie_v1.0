@@ -7,13 +7,3 @@
 "Label": {
 	color: '#FFF'
 }
-
-
-"#title": {
-	color: "#652F8D",
-	font: {
-		fontSize: '24dp',
-		fontWeight: 'bold',
-		
-	}
-}

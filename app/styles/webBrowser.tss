@@ -1,5 +1,15 @@
-".closeArticle": {
+"#browserWindow": {
+	fullscreen: false,
+	navBarHidden: false,
+	exitOnClose: true,
+	tabBarHidden: false,}
+	
+".closeBrowser": {
 	image: "/images/v-back.png",
 	tintColor: "#fff",
 	top: "2dp",
 	left: "8dp"}
+	
+"#webview": {
+	
+}
