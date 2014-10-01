@@ -1,15 +1,10 @@
 "#browserWindow": {
-	fullscreen: false,
+	fullscreen: true,
 	navBarHidden: false,
 	exitOnClose: true,
-	tabBarHidden: false,}
-	
-".closeBrowser": {
-	image: "/images/v-back.png",
-	tintColor: "#fff",
-	top: "2dp",
-	left: "8dp"}
-	
+	tabBarHidden: false,
+	backgroundImage: "/images/vlothie-background.jpg"} 
+		
 "#webview": {
-	
-}
+	 top: "36dp",}
+

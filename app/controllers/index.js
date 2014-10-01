@@ -28,7 +28,9 @@ function showLooksWithSituation1(){
 
 function showLooksWithSituation2(){
 	Alloy.Globals.selectedSituationId = 2;
-	Alloy.createController("look").getView().open();
+	Alloy.createController("diy").getView().open();
+	//Alloy.createController('diy').getView().open({transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
+
 }
 
 function showLooksWithSituation3(){

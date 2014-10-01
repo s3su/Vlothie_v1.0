@@ -2,9 +2,15 @@
   <!-- Main Window -->
   	 <Window id="articleWindow" title="Article Name" platform="android,ios">
  	
- 	<View id="articleButtons">
- 		<Button class="closeArticle" onClick="closeArticle"></Button>
+ 	<View id="windowButtons">
+ 		<Button class="backButton" onClick="closeArticle"></Button>
  	</View>
+ 	
+ 	 	<View id="windowTitle">
+		    <Label class="windowTitleText">Article Name</Label>
+		</View>
+    
+ 	
     <!-- header -->
     
     <ScrollView id="articleContent" >
@@ -17,23 +23,23 @@
 		     		</Label>
 		     	</Button>
 	        </View> 
-	     
-	        <View class="buttonClosetView">
-		     	<Button class="buttonCloset"></Button>
-	        </View> 
 	       
-	        		       <View class="borderArticle"> 
-						        <ImageView id="articleSelectedImg"/>
-						   </View> 
-			
-	       	<View class="buttonWearItView">
-		     		<Button class="buttonWearIt"></Button>	
-		    </View> 
-	       
+		        <View class="borderArticle"> 
+			     <ImageView id="articleSelectedImg"/>
+				</View> 
+							
+				        <View class="buttonClosetView">
+					     	<Button class="buttonCloset"></Button>
+				        </View> 
+				    
+				       	<View class="buttonWearItView">
+					     	<Button class="buttonWearIt"></Button>	
+					    </View> 
+				       
 	      </View>
 	
 	    <View id="articleInfo">
-	            <Label id="articleTitle" class="articleTitle">Article title</Label>
+	            <Label id="articleTitle">Article title</Label>
 	            <Label id="articleInfoText">Article desct</Label>
  	    </View>
 	

@@ -1,9 +1,45 @@
 "Window": {
 	backgroundColor: 'transparent',
-	font: {fontFamily: 'AmericanTypewriter'}
-}
-
+	font: {fontFamily: 'AmericanTypewriter'}}
 
 "Label": {
-	color: '#FFF'
+	color: '#FFF'}
+
+
+"#windowButtons": {
+	height: "36dp",
+	top: "0dp",
+	zIndex: "1",
+	backgroundColor: "transparent"
 }
+
+".backButton": {
+		image: "/images/v-back.png",
+		height: "32dp",
+		tintColor: "#922a80",
+		left: "8dp",
+		top: "2dp"}
+
+ 
+".searchButton": {
+		image: "/images/v-search.png",
+		tintColor: "#922a80",
+		height: "32dp",
+		right: "8dp",
+		top: "2dp"}
+
+
+"#windowTitle": {
+	top: "6dp",
+	width: "100%",
+	height: "24dp"}
+
+".windowTitleText": {
+	color: "#922a80",
+	font: {
+		fontSize: "20dp",
+		fontWeight: "bold",
+		fontStyle: "italic",
+		fontFamily: "Baskerville"}
+		}
+

@@ -1,62 +1,44 @@
 <Alloy>
-  	 <Window id="lookWindow"  platform="android,ios">
+  	
+  	 <Window id="DIYWindow" modal="true" platform="android,ios">
 
-	<View id="lookButtons">
- 		<Button class="backButton" onClick="showTrends"></Button>
- 		<Button class="searchButton"></Button>
- 	</View>
-   
-    <View id="getLook">
-	    <Label class="getLookText">A cassual day look:</Label>
-	</View>
-	
-		<View id="menuLookView">
-			  <Button class="buttonSchedule" onClick="showHome" ></Button>
-		 	  <Button class="buttonDiamond" onClick="showTrends"></Button>
-		 	  <Button class="buttonStylist" onClick="showLooks"></Button>
-		</View>
-		
-    <ScrollView id="lookContent">
- 
-        <View id="articleTop">
-	             <ImageView id="articleTopImg" onClick="showArticleTop"/>
-	    </View>
- 	   
- 	    		 <View class="lookSeparator"></View>
-	  	
-	    <View id="articleBottom">
-	            <ImageView id="articleBottomImg" onClick="showArticleBottom"/>
- 		</View>
-	
-			<View class="lookSeparator"></View>
-	    
-	    <View id="articleShoes">
-	             <ImageView id="articleShoesImg" onClick="showArticleShoes"/>
- 	    </View>
-	
-	</ScrollView>
-	 
-    	<View id="menuHome">
-			  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
-		 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
-		 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-		 	  <Button class="alarmButtonMenuHome"></Button>
-		 	  <Button class="settingsButtonMenuHome"></Button>
-	   	</View>
- 			
- 			 
-    <!-- Main table for tasks
-      Use model-view binding to render the rows fo this table
-      based on the models in the given collection. "dataCollection"
-      represents the collection used to populate this table.
-      "dataWhere" is a function used to filter the list of
-      models processed within the collection. "dataTransform"
-      is a function that will be executed on each model as it
-      is rendered as a row. It gives the opportunity to modify
-      the model's values before they are applied to each row.
-    -->
- 
-    <!-- iOS: footer with buttons 
-       <Require src="menu"/>-->
-  </Window>
+			<View id="windowButtons">
+		 		<Button class="backButton" onClick="showLooks"></Button>
+		 	</View>
+	 	
+	 		<View id="windowTitle">
+			    <Label class="windowTitleText">Do It Yourself</Label>
+			</View>
+
+		    <ScrollView id="DIYContent">
+		  
+		        <View id="articleTop">
+			             <ImageView id="articleTopImg" onClick="showArticleTop"/>
+			    </View>
+		 	   
+		 	    		 <View class="lookSeparator"></View>
+			  	
+			    <View id="articleBottom">
+			            <ImageView id="articleBottomImg" onClick="showArticleBottom"/>
+		 		</View>
+			
+					<View class="lookSeparator"></View>
+			    
+			    <View id="articleShoes">
+			             <ImageView id="articleShoesImg" onClick="showArticleShoes"/>
+		 	    </View>
+			
+			</ScrollView>
+  
+  		        <View class="buttonClosetView">
+			     	<Button class="buttonCloset"></Button>
+		        </View> 
+		    
+		       	<View class="buttonWearItView">
+ 			     	<Button class="buttonWearIt"></Button>	
+ 			    </View> 
+
+  
+  	</Window>
+
 </Alloy>
