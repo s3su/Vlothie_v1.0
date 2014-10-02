@@ -10,7 +10,13 @@ require('includes/setArticlesData');
 
 Alloy.Globals.selectedArticleIndex = 0;
 Alloy.Globals.isSetLook = 0;
+
+
+//Situations
 Alloy.Globals.selectedSituationId = 0;
+Alloy.Globals.situationArraySize = 4;
+
+Alloy.Globals.lookCurrentIndex = -1;
 
 Alloy.Globals.lookSetIndex = 0;
 

@@ -8,91 +8,48 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
-    function showArticleTop() {
-        Alloy.Globals.selectedArticleIndex = articleTop[Alloy.Globals.lookTopId]["articleIndex"];
-        Alloy.createController("article").getView().open();
-    }
-    function showArticleBottom() {
-        Alloy.Globals.selectedArticleIndex = articleBottom[Alloy.Globals.lookBottomId]["articleIndex"];
-        Alloy.createController("article").getView().open();
-    }
-    function showArticleShoes() {
-        Alloy.Globals.selectedArticleIndex = articleShoes[Alloy.Globals.lookShoesId]["articleIndex"];
-        Alloy.createController("article").getView().open();
-    }
-    function selectTopId(direction) {
-        "right" == direction ? Alloy.Globals.lookTopId - 1 >= 0 ? Alloy.Globals.lookTopId-- : Alloy.Globals.lookTopId = articleTop.length - 1 : "left" == direction ? Alloy.Globals.lookTopId + 1 < articleTop.length ? Alloy.Globals.lookTopId++ : Alloy.Globals.lookTopId = 0 : "random" == direction && (Alloy.Globals.lookTopId = Math.floor(Math.random() * articleTop.length));
-        return Alloy.Globals.lookTopId;
-    }
-    function selectBottomId(direction) {
-        "right" == direction ? Alloy.Globals.lookBottomId - 1 >= 0 ? Alloy.Globals.lookBottomId-- : Alloy.Globals.lookBottomId = articleBottom.length - 1 : "left" == direction ? Alloy.Globals.lookBottomId + 1 < articleBottom.length ? Alloy.Globals.lookBottomId++ : Alloy.Globals.lookBottomId = 0 : "random" == direction && (Alloy.Globals.lookBottomId = Math.floor(Math.random() * articleBottom.length));
-        return Alloy.Globals.lookBottomId;
-    }
-    function selectShoesId(direction) {
-        "right" == direction ? Alloy.Globals.lookShoesId - 1 >= 0 ? Alloy.Globals.lookShoesId-- : Alloy.Globals.lookShoesId = articleShoes.length - 1 : "left" == direction ? Alloy.Globals.lookShoesId + 1 < articleShoes.length ? Alloy.Globals.lookShoesId++ : Alloy.Globals.lookShoesId = 0 : "random" == direction && (Alloy.Globals.lookShoesId = Math.floor(Math.random() * articleShoes.length));
-        return Alloy.Globals.lookShoesId;
-    }
-    function setLook(lookId) {
-        lookId > 0 ? Alloy.Globals.lookSetIndex = getLookSetIndexBylookId(lookId) : Alloy.Globals.lookSetIndex + 1 < Alloy.Globals.looksArray["size"] ? Alloy.Globals.lookSetIndex++ : Alloy.Globals.lookSetIndex = 0;
-        Ti.API.info("Alloy.Globals.lookSetIndex: " + Alloy.Globals.lookSetIndex);
-        for (var index in articleTop) if (articleTop[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["topArticleId"]) {
-            Alloy.Globals.lookTopId = index;
-            break;
+    function buildLooksBySituationId() {
+        var count = 0;
+        Ti.API.info("!!Building Look By situation ID: " + Alloy.Globals.selectedSituationId);
+        for (var index in Alloy.Globals.looksArray) if (Alloy.Globals.looksArray[index]["situationId"] == Alloy.Globals.selectedSituationId) {
+            looksCurrentArray[count] = [];
+            looksCurrentArray[count]["title"] = Alloy.Globals.looksArray[index]["title"];
+            looksCurrentArray[count]["lookId"] = Alloy.Globals.looksArray[index]["lookId"];
+            looksCurrentArray[count]["topArticleIndex"] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]["topArticleId"]);
+            looksCurrentArray[count]["bottomArticleIndex"] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]["bottomArticleId"]);
+            looksCurrentArray[count]["shoesArticleIndex"] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]["shoesArticleId"]);
+            count++;
         }
-        for (var index in articleBottom) if (articleBottom[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["bottomArticleId"]) {
-            Alloy.Globals.lookBottomId = index;
-            break;
-        }
-        for (var index in articleShoes) if (articleShoes[index]["articleId"] == Alloy.Globals.looksArray[Alloy.Globals.lookSetIndex]["shoesArticleId"]) {
-            Alloy.Globals.lookShoesId = index;
-            break;
-        }
+        looksCurrentArray["size"] = count;
     }
-    function getLookSetIndexBylookId(lookId) {
-        for (var index in Alloy.Globals.looksArray) if (Alloy.Globals.looksArray[index]["lookId"] == lookId) return index;
+    function buildLooksByNextSituation() {
+        Alloy.Globals.selectedSituationId + 1 >= Alloy.Globals.situationArraySize ? Alloy.Globals.selectedSituationId = 1 : Alloy.Globals.selectedSituationId++;
+        buildLooksBySituationId();
     }
-    function setInitialLook() {
-        if (Alloy.Globals.selectedSituationId > 0) {
-            Ti.API.info("!!setInitialLook() situationId: " + Alloy.Globals.selectedSituationId);
-            for (var topId in articleTop) if (articleTop[topId]["situationId"] == Alloy.Globals.selectedSituationId) {
-                Alloy.Globals.lookTopId = topId;
-                break;
-            }
-            Alloy.Globals.lookTopId < 0 && (Alloy.Globals.lookTopId = selectTopId());
-            for (var bottomId in articleBottom) if (articleBottom[bottomId]["situationId"] == Alloy.Globals.selectedSituationId) {
-                Alloy.Globals.lookBottomId = bottomId;
-                break;
-            }
-            Alloy.Globals.lookBottomId < 0 && (Alloy.Globals.lookBottomId = selectBottomId());
-            for (var shoesId in articleShoes) if (articleShoes[shoesId]["situationId"] == Alloy.Globals.selectedSituationId) {
-                Alloy.Globals.lookShoesId = shoesId;
-                break;
-            }
-            Alloy.Globals.lookShoesId < 0 && (Alloy.Globals.lookShoesId = selectShoesId());
-            Alloy.Globals.selectedSituationId = 0;
-        } else if (Alloy.Globals.isSetLook > 0) {
-            Ti.API.info("!!setInitialLook() Setted Look ");
-            setLook(Alloy.Globals.isSetLook);
-            Alloy.Globals.isSetLook = 0;
-        } else if (0 == Alloy.Globals.isSetLook) {
-            Ti.API.info("!!setInitialLook() Not setted Look ");
-            setLook();
-            Alloy.Globals.isSetLook = 0;
-        }
-        Ti.API.info("!!Setted looks ids) TOP: " + Alloy.Globals.lookTopId + " - BOTTOM: " + Alloy.Globals.lookBottomId + " - SHOES: " + Alloy.Globals.lookShoesId);
-        animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        var imagePath = articleTop[Alloy.Globals.lookTopId]["articlePhotoLook"];
-        $.articleTopImg.image = imagePath;
-        animation.flipHorizontal($.articleTop, $.articleTop, 500);
-        animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        var imagePath = articleBottom[Alloy.Globals.lookBottomId]["articlePhotoLook"];
-        $.articleBottomImg.image = imagePath;
-        animation.flipHorizontal($.articleBottom, $.articleBottom, 500);
-        animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
-        var imagePath = articleShoes[Alloy.Globals.lookShoesId]["articlePhotoLook"];
-        $.articleShoesImg.image = imagePath;
-        animation.flipHorizontal($.articleShoes, $.articleShoes, 500);
+    function buildLooksByPreviousSituation() {
+        Alloy.Globals.selectedSituationId - 1 >= 1 ? Alloy.Globals.selectedSituationId-- : Alloy.Globals.selectedSituationId = Alloy.Globals.situationArraySize;
+        buildLooksBySituationId();
     }
+    function loadRandomLook() {
+        Alloy.Globals.lookCurrentIndex = Math.floor(Math.random() * looksCurrentArray["size"]);
+    }
+    function showLook() {
+        Ti.API.info("!!Show Look with index: " + Alloy.Globals.lookCurrentIndex);
+        animation.flipHorizontal($.lookContent, $.lookContent, 500);
+        $.articleTopImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]["topArticleIndex"]]["articlePhotoLook"];
+        $.articleBottomImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]["bottomArticleIndex"]]["articlePhotoLook"];
+        $.articleShoesImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]["shoesArticleIndex"]]["articlePhotoLook"];
+        animation.flipHorizontal($.lookContent, $.lookContent, 500);
+    }
+    function loadPreviousLook() {
+        Alloy.Globals.lookCurrentIndex - 1 >= 0 ? Alloy.Globals.lookCurrentIndex-- : Alloy.Globals.lookCurrentIndex = looksCurrentArray["size"] - 1;
+    }
+    function loadNextLook() {
+        Alloy.Globals.lookCurrentIndex + 1 == looksCurrentArray["size"] ? Alloy.Globals.lookCurrentIndex = 0 : Alloy.Globals.lookCurrentIndex++;
+    }
+    function showArticleTop() {}
+    function showArticleBottom() {}
+    function showArticleShoes() {}
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "look";
     if (arguments[0]) {
@@ -129,6 +86,7 @@ function Controller() {
         id: "lookButtons"
     });
     $.__views.lookWindow.add($.__views.lookButtons);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     $.__views.__alloyId29 = Ti.UI.createButton({
 =======
@@ -138,11 +96,15 @@ function Controller() {
     $.__views.__alloyId33 = Ti.UI.createButton({
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    $.__views.__alloyId33 = Ti.UI.createButton({
+>>>>>>> Stashed changes
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#fff",
         left: "8dp",
         top: "2dp",
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         id: "__alloyId29"
     });
@@ -156,18 +118,23 @@ function Controller() {
     $.__views.lookButtons.add($.__views.__alloyId37);
     $.__views.__alloyId38 = Ti.UI.createButton({
 =======
+=======
+>>>>>>> Stashed changes
         id: "__alloyId33"
     });
     $.__views.lookButtons.add($.__views.__alloyId33);
-    showTrends ? $.__views.__alloyId33.addEventListener("click", showTrends) : __defers["$.__views.__alloyId33!click!showTrends"] = true;
     $.__views.__alloyId34 = Ti.UI.createButton({
+<<<<<<< Updated upstream
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> Stashed changes
         image: "/images/v-search.png",
         tintColor: "#fff",
         height: "32dp",
         right: "8dp",
         top: "2dp",
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         id: "__alloyId30"
     });
@@ -183,6 +150,11 @@ function Controller() {
     $.__views.lookButtons.add($.__views.__alloyId34);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+        id: "__alloyId34"
+    });
+    $.__views.lookButtons.add($.__views.__alloyId34);
+>>>>>>> Stashed changes
     $.__views.getLook = Ti.UI.createView({
         top: "2dp",
         width: "100%",
@@ -190,6 +162,7 @@ function Controller() {
         id: "getLook"
     });
     $.__views.lookWindow.add($.__views.getLook);
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     $.__views.__alloyId31 = Ti.UI.createLabel({
 =======
@@ -199,6 +172,9 @@ function Controller() {
     $.__views.__alloyId35 = Ti.UI.createLabel({
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    $.__views.__alloyId35 = Ti.UI.createLabel({
+>>>>>>> Stashed changes
         color: "#922a80",
         font: {
             fontSize: "16dp",
@@ -207,6 +183,7 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "A cassual day look:",
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         id: "__alloyId31"
 =======
@@ -215,9 +192,12 @@ function Controller() {
     });
     $.__views.getLook.add($.__views.__alloyId39);
 =======
+=======
+>>>>>>> Stashed changes
         id: "__alloyId35"
 >>>>>>> FETCH_HEAD
     });
+<<<<<<< Updated upstream
     $.__views.getLook.add($.__views.__alloyId31);
     $.__views.menuLookView = Ti.UI.createView({
         top: "32dp",
@@ -255,6 +235,9 @@ function Controller() {
     showLooks ? $.__views.__alloyId38.addEventListener("click", showLooks) : __defers["$.__views.__alloyId38!click!showLooks"] = true;
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    $.__views.getLook.add($.__views.__alloyId35);
+>>>>>>> Stashed changes
     $.__views.lookContent = Ti.UI.createScrollView({
         layout: "vertical",
         top: "70dp",
@@ -280,6 +263,7 @@ function Controller() {
     });
     $.__views.articleTop.add($.__views.articleTopImg);
     showArticleTop ? $.__views.articleTopImg.addEventListener("click", showArticleTop) : __defers["$.__views.articleTopImg!click!showArticleTop"] = true;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     $.__views.__alloyId35 = Ti.UI.createView({
 =======
@@ -305,6 +289,15 @@ function Controller() {
     $.__views.lookContent.add($.__views.__alloyId39);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    $.__views.__alloyId36 = Ti.UI.createView({
+        height: "2dp",
+        backgroundColor: "#fda8e2",
+        bottom: "0dp",
+        id: "__alloyId36"
+    });
+    $.__views.lookContent.add($.__views.__alloyId36);
+>>>>>>> Stashed changes
     $.__views.articleBottom = Ti.UI.createView({
         layout: "vertical",
         height: "150dp",
@@ -321,6 +314,7 @@ function Controller() {
     });
     $.__views.articleBottom.add($.__views.articleBottomImg);
     showArticleBottom ? $.__views.articleBottomImg.addEventListener("click", showArticleBottom) : __defers["$.__views.articleBottomImg!click!showArticleBottom"] = true;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     $.__views.__alloyId36 = Ti.UI.createView({
 =======
@@ -346,6 +340,15 @@ function Controller() {
     $.__views.lookContent.add($.__views.__alloyId40);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    $.__views.__alloyId37 = Ti.UI.createView({
+        height: "2dp",
+        backgroundColor: "#fda8e2",
+        bottom: "0dp",
+        id: "__alloyId37"
+    });
+    $.__views.lookContent.add($.__views.__alloyId37);
+>>>>>>> Stashed changes
     $.__views.articleShoes = Ti.UI.createView({
         layout: "vertical",
         height: "120dp",
@@ -362,6 +365,7 @@ function Controller() {
     });
     $.__views.articleShoes.add($.__views.articleShoesImg);
     showArticleShoes ? $.__views.articleShoesImg.addEventListener("click", showArticleShoes) : __defers["$.__views.articleShoesImg!click!showArticleShoes"] = true;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
     $.__views.menuHome = Ti.UI.createView({
@@ -415,58 +419,37 @@ function Controller() {
     $.__views.menuHome.add($.__views.__alloyId45);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+>>>>>>> Stashed changes
     exports.destroy = function() {};
     _.extend($, $.__views);
     Ti.API.info("---------------- look.js ------------------------");
     var animation = require("alloy/animation");
-    for (var index in Alloy.Globals.articlesArray) switch (Alloy.Globals.articlesArray[index]["categoryId"]) {
-      case "1":
-        articleTop[articleTopCount] = [];
-        articleTop[articleTopCount]["articleIndex"] = index;
-        articleTop[articleTopCount]["articleId"] = Alloy.Globals.articlesArray[index]["articleId"];
-        articleTop[articleTopCount]["articlePhotoLook"] = Alloy.Globals.articlesArray[index]["articlePhotoLook"];
-        articleTop[articleTopCount]["title"] = Alloy.Globals.articlesArray[index]["title"];
-        articleTop[articleTopCount]["subcategoryId"] = Alloy.Globals.articlesArray[index]["subcategoryId"];
-        articleTop[articleTopCount]["subcategoryName"] = Alloy.Globals.articlesArray[index]["subcategoryName"];
-        articleTop[articleTopCount]["situationId"] = Alloy.Globals.articlesArray[index]["situationId"];
-        articleTop[articleTopCount]["articleLink"] = Alloy.Globals.articlesArray[index]["articleLink"];
-        articleTop[articleTopCount]["wearIt"] = Alloy.Globals.articlesArray[index]["wearIt"];
-        articleTop[articleTopCount]["clicks"] = Alloy.Globals.articlesArray[index]["clicks"];
-        articleTop[articleTopCount]["description"] = Alloy.Globals.articlesArray[index]["description"];
-        articleTopCount++;
-        break;
-
-      case "2":
-        articleBottom[articleBottomCount] = [];
-        articleBottom[articleBottomCount]["articleIndex"] = index;
-        articleBottom[articleBottomCount]["articleId"] = Alloy.Globals.articlesArray[index]["articleId"];
-        articleBottom[articleBottomCount]["articlePhotoLook"] = Alloy.Globals.articlesArray[index]["articlePhotoLook"];
-        articleBottom[articleBottomCount]["title"] = Alloy.Globals.articlesArray[index]["title"];
-        articleBottom[articleBottomCount]["subcategoryId"] = Alloy.Globals.articlesArray[index]["subcategoryId"];
-        articleBottom[articleBottomCount]["subcategoryName"] = Alloy.Globals.articlesArray[index]["subcategoryName"];
-        articleBottom[articleBottomCount]["situationId"] = Alloy.Globals.articlesArray[index]["situationId"];
-        articleBottom[articleBottomCount]["articleLink"] = Alloy.Globals.articlesArray[index]["articleLink"];
-        articleBottom[articleBottomCount]["wearIt"] = Alloy.Globals.articlesArray[index]["wearIt"];
-        articleBottom[articleBottomCount]["clicks"] = Alloy.Globals.articlesArray[index]["clicks"];
-        articleBottom[articleBottomCount]["description"] = Alloy.Globals.articlesArray[index]["description"];
-        articleBottomCount++;
-        break;
-
-      case "3":
-        articleShoes[articleShoesCount] = [];
-        articleShoes[articleShoesCount]["articleIndex"] = index;
-        articleShoes[articleShoesCount]["articleId"] = Alloy.Globals.articlesArray[index]["articleId"];
-        articleShoes[articleShoesCount]["articlePhotoLook"] = Alloy.Globals.articlesArray[index]["articlePhotoLook"];
-        articleShoes[articleShoesCount]["title"] = Alloy.Globals.articlesArray[index]["title"];
-        articleShoes[articleShoesCount]["subcategoryId"] = Alloy.Globals.articlesArray[index]["subcategoryId"];
-        articleShoes[articleShoesCount]["subcategoryName"] = Alloy.Globals.articlesArray[index]["subcategoryName"];
-        articleShoes[articleShoesCount]["situationId"] = Alloy.Globals.articlesArray[index]["situationId"];
-        articleShoes[articleShoesCount]["articleLink"] = Alloy.Globals.articlesArray[index]["articleLink"];
-        articleShoes[articleShoesCount]["wearIt"] = Alloy.Globals.articlesArray[index]["wearIt"];
-        articleShoes[articleShoesCount]["clicks"] = Alloy.Globals.articlesArray[index]["clicks"];
-        articleShoes[articleShoesCount]["description"] = Alloy.Globals.articlesArray[index]["description"];
-        articleShoesCount++;
+    var looksCurrentArray = [];
+    if (Alloy.Globals.selectedSituationId > 0) {
+        buildLooksBySituationId();
+        Ti.API.info("looksCurrentArray: " + Alloy.Globals.dump(looksCurrentArray));
+        loadRandomLook();
+        showLook();
+        $.lookContent.addEventListener("swipe", function(e) {
+            if ("right" == e.direction) loadPreviousLook(); else if ("left" == e.direction) loadNextLook(); else if ("top" == e.direction) {
+                buildLooksByNextSituation();
+                loadRandomLook();
+            } else if ("down" == e.direction) {
+                buildLooksByPreviousSituation();
+                loadRandomLook();
+            }
+            showLook();
+        });
+    } else if (Alloy.Globals.selectedTrendId > 0) {
+        loadLookByTrendId();
+        showLook();
+        $.lookContent.addEventListener("swipe", function(e) {
+            "right" == e.direction ? Alloy.createController("trend").getView().open() : "left" == e.direction || "top" == e.direction || "down" == e.direction;
+            showLook();
+        });
     }
+<<<<<<< Updated upstream
     setInitialLook();
     $.articleTop.addEventListener("swipe", function(e) {
         "right" == e.direction ? Alloy.Globals.lookTopId = selectTopId("right") : "left" == e.direction && (Alloy.Globals.lookTopId = selectTopId("left"));
@@ -518,6 +501,11 @@ function Controller() {
     __defers["$.__views.__alloyId43!click!showLooks"] && $.__views.__alloyId43.addEventListener("click", showLooks);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    __defers["$.__views.articleTopImg!click!showArticleTop"] && $.__views.articleTopImg.addEventListener("click", showArticleTop);
+    __defers["$.__views.articleBottomImg!click!showArticleBottom"] && $.__views.articleBottomImg.addEventListener("click", showArticleBottom);
+    __defers["$.__views.articleShoesImg!click!showArticleShoes"] && $.__views.articleShoesImg.addEventListener("click", showArticleShoes);
+>>>>>>> Stashed changes
     _.extend($, exports);
 }
 

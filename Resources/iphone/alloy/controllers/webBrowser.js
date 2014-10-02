@@ -32,18 +32,11 @@ function Controller() {
         font: {
             fontFamily: "AmericanTypewriter"
         },
-<<<<<<< HEAD
-        fullscreen: false,
-        navBarHidden: false,
-        exitOnClose: true,
-        tabBarHidden: false,
-=======
         fullscreen: true,
         navBarHidden: false,
         exitOnClose: true,
         tabBarHidden: false,
         backgroundImage: "/images/vlothie-background.jpg",
->>>>>>> FETCH_HEAD
         id: "browserWindow",
         modal: "true"
     });
@@ -56,36 +49,39 @@ function Controller() {
         id: "windowButtons"
     });
     $.__views.browserWindow.add($.__views.windowButtons);
+<<<<<<< Updated upstream
     $.__views.__alloyId55 = Ti.UI.createButton({
+=======
+    $.__views.__alloyId41 = Ti.UI.createButton({
+>>>>>>> Stashed changes
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
+<<<<<<< Updated upstream
         id: "__alloyId55"
     });
     $.__views.windowButtons.add($.__views.__alloyId55);
     closeBrowser ? $.__views.__alloyId55.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId55!click!closeBrowser"] = true;
+=======
+        id: "__alloyId41"
+    });
+    $.__views.windowButtons.add($.__views.__alloyId41);
+    closeBrowser ? $.__views.__alloyId41.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId41!click!closeBrowser"] = true;
+>>>>>>> Stashed changes
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
         height: "24dp",
         id: "windowTitle"
     });
-<<<<<<< HEAD
-    $.__views.browserWindow.add($.__views.articleButtons);
-    $.__views.__alloyId53 = Ti.UI.createButton({
-        image: "/images/v-back.png",
-        tintColor: "#fff",
-        top: "2dp",
-        left: "8dp",
-        id: "__alloyId53"
-    });
-    $.__views.articleButtons.add($.__views.__alloyId53);
-    closeBrowser ? $.__views.__alloyId53.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId53!click!closeBrowser"] = true;
-=======
     $.__views.browserWindow.add($.__views.windowTitle);
+<<<<<<< Updated upstream
     $.__views.__alloyId56 = Ti.UI.createLabel({
+=======
+    $.__views.__alloyId42 = Ti.UI.createLabel({
+>>>>>>> Stashed changes
         color: "#922a80",
         font: {
             fontSize: "20dp",
@@ -94,6 +90,7 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "Article link to buy it",
+<<<<<<< Updated upstream
         id: "__alloyId56"
     });
 <<<<<<< HEAD
@@ -102,6 +99,11 @@ function Controller() {
     $.__views.windowTitle.add($.__views.__alloyId50);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+        id: "__alloyId42"
+    });
+    $.__views.windowTitle.add($.__views.__alloyId42);
+>>>>>>> Stashed changes
     $.__views.webview = Ti.UI.createWebView({
         top: "36dp",
         id: "webview",
@@ -111,6 +113,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     __defers["$.__views.__alloyId55!click!closeBrowser"] && $.__views.__alloyId55.addEventListener("click", closeBrowser);
 =======
@@ -120,6 +123,9 @@ function Controller() {
     __defers["$.__views.__alloyId49!click!closeBrowser"] && $.__views.__alloyId49.addEventListener("click", closeBrowser);
 >>>>>>> FETCH_HEAD
 >>>>>>> FETCH_HEAD
+=======
+    __defers["$.__views.__alloyId41!click!closeBrowser"] && $.__views.__alloyId41.addEventListener("click", closeBrowser);
+>>>>>>> Stashed changes
     _.extend($, exports);
 }
 

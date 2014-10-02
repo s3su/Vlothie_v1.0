@@ -20,6 +20,10 @@ Alloy.Globals.isSetLook = 0;
 
 Alloy.Globals.selectedSituationId = 0;
 
+Alloy.Globals.situationArraySize = 4;
+
+Alloy.Globals.lookCurrentIndex = -1;
+
 Alloy.Globals.lookSetIndex = 0;
 
 Alloy.Globals.lookTopId = 0;
