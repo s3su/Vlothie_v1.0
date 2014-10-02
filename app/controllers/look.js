@@ -149,3 +149,8 @@ function showArticleBottom(){
 function showArticleShoes(){
 
 }
+
+function closeLook() {
+	//alert('close look');
+	$.lookWindow.close();
+}

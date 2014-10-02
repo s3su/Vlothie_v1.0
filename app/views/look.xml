@@ -2,7 +2,7 @@
   	 <Window id="lookWindow"  platform="android,ios">
 
 	<View id="lookButtons">
- 		<Button class="backButton" ></Button>
+ 		<Button class="backButton" onClick="closeLook" ></Button>
  		<Button class="searchButton"></Button>
  	</View>
    

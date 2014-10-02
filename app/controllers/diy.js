@@ -1,4 +1,4 @@
-Ti.API.info('---------------- look.js ------------------------');
+Ti.API.info('---------------- diy.js ------------------------');
 var animation = require('alloy/animation');
 var articleTop = [];
 var articleBottom = [];
@@ -8,6 +8,11 @@ var articleShoes = [];
 var articleTopCount = 0;
 var articleBottomCount = 0;
 var articleShoesCount = 0;
+
+function closeDiy() {
+	//alert('close diy');
+	$.DiyWindow.close();
+}
 
 
 for(var index in Alloy.Globals.articlesArray) {

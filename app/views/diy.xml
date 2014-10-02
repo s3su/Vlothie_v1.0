@@ -1,9 +1,9 @@
 <Alloy>
   	
-  	 <Window id="DIYWindow" modal="true" platform="android,ios">
+  	 <Window id="DiyWindow" platform="android,ios">
 
 			<View id="windowButtons">
-		 		<Button class="backButton" onClick="showHome"></Button>
+		 		<Button class="backButton" onClick="closeDiy"></Button>
 		 	</View>
 	 	
 	 		<View id="windowTitle">

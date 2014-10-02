@@ -49,27 +49,16 @@ function Controller() {
         id: "windowButtons"
     });
     $.__views.browserWindow.add($.__views.windowButtons);
-<<<<<<< Updated upstream
-    $.__views.__alloyId55 = Ti.UI.createButton({
-=======
-    $.__views.__alloyId41 = Ti.UI.createButton({
->>>>>>> Stashed changes
+    $.__views.__alloyId47 = Ti.UI.createButton({
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
-<<<<<<< Updated upstream
-        id: "__alloyId55"
+        id: "__alloyId47"
     });
-    $.__views.windowButtons.add($.__views.__alloyId55);
-    closeBrowser ? $.__views.__alloyId55.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId55!click!closeBrowser"] = true;
-=======
-        id: "__alloyId41"
-    });
-    $.__views.windowButtons.add($.__views.__alloyId41);
-    closeBrowser ? $.__views.__alloyId41.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId41!click!closeBrowser"] = true;
->>>>>>> Stashed changes
+    $.__views.windowButtons.add($.__views.__alloyId47);
+    closeBrowser ? $.__views.__alloyId47.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId47!click!closeBrowser"] = true;
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
@@ -77,11 +66,7 @@ function Controller() {
         id: "windowTitle"
     });
     $.__views.browserWindow.add($.__views.windowTitle);
-<<<<<<< Updated upstream
-    $.__views.__alloyId56 = Ti.UI.createLabel({
-=======
-    $.__views.__alloyId42 = Ti.UI.createLabel({
->>>>>>> Stashed changes
+    $.__views.__alloyId48 = Ti.UI.createLabel({
         color: "#922a80",
         font: {
             fontSize: "20dp",
@@ -90,20 +75,9 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "Article link to buy it",
-<<<<<<< Updated upstream
-        id: "__alloyId56"
+        id: "__alloyId48"
     });
-<<<<<<< HEAD
-    $.__views.windowTitle.add($.__views.__alloyId56);
-=======
-    $.__views.windowTitle.add($.__views.__alloyId50);
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
-=======
-        id: "__alloyId42"
-    });
-    $.__views.windowTitle.add($.__views.__alloyId42);
->>>>>>> Stashed changes
+    $.__views.windowTitle.add($.__views.__alloyId48);
     $.__views.webview = Ti.UI.createWebView({
         top: "36dp",
         id: "webview",
@@ -113,19 +87,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-    __defers["$.__views.__alloyId55!click!closeBrowser"] && $.__views.__alloyId55.addEventListener("click", closeBrowser);
-=======
-<<<<<<< HEAD
-    __defers["$.__views.__alloyId53!click!closeBrowser"] && $.__views.__alloyId53.addEventListener("click", closeBrowser);
-=======
-    __defers["$.__views.__alloyId49!click!closeBrowser"] && $.__views.__alloyId49.addEventListener("click", closeBrowser);
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
-=======
-    __defers["$.__views.__alloyId41!click!closeBrowser"] && $.__views.__alloyId41.addEventListener("click", closeBrowser);
->>>>>>> Stashed changes
+    __defers["$.__views.__alloyId47!click!closeBrowser"] && $.__views.__alloyId47.addEventListener("click", closeBrowser);
     _.extend($, exports);
 }
 
