@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
 iosLaunchConfigurationAttributes/ATTR_MINIFY=true
 iosLaunchConfigurationAttributes/ATTR_PROJECT_NAME=Vlothie_v1.0
-iosLaunchConfigurationAttributes/appid=com.appcelerator.todo
-iosLaunchConfigurationAttributes/certificate=Juan Dalvit (TFSBW9UX46)
+iosLaunchConfigurationAttributes/appid=com.appcelerator.vlothie
+iosLaunchConfigurationAttributes/certificate=Sebastian Suarez (92GVMK8GJP)
 iosLaunchConfigurationAttributes/keychain=
-iosLaunchConfigurationAttributes/sdk_version=8.0
-iosLaunchConfigurationAttributes/uuid=e03959cf-15ec-4d57-a755-f87cbfccdd01
+iosLaunchConfigurationAttributes/sdk_version=7.1
+iosLaunchConfigurationAttributes/uuid=AE3A5DD6-34D9-4DCC-9C46-14497810797D

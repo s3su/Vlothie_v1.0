@@ -21,41 +21,34 @@
 					    </View>
 					 </View>
 				
-				    <View id="getLook">
-				      <Label class="getLookText">Get the look for:</Label>
-				    </View>
-				   
-				    
 				     <View id="yourLooks" >
   
-				    	<View class="yourLooksEachA">
-				     	 		<Label onClick="showLooksWithSituation1" class="sectionTitleWhite">THAT MEETING</Label>
+				       <View class="yourLooksEachA">
+				     	 		<Label onClick="showTrends" class="sectionTitleWhite">HOTTEST TRENDS!</Label>
 				       </View>
 				   	
 				   		<View class="yourLooksEachB">
+				     	   		 <Label onClick="showStylist" class="sectionTitleWhite">STYLIST</Label> 
+					    </View>
+				   	
+				   		<View class="yourLooksEachC">
 				     	   		 <Label onClick="showLooksWithSituation2" class="sectionTitleViolet">SPORTY YOU</Label> 
 					    </View>
 				   	
-				   		<View class="yourLooksEachC"> 	
+				   		<View class="yourLooksEachD"> 	
 				     	    	 <Label onClick="showLooksWithSituation3" class="sectionTitleViolet">A CASUAL DAY</Label>
 				  		</View>
 				    
-				    	<View class="yourLooksEachD"> 	
+				    	<View class="yourLooksEachE"> 	
 				     	    	 <Label onClick="showLooksWithSituation4" class="sectionTitleViolet">YOUR LOOK FOR THE NIGHT</Label>
 				  		</View>
 				    
-				    	<View class="yourLooksEachE"> 	
-				     	    	 <Label onClick="showLooks" class="sectionTitleViolet">MORE  ; )</Label>
+				    	<View class="yourLooksEachF"> 	
+				     	    	 <Label onClick="showDIY" class="sectionTitleViolet">DIY  ; )</Label>
 				  		</View>
 				    </View>
 				</ScrollView>
 		
-					<View id="menuHome">
-				 	  <Button class="homeButtonMenuHome" onClick="showHome" ></Button>
-				 	  <Button class="trendButtonMenuHome" onClick="showTrends"></Button>
-				 	  <Button class="lookButtonMenuHome" onClick="showLooks"></Button>
-				 	  <Button class="alarmButtonMenuHome" ></Button>
-				 	  <Button class="settingsButtonMenuHome" ></Button>
-				 	  </View>
+		
 			  </Window>   
 </Alloy>

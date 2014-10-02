@@ -16,9 +16,20 @@ function showTrends() {
 	Alloy.createController("trend").getView().open();
 }
 
+function showStylist() {
+	Alloy.Globals.isSetLook = 0;
+	Alloy.createController("stylist").getView().open();
+}
+
 function showLooks() {
 	Alloy.Globals.isSetLook = 0;
 	Alloy.createController("look").getView().open();
+}
+	
+function showDIY(){
+	Alloy.Globals.selectedSituationId = 2;
+	Alloy.createController("diy").getView().open();
+	//Alloy.createController('diy').getView().open({transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
 }
 	
 function showLooksWithSituation1(){
@@ -28,9 +39,7 @@ function showLooksWithSituation1(){
 
 function showLooksWithSituation2(){
 	Alloy.Globals.selectedSituationId = 2;
-	Alloy.createController("diy").getView().open();
-	//Alloy.createController('diy').getView().open({transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
-
+	Alloy.createController("look").getView().open();
 }
 
 function showLooksWithSituation3(){

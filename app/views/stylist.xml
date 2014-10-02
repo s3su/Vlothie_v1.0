@@ -1,0 +1,40 @@
+<Alloy>
+	 <Window id="stylistWindow" title="Stylist" platform="android,ios">
+
+		<View id="windowButtons">
+		 		<Button class="backButton" onClick="showHome"></Button>
+		 	</View>
+	 	
+	 		<View id="windowTitle">
+			    <Label class="windowTitleText">Stylist</Label>
+			</View>
+
+	     <ScrollView id="stylistScrollView" >
+			<View class="stylistListView">
+				
+					<View class="stylistContainer">
+				
+							<View class="stylistPhotoContainer">
+								Foto
+							</View>	
+							
+							<View class="stylistDataContainer">
+					 
+							 	<View class="stylistDataFollowers">
+									<Label>Followers 11001</Label>
+								</View>
+					
+								<View class="stylistDataLooks">
+									<Label>Looks 11001</Label>
+								</View>
+					
+							</View>
+					
+			
+					</View>
+				
+			</View>
+		</ScrollView>
+
+	</Window>
+</Alloy>

@@ -20,8 +20,8 @@ function Controller() {
         Alloy.Globals.selectedArticleIndex = articleShoes[Alloy.Globals.lookShoesId]["articleIndex"];
         Alloy.createController("article").getView().open();
     }
-    function showLooks() {
-        Alloy.createController("look").getView().open();
+    function showHome() {
+        Alloy.createController("index").getView().open();
     }
     function selectTopId(direction) {
         "right" == direction ? Alloy.Globals.lookTopId - 1 >= 0 ? Alloy.Globals.lookTopId-- : Alloy.Globals.lookTopId = articleTop.length - 1 : "left" == direction ? Alloy.Globals.lookTopId + 1 < articleTop.length ? Alloy.Globals.lookTopId++ : Alloy.Globals.lookTopId = 0 : "random" == direction && (Alloy.Globals.lookTopId = Math.floor(Math.random() * articleTop.length));
@@ -143,7 +143,7 @@ function Controller() {
         id: "__alloyId9"
     });
     $.__views.windowButtons.add($.__views.__alloyId9);
-    showLooks ? $.__views.__alloyId9.addEventListener("click", showLooks) : __defers["$.__views.__alloyId9!click!showLooks"] = true;
+    showHome ? $.__views.__alloyId9.addEventListener("click", showHome) : __defers["$.__views.__alloyId9!click!showHome"] = true;
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
@@ -352,7 +352,7 @@ function Controller() {
         Ti.API.info("articleShoes[Alloy.Globals.lookShoesId][articlePhotoLook]:  with: Alloy.Globals.lookShoesId: " + Alloy.Globals.lookShoesId);
         Ti.API.info("!!shoes title: " + articleShoes[Alloy.Globals.lookShoesId]["title"] + " - Image: " + imagePath);
     });
-    __defers["$.__views.__alloyId9!click!showLooks"] && $.__views.__alloyId9.addEventListener("click", showLooks);
+    __defers["$.__views.__alloyId9!click!showHome"] && $.__views.__alloyId9.addEventListener("click", showHome);
     __defers["$.__views.articleTopImg!click!showArticleTop"] && $.__views.articleTopImg.addEventListener("click", showArticleTop);
     __defers["$.__views.articleBottomImg!click!showArticleBottom"] && $.__views.articleBottomImg.addEventListener("click", showArticleBottom);
     __defers["$.__views.articleShoesImg!click!showArticleShoes"] && $.__views.articleShoesImg.addEventListener("click", showArticleShoes);

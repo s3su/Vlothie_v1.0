@@ -1,0 +1,52 @@
+"#stylistWindow": {
+	fullscreen: true,
+	exitOnClose: true,
+	backgroundImage: "/images/vlothie-background.jpg"
+}
+
+"#stylistScrollView": {
+	top: "20dp",
+	left: "0dp",
+	right: "0dp",
+	height: "560dp"}
+
+".stylistListView": {
+	top: "110dp",
+	height: "auto"
+	}
+
+".stylistContainer": {
+	top: "110dp",
+	height: "120dp",
+	width: "90%",
+	left: "5%",
+	backgroundColor: "#FFF",
+	borderRadius: "8dp",
+	}
+	
+".stylistPhotoContainer": {
+	top: "10dp",
+	height: "60dp",
+	width: "60dp",
+	left: "8dp",
+	backgroundImage: "/images/vlothie-background.jpg",
+	borderRadius: "30dp",
+	}
+
+".stylistDataContainer": {
+	top: "10dp",
+	height: "60dp",
+	left: "80dp",
+	backgroundColor: "#ccc",
+	}
+
+".stylistDataFollowers": {
+	top: "10dp",
+	width: "90%"
+}
+
+".stylistDataLooks": {
+	top: "10dp",
+	width: "90%"
+}
+

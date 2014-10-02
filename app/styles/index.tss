@@ -8,7 +8,7 @@
 	top: "20dp",
 	left: "0dp",
 	right: "0dp",
-	height: "460dp"}
+	height: "560dp"}
 	
 	
 "#weatherIcon": {
@@ -132,8 +132,8 @@
 	
 	
 "#yourLooks": {
-	top: "120dp",
-	height: "540dp"
+	top: "110dp",
+	height: "auto"
 	}
 
 ".yourLooksEachA": {
@@ -143,58 +143,33 @@
 	backgroundColor: "#a1238e"}
 
 ".yourLooksEachB": {
-	top: "66dp",
+	top: "70dp",
 	height: "60dp",
 	opacity: "0.8",
 	backgroundColor: "#fe94d5"}
 	
 ".yourLooksEachC": {
-	top: "132dp",
+	top: "140dp",
 	height: "60dp",
 	opacity: "0.8",
 	backgroundColor: "#ffc3e2"}
 
 ".yourLooksEachD": {
-	top: "198dp",
+	top: "210dp",
 	height: "60dp",
 	opacity: "0.8",
 	backgroundColor: "#fee8f3"}
 
 ".yourLooksEachE": {
-	top: "264dp",
+	top: "280dp",
 	height: "60dp",
 	opacity: "0.8",
 	backgroundColor: "#fdf4f9"}
 
+".yourLooksEachF": {
+	top: "350dp",
+	height: "60dp",
+	opacity: "0.8",
+	backgroundColor: "#fffFf9"}
 
-"#menuHome": {
-	height: "50dp",
-	width: "100%",
-	bottom: "2dp",
-	backgroundColor: "#transparent"}	
-	
-".homeButtonMenuHome": {
-	image: "/images/home/v-home.png",
-	tintColor: "#fff",
-	left: "30dp"}	
-
-".trendButtonMenuHome": {
-	image: "/images/home/v-trend.png",
-	tintColor: "#fff",
-	left: "86dp"}	
-
-".lookButtonMenuHome": {
-	image: "/images/home/v-look.png",
-	tintColor: "#fff",
-	left: "140dp"}	
-
-".alarmButtonMenuHome": {
-	image: "/images/home/v-alarm.png",
-	tintColor: "#fff",
-	left: "195dp"}	
-
-".settingsButtonMenuHome": {
-	image: "/images/home/v-setting.png",
-	tintColor: "#fff",
-	left: "250dp"}	
 

@@ -3,7 +3,7 @@
   	 <Window id="DIYWindow" modal="true" platform="android,ios">
 
 			<View id="windowButtons">
-		 		<Button class="backButton" onClick="showLooks"></Button>
+		 		<Button class="backButton" onClick="showHome"></Button>
 		 	</View>
 	 	
 	 		<View id="windowTitle">

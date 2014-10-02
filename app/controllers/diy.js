@@ -141,6 +141,7 @@ function showArticleShoes() {
 	Alloy.Globals.selectedArticleIndex = articleShoes[Alloy.Globals.lookShoesId]['articleIndex'];
 	Alloy.createController("article").getView().open();
 }
+
 function showHome() {
 	Alloy.createController("index").getView().open();
 }

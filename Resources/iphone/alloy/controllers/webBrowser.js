@@ -49,16 +49,16 @@ function Controller() {
         id: "windowButtons"
     });
     $.__views.browserWindow.add($.__views.windowButtons);
-    $.__views.__alloyId49 = Ti.UI.createButton({
+    $.__views.__alloyId55 = Ti.UI.createButton({
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
-        id: "__alloyId49"
+        id: "__alloyId55"
     });
-    $.__views.windowButtons.add($.__views.__alloyId49);
-    closeBrowser ? $.__views.__alloyId49.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId49!click!closeBrowser"] = true;
+    $.__views.windowButtons.add($.__views.__alloyId55);
+    closeBrowser ? $.__views.__alloyId55.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId55!click!closeBrowser"] = true;
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
@@ -66,7 +66,7 @@ function Controller() {
         id: "windowTitle"
     });
     $.__views.browserWindow.add($.__views.windowTitle);
-    $.__views.__alloyId50 = Ti.UI.createLabel({
+    $.__views.__alloyId56 = Ti.UI.createLabel({
         color: "#922a80",
         font: {
             fontSize: "20dp",
@@ -75,9 +75,9 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "Article link to buy it",
-        id: "__alloyId50"
+        id: "__alloyId56"
     });
-    $.__views.windowTitle.add($.__views.__alloyId50);
+    $.__views.windowTitle.add($.__views.__alloyId56);
     $.__views.webview = Ti.UI.createWebView({
         top: "36dp",
         id: "webview",
@@ -87,7 +87,7 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
-    __defers["$.__views.__alloyId49!click!closeBrowser"] && $.__views.__alloyId49.addEventListener("click", closeBrowser);
+    __defers["$.__views.__alloyId55!click!closeBrowser"] && $.__views.__alloyId55.addEventListener("click", closeBrowser);
     _.extend($, exports);
 }
 
