@@ -32,11 +32,18 @@ function Controller() {
         font: {
             fontFamily: "AmericanTypewriter"
         },
+<<<<<<< HEAD
+        fullscreen: false,
+        navBarHidden: false,
+        exitOnClose: true,
+        tabBarHidden: false,
+=======
         fullscreen: true,
         navBarHidden: false,
         exitOnClose: true,
         tabBarHidden: false,
         backgroundImage: "/images/vlothie-background.jpg",
+>>>>>>> FETCH_HEAD
         id: "browserWindow",
         modal: "true"
     });
@@ -65,6 +72,18 @@ function Controller() {
         height: "24dp",
         id: "windowTitle"
     });
+<<<<<<< HEAD
+    $.__views.browserWindow.add($.__views.articleButtons);
+    $.__views.__alloyId53 = Ti.UI.createButton({
+        image: "/images/v-back.png",
+        tintColor: "#fff",
+        top: "2dp",
+        left: "8dp",
+        id: "__alloyId53"
+    });
+    $.__views.articleButtons.add($.__views.__alloyId53);
+    closeBrowser ? $.__views.__alloyId53.addEventListener("click", closeBrowser) : __defers["$.__views.__alloyId53!click!closeBrowser"] = true;
+=======
     $.__views.browserWindow.add($.__views.windowTitle);
     $.__views.__alloyId56 = Ti.UI.createLabel({
         color: "#922a80",
@@ -77,7 +96,12 @@ function Controller() {
         text: "Article link to buy it",
         id: "__alloyId56"
     });
+<<<<<<< HEAD
     $.__views.windowTitle.add($.__views.__alloyId56);
+=======
+    $.__views.windowTitle.add($.__views.__alloyId50);
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
     $.__views.webview = Ti.UI.createWebView({
         top: "36dp",
         id: "webview",
@@ -87,7 +111,15 @@ function Controller() {
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.webview.url = Alloy.Globals.webBrowserUrl;
+<<<<<<< HEAD
     __defers["$.__views.__alloyId55!click!closeBrowser"] && $.__views.__alloyId55.addEventListener("click", closeBrowser);
+=======
+<<<<<<< HEAD
+    __defers["$.__views.__alloyId53!click!closeBrowser"] && $.__views.__alloyId53.addEventListener("click", closeBrowser);
+=======
+    __defers["$.__views.__alloyId49!click!closeBrowser"] && $.__views.__alloyId49.addEventListener("click", closeBrowser);
+>>>>>>> FETCH_HEAD
+>>>>>>> FETCH_HEAD
     _.extend($, exports);
 }
 

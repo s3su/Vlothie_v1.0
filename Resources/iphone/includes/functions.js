@@ -65,5 +65,5 @@ Alloy.Globals.getLocation = function(tableName) {
 };
 
 Alloy.Globals.getArticlesIndexByArticleId = function(articleId) {
-    for (var index in Alloy.Globals.articlesArray) if (Alloy.Globals.articlesArray["articleId"] == articleId) return index;
+    for (var index in Alloy.Globals.articlesArray) if (Alloy.Globals.articlesArray[index]["articleId"] == articleId) return index;
 };

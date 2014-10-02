@@ -1,19 +1,18 @@
 Ti.API.info('---------------- look.js ------------------------');
 var animation = require('alloy/animation');
-var articleTop = [];
-var articleBottom = [];
-var articleShoes = [];
+
+var looksCurrentArray = [];
 
 
-var articleTopCount = 0;
-var articleBottomCount = 0;
-var articleShoesCount = 0;
-
-
-/*
 if(Alloy.Globals.selectedSituationId > 0){
 	
+	//Ti.API.info('looksCurrentArray: ' + Alloy.Globals.dump(Alloy.Globals.looksArray));
+	//Ti.API.info('getArticlesIndexByArticleId(6): '+Alloy.Globals.getArticlesIndexByArticleId(6));
+	
 	buildLooksBySituationId();
+	
+	Ti.API.info('looksCurrentArray: ' + Alloy.Globals.dump(looksCurrentArray));
+	/*
 	loadRandomLook();
 	showLook();
 	
@@ -32,6 +31,7 @@ if(Alloy.Globals.selectedSituationId > 0){
 		
 		showLook();
 	});
+	*/
 		
 	
 }else if(Alloy.Globals.selectedTrendId > 0){
@@ -58,15 +58,18 @@ if(Alloy.Globals.selectedSituationId > 0){
 function buildLooksBySituationId(){
 	
 	var count = 0;
+	Ti.API.info('!!Building Look By situation ID: '+Alloy.Globals.selectedSituationId);
 	for(var index in Alloy.Globals.looksArray) {
 		if(Alloy.Globals.looksArray[index]['situationId'] == Alloy.Globals.selectedSituationId){
+			looksCurrentArray[count] = [];
 			looksCurrentArray[count]['title'] = Alloy.Globals.looksArray[index]['title'];
 			looksCurrentArray[count]['lookId'] = Alloy.Globals.looksArray[index]['lookId'];
 			looksCurrentArray[count]['topArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[index]['topArticleId']);
 			looksCurrentArray[count]['bottomArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['bottomArticleId']);
-			looksCurrentArray[count]['shoesArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['shoesArticleId']);		
+			looksCurrentArray[count]['shoesArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['shoesArticleId']);
+			count++;		
 		}
-		count++;
+	
 	}
 	looksCurrentArray['size'] = count;
 	
@@ -86,8 +89,20 @@ function showLook(){
 	Ti.API.info('!!Change Look: '+articleTop[Alloy.Globals.lookTopId]['title']+' - Image: '+imagePath);
 }
 
-*/
+function showArticleTop(){
 
+}
+
+function showArticleBottom(){
+
+}
+
+function showArticleShoes(){
+
+}
+
+
+/*
 for(var index in Alloy.Globals.articlesArray) {
 
 	switch(Alloy.Globals.articlesArray[index]['categoryId']){
@@ -419,3 +434,5 @@ function setInitialLook(){
 	
 	
 }
+
+*/
