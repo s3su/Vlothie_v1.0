@@ -1,10 +1,9 @@
 <Alloy>  <!-- Main Window -->
   <Window id="trendWindow" platform="android,ios">
 
-	<View id="windowButtons">
- 		<Button class="backButton" onClick="showHome"></Button>
+	<View id="trendButtons">
+ 		<Button class="backButton" onClick="closeTrend" ></Button>
  		<Button class="searchButton"></Button>
- 	
  	</View>
  	
  	 	<View id="windowTitle">

@@ -16,7 +16,6 @@ function Controller() {
         Alloy.createController("stylist").getView().open();
     }
     function showDIY() {
-        Alloy.Globals.selectedSituationId = 2;
         Alloy.createController("diy").getView().open();
     }
     function showLooksWithSituation2() {

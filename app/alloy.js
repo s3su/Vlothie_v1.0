@@ -8,17 +8,19 @@ require('includes/getWeatherData');
 require('includes/setArticlesData');
 
 
+//Articles
 Alloy.Globals.selectedArticleIndex = 0;
-Alloy.Globals.isSetLook = 0;
 
 
 //Situations
 Alloy.Globals.selectedSituationId = 0;
 Alloy.Globals.situationArraySize = 4;
 
+//Looks
 Alloy.Globals.lookCurrentIndex = -1;
-
+Alloy.Globals.lookCurrentId = -1;
 Alloy.Globals.lookSetIndex = 0;
+Alloy.Globals.selectedLookId = 0;
 
 Alloy.Globals.lookTopId = 0;
 Alloy.Globals.lookBottomId = 0;

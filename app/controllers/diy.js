@@ -1,5 +1,6 @@
 Ti.API.info('---------------- diy.js ------------------------');
 var animation = require('alloy/animation');
+
 var articleTop = [];
 var articleBottom = [];
 var articleShoes = [];
@@ -77,16 +78,80 @@ for(var index in Alloy.Globals.articlesArray) {
 //Ti.API.info("articleShoes: "+Alloy.Globals.dump(articleShoes));
 
 
-setInitialLook();
+//setInitialLook();
 
+if(Alloy.Globals.lookCurrentId > 0){
+	
+	var lookArrayIndex = getLookArrayIndexByLookId(Alloy.Globals.lookCurrentId);
+	Ti.API.info('!!Alloy.Globals.lookCurrentId: '+Alloy.Globals.lookCurrentId+ 'With lookArrayIndex: '+lookArrayIndex);
+	//Ti.API.info('!!Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[lookArrayIndex][topArticleId]: '+Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[lookArrayIndex]['topArticleId']));
+	//Ti.API.info('!!Alloy.Globals.lookCurrentId: '+Alloy.Globals.lookCurrentId+ 'With lookArrayIndex: '+lookArrayIndex);
+	//Ti.API.info('!!Alloy.Globals.lookCurrentId: '+Alloy.Globals.lookCurrentId+ 'With lookArrayIndex: '+lookArrayIndex);
+	
+	var topArticleIndex = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[lookArrayIndex]['topArticleId']);
+	var bottomArticleIndex = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[lookArrayIndex]['bottomArticleId']);
+	var shoesArticleIndex = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[lookArrayIndex]['shoesArticleId']);
+	
+	for(var index in articleTop) {
+		if(articleTop[index]['articleIndex'] == topArticleIndex){
+			Alloy.Globals.lookTopId = index;
+			break;
+		}
+	}
+	
+	for(var index in articleBottom) {
+		if(articleBottom[index]['articleIndex'] == bottomArticleIndex){
+			Alloy.Globals.lookBottomId = index;
+			break;
+		}
+	}
+	
+	for(var index in articleShoes) {
+		if(articleShoes[index]['articleIndex'] == shoesArticleIndex){
+			Alloy.Globals.lookShoesId = index;
+			break;
+		}
+	}
+	
+	
+	//Alloy.Globals.lookTopId = getTopIdByArticleIndex(looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex']);
+	//Alloy.Globals.lookTopId = getTopIdByArticleIndex(looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex']);
+	//Alloy.Globals.lookTopId = getTopIdByArticleIndex(looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex']);
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+	$.articleTopImg.image = articleTop[Alloy.Globals.lookTopId]['articlePhotoLook'];
+	$.articleBottomImg.image = articleBottom[Alloy.Globals.lookBottomId]['articlePhotoLook'];
+	$.articleShoesImg.image = articleShoes[Alloy.Globals.lookShoesId]['articlePhotoLook'];
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+
+}else{
+	
+	Alloy.Globals.lookTopId = Math.floor(Math.random() * (articleTop.length));
+	Alloy.Globals.lookBottomId = Math.floor(Math.random() * (articleBottom.length));
+	Alloy.Globals.lookShoesId = Math.floor(Math.random() * (articleShoes.length));
+	
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+	$.articleTopImg.image = articleTop[Alloy.Globals.lookTopId]['articlePhotoLook'];
+	$.articleBottomImg.image = articleBottom[Alloy.Globals.lookBottomId]['articlePhotoLook'];
+	$.articleShoesImg.image = articleShoes[Alloy.Globals.lookShoesId]['articlePhotoLook'];
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
+	
+}
 
 
 
 $.articleTop.addEventListener('swipe',function(e){
 	if (e.direction == 'right') {
-      	Alloy.Globals.lookTopId = selectTopId('right');
+      	selectNextTopId();
    	} else if (e.direction == 'left') {
-      	Alloy.Globals.lookTopId = selectTopId('left');
+      	selectPreviousTopId();
    	}
 	
 	animation.flipHorizontal($.articleTop,$.articleTop, 500);
@@ -99,9 +164,9 @@ $.articleTop.addEventListener('swipe',function(e){
 
 $.articleBottom.addEventListener('swipe',function(e){
 	if (e.direction == 'right') {
-      	Alloy.Globals.lookBottomId = selectBottomId('right');
+      	selectNextBottomId();
    	} else if (e.direction == 'left') {
-      	Alloy.Globals.lookTopId = selectBottomId('left');
+      	selectPreviousBottomId();
    	}
 	
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
@@ -113,9 +178,9 @@ $.articleBottom.addEventListener('swipe',function(e){
 
 $.articleShoes.addEventListener('swipe',function(e){
 	if (e.direction == 'right') {
-      	Alloy.Globals.lookShoesId = selectShoesId('right');
+      	selectNextShoesId();
    	} else if (e.direction == 'left') {
-    	Alloy.Globals.lookShoesId = selectShoesId('left');
+    	selectPreviousShoesId();
    	}
 	
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
@@ -147,78 +212,85 @@ function showArticleShoes() {
 	Alloy.createController("article").getView().open();
 }
 
-function showHome() {
-	Alloy.createController("index").getView().open();
-}
-
-function showTrends() {
-	Alloy.createController("trend").getView().open();
-}
-
-function showLooks() {
-	Alloy.createController("look").getView().open();
-}
 	
 
 	
-function selectTopId(direction){
+function selectNextTopId(){
 	//alert('select top id prev: '+topId+' with length: '+articleTop.length);
-	if(direction == 'right'){
-		if((Alloy.Globals.lookTopId-1) >= 0){
-			Alloy.Globals.lookTopId--;
-		}else{
-			Alloy.Globals.lookTopId = articleTop.length-1;
-		}
-	}else if(direction == 'left'){
-		if((Alloy.Globals.lookTopId+1) < articleTop.length){
-			Alloy.Globals.lookTopId++;
-		}else{
-			Alloy.Globals.lookTopId = 0;
-		}
-	}else if(direction == 'random'){
-		Alloy.Globals.lookTopId = Math.floor(Math.random() * (articleTop.length));
+	if((Alloy.Globals.lookTopId-1) >= 0){
+		Alloy.Globals.lookTopId--;
+	}else{
+		Alloy.Globals.lookTopId = articleTop.length-1;
 	}
-	return Alloy.Globals.lookTopId;
 }
 
-function selectBottomId(direction){
-	if(direction == 'right'){
-		if((Alloy.Globals.lookBottomId-1) >= 0){
-			Alloy.Globals.lookBottomId--;
-		}else{
-			Alloy.Globals.lookBottomId = articleBottom.length-1;
-		}
-	}else if(direction == 'left'){
-		if((Alloy.Globals.lookBottomId+1) < articleBottom.length){
-			Alloy.Globals.lookBottomId++;
-		}else{
-			Alloy.Globals.lookBottomId = 0;
-		}
-	}else if(direction == 'random'){
-		Alloy.Globals.lookBottomId = Math.floor(Math.random() * (articleBottom.length));
+function selectPreviousTopId(){
+
+	if((Alloy.Globals.lookTopId+1) < articleTop.length){
+		Alloy.Globals.lookTopId++;
+	}else{
+		Alloy.Globals.lookTopId = 0;
 	}
-	return Alloy.Globals.lookBottomId;
 }
 
-function selectShoesId(direction){
-	if(direction == 'right'){
+function selectNextBottomId(){
+	if((Alloy.Globals.lookBottomId-1) >= 0){
+		Alloy.Globals.lookBottomId--;
+	}else{
+		Alloy.Globals.lookBottomId = articleBottom.length-1;
+	}
+}
+
+function selectPreviousBottomId(){
+
+	if((Alloy.Globals.lookBottomId+1) < articleBottom.length){
+		Alloy.Globals.lookBottomId++;
+	}else{
+		Alloy.Globals.lookBottomId = 0;
+	}
+}
+
+function selectNextShoesId(){
 		if((Alloy.Globals.lookShoesId-1) >= 0){
 			Alloy.Globals.lookShoesId--;
 		}else{
 			Alloy.Globals.lookShoesId = articleShoes.length-1;
 		}
-	}else if(direction == 'left'){
-		if((Alloy.Globals.lookShoesId+1) < articleShoes.length){
-			Alloy.Globals.lookShoesId++;
-		}else{
-			Alloy.Globals.lookShoesId = 0;
-		}
-	}else if(direction == 'random'){
-		Alloy.Globals.lookShoesId = Math.floor(Math.random() * (articleShoes.length));
-	}
-	return Alloy.Globals.lookShoesId;
 }
 
+function selectPreviousShoesId(){
+	if((Alloy.Globals.lookShoesId+1) < articleShoes.length){
+		Alloy.Globals.lookShoesId++;
+	}else{
+		Alloy.Globals.lookShoesId = 0;
+	}
+}
+
+
+
+function getTopIdByArticleIndex(topArticleIndex){
+	
+	for(var index in articleTop) {
+		if(articleTop[index]['articleIndex'] == topArticleIndex){
+			Alloy.Globals.lookTopId = index;
+			break;
+		}
+	}
+	
+}
+
+function getLookArrayIndexByLookId(lookId){
+	
+	for(var index in Alloy.Globals.looksArray) {
+		if(Alloy.Globals.looksArray[index]['lookId'] == lookId){
+			return index;
+			break;
+		}
+	}
+	
+}
+
+/*
 function setLook(lookId){
 	
 	//Ti.API.info('Set Look function || Alloy.Globals.looksArray.length: '+Alloy.Globals.looksArray.length);
@@ -349,3 +421,4 @@ function setInitialLook(){
 	
 	
 }
+*/

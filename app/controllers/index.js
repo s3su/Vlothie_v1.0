@@ -27,7 +27,7 @@ function showLooks() {
 }
 	
 function showDIY(){
-	Alloy.Globals.selectedSituationId = 2;
+	
 	Alloy.createController("diy").getView().open();
 	//Alloy.createController('diy').getView().open({transition:Ti.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT});
 }

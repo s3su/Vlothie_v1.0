@@ -17,11 +17,12 @@ if(Alloy.Globals.selectedSituationId > 0){
 	showLook();
 	
 	$.lookContent.addEventListener('swipe',function(e){
+		//Ti.API.info('!!Swipe with direction: '+e.direction);
 		if (e.direction == 'right') {
 	      	loadPreviousLook();
 	   	} else if (e.direction == 'left') {
 	      	loadNextLook();
-	   	} else if (e.direction == 'top') {
+	   	} else if (e.direction == 'up') {
 	      	buildLooksByNextSituation();
 			loadRandomLook();
 	   	} else if (e.direction == 'down') {
@@ -34,9 +35,10 @@ if(Alloy.Globals.selectedSituationId > 0){
 	
 		
 	
-}else if(Alloy.Globals.selectedTrendId > 0){
+}else if(Alloy.Globals.selectedLookId > 0){
 	
-	loadLookByTrendId();
+	buildLooksByLookId();
+	loadRandomLook();
 	showLook();
 	
 	$.lookContent.addEventListener('swipe',function(e){
@@ -54,6 +56,22 @@ if(Alloy.Globals.selectedSituationId > 0){
 	});
 	
 }
+
+$.lookContent.addEventListener('pinch',function(e){
+	if(e.scale > 1){ //pinch OUT
+		//Niente
+	}else{ //pinchIN
+		Alloy.createController("diy").getView().open();
+	}
+				
+});
+
+$.lookContent.addEventListener('longpress',function(e){
+	//Open DIY
+	Alloy.createController("diy").getView().open();
+	
+				
+});
 
 function buildLooksBySituationId(){
 	
@@ -75,14 +93,35 @@ function buildLooksBySituationId(){
 	
 }
 
+function buildLooksByLookId(){
+	
+	var count = 0;
+	Ti.API.info('!!Building Look By look ID: '+Alloy.Globals.selectedLookId);
+	for(var index in Alloy.Globals.looksArray) {
+		if(Alloy.Globals.looksArray[index]['lookId'] == Alloy.Globals.selectedLookId){
+			looksCurrentArray[count] = [];
+			looksCurrentArray[count]['title'] = Alloy.Globals.looksArray[index]['title'];
+			looksCurrentArray[count]['lookId'] = Alloy.Globals.looksArray[index]['lookId'];
+			looksCurrentArray[count]['topArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId( Alloy.Globals.looksArray[index]['topArticleId']);
+			looksCurrentArray[count]['bottomArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['bottomArticleId']);
+			looksCurrentArray[count]['shoesArticleIndex'] = Alloy.Globals.getArticlesIndexByArticleId(Alloy.Globals.looksArray[index]['shoesArticleId']);
+			count++;		
+		}
+	
+	}
+	looksCurrentArray['size'] = count;
+	
+}
+
 function buildLooksByNextSituation(){
 	
 	
-	if((Alloy.Globals.selectedSituationId+1) >= Alloy.Globals.situationArraySize){
+	if((Alloy.Globals.selectedSituationId+1) > Alloy.Globals.situationArraySize){
 		Alloy.Globals.selectedSituationId = 1;
 	}else{
 		Alloy.Globals.selectedSituationId++;
 	}
+	Ti.API.info('!!Show Next Situation with SitId: '+Alloy.Globals.selectedSituationId);
 	
 	buildLooksBySituationId();
 	
@@ -96,7 +135,7 @@ function buildLooksByPreviousSituation(){
 	}else{
 		Alloy.Globals.selectedSituationId = Alloy.Globals.situationArraySize;
 	}
-	
+	Ti.API.info('!!Show Previous Situation with SitId: '+Alloy.Globals.selectedSituationId);
 	
 	buildLooksBySituationId();
 	
@@ -104,18 +143,22 @@ function buildLooksByPreviousSituation(){
 
 function loadRandomLook(){
 	Alloy.Globals.lookCurrentIndex = Math.floor(Math.random() * (looksCurrentArray['size']));
+	Alloy.Globals.lookCurrentId = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['lookId'];
 }
 
 function showLook(){
 	
 	Ti.API.info('!!Show Look with index: '+Alloy.Globals.lookCurrentIndex);
 	
-	animation.flipHorizontal($.lookContent,$.lookContent, 500);
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
 	$.articleTopImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex']]['articlePhotoLook'];
 	$.articleBottomImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['bottomArticleIndex']]['articlePhotoLook'];
 	$.articleShoesImg.image = Alloy.Globals.articlesArray[looksCurrentArray[Alloy.Globals.lookCurrentIndex]['shoesArticleIndex']]['articlePhotoLook'];
-	animation.flipHorizontal($.lookContent,$.lookContent, 500);
-	
+	animation.flipHorizontal($.articleTop,$.articleTop, 500);
+	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
+	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
 	
 }
 
@@ -127,6 +170,8 @@ function loadPreviousLook(){
 	}else{
 		Alloy.Globals.lookCurrentIndex = looksCurrentArray['size']-1;
 	}
+	Alloy.Globals.lookCurrentId = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['lookId'];
+	Ti.API.info('!!Show Previous Look with index: '+Alloy.Globals.lookCurrentIndex);
 }
 
 function loadNextLook(){
@@ -135,19 +180,28 @@ function loadNextLook(){
 	}else{
 		Alloy.Globals.lookCurrentIndex++;
 	}
+	Alloy.Globals.lookCurrentId = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['lookId'];
+	Ti.API.info('!!Show Next Look with index: '+Alloy.Globals.lookCurrentIndex);
 }
+
 
 
 function showArticleTop(){
-
+	Alloy.Globals.selectedArticleIndex = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['topArticleIndex'];
+	//Ti.API.info('!!Selected Top article .. ID: '+Alloy.Globals.selectedArticleIndex);
+	Alloy.createController("article").getView().open();
 }
 
 function showArticleBottom(){
-
+	Alloy.Globals.selectedArticleIndex = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['bottomArticleIndex'];
+	//Ti.API.info('!!Selected Top article .. ID: '+Alloy.Globals.selectedArticleIndex);
+	Alloy.createController("article").getView().open();
 }
 
 function showArticleShoes(){
-
+	Alloy.Globals.selectedArticleIndex = looksCurrentArray[Alloy.Globals.lookCurrentIndex]['shoesArticleIndex'];
+	//Ti.API.info('!!Selected Top article .. ID: '+Alloy.Globals.selectedArticleIndex);
+	Alloy.createController("article").getView().open();
 }
 
 function closeLook() {
