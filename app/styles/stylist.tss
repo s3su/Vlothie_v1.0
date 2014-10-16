@@ -8,15 +8,15 @@
 	top: "20dp",
 	left: "0dp",
 	right: "0dp",
-	height: "560dp"}
+	height: "1560dp"}
 
 ".stylistListView": {
-	top: "110dp",
-	height: "auto"
-	}
+	top: "40dp",
+	height: "auto",
+	layout: "vertical"}
 
 ".stylistContainer": {
-	top: "110dp",
+	top: "10dp",
 	height: "120dp",
 	width: "90%",
 	left: "5%",
@@ -37,16 +37,19 @@
 	top: "10dp",
 	height: "60dp",
 	left: "80dp",
+	right: "8dp",
 	backgroundColor: "#ccc",
 	}
 
-".stylistDataFollowers": {
-	top: "10dp",
-	width: "90%"
-}
+".stylistDataText": {
+	top: "1dp",
+	height: "22dp"}
 
-".stylistDataLooks": {
-	top: "10dp",
-	width: "90%"
-}
+".stylistTitle": {
+	color: "violet",
+	width: "90%",
+	bottom: "2dp",
+	font: {fontSize: 18, fontFamily: 'Roboto'},
+	}
+
 

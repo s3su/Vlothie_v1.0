@@ -13,24 +13,44 @@
 			<View class="stylistListView">
 				
 					<View class="stylistContainer">
-				
 							<View class="stylistPhotoContainer">
 								Foto
 							</View>	
 							
 							<View class="stylistDataContainer">
-					 
-							 	<View class="stylistDataFollowers">
-									<Label>Followers 11001</Label>
+							 	<View class="stylistDataText">
+									<Label class="stylistTitle">Followers 11001</Label>
+									<Label class="stylistTitle">Looks 11001</Label>
 								</View>
-					
-								<View class="stylistDataLooks">
-									<Label>Looks 11001</Label>
-								</View>
-					
 							</View>
-					
-			
+					</View>
+		
+					<View class="stylistContainer">
+							<View class="stylistPhotoContainer">
+								Foto
+							</View>	
+							
+							<View class="stylistDataContainer">
+							 	<View class="stylistDataText">
+									<Label class="stylistTitle">Followers 11001</Label>
+								</View>
+								<View class="stylistDataText">
+									<Label class="stylistTitle">Looks 11001</Label>
+								</View>
+							</View>
+					</View>
+		
+					<View class="stylistContainer">
+							<View class="stylistPhotoContainer">
+								Foto
+							</View>	
+							
+							<View class="stylistDataContainer">
+							 	<View class="stylistDataText">
+									<Label class="stylistTitle">Followers 11001</Label>
+									<Label class="stylistTitle">Looks 11001</Label>
+								</View>
+							</View>
 					</View>
 				
 			</View>

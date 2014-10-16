@@ -212,7 +212,15 @@ function showArticleShoes() {
 	Alloy.createController("article").getView().open();
 }
 
+<<<<<<< Updated upstream
 	
+=======
+function showHome() {
+	alert('show home');
+	//$.diyWindow.close();
+	Alloy.createController("index").getView().open();
+}
+>>>>>>> Stashed changes
 
 	
 function selectNextTopId(){

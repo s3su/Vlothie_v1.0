@@ -22,26 +22,6 @@
 		right: "8dp",
 		top: "2dp"}
 
-"#menuLookView": {
-	top: "32dp",
-	height: "36dp"}
-
-".buttonSchedule": {
-	image: "/images/v-schedule.png", 
-	tintColor: "#b23b91",
-	left: "20dp"}
-
-".buttonDiamond": {
-	image: "/images/v-diamond.png",
-	tintColor: "#b23b91",
-	left: "50dp"}
-
-".buttonStylist": {
-	image: "/images/v-stylist.png",
-	tintColor: "#b23b91",
-	left: "80dp"}
-
-
 "#getLook": {
 	top: "2dp",
 	width: "100%",
@@ -103,37 +83,3 @@
 	bottom: "0dp",
 	width: Ti.UI.FILL,
 	height: Ti.UI.FILL}
-
-
-"#menuHome": {
-	height: "50dp",
-	width: "100%",
-	bottom: "2dp",
-	backgroundColor: "#transparent"}	
-		
-".homeButtonMenuHome": {
-	image: "/images/home/v-home.png",
-	tintColor: "#fff",
-	left: "30dp"}	
-
-".trendButtonMenuHome": {
-	image: "/images/home/v-trend.png",
-	tintColor: "#fff",
-	left: "86dp"}	
-
-".lookButtonMenuHome": {
-	image: "/images/home/v-look.png",
-	tintColor: "#fff",
-	left: "140dp"}	
-
-".alarmButtonMenuHome": {
-	image: "/images/home/v-alarm.png",
-	tintColor: "#fff",
-	left: "195dp"}	
-
-".settingsButtonMenuHome": {
-	image: "/images/home/v-setting.png",
-	tintColor: "#fff",
-	left: "250dp"}	
-
-

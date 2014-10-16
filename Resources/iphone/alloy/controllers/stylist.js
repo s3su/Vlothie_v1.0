@@ -80,18 +80,19 @@ function Controller() {
         top: "20dp",
         left: "0dp",
         right: "0dp",
-        height: "560dp",
+        height: "1560dp",
         id: "stylistScrollView"
     });
     $.__views.stylistWindow.add($.__views.stylistScrollView);
     $.__views.__alloyId36 = Ti.UI.createView({
-        top: "110dp",
+        top: "40dp",
         height: "auto",
+        layout: "vertical",
         id: "__alloyId36"
     });
     $.__views.stylistScrollView.add($.__views.__alloyId36);
     $.__views.__alloyId37 = Ti.UI.createView({
-        top: "110dp",
+        top: "10dp",
         height: "120dp",
         width: "90%",
         left: "5%",
@@ -114,38 +115,167 @@ function Controller() {
         top: "10dp",
         height: "60dp",
         left: "80dp",
+        right: "8dp",
         backgroundColor: "#ccc",
         id: "__alloyId39"
     });
     $.__views.__alloyId37.add($.__views.__alloyId39);
     $.__views.__alloyId40 = Ti.UI.createView({
-        top: "10dp",
-        width: "90%",
+        top: "1dp",
+        height: "22dp",
         id: "__alloyId40"
     });
     $.__views.__alloyId39.add($.__views.__alloyId40);
     $.__views.__alloyId41 = Ti.UI.createLabel({
-        color: "#FFF",
+        color: "violet",
+        width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
         text: "Followers 11001",
         id: "__alloyId41"
     });
     $.__views.__alloyId40.add($.__views.__alloyId41);
-    $.__views.__alloyId42 = Ti.UI.createView({
-        top: "10dp",
+    $.__views.__alloyId42 = Ti.UI.createLabel({
+        color: "violet",
         width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
+        text: "Looks 11001",
         id: "__alloyId42"
     });
-    $.__views.__alloyId39.add($.__views.__alloyId42);
-    $.__views.__alloyId43 = Ti.UI.createLabel({
-        color: "#FFF",
-        text: "Looks 11001",
+    $.__views.__alloyId40.add($.__views.__alloyId42);
+    $.__views.__alloyId43 = Ti.UI.createView({
+        top: "10dp",
+        height: "120dp",
+        width: "90%",
+        left: "5%",
+        backgroundColor: "#FFF",
+        borderRadius: "8dp",
         id: "__alloyId43"
     });
-    $.__views.__alloyId42.add($.__views.__alloyId43);
+    $.__views.__alloyId36.add($.__views.__alloyId43);
+    $.__views.__alloyId44 = Ti.UI.createView({
+        top: "10dp",
+        height: "60dp",
+        width: "60dp",
+        left: "8dp",
+        backgroundImage: "/images/vlothie-background.jpg",
+        borderRadius: "30dp",
+        id: "__alloyId44"
+    });
+    $.__views.__alloyId43.add($.__views.__alloyId44);
+    $.__views.__alloyId45 = Ti.UI.createView({
+        top: "10dp",
+        height: "60dp",
+        left: "80dp",
+        right: "8dp",
+        backgroundColor: "#ccc",
+        id: "__alloyId45"
+    });
+    $.__views.__alloyId43.add($.__views.__alloyId45);
+    $.__views.__alloyId46 = Ti.UI.createView({
+        top: "1dp",
+        height: "22dp",
+        id: "__alloyId46"
+    });
+    $.__views.__alloyId45.add($.__views.__alloyId46);
+    $.__views.__alloyId47 = Ti.UI.createLabel({
+        color: "violet",
+        width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
+        text: "Followers 11001",
+        id: "__alloyId47"
+    });
+    $.__views.__alloyId46.add($.__views.__alloyId47);
+    $.__views.__alloyId48 = Ti.UI.createView({
+        top: "1dp",
+        height: "22dp",
+        id: "__alloyId48"
+    });
+    $.__views.__alloyId45.add($.__views.__alloyId48);
+    $.__views.__alloyId49 = Ti.UI.createLabel({
+        color: "violet",
+        width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
+        text: "Looks 11001",
+        id: "__alloyId49"
+    });
+    $.__views.__alloyId48.add($.__views.__alloyId49);
+    $.__views.__alloyId50 = Ti.UI.createView({
+        top: "10dp",
+        height: "120dp",
+        width: "90%",
+        left: "5%",
+        backgroundColor: "#FFF",
+        borderRadius: "8dp",
+        id: "__alloyId50"
+    });
+    $.__views.__alloyId36.add($.__views.__alloyId50);
+    $.__views.__alloyId51 = Ti.UI.createView({
+        top: "10dp",
+        height: "60dp",
+        width: "60dp",
+        left: "8dp",
+        backgroundImage: "/images/vlothie-background.jpg",
+        borderRadius: "30dp",
+        id: "__alloyId51"
+    });
+    $.__views.__alloyId50.add($.__views.__alloyId51);
+    $.__views.__alloyId52 = Ti.UI.createView({
+        top: "10dp",
+        height: "60dp",
+        left: "80dp",
+        right: "8dp",
+        backgroundColor: "#ccc",
+        id: "__alloyId52"
+    });
+    $.__views.__alloyId50.add($.__views.__alloyId52);
+    $.__views.__alloyId53 = Ti.UI.createView({
+        top: "1dp",
+        height: "22dp",
+        id: "__alloyId53"
+    });
+    $.__views.__alloyId52.add($.__views.__alloyId53);
+    $.__views.__alloyId54 = Ti.UI.createLabel({
+        color: "violet",
+        width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
+        text: "Followers 11001",
+        id: "__alloyId54"
+    });
+    $.__views.__alloyId53.add($.__views.__alloyId54);
+    $.__views.__alloyId55 = Ti.UI.createLabel({
+        color: "violet",
+        width: "90%",
+        bottom: "2dp",
+        font: {
+            fontSize: 18,
+            fontFamily: "Roboto"
+        },
+        text: "Looks 11001",
+        id: "__alloyId55"
+    });
+    $.__views.__alloyId53.add($.__views.__alloyId55);
     exports.destroy = function() {};
     _.extend($, $.__views);
-    Ti.API.info("---------------- look.js ------------------------");
-    require("alloy/animation");
     __defers["$.__views.__alloyId34!click!showHome"] && $.__views.__alloyId34.addEventListener("click", showHome);
     _.extend($, exports);
 }

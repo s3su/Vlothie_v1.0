@@ -52,26 +52,41 @@ function Controller() {
     $.__views.trendButtons = Ti.UI.createView({
         id: "trendButtons"
     });
+<<<<<<< Updated upstream
     $.__views.trendWindow.add($.__views.trendButtons);
     $.__views.__alloyId44 = Ti.UI.createButton({
+=======
+    $.__views.trendWindow.add($.__views.windowButtons);
+    $.__views.__alloyId56 = Ti.UI.createButton({
+>>>>>>> Stashed changes
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
-        id: "__alloyId44"
+        id: "__alloyId56"
     });
+<<<<<<< Updated upstream
     $.__views.trendButtons.add($.__views.__alloyId44);
     closeTrend ? $.__views.__alloyId44.addEventListener("click", closeTrend) : __defers["$.__views.__alloyId44!click!closeTrend"] = true;
     $.__views.__alloyId45 = Ti.UI.createButton({
+=======
+    $.__views.windowButtons.add($.__views.__alloyId56);
+    showHome ? $.__views.__alloyId56.addEventListener("click", showHome) : __defers["$.__views.__alloyId56!click!showHome"] = true;
+    $.__views.__alloyId57 = Ti.UI.createButton({
+>>>>>>> Stashed changes
         image: "/images/v-search.png",
         tintColor: "#922a80",
         height: "32dp",
         right: "8dp",
         top: "2dp",
-        id: "__alloyId45"
+        id: "__alloyId57"
     });
+<<<<<<< Updated upstream
     $.__views.trendButtons.add($.__views.__alloyId45);
+=======
+    $.__views.windowButtons.add($.__views.__alloyId57);
+>>>>>>> Stashed changes
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
@@ -79,7 +94,7 @@ function Controller() {
         id: "windowTitle"
     });
     $.__views.trendWindow.add($.__views.windowTitle);
-    $.__views.__alloyId46 = Ti.UI.createLabel({
+    $.__views.__alloyId58 = Ti.UI.createLabel({
         color: "#922a80",
         font: {
             fontSize: "20dp",
@@ -88,9 +103,9 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "Trend Stylist",
-        id: "__alloyId46"
+        id: "__alloyId58"
     });
-    $.__views.windowTitle.add($.__views.__alloyId46);
+    $.__views.windowTitle.add($.__views.__alloyId58);
     $.__views.trendContentScroll = Ti.UI.createScrollView({
         layout: "vertical",
         top: "28dp",
@@ -134,7 +149,11 @@ function Controller() {
         $.trendImg.image = imagePath;
         animation.flipHorizontal($.trendContent, $.trendContent, 500);
     });
+<<<<<<< Updated upstream
     __defers["$.__views.__alloyId44!click!closeTrend"] && $.__views.__alloyId44.addEventListener("click", closeTrend);
+=======
+    __defers["$.__views.__alloyId56!click!showHome"] && $.__views.__alloyId56.addEventListener("click", showHome);
+>>>>>>> Stashed changes
     __defers["$.__views.trendContent!click!showLooks"] && $.__views.trendContent.addEventListener("click", showLooks);
     _.extend($, exports);
 }
