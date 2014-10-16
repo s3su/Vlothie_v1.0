@@ -7,7 +7,7 @@
  	</View>
  	
  	 	<View id="windowTitle">
-		    <Label class="windowTitleText">Trend Stylist</Label>
+		    <Label id="trendTitleText" class="windowTitleText">Trend Stylist</Label>
 		</View>
 		
       <ScrollView id="trendContentScroll">

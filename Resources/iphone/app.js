@@ -8,6 +8,8 @@ require("includes/getLooksData");
 
 require("includes/getTrendsData");
 
+require("includes/getStylistsData");
+
 require("includes/getHomeData");
 
 require("includes/getWeatherData");

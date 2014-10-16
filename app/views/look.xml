@@ -7,7 +7,7 @@
  	</View>
    
     <View id="getLook">
-	    <Label class="getLookText">A cassual day look:</Label>
+	    <Label id="lookTitleText" class="getLookText">A cassual day look:</Label>
 	</View>
 	
 		

@@ -27,4 +27,5 @@ Ti.API.info('!!articleIndex: '+Alloy.Globals.selectedArticleIndex+' - Title: ');
 //SET DATA IN VIWE
 $.articleSelectedImg.image = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['articlePhotoArt'];
 $.articleTitle.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['title'];
+$.articleTitleText.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['title'];
 $.articleInfoText.text = Alloy.Globals.articlesArray[Alloy.Globals.selectedArticleIndex]['description'];

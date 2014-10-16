@@ -7,7 +7,7 @@
  	</View>
  	
  	 	<View id="windowTitle">
-		    <Label class="windowTitleText">Article Name</Label>
+		    <Label id="articleTitleText" class="windowTitleText"></Label>
 		</View>
     
  	

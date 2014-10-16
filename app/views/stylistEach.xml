@@ -1,0 +1,15 @@
+<Alloy>
+	 				<View class="stylistContainer">
+							<View class="stylistPhotoContainer">
+								<ImageView id="stylistPhotoImg" />
+							</View>	
+							
+							<View class="stylistDataContainer">
+							 	<View class="stylistDataText">
+							 		<Label id="stylistTitleText" class="stylistTitle">Followers 11001</Label>
+									<Label class="stylistFollowers">Followers 11001</Label>
+									<Label class="stylistLooks">Looks 11001</Label>
+								</View>
+							</View>
+					</View>
+</Alloy>

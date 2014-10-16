@@ -158,15 +158,15 @@ function Controller() {
         id: "yourLooks"
     });
     $.__views.homeContent.add($.__views.yourLooks);
-    $.__views.__alloyId17 = Ti.UI.createView({
+    $.__views.__alloyId16 = Ti.UI.createView({
         top: "0dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#a1238e",
-        id: "__alloyId17"
+        id: "__alloyId16"
     });
-    $.__views.yourLooks.add($.__views.__alloyId17);
-    $.__views.__alloyId18 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId16);
+    $.__views.__alloyId17 = Ti.UI.createLabel({
         color: "white",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -177,19 +177,19 @@ function Controller() {
             fontWeight: "light"
         },
         text: "HOTTEST TRENDS!",
-        id: "__alloyId18"
+        id: "__alloyId17"
     });
-    $.__views.__alloyId17.add($.__views.__alloyId18);
-    showTrends ? $.__views.__alloyId18.addEventListener("click", showTrends) : __defers["$.__views.__alloyId18!click!showTrends"] = true;
-    $.__views.__alloyId19 = Ti.UI.createView({
+    $.__views.__alloyId16.add($.__views.__alloyId17);
+    showTrends ? $.__views.__alloyId17.addEventListener("click", showTrends) : __defers["$.__views.__alloyId17!click!showTrends"] = true;
+    $.__views.__alloyId18 = Ti.UI.createView({
         top: "70dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#fe94d5",
-        id: "__alloyId19"
+        id: "__alloyId18"
     });
-    $.__views.yourLooks.add($.__views.__alloyId19);
-    $.__views.__alloyId20 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId18);
+    $.__views.__alloyId19 = Ti.UI.createLabel({
         color: "white",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -200,19 +200,19 @@ function Controller() {
             fontWeight: "light"
         },
         text: "STYLIST",
-        id: "__alloyId20"
+        id: "__alloyId19"
     });
-    $.__views.__alloyId19.add($.__views.__alloyId20);
-    showStylist ? $.__views.__alloyId20.addEventListener("click", showStylist) : __defers["$.__views.__alloyId20!click!showStylist"] = true;
-    $.__views.__alloyId21 = Ti.UI.createView({
+    $.__views.__alloyId18.add($.__views.__alloyId19);
+    showStylist ? $.__views.__alloyId19.addEventListener("click", showStylist) : __defers["$.__views.__alloyId19!click!showStylist"] = true;
+    $.__views.__alloyId20 = Ti.UI.createView({
         top: "140dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#ffc3e2",
-        id: "__alloyId21"
+        id: "__alloyId20"
     });
-    $.__views.yourLooks.add($.__views.__alloyId21);
-    $.__views.__alloyId22 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId20);
+    $.__views.__alloyId21 = Ti.UI.createLabel({
         color: "a1238e",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -223,19 +223,19 @@ function Controller() {
             fontWeight: "light"
         },
         text: "SPORTY YOU",
-        id: "__alloyId22"
+        id: "__alloyId21"
     });
-    $.__views.__alloyId21.add($.__views.__alloyId22);
-    showLooksWithSituation2 ? $.__views.__alloyId22.addEventListener("click", showLooksWithSituation2) : __defers["$.__views.__alloyId22!click!showLooksWithSituation2"] = true;
-    $.__views.__alloyId23 = Ti.UI.createView({
+    $.__views.__alloyId20.add($.__views.__alloyId21);
+    showLooksWithSituation2 ? $.__views.__alloyId21.addEventListener("click", showLooksWithSituation2) : __defers["$.__views.__alloyId21!click!showLooksWithSituation2"] = true;
+    $.__views.__alloyId22 = Ti.UI.createView({
         top: "210dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#fee8f3",
-        id: "__alloyId23"
+        id: "__alloyId22"
     });
-    $.__views.yourLooks.add($.__views.__alloyId23);
-    $.__views.__alloyId24 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId22);
+    $.__views.__alloyId23 = Ti.UI.createLabel({
         color: "a1238e",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -246,19 +246,19 @@ function Controller() {
             fontWeight: "light"
         },
         text: "A CASUAL DAY",
-        id: "__alloyId24"
+        id: "__alloyId23"
     });
-    $.__views.__alloyId23.add($.__views.__alloyId24);
-    showLooksWithSituation3 ? $.__views.__alloyId24.addEventListener("click", showLooksWithSituation3) : __defers["$.__views.__alloyId24!click!showLooksWithSituation3"] = true;
-    $.__views.__alloyId25 = Ti.UI.createView({
+    $.__views.__alloyId22.add($.__views.__alloyId23);
+    showLooksWithSituation3 ? $.__views.__alloyId23.addEventListener("click", showLooksWithSituation3) : __defers["$.__views.__alloyId23!click!showLooksWithSituation3"] = true;
+    $.__views.__alloyId24 = Ti.UI.createView({
         top: "280dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#fdf4f9",
-        id: "__alloyId25"
+        id: "__alloyId24"
     });
-    $.__views.yourLooks.add($.__views.__alloyId25);
-    $.__views.__alloyId26 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId24);
+    $.__views.__alloyId25 = Ti.UI.createLabel({
         color: "a1238e",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -269,19 +269,19 @@ function Controller() {
             fontWeight: "light"
         },
         text: "YOUR LOOK FOR THE NIGHT",
-        id: "__alloyId26"
+        id: "__alloyId25"
     });
-    $.__views.__alloyId25.add($.__views.__alloyId26);
-    showLooksWithSituation4 ? $.__views.__alloyId26.addEventListener("click", showLooksWithSituation4) : __defers["$.__views.__alloyId26!click!showLooksWithSituation4"] = true;
-    $.__views.__alloyId27 = Ti.UI.createView({
+    $.__views.__alloyId24.add($.__views.__alloyId25);
+    showLooksWithSituation4 ? $.__views.__alloyId25.addEventListener("click", showLooksWithSituation4) : __defers["$.__views.__alloyId25!click!showLooksWithSituation4"] = true;
+    $.__views.__alloyId26 = Ti.UI.createView({
         top: "350dp",
         height: "60dp",
         opacity: "0.8",
         backgroundColor: "#fffFf9",
-        id: "__alloyId27"
+        id: "__alloyId26"
     });
-    $.__views.yourLooks.add($.__views.__alloyId27);
-    $.__views.__alloyId28 = Ti.UI.createLabel({
+    $.__views.yourLooks.add($.__views.__alloyId26);
+    $.__views.__alloyId27 = Ti.UI.createLabel({
         color: "a1238e",
         textAlign: "center",
         shadowRadius: "5dp",
@@ -292,10 +292,10 @@ function Controller() {
             fontWeight: "light"
         },
         text: "DIY  ; )",
-        id: "__alloyId28"
+        id: "__alloyId27"
     });
-    $.__views.__alloyId27.add($.__views.__alloyId28);
-    showDIY ? $.__views.__alloyId28.addEventListener("click", showDIY) : __defers["$.__views.__alloyId28!click!showDIY"] = true;
+    $.__views.__alloyId26.add($.__views.__alloyId27);
+    showDIY ? $.__views.__alloyId27.addEventListener("click", showDIY) : __defers["$.__views.__alloyId27!click!showDIY"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
     $.vlothieHome.open();
@@ -304,12 +304,12 @@ function Controller() {
     $.greetingDayPhrase.setText(Alloy.Globals.homeDataArray["greetingDayPhrase"]);
     $.weatherText.setText(Alloy.Globals.weatherArray["temp_C"] + " °C");
     $.weatherIcon.image = "/images/weather/" + Alloy.Globals.weatherArray["weatherCode"] + ".png";
-    __defers["$.__views.__alloyId18!click!showTrends"] && $.__views.__alloyId18.addEventListener("click", showTrends);
-    __defers["$.__views.__alloyId20!click!showStylist"] && $.__views.__alloyId20.addEventListener("click", showStylist);
-    __defers["$.__views.__alloyId22!click!showLooksWithSituation2"] && $.__views.__alloyId22.addEventListener("click", showLooksWithSituation2);
-    __defers["$.__views.__alloyId24!click!showLooksWithSituation3"] && $.__views.__alloyId24.addEventListener("click", showLooksWithSituation3);
-    __defers["$.__views.__alloyId26!click!showLooksWithSituation4"] && $.__views.__alloyId26.addEventListener("click", showLooksWithSituation4);
-    __defers["$.__views.__alloyId28!click!showDIY"] && $.__views.__alloyId28.addEventListener("click", showDIY);
+    __defers["$.__views.__alloyId17!click!showTrends"] && $.__views.__alloyId17.addEventListener("click", showTrends);
+    __defers["$.__views.__alloyId19!click!showStylist"] && $.__views.__alloyId19.addEventListener("click", showStylist);
+    __defers["$.__views.__alloyId21!click!showLooksWithSituation2"] && $.__views.__alloyId21.addEventListener("click", showLooksWithSituation2);
+    __defers["$.__views.__alloyId23!click!showLooksWithSituation3"] && $.__views.__alloyId23.addEventListener("click", showLooksWithSituation3);
+    __defers["$.__views.__alloyId25!click!showLooksWithSituation4"] && $.__views.__alloyId25.addEventListener("click", showLooksWithSituation4);
+    __defers["$.__views.__alloyId27!click!showDIY"] && $.__views.__alloyId27.addEventListener("click", showDIY);
     _.extend($, exports);
 }
 

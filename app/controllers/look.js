@@ -41,6 +41,8 @@ if(Alloy.Globals.selectedSituationId > 0){
 	loadRandomLook();
 	showLook();
 	
+	$.lookTitleText.setText(looksCurrentArray[Alloy.Globals.lookCurrentIndex]['title']);
+	
 	$.lookContent.addEventListener('swipe',function(e){
 		if (e.direction == 'right') {
 	      	Alloy.createController("trend").getView().open();
@@ -160,6 +162,7 @@ function showLook(){
 	animation.flipHorizontal($.articleBottom,$.articleBottom, 500);
 	animation.flipHorizontal($.articleShoes,$.articleShoes, 500);
 	
+	$.lookTitleText.setText(looksCurrentArray[Alloy.Globals.lookCurrentIndex]['title']);
 }
 
 

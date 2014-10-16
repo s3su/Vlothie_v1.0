@@ -3,6 +3,7 @@ require('includes/functions');
 require('includes/getArticlesData');
 require('includes/getLooksData');
 require('includes/getTrendsData');
+require('includes/getStylistsData');
 require('includes/getHomeData');
 require('includes/getWeatherData');
 require('includes/setArticlesData');

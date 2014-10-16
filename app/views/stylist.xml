@@ -10,49 +10,9 @@
 			</View>
 
 	     <ScrollView id="stylistScrollView" >
-			<View class="stylistListView">
+			<View id="stylistListView" class="stylistListView">
 				
-					<View class="stylistContainer">
-							<View class="stylistPhotoContainer">
-								Foto
-							</View>	
-							
-							<View class="stylistDataContainer">
-							 	<View class="stylistDataText">
-									<Label class="stylistTitle">Followers 11001</Label>
-									<Label class="stylistTitle">Looks 11001</Label>
-								</View>
-							</View>
-					</View>
-		
-					<View class="stylistContainer">
-							<View class="stylistPhotoContainer">
-								Foto
-							</View>	
-							
-							<View class="stylistDataContainer">
-							 	<View class="stylistDataText">
-									<Label class="stylistTitle">Followers 11001</Label>
-								</View>
-								<View class="stylistDataText">
-									<Label class="stylistTitle">Looks 11001</Label>
-								</View>
-							</View>
-					</View>
-		
-					<View class="stylistContainer">
-							<View class="stylistPhotoContainer">
-								Foto
-							</View>	
-							
-							<View class="stylistDataContainer">
-							 	<View class="stylistDataText">
-									<Label class="stylistTitle">Followers 11001</Label>
-									<Label class="stylistTitle">Looks 11001</Label>
-								</View>
-							</View>
-					</View>
-				
+					
 			</View>
 		</ScrollView>
 

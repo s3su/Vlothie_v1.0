@@ -1,7 +1,10 @@
 Ti.API.info('---------------- trend.js ------------------------');
 var animation = require('alloy/animation');
 
-
+function closeTrend() {
+	alert('close look');
+	$.trendWindow.close();
+}
 
 function showLooks() {
 
@@ -18,8 +21,7 @@ if(Alloy.Globals.trendId <= 0){
 
 var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]['photoMain'];
 $.trendImg.image = imagePath;
-//$.trendInfoText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
-//$.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['accountName']);
+$.trendTitleText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
 
 $.trendContent.addEventListener('swipe',function(e){
 	if (e.direction == 'right') {
@@ -32,10 +34,7 @@ $.trendContent.addEventListener('swipe',function(e){
 	var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]['photoMain'];
 	$.trendImg.image = imagePath;
 	animation.flipHorizontal($.trendContent,$.trendContent, 500);
-	
-	//$.trendInfoText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
-	//$.trendAuthorImg.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['accountName']);
-	//Ti.API.info('Alloy.Globals.trendId: '+Alloy.Globals.trendId+' AND imagePath: '+imagePath);
+	$.trendTitleText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]['title']);
 	//Ti.API.info('!!shoes title: '+articleShoes[Alloy.Globals.lookShoesId]['title']+' - Image: '+imagePath);
 });
 
@@ -58,9 +57,4 @@ function selectTrendId(direction){
 		Alloy.Globals.trendId = Math.floor(Math.random() * (Alloy.Globals.trendsArray['size']));
 	}
 	return Alloy.Globals.trendId;
-}
-
-function closeTrend() {
-	//alert('close look');
-	$.trendWindow.close();
 }

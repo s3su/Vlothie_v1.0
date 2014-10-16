@@ -8,6 +8,10 @@ function __processArg(obj, key) {
 }
 
 function Controller() {
+    function closeTrend() {
+        alert("close look");
+        $.trendWindow.close();
+    }
     function showLooks() {
         Alloy.Globals.selectedSituationId = 0;
         Alloy.Globals.selectedLookId = Alloy.Globals.trendsArray[Alloy.Globals.trendId]["lookId"];
@@ -16,9 +20,6 @@ function Controller() {
     function selectTrendId(direction) {
         "right" == direction ? Alloy.Globals.trendId - 1 >= 0 ? Alloy.Globals.trendId-- : Alloy.Globals.trendId = Alloy.Globals.trendsArray["size"] - 1 : "left" == direction ? Alloy.Globals.trendId + 1 < Alloy.Globals.trendsArray["size"] ? Alloy.Globals.trendId++ : Alloy.Globals.trendId = 0 : "random" == direction && (Alloy.Globals.trendId = Math.floor(Math.random() * Alloy.Globals.trendsArray["size"]));
         return Alloy.Globals.trendId;
-    }
-    function closeTrend() {
-        $.trendWindow.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "trend";
@@ -52,41 +53,26 @@ function Controller() {
     $.__views.trendButtons = Ti.UI.createView({
         id: "trendButtons"
     });
-<<<<<<< Updated upstream
     $.__views.trendWindow.add($.__views.trendButtons);
-    $.__views.__alloyId44 = Ti.UI.createButton({
-=======
-    $.__views.trendWindow.add($.__views.windowButtons);
-    $.__views.__alloyId56 = Ti.UI.createButton({
->>>>>>> Stashed changes
+    $.__views.__alloyId39 = Ti.UI.createButton({
         image: "/images/v-back.png",
         height: "32dp",
         tintColor: "#922a80",
         left: "8dp",
         top: "2dp",
-        id: "__alloyId56"
+        id: "__alloyId39"
     });
-<<<<<<< Updated upstream
-    $.__views.trendButtons.add($.__views.__alloyId44);
-    closeTrend ? $.__views.__alloyId44.addEventListener("click", closeTrend) : __defers["$.__views.__alloyId44!click!closeTrend"] = true;
-    $.__views.__alloyId45 = Ti.UI.createButton({
-=======
-    $.__views.windowButtons.add($.__views.__alloyId56);
-    showHome ? $.__views.__alloyId56.addEventListener("click", showHome) : __defers["$.__views.__alloyId56!click!showHome"] = true;
-    $.__views.__alloyId57 = Ti.UI.createButton({
->>>>>>> Stashed changes
+    $.__views.trendButtons.add($.__views.__alloyId39);
+    closeTrend ? $.__views.__alloyId39.addEventListener("click", closeTrend) : __defers["$.__views.__alloyId39!click!closeTrend"] = true;
+    $.__views.__alloyId40 = Ti.UI.createButton({
         image: "/images/v-search.png",
         tintColor: "#922a80",
         height: "32dp",
         right: "8dp",
         top: "2dp",
-        id: "__alloyId57"
+        id: "__alloyId40"
     });
-<<<<<<< Updated upstream
-    $.__views.trendButtons.add($.__views.__alloyId45);
-=======
-    $.__views.windowButtons.add($.__views.__alloyId57);
->>>>>>> Stashed changes
+    $.__views.trendButtons.add($.__views.__alloyId40);
     $.__views.windowTitle = Ti.UI.createView({
         top: "6dp",
         width: "100%",
@@ -94,7 +80,7 @@ function Controller() {
         id: "windowTitle"
     });
     $.__views.trendWindow.add($.__views.windowTitle);
-    $.__views.__alloyId58 = Ti.UI.createLabel({
+    $.__views.trendTitleText = Ti.UI.createLabel({
         color: "#922a80",
         font: {
             fontSize: "20dp",
@@ -103,9 +89,9 @@ function Controller() {
             fontFamily: "Baskerville"
         },
         text: "Trend Stylist",
-        id: "__alloyId58"
+        id: "trendTitleText"
     });
-    $.__views.windowTitle.add($.__views.__alloyId58);
+    $.__views.windowTitle.add($.__views.trendTitleText);
     $.__views.trendContentScroll = Ti.UI.createScrollView({
         layout: "vertical",
         top: "28dp",
@@ -142,18 +128,16 @@ function Controller() {
     Alloy.Globals.trendId <= 0 && (Alloy.Globals.trendId = selectTrendId("random"));
     var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]["photoMain"];
     $.trendImg.image = imagePath;
+    $.trendTitleText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]["title"]);
     $.trendContent.addEventListener("swipe", function(e) {
         "right" == e.direction ? Alloy.Globals.trendId = selectTrendId("right") : "left" == e.direction && (Alloy.Globals.trendId = selectTrendId("left"));
         animation.flipHorizontal($.trendContent, $.trendContent, 500);
         var imagePath = Alloy.Globals.trendsArray[Alloy.Globals.trendId]["photoMain"];
         $.trendImg.image = imagePath;
         animation.flipHorizontal($.trendContent, $.trendContent, 500);
+        $.trendTitleText.setText(Alloy.Globals.trendsArray[Alloy.Globals.trendId]["title"]);
     });
-<<<<<<< Updated upstream
-    __defers["$.__views.__alloyId44!click!closeTrend"] && $.__views.__alloyId44.addEventListener("click", closeTrend);
-=======
-    __defers["$.__views.__alloyId56!click!showHome"] && $.__views.__alloyId56.addEventListener("click", showHome);
->>>>>>> Stashed changes
+    __defers["$.__views.__alloyId39!click!closeTrend"] && $.__views.__alloyId39.addEventListener("click", closeTrend);
     __defers["$.__views.trendContent!click!showLooks"] && $.__views.trendContent.addEventListener("click", showLooks);
     _.extend($, exports);
 }
